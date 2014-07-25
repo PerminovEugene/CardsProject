@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3285562461">
+    <data-source source="LOCAL" name="CardsProject dev" uuid="e5a785ca-dd09-4894-8234-2091a4238c23">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/CardsProject?autoreconnect=true</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfdbdfdddfcfdfd8dfdedfd3</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
