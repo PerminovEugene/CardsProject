@@ -1,5 +1,10 @@
 # .gitignore for Grails 1.2 and 1.3
 
+#IDEA files
+/.idea
+CardsProject-grailsPlugins.iml
+CardsProject.iml
+
 # web application files
 /web-app/WEB-INF/classes
 
@@ -9,6 +14,9 @@
 # general HSQL database files
 *Db.properties
 *Db.script
+
+# MySQL configuration file
+/grails-app/conf/DataSource.groovy
 
 # logs
 /stacktrace.log
