@@ -1,8 +1,8 @@
 package cardsproject
 
 class Card {
-    Picture picture
-    User user
+    //Picture picture
+    //User user
     String text
 
     static constraints = {
