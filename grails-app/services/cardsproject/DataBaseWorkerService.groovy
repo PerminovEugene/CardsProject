@@ -21,4 +21,22 @@ class DataBaseWorkerService {
       //  Picture picture = new Picture(pict1)
        // picture.save()
     }
+    def createTestPicture
+    {
+        Picture picture = new Picture()
+        picture.name = "pict1"
+        picture.path = "/home/eugenep/IdeaProjects/CardsProject/CardsProject/web-app/images/testCards/cat1.jpeg"
+        picture.save()
+
+        Picture picture1 = new Picture()
+        picture1.name = "pict2"
+        picture1.path = "/home/eugenep/IdeaProjects/CardsProject/CardsProject/web-app/images/testCards/cat2.jpeg"
+        picture1.save()
+
+        Picture picture2 = new Picture()
+        picture2.name = "pict3"
+        picture2.path = "/home/eugenep/IdeaProjects/CardsProject/CardsProject/web-app/images/testCards/cat3.jpeg"
+        picture2.save()
+    }
+
 }
