@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title
+      %g:if{:env => "development"} Grails Runtime Exception
+      %g:else Error
+    %meta{:content => "main", :name => "layout"}
+      %g:if{:env => "development"}
+        %asset:stylesheet{:src => "errors.css"}/
+  %body
+    %g:if{:env => "development"}
+      %g:renderException{:exception => "${exception}"}/
+    %g:else
+      %ul.errors
+        %li An error has occurred
