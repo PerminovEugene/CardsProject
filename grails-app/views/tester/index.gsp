@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content='main' name='layout' />
     <title>tester</title>
   </head>
   <body>

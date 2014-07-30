@@ -1,7 +1,7 @@
 !!!5
 %html
   %head
-    %meta{:content => "main", :name => "cards"}/
+    %meta{:content => "main", :name => "layout"}/
     %title Cards
   %body
     %g:each{:in => "${cards}", :status => "i", :var => "card"}
@@ -20,5 +20,4 @@
       %br/
       %g:textArea{:name => "sign"}/
       %br/
-      -#${session.message}
       %g:actionSubmit{:value => "Save"}

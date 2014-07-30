@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta content='main' name='cards' />
+    <meta content='main' name='layout' />
     <title>Cards</title>
   </head>
   <body>
@@ -24,7 +24,6 @@
       <br />
       <g:textArea name='sign' />
       <br />
-      <% #${session.message} %>
       <g:actionSubmit value='Save'></g:actionSubmit>
     </g:form>
   </body>
