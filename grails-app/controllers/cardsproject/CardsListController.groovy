@@ -8,6 +8,7 @@ class CardsListController {
 
     def index() {
         numberOfPicture = 0;
+        dataBaseWorkerService.startService()
         render(view: "cardsList.gsp")
     }
 
@@ -20,11 +21,7 @@ class CardsListController {
       //
         def picture = Picture.findById(1)
         def path =  [picture.path] as JSON
-        println(picture.path)
-       // render ("see me?")
-        //path.render(respoonce)
-        // path.
-        //render (view: "cardsList.gsp", model: [message: path])
+
         render path
     }
     def showPicture = {

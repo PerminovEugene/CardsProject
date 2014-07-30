@@ -73,6 +73,8 @@ grails.project.dependency.resolution = {
         compile ":coffee-asset-pipeline:1.7.0"
         compile ":haml:0.3"
         //compile ":handlebars-asset-pipeline:1.3.0.3"
+        //fixtures
+        compile ":fixtures:1.2"
 
         test ':build-test-data:2.1.2'
         test ':fixtures:1.3'

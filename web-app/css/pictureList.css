@@ -29,3 +29,37 @@
     width: 200;
     height: 200;
 }
+
+
+.catalog_cards{
+    width: 270px;
+    padding: 24px 0 0;
+    font-size: 11px;
+    height: 22px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 20px 0 0;
+    border: 1px solid #efefef;
+    z-index: 11;
+    background-color: blue;;
+}
+.catalog_cards ul.thems_list {
+    margin-top: 0px;
+    z-index: 10;
+    background: #fcfcfc;
+    position: absolute;
+    border-radius: 3px;
+    width: 249px;
+    padding: 0;
+    border: 1px solid #eee;
+    display: none;
+}
+ul.thems_list li {
+    padding: 6px 9px;
+    list-style-type: none;
+    border-top: 1px solid #efefef;
+}
+ul.thems_list li:hover {
+    cursor: pointer;
+    background: #fff;
+}

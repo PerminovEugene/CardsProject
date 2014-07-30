@@ -42,3 +42,19 @@ $('#sendButton').click(function(){
 })
 })
 
+
+// list
+$(document).ready(function (){
+    /* выбор tembI */
+    $('.catalog_cards').click(function(){
+        $(".thems_list").slideToggle('fast');
+    });
+    $('ul.thems_list li').click(function(){
+        var tx = $(this).html();
+        var tv = $(this).attr('alt');
+        $(".cities_list").slideUp('fast');
+       // $(".delivery_list span").html(tx);
+       // $(".delivery_text").html(tv);
+    });
+})
+

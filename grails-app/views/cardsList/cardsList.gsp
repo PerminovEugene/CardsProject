@@ -23,5 +23,12 @@
         <img class="picture1">
     </div>
 
+    %{--list for catalog--}%
+<div class="catalog_cards"></div>
+<ul class="thems_list">
+    <li> cats </li>
+     <li> eva </li>
+</ul>
+
 </body>
 </html>

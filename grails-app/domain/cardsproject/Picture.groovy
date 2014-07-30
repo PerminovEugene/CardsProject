@@ -11,7 +11,7 @@ class Picture {
         path = path_
         name = name_
     }
-
+    static belongsTo = [catalog: Catalog]
     static constraints = {
         name(blank: true, unique: true)
         path(blank: true, unique: true)
