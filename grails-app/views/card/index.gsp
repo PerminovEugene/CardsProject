@@ -24,6 +24,7 @@
       <br />
       <g:textArea name='sign' />
       <br />
+      <% #${session.message} %>
       <g:actionSubmit value='Save'></g:actionSubmit>
     </g:form>
   </body>

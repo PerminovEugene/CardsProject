@@ -79,38 +79,15 @@
       }
       }
   %body
-    %a.skip{:href => "#page-body"}
-      %g:message{:code => "default.link.skip.label", :default => "Skip to content&hellip;"}/
-    #status{:role => "complementary"}
-      %h1 Application Status
+    %h1 Welcome to Grails
+    %p
+      Congratulations, you have successfully started your first Grails application! At the moment
+      this is the default page, feel free to modify it to either redirect to a controller or display whatever
+      content you may choose. Below is a list of controllers that are currently deployed in this application,
+      click on each to execute its default action:
+    #controller-list{:role => "navigation"}
+      %h2 Available Controllers:
       %ul
-        %li
-          App version:
-          %g:meta{:name => "app.version"}/
-        %li
-          Grails version:
-          %g:meta{:name => "app.grails.version"}/
-        %li Groovy version: ${GroovySystem.getVersion()}
-        %li JVM version: ${System.getProperty('java.version')}
-        %li Reloading active: ${grails.util.Environment.reloadingAgentEnabled}
-        %li Controllers: ${grailsApplication.controllerClasses.size()}
-        %li Domains: ${grailsApplication.domainClasses.size()}
-        %li Services: ${grailsApplication.serviceClasses.size()}
-        %li Tag Libraries: ${grailsApplication.tagLibClasses.size()}
-      %h1 Installed Plugins
-      %ul
-        %g:each{:in => "${applicationContext.getBean('pluginManager').allPlugins}", :var => "plugin"}
-          %li ${plugin.name} - ${plugin.version}
-    #page-body{:role => "main"}
-      %h1 Welcome to Grails
-      %p
-        Congratulations, you have successfully started your first Grails application! At the moment
-        this is the default page, feel free to modify it to either redirect to a controller or display whatever
-        content you may choose. Below is a list of controllers that are currently deployed in this application,
-        click on each to execute its default action:
-      #controller-list{:role => "navigation"}
-        %h2 Available Controllers:
-        %ul
-          %g:each{:in => "${grailsApplication.controllerClasses.sort { it.fullName } }", :var => "c"}
-            %li.controller
-              %g:link{:controller => "${c.logicalPropertyName}"} ${c.fullName}
+        %g:each{:in => "${grailsApplication.controllerClasses.sort { it.fullName } }", :var => "c"}
+          %li.controller
+            %g:link{:controller => "${c.logicalPropertyName}"} ${c.fullName}
