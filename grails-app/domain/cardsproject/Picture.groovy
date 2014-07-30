@@ -11,8 +11,9 @@ class Picture {
         path = path_
         name = name_
     }
+
     static constraints = {
         name(blank: true, unique: true)
-        path(url:true, unique: true)
+        path(blank: true, unique: true)
     }
 }

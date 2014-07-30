@@ -1,0 +1,31 @@
+.getNextCardsForm
+{
+    width: 300;
+    height: 200;
+    background-color: red;
+    float: left;
+}
+.buttonNext
+{
+    width: 600;
+    height: 400;
+    background-color: green;
+    float: left;
+}
+.picturesBlock {
+    background-color: red;
+    width: 600;
+    height: 600;
+}
+.picture1
+{
+    background-color: blue;
+    width: 200;
+    height: 200;
+}
+.picture2
+{
+    background-color: blue;
+    width: 200;
+    height: 200;
+}

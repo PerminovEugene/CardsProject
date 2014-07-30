@@ -21,4 +21,9 @@ class DataBaseWorkerService {
       //  Picture picture = new Picture(pict1)
        // picture.save()
     }
+    def getNextPicture(picture_id)
+    {
+        Picture picture = Picture.get(picture_id)
+        return picture
+    }
 }
