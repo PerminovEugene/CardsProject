@@ -6,23 +6,14 @@
     <title>Cards</title>
   </head>
   <body>
-    <g:each in='${cards}' status='i' var='card'>
-      <p>
-        № ${card.id}.
-        Text: ${card.text}
-        <br />
-        Signature: ${card.sign}
-      </p>
-      <br />
-    </g:each>
     <g:form action='save' controller='card'>
       <label>congratulation</label>
       <br />
-      <g:textArea name='text' />
+      <g:textArea name='text' value='${card.card_text}' />
       <br />
       <label>signature</label>
       <br />
-      <g:textArea name='sign' />
+      <g:textArea name='sign' value='${card.card_sign}' />
       <br />
       <g:actionSubmit value='Save'></g:actionSubmit>
     </g:form>

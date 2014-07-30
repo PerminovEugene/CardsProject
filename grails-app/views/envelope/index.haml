@@ -1,0 +1,12 @@
+%html
+  %head
+    %meta{:content => "main", :name => "layout"}/
+    %title Cards
+  %body
+    %h1 2. Ввод адреса
+    %g:form{:controller => "envelope", :action => "save"}
+      %label Адрес доставки
+      %g:textField{:name => "sender_name", :value => "${en_date.sender_name}", :placeholder => "Фамилия, инициалы получателя"}/
+      %g:textField{:name => "sender_company", :value => "${en_date.sender_company}"}/
+      %br/
+      %g:actionSubmit{:value => "Save"}

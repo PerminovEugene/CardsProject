@@ -4,20 +4,13 @@
     %meta{:content => "main", :name => "layout"}/
     %title Cards
   %body
-    %g:each{:in => "${cards}", :status => "i", :var => "card"}
-      %p
-        № ${card.id}.
-        Text: ${card.text}
-        %br/
-        Signature: ${card.sign}
-      %br/
     %g:form{:controller => "card", :action => "save"}
       %label congratulation
       %br/
-      %g:textArea{:name => "text"}/
+      %g:textArea{:name => "text", :value => "${card.card_text}"}/
       %br/
       %label signature
       %br/
-      %g:textArea{:name => "sign"}/
+      %g:textArea{:name => "sign", :value => "${card.card_sign}"}/
       %br/
       %g:actionSubmit{:value => "Save"}
