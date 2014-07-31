@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta content='main' name='layout' />
-    <title>Cards</title>
+    <title>Envelop</title>
   </head>
   <body>
     <!-- Declare Variable -->

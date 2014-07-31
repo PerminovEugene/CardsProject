@@ -3,14 +3,14 @@ package cardsproject
 class EnvelopeController {
 
     def index() {
-        if (session['envelope_params'] == null) {
-            session.setAttribute('envelope_params',params)
+        if (session['envelope_data'] == null) {
+            session.setAttribute('envelope_data',params)
         }
-        [en_date:session['envelope_params']]
+        [en_date:session['envelope_data']]
     }
 
     def save() {
-        session['envelope_params'] = params
+        session['envelope_data'] = params
 //        redirect (action:"index")
         redirect(controller:'card', action: 'index')
     }
