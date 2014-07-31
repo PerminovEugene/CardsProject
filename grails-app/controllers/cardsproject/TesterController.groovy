@@ -3,13 +3,9 @@ package cardsproject
 class TesterController {
     def dataBaseWorkerService
 
-    def index() {
-        //dataBaseWorkerService.createTestPicture
-        //List <Picture> list = dataBaseWorkerService.pictures
-       // if (list == null)
-         //     render ("null")
-        //else
-       // render("rr")
-        //render(list.path)
+    def index = {
+//        render("hello world its test page")
+//        def message = "Hi"
+        render ('hi')
     }
 }

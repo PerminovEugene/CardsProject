@@ -1,0 +1,17 @@
+!!!5
+%html
+  %head
+    %meta{:content => "main", :name => "layout"}/
+    %title Cards
+  %body
+    / Declare Variable
+    - text = 'Ввести текст сообщения'
+    - sign = 'Подписаться (Вы можете указать ФИО, должность, название Вашей компании и контакты)'
+    %g:form{:controller => "card", :action => "save"}
+      %br/
+      %g:textArea{:name => "card_text", :value => "${card.card_text}", :placeholder => "$text"}/
+      %br/
+      %g:textArea{:name => "card_sign", :value => "${card.card_sign}", :placeholder => "$sign"}/
+      %br/
+      %g:link{:controller =>"envelope", :action=>"index"} Назад
+      %g:actionSubmit{:action => "save", :value => "Далее"}
