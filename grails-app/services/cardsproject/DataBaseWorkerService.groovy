@@ -9,7 +9,7 @@ class DataBaseWorkerService {
 
     def startService()
     {
-        fixtureLoader.load("dbFixtures")
+//        fixtureLoader.load("dbFixtures")
     }
 
     def serviceMethod() {
