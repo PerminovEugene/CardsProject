@@ -2,15 +2,15 @@ package cardsproject
 
 class CardController {
     def index() {
-        if (session['card_id'] == null) {
-            session['card_id'] = 0001
-            session['card_text'] = 'test'
-            session['card_sign'] = 'test'
+        if (session['card_params'] == null) {
+            session.setAttribute('card_params',params)
+            session['card_params'].card_id = 0001
         }
+
 //        int id = session['card_id']
 //        def lastCard = Card.findById(id)
 //        def cards = Card.list()
-        [card:session]
+        [card:session['card_params']]
 //        session.invalidate()
     }
     def form() {}
@@ -18,10 +18,9 @@ class CardController {
 //        def card = new Card(params)
 //        card.save()
 //        def lastId = card.id
-        session['card_id'] = 0001
-        session['card_text'] = params.text
-        session['card_sign'] = params.sign
-//        session['message'] = 'done'
+
+        session['card_params'] = params
         redirect (action:"index")
+//        redirect(controller:'preview', action: 'index')
     }
 }

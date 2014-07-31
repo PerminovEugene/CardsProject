@@ -6,16 +6,17 @@
     <title>Cards</title>
   </head>
   <body>
+    <!-- Declare Variable -->
+    <% text = 'Ввести текст сообщения' %>
+    <% sign = 'Подписаться (Вы можете указать ФИО, должность, название Вашей компании и контакты)' %>
     <g:form action='save' controller='card'>
-      <label>congratulation</label>
       <br />
-      <g:textArea name='text' value='${card.card_text}' />
+      <g:textArea name='card_text' placeholder='$text' value='${card.card_text}' />
       <br />
-      <label>signature</label>
+      <g:textArea name='card_sign' placeholder='$sign' value='${card.card_sign}' />
       <br />
-      <g:textArea name='sign' value='${card.card_sign}' />
-      <br />
-      <g:actionSubmit value='Save'></g:actionSubmit>
+      <g:link action='index' controller='envelope'>Назад</g:link>
+      <g:actionSubmit action='save' value='&#1044;&#1072;&#1083;&#1077;&#1077;'></g:actionSubmit>
     </g:form>
   </body>
 </html>
