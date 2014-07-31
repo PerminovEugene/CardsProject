@@ -1,0 +1,189 @@
+.getNextCardsForm
+{
+    width: 300;
+    height: 200;
+    background-color: red;
+    float: left;
+}
+.buttonNext
+{
+    width: 600;
+    height: 400;
+    background-color: green;
+    float: left;
+}
+.picturesBlock {
+    background-color: red;
+    width: 600;
+    height: 600;
+}
+
+
+
+.catalog_cards{
+    width: 270px;
+    padding: 24px 0 0;
+    font-size: 11px;
+    height: 22px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 20px 0 0;
+    border: 1px solid #efefef;
+    z-index: 11;
+    background-color: blue;;
+}
+.catalog_cards ul.thems_list {
+    margin-top: 0px;
+    z-index: 10;
+    background: #fcfcfc;
+    position: absolute;
+    border-radius: 3px;
+    width: 249px;
+    padding: 0;
+    border: 1px solid #eee;
+    display: none;
+}
+ul.thems_list li {
+    padding: 6px 9px;
+    list-style-type: none;
+    border-top: 1px solid #efefef;
+}
+ul.thems_list li:hover {
+    cursor: pointer;
+    background: #fff;
+}
+
+.container
+{
+    width: 970px;
+    margin-left: 100px;
+}
+
+.change_card_header
+{
+    background-color:green;
+    width: 970px;
+    height: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 20;
+}
+.change_block
+{
+    background-color:darkred;
+    width: 520px;
+    height: 500px;
+    float: left;
+    margin-right: 10px;
+}
+
+.preview_block
+{
+    background-color: blue;
+    width: 440px;
+    height: 500px;
+    float:left;
+}
+
+/*.picture1 .picture2 .picture3 .picture4 .picture5 .picture6*/
+.picture1
+{
+    /*background-color: blue;*/
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.picture2
+{
+    background-color: blue;
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10;
+}
+.picture3
+{
+    background-color: blue;
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.picture4
+{
+    background-color: blue;
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.picture5
+{
+    background-color: blue;
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.picture6
+{
+    background-color: blue;
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.picture
+{
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.pictures{
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    margin: 10px;
+}
+.pictures > ul
+{
+    list-style: none;
+    padding-top: 10px;
+}
+.list_catalog
+{
+    width: 500px;
+    height: 50px;
+    background-color: white;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+#get_next_button
+{
+    float:right;
+}
+#get_previous_button
+{
+    float:left;
+}
+#picture_preview
+{
+    width: 400px;
+    height:  400px;
+    margin: 20px;
+}
+#next_step_button
+{
+    float: right;
+}
