@@ -36,3 +36,7 @@ CardsProject.iml
 
 # "temporary" build files
 /target
+
+#testImages
+/web-app/images/testCards
+

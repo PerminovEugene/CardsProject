@@ -9,6 +9,6 @@ class Company {
 
     static constraints = {
         name(unique: true, blank: true)
-        logo(url: true)
+        logo(blank: true)
     }
 }

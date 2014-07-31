@@ -1,10 +1,11 @@
 package cardsproject
 
 class TesterController {
+    def dataBaseWorkerService
 
     def index = {
 //        render("hello world its test page")
-        def message = "Hi"
-        [message: message]
+//        def message = "Hi"
+        render ('hi')
     }
 }
