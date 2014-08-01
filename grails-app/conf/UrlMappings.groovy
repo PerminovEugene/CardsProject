@@ -7,7 +7,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/" ( controller:'picturesList', action:'index' )
         "500"(view:'/error.haml')
 	}
 }

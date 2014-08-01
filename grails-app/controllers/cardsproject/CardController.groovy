@@ -1,4 +1,5 @@
 package cardsproject
+import org.springframework.web.multipart.MultipartFile
 
 class CardController {
     def index() {
@@ -19,17 +20,20 @@ class CardController {
 //        card.save()
 //        def lastId = card.id
 //        println request.getFile('logo').inputStream.text
-        def img = request.getFile('logo')
-//        if (img.empty) {
-//            flash.message = 'file cannot be empty'
-//            return
-//        }
-//        img.transferTo(new File('/CardsProject/assets/images/temp/1.jpg'))
-//        response.sendError(200, 'Done')
-
-        println img
+        MultipartFile img
+        def context = servletContext.getRealPath("/")
+        def path = '/images/temp/'
+        img = request.getFile('logo')
+        def name  = 'sample.jpg'
+        if (img.empty) {
+           //place for log
+        }
+        else {
+            name = img.getOriginalFilename()
+            img.transferTo(new File(context + path + name))
+        }
+        session['_logo'] = '..' + path + name
         session['card_data'] = params
-//        redirect (action:"index")
         redirect(controller:'preview', action: 'index')
     }
 }

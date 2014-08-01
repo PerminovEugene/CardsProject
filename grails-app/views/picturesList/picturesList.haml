@@ -1,0 +1,32 @@
+%html{:xmlns => "http://www.w3.org/1999/html"}
+  %head
+    %title Выбор открытки
+    %meta{:content => "main", :name => "layout"}/
+    %script{:src => "js/swapPictures.js", :type => "text/javascript"}
+  %body
+    / Declare Variable
+    - next = 'Далее'
+    .container.page
+      .change-card-header
+        %h1 1. Выберите открытку
+      .change-block
+        .list-catalog
+        .pictures
+          %ul#list{:name => "list"}
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture{:id => "picture'"}
+      .preview-block
+        %img#picture-preview{:src => "${session._picture}"}
+    .footer.footer-absolute
+      .container
+        %button#next-step-button.button.button-next{:name => "next_step_button", :value => "next_step"} Далее

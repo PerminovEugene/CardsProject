@@ -17,9 +17,15 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="#"><asset:image src="logo_o.png" alt="Grails"/></a></div>
+		<div class="header" id="header" role="banner">
+            <div class="container">
+                <a href="/CardsProject">
+                    <asset:image src="logo_o.png" alt="GoodCards" class="project-logo"/>
+                </a>
+            </div>
+        </div>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
+
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>
 </html>

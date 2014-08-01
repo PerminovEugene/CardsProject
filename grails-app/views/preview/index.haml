@@ -3,54 +3,58 @@
     %meta{:content => "main", :name => "layout"}/
     %title Preview
   %body
-    %h1 4. Подтверждение заказа
-    .card-face
-      %h3 Лицевая сторона
-      .card-view
-        %img{:src => ""}
-    .card-back
-      %h3 Обратная сторона
-      .card-view
-        ${session.card_data.card_text}
-        ${session.card_data.card_sign}
-    .envelope
-      %h3 Конверт с указанием адресов
-      .envelop-view
-        .sender
-          .name
-            От кого
-            %span.underlined
-            ${session.envelope_data.sender_name}
-          .address
-            От куда
-            %span.city.underlined
-              город ${session.envelope_data.sender_city}
-            %span.street.underlined
-              улица ${session.envelope_data.sender_street}
-            %span.house.underlined
-              дом ${session.envelope_data.sender_house}, корпус ${session.envelope_data.sender_housing},
-              офис ${session.envelope_data.sender_office}
-          .postcode
-            ${session.envelope_data.sender_postcode}
-        .receiver
-          .name
-            Кому
-            %span.underlined
-            ${session.envelope_data.receiver_name}
-          .address
-            Куда
-            %span.city.underlined
-              город ${session.envelope_data.receiver_city}
-            %span.street.underlined
-              улица ${session.envelope_data.receiver_street}
-            %span.house.underlined
-              дом ${session.envelope_data.receiver_house}, корпус ${session.envelope_data.receiver_housing},
-              офис ${session.envelope_data.receiver_office}
-          .postcode
-            ${session.envelope_data.receiver_postcode}
-        .postcode-main
-          %h1 ${session.envelope_data.receiver_postcode}
-      %span Печать на гофрированной бумаге в три слоя,
-      %Span заботливо поглаженное на прощание
-    %g:link{:controller =>"card", :action=>"index"} Назад
-    %g:link{:controller =>"tester", :action=>"index"} Все правильно. Отправить
+    .container.page.preview
+      %h1 4. Подтверждение заказа
+      .card-preview.card-face
+        %h2 Лицевая сторона
+        .card-view
+          %img{:src => "${session._picture}"}
+      .card-preview.card-back
+        %h2 Обратная сторона
+        .card-view.card
+          .text ${session.card_data.card_text}
+          .file
+            %img{:src => "${session._logo}", :width => "125"}
+          .sign ${session.card_data.card_sign}
+        %span Печать на гофрированной бумаге в три слоя,
+        %Span заботливо поглаженное на прощание
+      .envelope
+        %h2 Конверт с указанием адресов
+        .envelop-view
+          .sender
+            .name
+              От кого
+              %span.underlined
+              ${session.envelope_data.sender_name}
+            .address
+              От куда
+              %span.city.underlined
+                город ${session.envelope_data.sender_city}
+              %span.street.underlined
+                улица ${session.envelope_data.sender_street}
+              %span.house.underlined
+                дом ${session.envelope_data.sender_house}, корпус ${session.envelope_data.sender_housing},
+                офис ${session.envelope_data.sender_office}
+            .postcode
+              ${session.envelope_data.sender_postcode}
+          .receiver
+            .name
+              Кому
+              %span.underlined
+              ${session.envelope_data.receiver_name}
+            .address
+              Куда
+              %span.city.underlined
+                город ${session.envelope_data.receiver_city}
+              %span.street.underlined
+                улица ${session.envelope_data.receiver_street}
+              %span.house.underlined
+                дом ${session.envelope_data.receiver_house}, корпус ${session.envelope_data.receiver_housing},
+                офис ${session.envelope_data.receiver_office}
+            .postcode
+              ${session.envelope_data.receiver_postcode}
+          .postcode-main
+            %h1 ${session.envelope_data.receiver_postcode}
+      .footer
+        %g:link.button.button-prev{:controller =>"card", :action=>"index"} Назад
+        %g:link.button.button-next{:action=>"toStart"} Все правильно. Отправить

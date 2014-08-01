@@ -2,7 +2,7 @@ package cardsproject
 import grails.converters.JSON
 
 
-class CardsListController {
+class PicturesListController {
 
     def _PICTUREATSCREEN_ = 6 // how many picture at screen
     def dataBaseWorkerService
@@ -14,22 +14,25 @@ class CardsListController {
         numberOfPicture = 0;
         getPreviousCall = false
         dataBaseWorkerService.startService()
+        if (session['_picture'] == null) {
+            session['_picture'] = ''
+        }
         if (session['cardList'] == null) {
             session.setAttribute('cardList',params)
             session['cardList'] = 0001
         }
-        render(view: "cardsList.gsp")
+        render(view: "picturesList.gsp")
     }
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST", getNextCards: "GET",
                              getPreviousCards: "GET", saveChoicePicture: "POST"]
 
-    def getNextCards(){
+    def getNextPictures(){
         numberOfPicture++
         sendPicture()
     }
     // THERE MUST BE CORRECT SENDS PICTURE
-    def getPreviousCards() {
+    def getPreviousPictures() {
         if (getPreviousCall == false) {
             getPreviousCall = numberOfPicture
             numberOfPicture -= _PICTUREATSCREEN_ * 2
@@ -48,8 +51,8 @@ class CardsListController {
         def path =  [picture.path] as JSON
         render path
     }
-    def saveChoicePicture(params){
-        session['card_data'] = params
+    def saveChoicePicture(){
+        session['_picture'] = params.path
         render("ok") as JSON
 
         //redirect(controller:'cardsList', action: 'look')
