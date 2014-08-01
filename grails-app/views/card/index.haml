@@ -7,6 +7,32 @@
     / Declare Variable
     - text = 'Ввести текст сообщения'
     - sign = 'Подписаться (Вы можете указать ФИО, должность, название Вашей компании и контакты)'
+    .nav
+      .container
+        %ul
+          %li
+            .point
+              .circle.active
+                1
+            .line.active
+            %span.active-text Выбор открытки
+          %li
+            .point
+              .circle.active
+                2
+            .line.active
+            %span.active-text.centred Ввод адреса
+          %li
+            .point
+              .border
+                .circle.active
+                  3
+            .line
+            %span.active-text.centred Ввод текста и подписи
+            .point.last
+              .circle
+                4
+            %span.last Подтверждение заказа
     .container.page
       %h1 3. Ввод текста и подписи
       %g:form{:controller => "card", :action => "save", :enctype => "multipart/form-data"}

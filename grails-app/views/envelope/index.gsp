@@ -17,6 +17,47 @@
     <% postcode = 'Индекс' %>
     <% next = 'Далее' %>
     <% prev = 'Назад' %>
+    <div class='nav'>
+      <div class='container'>
+        <ul>
+          <li>
+            <div class='point'>
+              <div class='circle active'>
+                1
+              </div>
+            </div>
+            <div class='line active'></div>
+            <span class='active-text'>Выбор открытки</span>
+          </li>
+          <li>
+            <div class='point'>
+              <div class='border'>
+                <div class='circle active'>
+                  2
+                </div>
+              </div>
+            </div>
+            <div class='line'></div>
+            <span class='active-text centred'>Ввод адреса</span>
+          </li>
+          <li>
+            <div class='point'>
+              <div class='circle'>
+                3
+              </div>
+            </div>
+            <div class='line'></div>
+            <span class='centred'>Ввод текста и подписи</span>
+            <div class='point last'>
+              <div class='circle'>
+                4
+              </div>
+            </div>
+            <span class='last'>Подтверждение заказа</span>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class='container page'>
       <h1>2. Ввод адреса</h1>
       <h3>Информация будет указана на конверте</h3>

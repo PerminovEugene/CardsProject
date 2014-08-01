@@ -15,6 +15,32 @@
     - postcode = 'Индекс'
     - next = 'Далее'
     - prev = 'Назад'
+    .nav
+      .container
+        %ul
+          %li
+            .point
+              .circle.active
+                1
+            .line.active
+            %span.active-text Выбор открытки
+          %li
+            .point
+              .border
+                .circle.active
+                  2
+            .line
+            %span.active-text.centred Ввод адреса
+          %li
+            .point
+              .circle
+                3
+            .line
+            %span.centred Ввод текста и подписи
+            .point.last
+              .circle
+                4
+            %span.last Подтверждение заказа
     .container.page
       %h1 2. Ввод адреса
       %h3 Информация будет указана на конверте
