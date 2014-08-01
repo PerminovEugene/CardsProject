@@ -23,9 +23,40 @@ def catalog2 = new Catalog()
 catalog2.name = "Eva"
 catalog2.save()
 
+def happyBday = new Catalog()
+happyBday.name = "happy birthday"
+happyBday.save()
+
+def valentinesDay = new Catalog()
+valentinesDay.name = "valentines Day"
+valentinesDay.save()
+
+def holidays = new Catalog()
+holidays.name = "holidays"
+holidays.save()
+
 /**
  *  Crete some picture in db
  */
+
+def evaCard1 = new Picture()
+evaCard1.name = ("happy boy")
+evaCard1.path = 'images/testCards/card1.jpg'
+evaCard1.catalog = happyBday
+evaCard1.save()
+
+def evaCard2 = new Picture()
+evaCard2.name = ("happy girl")
+evaCard2.path = 'images/testCards/card2.jpg'
+evaCard2.catalog = valentinesDay
+evaCard2.save()
+
+def evaCard3 = new Picture()
+evaCard3.name = ("bubble goom girl")
+evaCard3.path = 'images/testCards/card3.jpg'
+evaCard3.catalog = holidays
+evaCard3.save()
+
 def picture = new Picture()
 picture.name = 'pict1'
 picture.path = 'images/testCards/cat1.jpeg'
@@ -44,7 +75,7 @@ picture2.catalog = catalog
 picture2.path = 'images/testCards/cat3.jpeg'
 picture2.save()
 
-
+/*
 def picture3 = new Picture()
 picture3.name = 'pict4'
 picture3.path = 'images/testCards/evangelion1.jpg'
@@ -95,3 +126,4 @@ picture10.name = 'stainsgate'
 picture10.catalog = catalog1
 picture10.path = 'images/testCards/stainsGate.jpg'
 picture10.save()
+*/
