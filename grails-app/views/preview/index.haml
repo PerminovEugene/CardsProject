@@ -1,8 +1,34 @@
 %html
   %head
     %meta{:content => "main", :name => "layout"}/
-    %title Preview
+    %title Предпросмотр
   %body
+    .nav
+      .container
+        %ul
+          %li
+            .point
+              .circle.active
+                1
+            .line.active
+            %span.active-text Выбор открытки
+          %li
+            .point
+              .circle.active
+                2
+            .line.active
+            %span.active-text.centred Ввод адреса
+          %li
+            .point
+              .circle.active
+                3
+            .line.active.final
+            %span.active-text.centred Ввод текста и подписи
+            .point.last
+              .border
+                .circle.active
+                  4
+            %span.last.active-text Подтверждение заказа
     .container.page.preview
       %h1 4. Подтверждение заказа
       .card-preview.card-face
@@ -18,6 +44,10 @@
           .sign ${session.card_data.card_sign}
         %span Печать на гофрированной бумаге в три слоя,
         %Span заботливо поглаженное на прощание
+      .footer
+        %g:link.button.button-prev{:controller =>"card", :action=>"index"} Назад
+        %g:link.button.button-next{:action=>"toStart"} Все правильно. Отправить
+    /
       .envelope
         %h2 Конверт с указанием адресов
         .envelop-view
@@ -55,6 +85,3 @@
               ${session.envelope_data.receiver_postcode}
           .postcode-main
             %h1 ${session.envelope_data.receiver_postcode}
-      .footer
-        %g:link.button.button-prev{:controller =>"card", :action=>"index"} Назад
-        %g:link.button.button-next{:action=>"toStart"} Все правильно. Отправить

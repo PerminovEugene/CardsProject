@@ -8,6 +8,47 @@
   <body>
     <!-- Declare Variable -->
     <% next = 'Далее' %>
+    <div class='nav'>
+      <div class='container'>
+        <ul>
+          <li>
+            <div class='point'>
+              <div class='border'>
+                <div class='circle active'>
+                  1
+                </div>
+              </div>
+            </div>
+            <div class='line'></div>
+            <span class='active-text'>Выбор открытки</span>
+          </li>
+          <li>
+            <div class='point'>
+              <div class='circle'>
+                2
+              </div>
+            </div>
+            <div class='line'></div>
+            <span class='centred'>Ввод адреса</span>
+          </li>
+          <li>
+            <div class='point'>
+              <div class='circle'>
+                3
+              </div>
+            </div>
+            <div class='line'></div>
+            <span class='centred'>Ввод текста и подписи</span>
+            <div class='point last'>
+              <div class='circle'>
+                4
+              </div>
+            </div>
+            <span class='last'>Подтверждение заказа</span>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class='container page'>
       <div class='change-card-header'>
         <h1>1. Выберите открытку</h1>

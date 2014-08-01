@@ -9,6 +9,47 @@
     <!-- Declare Variable -->
     <% text = 'Ввести текст сообщения' %>
     <% sign = 'Подписаться (Вы можете указать ФИО, должность, название Вашей компании и контакты)' %>
+    <div class='nav'>
+      <div class='container'>
+        <ul>
+          <li>
+            <div class='point'>
+              <div class='circle active'>
+                1
+              </div>
+            </div>
+            <div class='line active'></div>
+            <span class='active-text'>Выбор открытки</span>
+          </li>
+          <li>
+            <div class='point'>
+              <div class='circle active'>
+                2
+              </div>
+            </div>
+            <div class='line active'></div>
+            <span class='active-text centred'>Ввод адреса</span>
+          </li>
+          <li>
+            <div class='point'>
+              <div class='border'>
+                <div class='circle active'>
+                  3
+                </div>
+              </div>
+            </div>
+            <div class='line'></div>
+            <span class='active-text centred'>Ввод текста и подписи</span>
+            <div class='point last'>
+              <div class='circle'>
+                4
+              </div>
+            </div>
+            <span class='last'>Подтверждение заказа</span>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class='container page'>
       <h1>3. Ввод текста и подписи</h1>
       <g:form action='save' controller='card' enctype='multipart/form-data'>
