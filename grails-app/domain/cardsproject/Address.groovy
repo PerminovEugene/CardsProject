@@ -9,7 +9,7 @@ class Address {
     String office
     int postCode
 
-    static hasMany = [company: Company]
+//    static hasMany = [company: Company]
 
     static constraints = {
         city(blank: true, minSize: 1)

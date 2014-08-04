@@ -5,6 +5,7 @@ class Card {
     // user its a sender. Human its addressee
 
     String text
+    String sign
     String state
     Date created
 

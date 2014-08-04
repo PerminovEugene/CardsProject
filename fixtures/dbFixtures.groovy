@@ -1,5 +1,8 @@
+import cardsproject.Address
 import cardsproject.Card
 import cardsproject.Catalog
+import cardsproject.Company
+import cardsproject.Human
 import cardsproject.Picture
 import cardsproject.User
 
@@ -8,7 +11,7 @@ import cardsproject.User
  */
 
 /**
- *  Crete some catalogs in db
+ *  Create some catalogs in db
  */
 
 def catalog = new Catalog()
@@ -36,7 +39,7 @@ holidays.name = "holidays"
 holidays.save()
 
 /**
- *  Crete some picture in db
+ *  Create some picture in db
  */
 
 def evaCard1 = new Picture()
@@ -75,55 +78,76 @@ picture2.catalog = catalog
 picture2.path = 'images/testCards/cat3.jpeg'
 picture2.save()
 
-/*
-def picture3 = new Picture()
-picture3.name = 'pict4'
-picture3.path = 'images/testCards/evangelion1.jpg'
-picture3.catalog = catalog1
-picture3.save()
+/**
+ *  Create some human in db
+ */
+def sender = new Human()
+sender.name = 'Alexeev S.K.'
+sender.post = 'Director'
+sender.save()
 
-def picture4 = new Picture()
-picture4.name = 'pict5'
-picture4.path = 'images/testCards/evangelion2.jpg'
-picture4.catalog = catalog1
-picture4.save()
+def addressee = new Human()
+addressee.name = 'Antonov A.V.'
+addressee.post = 'General director'
+addressee.save()
 
-def picture5 = new Picture()
-picture5.name = 'pict6'
-picture5.catalog = catalog1
-picture5.path = 'images/testCards/evangelion3.jpg'
-picture5.save()
+/**
+ *  Create some address in db
+ */
+def lukoilAddress = new Address()
+lukoilAddress.city = 'Москва'
+lukoilAddress.street = 'ул.Ленина'
+lukoilAddress.house = 1
+lukoilAddress.housing = '1'
+lukoilAddress.office = '21'
+lukoilAddress.postCode = 644526
+lukoilAddress.save()
+
+def mostovikAddress = new Address()
+mostovikAddress.city = 'Омск'
+mostovikAddress.street = 'пр.Мира'
+mostovikAddress.house = 124
+mostovikAddress.housing = '25'
+mostovikAddress.office = '18'
+mostovikAddress.postCode = 643421
+mostovikAddress.save()
+
+/**
+ *  Create some company in db
+ */
+def mostovik = new Company()
+mostovik.name = 'Мостовик'
+mostovik.logo = 'images/logo/mostovik.jpeg'
+mostovik.human = sender
+mostovik.address = mostovikAddress
+mostovik.save()
+
+def lukoil = new Company()
+lukoil.name = 'Лукоил'
+lukoil.logo = 'images/logo/lukoil.jpeg'
+lukoil.human = addressee
+lukoil.address = lukoilAddress
+lukoil.save()
 
 
+/**
+ *  Create test user in db
+ */
+def testUser = new User()
+testUser.e_mail = 'test@gmail.com'
+testUser.password ='qwerty'
+testUser.human = sender
+testUser.save()
 
-def picture6 = new Picture()
-picture6.name = 'pict7'
-picture6.catalog = catalog
-picture6.path = 'images/testCards/anime1.jpg'
-picture6.save()
-
-
-def picture7 = new Picture()
-picture7.name = 'pict8'
-picture7.path = 'images/testCards/naruto1.jpg'
-picture7.catalog = catalog1
-picture7.save()
-
-def picture8 = new Picture()
-picture8.name = 'pict9'
-picture8.path = 'images/testCards/naruto3.jpg'
-picture8.catalog = catalog1
-picture8.save()
-
-def picture9 = new Picture()
-picture9.name = 'shtainsgate'
-picture9.catalog = catalog1
-picture9.path = 'images/testCards/shtainsgate.jpg'
-picture9.save()
-
-def picture10 = new Picture()
-picture10.name = 'stainsgate'
-picture10.catalog = catalog1
-picture10.path = 'images/testCards/stainsGate.jpg'
-picture10.save()
-*/
+/**
+ *  Create card in db
+ */
+def firstCard = new Card()
+firstCard.text = 'С праздничком вас!'
+firstCard.sign = 'Ваши зайки'
+firstCard.created = new Date(2014,03,25)
+firstCard.state = 'На модерации'
+firstCard.picture = evaCard1
+firstCard.user = testUser
+firstCard.human = addressee
+firstCard.save()
