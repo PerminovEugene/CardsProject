@@ -1,12 +1,16 @@
 package cardsproject
 
 class Card {
-    //Picture picture
-    //User user
+    static belongsTo = [picture: Picture, user: User, human: Human]
+    // user its a sender. Human its addressee
+
     String text
-    String sign
+    String state
+    Date created
+
     static constraints = {
         text(blacnk: true)
-        sign(blacnk: true)
+        state(blank: true)
+        created(date : true)
     }
 }

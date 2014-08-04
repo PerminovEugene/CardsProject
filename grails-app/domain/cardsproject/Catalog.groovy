@@ -1,5 +1,7 @@
 package cardsproject
 
+
+
 class Catalog {
     static hasMany = [picture: Picture]
     String name

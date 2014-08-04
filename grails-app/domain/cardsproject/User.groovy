@@ -1,19 +1,14 @@
 package cardsproject
 
 class User {
+    static belongsTo = [human: Human]
     static hasMany = [card: Card]
 
-    String first_name
-    String second_name
     String e_mail
-    String login
     String password
 
     static constraints = {
-        second_name(blank: true)
-        first_name(blank: true)
         e_mail(email: true, unique: true)
-        login (size: 5..15, unique: true)
-        password(size: 5..15)
+        password() // size: 5..15
     }
 }
