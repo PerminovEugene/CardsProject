@@ -1,7 +1,7 @@
 package cardsproject
 
 class Card {
-    static belongsTo = [picture: Picture, user: User, human: Human]
+    static belongsTo = [picture: Picture, user: User, company: Company]
     // user its a sender. Human its addressee
 
     String text

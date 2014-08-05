@@ -11,7 +11,7 @@ class EnvelopeController {
 
     def save() {
         session['envelope_data'] = params
-//        redirect (action:"index")
         redirect(controller:'card', action: 'index')
+
     }
 }

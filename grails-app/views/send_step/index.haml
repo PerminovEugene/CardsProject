@@ -1,0 +1,31 @@
+%html{:xmlns => "http://www.w3.org/1999/html"}
+  %head
+    %title Выбор открытки
+    %meta{:content => "main", :name => "layout"}
+    %script{:src => "/CardsProject/assets/popup_registration.js", :type => "text/javascript"}
+  %body
+    / Declare variable
+    - pass = 'пароль'
+    - mail = 'mail'
+    - send_reg = 'отправить'
+    .container
+      .content_block
+        #send_message
+          %h1 Ваша открытка отправляется
+        .send_logo
+          %img{:id => 'picture_send_logo', :src => '/CardsProject/assets/send_step/airoplane.png'}
+        %h1{:id => "message_take_email"} Чтобы знать о статусе письма оставте свой емэйл
+        %button{:id =>'registration_button', :name => 'registration_button', :value => 'registration_button'}
+          зарегистрироваться
+        .subscribe_block
+          %a{:href => "#"}
+            %img{:src => '/CardsProject/assets/send_step/facebook.png'}
+        %g:link.button.button-prev{:action => "toStart"} в начало
+    .popup_block{:id => 'popup_block'}
+      .popup_content{:id => 'popup_content'}
+        %h3 заполните поля для регистрации
+        %input{:id => 'mail', :type => 'email', :placeholder => "емэйл"}
+        %input{:id => 'pass', :type => 'password', :placeholder => "пароль"}
+        %button{:id =>'send_reg_button', :name => 'send_reg_button', :value => 'send_reg_button'}
+          отправить
+
