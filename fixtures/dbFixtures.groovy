@@ -95,8 +95,8 @@ addressee.save()
  *  Create some address in db
  */
 def lukoilAddress = new Address()
-lukoilAddress.city = 'Москва'
-lukoilAddress.street = 'ул.Ленина'
+lukoilAddress.city = 'Moskva'
+lukoilAddress.street = 'Lenina'
 lukoilAddress.house = 1
 lukoilAddress.housing = '1'
 lukoilAddress.office = '21'
@@ -104,8 +104,8 @@ lukoilAddress.postCode = 644526
 lukoilAddress.save()
 
 def mostovikAddress = new Address()
-mostovikAddress.city = 'Омск'
-mostovikAddress.street = 'пр.Мира'
+mostovikAddress.city = 'Omsk'
+mostovikAddress.street = 'Mira'
 mostovikAddress.house = 124
 mostovikAddress.housing = '25'
 mostovikAddress.office = '18'
@@ -116,14 +116,14 @@ mostovikAddress.save()
  *  Create some company in db
  */
 def mostovik = new Company()
-mostovik.name = 'Мостовик'
+mostovik.name = 'Mostovik'
 mostovik.logo = 'images/logo/mostovik.jpeg'
 mostovik.human = sender
 mostovik.address = mostovikAddress
 mostovik.save()
 
 def lukoil = new Company()
-lukoil.name = 'Лукоил'
+lukoil.name = 'Lukoil'
 lukoil.logo = 'images/logo/lukoil.jpeg'
 lukoil.human = addressee
 lukoil.address = lukoilAddress
@@ -143,10 +143,10 @@ testUser.save()
  *  Create card in db
  */
 def firstCard = new Card()
-firstCard.text = 'С праздничком вас!'
-firstCard.sign = 'Ваши зайки'
+firstCard.text = 'Congratulation'
+firstCard.sign = "Your's banny"
 firstCard.created = new Date(2014,03,25)
-firstCard.state = 'На модерации'
+firstCard.state = 'ON MODERATION'
 firstCard.picture = evaCard1
 firstCard.user = testUser
 firstCard.company = lukoil

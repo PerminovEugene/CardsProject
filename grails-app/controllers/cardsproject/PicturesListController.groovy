@@ -6,20 +6,17 @@ class PicturesListController {
 
     def _PICTUREATSCREEN_ = 6 // how many picture at screen
     def dataBaseWorkerService
-    def numberOfPicture
+    int numberOfPicture
     def getPreviousCall
 
 
     def index() {
         numberOfPicture = 0;
         getPreviousCall = false
-        dataBaseWorkerService.startService()
+
         if (session['_picture'] == null) {
+            session.setAttribute('_picture',params)
             session['_picture'] = ''
-        }
-        if (session['cardList'] == null) {
-            session.setAttribute('cardList',params)
-            session['cardList'] = 0001
         }
         render(view: "picturesList.gsp")
     }
@@ -39,7 +36,7 @@ class PicturesListController {
         } else {
             if (numberOfPicture == getPreviousCall)
                 getPreviousCall = false
-            getNextCards()
+            getNextPictures()
         }
         if (numberOfPicture < 0) {
 
