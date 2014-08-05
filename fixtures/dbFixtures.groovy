@@ -136,7 +136,7 @@ lukoil.save()
 def testUser = new User()
 testUser.e_mail = 'test@gmail.com'
 testUser.password ='qwerty'
-testUser.human = sender
+testUser.company = mostovik
 testUser.save()
 
 /**
@@ -149,5 +149,5 @@ firstCard.created = new Date(2014,03,25)
 firstCard.state = 'На модерации'
 firstCard.picture = evaCard1
 firstCard.user = testUser
-firstCard.human = addressee
+firstCard.company = lukoil
 firstCard.save()

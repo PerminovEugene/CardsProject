@@ -1,7 +1,7 @@
 package cardsproject
 
 class User {
-    static belongsTo = [human: Human]
+    static belongsTo = [company: Company]
     static hasMany = [card: Card]
 
     String e_mail
