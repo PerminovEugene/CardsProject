@@ -10,5 +10,6 @@ class User {
     static constraints = {
         e_mail(email: true, unique: true)
         password() // size: 5..15
+        company(nullable: true)
     }
 }

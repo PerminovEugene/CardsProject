@@ -1,52 +1,38 @@
 package cardsproject
+//import grails.transaction.Transactional
 
-import grails.transaction.Transactional
-import org.yecht.Data.Str
-
-import javax.accessibility.AccessibleHyperlink
-
-@Transactional
+//@Transactional
 class DataBaseService {
-//    def card = new Card()
-//    def sender = new Human()
-//    def receiver = new Human()
-//    def senderAddress = new Address()
-//    def recieverAddress = new Address()
-//    def senderCompany = new Company()
-//    def recieverCompany = new Company()
+//    static transactional = false
 
-    def serviceMethod() {
-
-    }
     /*Добавить в каждый метод проверку обязательных параметров*/
-    def createUser(String e_mail, String password, Company company) {
+    def createUser(String e_mail, String password){
         def user = new User()
         user.e_mail = e_mail
         user.password = password
-        user.company = company
         user.save()
+        return user.id
+    }
+
+    def saveUser(long user_id, Company company) {
+        def user = User.get(user_id)
+        println(user)
+        user.company = company
+        user.save(flush: true)
+        println(user.company)
         return user
     }
-
-    def createCompany() {
+    def saveCompany(String name, Address address, Human human, String logo) {
         def company = new Company()
-        return company
-    }
-
-    def addCompanyInfo(Company company, String name, Address address, Human human) {
         company.name = name
         company.address = address
         company.human = human
+        company.logo = logo
+        company.save()
         return company
     }
 
-   def addLogo(Company company, String logo) {
-       company.logo = logo
-       company.save()
-       return company
-   }
-
-    def createAddress(String city, String street, int house, String housing, String office, int postCode) {
+    def saveAddress(String city, String street, int house, String housing, String office, int postCode) {
         def address = new Address()
         address.city = city
         address.street = street
@@ -58,7 +44,7 @@ class DataBaseService {
         return address
     }
 
-    def createHuman(String name, String post) {
+    def saveHuman(String name, String post) {
         def human = new Human()
         human.name = name
         human.post = post
@@ -66,28 +52,20 @@ class DataBaseService {
         return human
     }
 
-    def createCard() {
+    def saveCard(int picture_id, String text, String sign, long user_id, company) {
+        def picture = Picture.get(picture_id)
+        def user = User.get(user_id)
         def card = new Card()
-        return card
-    }
-
-    def addPicture(Card card, int id) {
-        def picture = Picture.get(id)
         card.picture = picture
-        return card
-    }
-
-    def addСompliments (Card card, String text, String sign) {
-        /*Добавить проверку на колличество символов*/
         card.text = text
         card.sign = sign
+        card.user = user
+        card.company = company
+        card.state = 'ON MODERATION'
+        card.created = new Date(2014, 01, 01)
+        card.save()
         return card
     }
 
-    def saveCard (Card card) {
-        card.state = 'ON MODERATION'
-        card.created = Date(2014, 01, 01)
-        card.save()
-    }
 
 }

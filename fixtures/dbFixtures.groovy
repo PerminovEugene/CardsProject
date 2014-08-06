@@ -136,7 +136,7 @@ lukoil.save()
 def testUser = new User()
 testUser.e_mail = 'test@gmail.com'
 testUser.password ='qwerty'
-testUser.company = mostovik
+//testUser.company = mostovik
 testUser.save()
 
 /**

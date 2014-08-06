@@ -38,10 +38,10 @@
       .card-preview.card-back
         %h2 Обратная сторона
         .card-view.card
-          .text ${session.card_data.card_text}
+          .text ${session.currentCard.text}
           .file
             %img{:src => "${session._logo}", :width => "125"}
-          .sign ${session.card_data.card_sign}
+          .sign ${session.currentCard.sign}
         %span Печать на гофрированной бумаге в три слоя,
         %Span заботливо поглаженное на прощание
       .footer
@@ -55,33 +55,33 @@
             .name
               От кого
               %span.underlined
-              ${session.envelope_data.sender_name}
+              ${session.companySender.sender.name}
             .address
               От куда
               %span.city.underlined
-                город ${session.envelope_data.sender_city}
+                город ${session.companySender.address.city}
               %span.street.underlined
-                улица ${session.envelope_data.sender_street}
+                улица ${session.companySender.address.street}
               %span.house.underlined
-                дом ${session.envelope_data.sender_house}, корпус ${session.envelope_data.sender_housing},
-                офис ${session.envelope_data.sender_office}
+                дом ${session.companySender.address.house}, корпус ${session.companySender.address.housing},
+                офис ${session.companySender.address.office}
             .postcode
-              ${session.envelope_data.sender_postcode}
+              ${session.companySender.address.postcode}
           .receiver
             .name
               Кому
               %span.underlined
-              ${session.envelope_data.receiver_name}
+              ${session.companyReceiver.receiver.name}
             .address
               Куда
               %span.city.underlined
-                город ${session.envelope_data.receiver_city}
+                город ${session.companyReceiver.address.city}
               %span.street.underlined
-                улица ${session.envelope_data.receiver_street}
+                улица ${session.companyReceiver.address.street}
               %span.house.underlined
-                дом ${session.envelope_data.receiver_house}, корпус ${session.envelope_data.receiver_housing},
-                офис ${session.envelope_data.receiver_office}
+                дом ${session.companyReceiver.address.house}, корпус ${session.companyReceiver.address.housing},
+                офис ${session.companyReceiver.address.office}
             .postcode
-              ${session.envelope_data.receiver_postcode}
+              ${session.companyReceiver.address.postcode}
           .postcode-main
-            %h1 ${session.envelope_data.receiver_postcode}
+            %h1 ${session.companyReceiver.address.postcode}

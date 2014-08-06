@@ -64,30 +64,30 @@
       <g:form action='save' controller='envelope'>
         <div class='sender address-form'>
           <h2>Данные получателя</h2>
-          <g:textField name='sender_name' placeholder='$name' value='${en_date.sender_name}' />
-          <g:textField name='sender_post' placeholder='$post' value='${en_date.sender_post}' />
-          <g:textField name='sender_company' placeholder='$company' value='${en_date.sender_company}' />
+          <g:textField name='sender_name' placeholder='$name' value='${session.companySender.sender.name}' />
+          <g:textField name='sender_post' placeholder='$post' value='${session.companySender.sender.post}' />
+          <g:textField name='sender_company' placeholder='$company' value='${session.companySender.name}' />
           <br />
-          <g:textField name='sender_city' placeholder='$city' value='${en_date.sender_city}' />
-          <g:textField name='sender_street' placeholder='$street' value='${en_date.sender_street}' />
-          <g:textField name='sender_house' placeholder='$house' value='${en_date.sender_house}' />
-          <g:textField name='sender_housing' placeholder='$housing' value='${en_date.sender_housing}' />
-          <g:textField name='sender_office' placeholder='$office' value='${en_date.sender_office}' />
-          <g:textField name='sender_postcode' placeholder='$postcode' value='${en_date.sender_postcode}' />
+          <g:textField name='sender_city' placeholder='$city' value='${session.companySender.address.city}' />
+          <g:textField name='sender_street' placeholder='$street' value='${session.companySender.address.street}' />
+          <g:textField name='sender_house' placeholder='$house' value='${session.companySender.address.house}' />
+          <g:textField name='sender_housing' placeholder='$housing' value='${session.companySender.address.housing}' />
+          <g:textField name='sender_office' placeholder='$office' value='${session.companySender.address.office}' />
+          <g:textField name='sender_postcode' placeholder='$postcode' value='${session.companySender.address.postcode}' />
           <a href='http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx' target='_blank'>Уточнить индекс</a>
         </div>
         <div class='receiver address-form'>
           <h2>Данные отправителя</h2>
-          <g:textField name='receiver_name' placeholder='$name' value='${en_date.receiver_name}' />
-          <g:textField name='receiver_post' placeholder='$post' value='${en_date.receiver_post}' />
-          <g:textField name='receiver_company' placeholder='$company' value='${en_date.receiver_company}' />
+          <g:textField name='receiver_name' placeholder='$name' value='${session.companyReceiver.receiver.name}' />
+          <g:textField name='receiver_post' placeholder='$post' value='${session.companyReceiver.receiver.post}' />
+          <g:textField name='receiver_company' placeholder='$company' value='${session.companyReceiver.name}' />
           <br />
-          <g:textField name='receiver_city' placeholder='$city' value='${en_date.receiver_city}' />
-          <g:textField name='receiver_street' placeholder='$street' value='${en_date.receiver_street}' />
-          <g:textField name='receiver_house' placeholder='$house' value='${en_date.receiver_house}' />
-          <g:textField name='receiver_housing' placeholder='$housing' value='${en_date.receiver_housing}' />
-          <g:textField name='receiver_office' placeholder='$office' value='${en_date.receiver_office}' />
-          <g:textField name='receiver_postcode' placeholder='$postcode' value='${en_date.receiver_postcode}' />
+          <g:textField name='receiver_city' placeholder='$city' value='${session.companyReceiver.address.city}' />
+          <g:textField name='receiver_street' placeholder='$street' value='${session.companyReceiver.address.street}' />
+          <g:textField name='receiver_house' placeholder='$house' value='${session.companyReceiver.address.house}' />
+          <g:textField name='receiver_housing' placeholder='$housing' value='${session.companyReceiver.address.housing}' />
+          <g:textField name='receiver_office' placeholder='$office' value='${session.companyReceiver.address.office}' />
+          <g:textField name='receiver_postcode' placeholder='$postcode' value='${session.companyReceiver.address.postcode}' />
           <a href='http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx' target='_blank'>Уточнить индекс</a>
         </div>
         <div class='footer'>

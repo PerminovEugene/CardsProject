@@ -5,7 +5,7 @@ import grails.converters.JSON
 class PicturesListController {
 
     def _PICTUREATSCREEN_ = 6 // how many picture at screen
-    def dataBaseWorkerService
+//    def dbservice
     int numberOfPicture
     def getPreviousCall
 
@@ -39,16 +39,21 @@ class PicturesListController {
             getNextPictures()
         }
         if (numberOfPicture < 0) {
-
             sendPicture()
         }
     }
     def sendPicture(){
         def picture = Picture.findById(numberOfPicture)
-        def path =  [picture.path] as JSON
-        render path
+        def data =  [picture.path, numberOfPicture] as JSON
+        render data
     }
     def saveChoicePicture(){
+        /*Слишком уж тут навернуто*/
+        session['currentCard'] = [
+                'picture_id' : params.id
+        ]
+
+        println(session['currentCard'])
         session['_picture'] = params.path
         render("ok") as JSON
 
