@@ -1,4 +1,5 @@
 package cardsproject
+import grails.converters.JSON
 
 class Send_stepController {
 
@@ -12,10 +13,31 @@ class Send_stepController {
         redirect(controller: "picturesList", action: "index")
         session.invalidate()
     }
-    def save_mail_pas()
-    {
-        session['envelope_data'] = params
-        redirect(action: toStart())
+
+    static allowedMethods = [save: "POST", update: "POST", delete: "POST", save_registration: "POST"]
+
+    //здесь вставить функцию сервиса для сохранения в бд
+    def save_registration() {
+
+        Human human = new Human()
+        human
+        // validation there
+
+
+        /*
+        User user = new User()
+        user.e_mail = params.Mail
+        user.password = params.Pass
+        user.save()*/
+
+        // ТУТ
+
+       // redirect(action: toStart())*/
+
+        render(contentType: 'text/json') {[
+                'Mail': params.Mail,
+                'pass': params.Pass
+        ]}
     }
 
 }

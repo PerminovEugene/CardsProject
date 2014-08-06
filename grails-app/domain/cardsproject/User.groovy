@@ -8,7 +8,7 @@ class User {
     String password
 
     static constraints = {
-        e_mail(email: true, unique: true)
+        e_mail()
         password() // size: 5..15
     }
 }

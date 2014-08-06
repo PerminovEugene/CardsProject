@@ -32,11 +32,21 @@
     </div>
     <div class='popup_block' id='popup_block'>
       <div class='popup_content' id='popup_content'>
-        <h3>заполните поля для регистрации</h3>
-        <input id='mail' placeholder='&#1077;&#1084;&#1101;&#1081;&#1083;' type='email' />
-        <input id='pass' placeholder='&#1087;&#1072;&#1088;&#1086;&#1083;&#1100;' type='password' />
+        <div class='exit_sign'>
+          <img />
+        </div>
+        <h2>Регистрация</h2>
+        <h3>Вам не нужно будет повторно вводить данные, в следующий, раз все будет уже сохранено!</h3>
+        <div class='mailError'>
+          <h3></h3>
+        </div>
+        <input id='mail' placeholder='&#1042;&#1072;&#1096; e-mail' type='text' />
+        <div class='passError'>
+          <h3></h3>
+        </div>
+        <input id='pass' placeholder='&#1055;&#1072;&#1088;&#1086;&#1083;&#1100;' type='password' />
         <button id='send_reg_button' name='send_reg_button' value='send_reg_button'>
-          отправить
+          Регистрация
         </button>
       </div>
     </div>

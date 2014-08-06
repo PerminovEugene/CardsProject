@@ -1,7 +1,6 @@
 package cardsproject
 import grails.converters.JSON
 
-
 class PicturesListController {
 
     def _PICTUREATSCREEN_ = 6 // how many picture at screen
