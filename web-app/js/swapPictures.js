@@ -45,8 +45,9 @@ function getNextPicturesFromServer() {
             success: (function (data) {
                 i +=1;
                 var img = items.children[i-7].children;
-                img[0]["src"] = data;
-                img[0]["name"] = data;
+                img[0]["src"] = data[0];
+                img[0]["name"] = data[0];
+                img[0].setAttribute('data-id', data[1]);
             }),
             error: (function (data) {
                 i +=1;
@@ -83,6 +84,8 @@ $(document).ready(function () {
         var img = document.getElementById('picture-preview');
         img["src"] = this.src;
         img["name"] = this.name;
+        var data_id = $(this).attr('data-id');
+        img.setAttribute('data-id', data_id);
     })
 })
 // тыкнули батон следующие картинки
@@ -94,14 +97,16 @@ $(document).ready(function () {
 })
 // тыкнули кнопку перйти на следующий шаг
 function onNextStep() {
-    var imgDest = $('#picture-preview').attr('src');
+    var img = $('#picture-preview');
+    var imgDest = img.attr('src');
+    var imgId = img.attr('data-id');
     if (imgDest == "")
     //there may be other ulr if anything change
     {
         alert("сначала выберите открытку");
     }
     else{
-        var toServer = {path : imgDest};
+        var toServer = {path : imgDest, id: imgId};
         $.ajax({
             url: 'picturesList/saveChoicePicture',
             type: 'post',

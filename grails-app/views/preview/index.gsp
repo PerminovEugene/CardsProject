@@ -3,6 +3,7 @@
   <head>
     <meta content='main' name='layout' />
     <title>Предпросмотр</title>
+    <script src='/CardsProject/assets/popup_registration.js' type='text/javascript'></script>
   </head>
   <body>
     <div class='nav'>
@@ -57,18 +58,40 @@
       <div class='card-preview card-back'>
         <h2>Обратная сторона</h2>
         <div class='card-view card'>
-          <div class='text'>${session.card_data.card_text}</div>
+          <div class='text'>${session.currentCard.text}</div>
           <div class='file'>
             <img src='${session._logo}' width='125' />
           </div>
-          <div class='sign'>${session.card_data.card_sign}</div>
+          <div class='sign'>${session.currentCard.sign}</div>
         </div>
         <span>Печать на гофрированной бумаге в три слоя,</span>
         <Span>заботливо поглаженное на прощание</Span>
       </div>
       <div class='footer'>
         <g:link action='index' class='button button-prev' controller='card'>Назад</g:link>
-        <g:link action='index' class='button button-next' controller='send_step'>Все правильно. Отправить</g:link>
+        <button id='registration_button' name='registration_button' value='registration_button'>
+          отправить
+        </button>
+      </div>
+    </div>
+    <div class='popup_block' id='popup_block'>
+      <div class='popup_content' id='popup_content'>
+        <div class='exit_sign'>
+          <img />
+        </div>
+        <h2>Регистрация</h2>
+        <h3>Вам не нужно будет повторно вводить данные, в следующий, раз все будет уже сохранено!</h3>
+        <div class='mailError'>
+          <h3></h3>
+        </div>
+        <input id='mail' placeholder='&#1042;&#1072;&#1096; e-mail' type='text' />
+        <div class='passError'>
+          <h3></h3>
+        </div>
+        <input id='pass' placeholder='&#1055;&#1072;&#1088;&#1086;&#1083;&#1100;' type='password' />
+        <button id='send_reg_button' name='send_reg_button' value='send_reg_button'>
+          Регистрация
+        </button>
       </div>
     </div>
     <!--
@@ -80,50 +103,50 @@
             <div class='name name'>
               От кого
               <span class='underlined underlined'></span>
-              ${session.envelope_data.sender_name}
+              ${session.companySender.sender.name}
             </div>
             <div class='address address'>
               От куда
               <span class='city underlined city underlined'>
-                город ${session.envelope_data.sender_city}
+                город ${session.companySender.address.city}
               </span>
               <span class='street underlined street underlined'>
-                улица ${session.envelope_data.sender_street}
+                улица ${session.companySender.address.street}
               </span>
               <span class='house underlined house underlined'>
-                дом ${session.envelope_data.sender_house}, корпус ${session.envelope_data.sender_housing},
-                офис ${session.envelope_data.sender_office}
+                дом ${session.companySender.address.house}, корпус ${session.companySender.address.housing},
+                офис ${session.companySender.address.office}
               </span>
             </div>
             <div class='postcode postcode'>
-              ${session.envelope_data.sender_postcode}
+              ${session.companySender.address.postcode}
             </div>
           </div>
           <div class='receiver receiver'>
             <div class='name name'>
               Кому
               <span class='underlined underlined'></span>
-              ${session.envelope_data.receiver_name}
+              ${session.companyReceiver.receiver.name}
             </div>
             <div class='address address'>
               Куда
               <span class='city underlined city underlined'>
-                город ${session.envelope_data.receiver_city}
+                город ${session.companyReceiver.address.city}
               </span>
               <span class='street underlined street underlined'>
-                улица ${session.envelope_data.receiver_street}
+                улица ${session.companyReceiver.address.street}
               </span>
               <span class='house underlined house underlined'>
-                дом ${session.envelope_data.receiver_house}, корпус ${session.envelope_data.receiver_housing},
-                офис ${session.envelope_data.receiver_office}
+                дом ${session.companyReceiver.address.house}, корпус ${session.companyReceiver.address.housing},
+                офис ${session.companyReceiver.address.office}
               </span>
             </div>
             <div class='postcode postcode'>
-              ${session.envelope_data.receiver_postcode}
+              ${session.companyReceiver.address.postcode}
             </div>
           </div>
           <div class='postcode-main postcode-main'>
-            <h1>${session.envelope_data.receiver_postcode}</h1>
+            <h1>${session.companyReceiver.address.postcode}</h1>
           </div>
         </div>
       </div>

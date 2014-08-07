@@ -37,9 +37,9 @@
       %h1 3. Ввод текста и подписи
       %g:form{:controller => "card", :action => "save", :enctype => "multipart/form-data"}
         .card
-          %g:textArea.text{:name => "card_text", :value => "${card.card_text}", :placeholder => "$text"}/
+          %g:textArea.text{:name => "card_text", :value => "${session.currentCard.text}", :placeholder => "$text"}/
           %input.file{:type => "file", :id => "logo",  :name => "logo"}/
-          %g:textArea.sign{:name => "card_sign", :value => "${card.card_sign}", :placeholder => "$sign"}/
+          %g:textArea.sign{:name => "card_sign", :value => "${session.currentCard.sign}", :placeholder => "$sign"}/
         .footer
           %g:link.button.button-prev{:controller =>"envelope", :action=>"index"} Назад
           %g:actionSubmit.button.button-next{:action => "save", :value => "Далее"}

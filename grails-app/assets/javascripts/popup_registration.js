@@ -44,14 +44,13 @@ function sendRegistrationInfo() {
     };
     var myJson = JSON.stringify(obj);
     $.ajax({
-        url: '../send_step/save_registration',
+        url: '../preview/registration',
         type: 'post',
         dataType: 'JSON',
         data: obj,
         response: 'JSON',
         success: (function (response) {
-            alert(response.mail + ' '+response.Pass + " succes");
-            //window.location.replace("envelope/index");
+            window.location.replace('../send_step/index');
         }),
         error: (function (response) {
             //time to logging

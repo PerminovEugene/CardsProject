@@ -1,8 +1,8 @@
 %html{:xmlns => "http://www.w3.org/1999/html"}
   %head
-    %title Выбор открытки
+    %title Отправлено
     %meta{:content => "main", :name => "layout"}
-    %script{:src => "/CardsProject/assets/popup_registration.js", :type => "text/javascript"}
+
   %body
     / Declare variable
     - pass = 'пароль'
@@ -15,24 +15,10 @@
         .send_logo
           %img{:id => 'picture_send_logo', :src => '/CardsProject/assets/send_step/airoplane.png'}
         %h1{:id => "message_take_email"} Чтобы знать о статусе письма оставте свой емэйл
-        %button{:id =>'registration_button', :name => 'registration_button', :value => 'registration_button'}
-          зарегистрироваться
         .subscribe_block
           %a{:href => "#"}
             %img{:src => '/CardsProject/assets/send_step/facebook.png'}
         %g:link.button.button-prev{:action => "toStart"} в начало
-    .popup_block{:id => 'popup_block'}
-      .popup_content{:id => 'popup_content'}
-        .exit_sign
-          %img
-        %h2 Регистрация
-        %h3 Вам не нужно будет повторно вводить данные, в следующий, раз все будет уже сохранено!
-        .mailError
-          %h3
-        %input{:id => 'mail', :type => 'text', :placeholder => "Ваш e-mail"}
-        .passError
-          %h3
-        %input{:id => 'pass', :type => 'password', :placeholder => "Пароль"}
-        %button{:id =>'send_reg_button', :name => 'send_reg_button', :value => 'send_reg_button'}
-          Регистрация
+        %g:link.button.button-prev{:action => "toMainPage"} на главную страничку
+
 
