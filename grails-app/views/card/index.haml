@@ -5,8 +5,8 @@
     %title Ввод текста
   %body
     / Declare Variable
-    - text = 'Ввести текст сообщения'
-    - sign = 'Подписаться (Вы можете указать ФИО, должность, название Вашей компании и контакты)'
+    - text = 'Введите текст сообщения'
+    - sign = 'Подпишитесь, оставьте контактные данные'
     .nav
       .container
         %ul
@@ -15,31 +15,31 @@
               .circle.active
                 1
             .line.active
-            %span.active-text Выбор открытки
+            %span.active-text Выберите открытку
           %li
             .point
               .circle.active
                 2
             .line.active
-            %span.active-text.centred Ввод адреса
+            %span.active-text.centred Введите адрес
           %li
             .point
               .border
                 .circle.active
                   3
             .line
-            %span.active-text.centred Ввод текста и подписи
+            %span.active-text.centred Заполните обратную сторону
             .point.last
               .circle
                 4
-            %span.last Подтверждение заказа
+            %span.last Проверьте
     .container.page
-      %h1 3. Ввод текста и подписи
+      %h1 3. Заполните обратную сторону
       %g:form{:controller => "card", :action => "save", :enctype => "multipart/form-data"}
         .card
           %g:textArea.text{:name => "card_text", :value => "${session.currentCard.text}", :placeholder => "$text"}/
           %input.file{:type => "file", :id => "logo",  :name => "logo", :value => "${session._logo}"}/
           %g:textArea.sign{:name => "card_sign", :value => "${session.currentCard.sign}", :placeholder => "$sign"}/
         .footer
-          %g:link.button.button-prev{:controller =>"envelope", :action=>"index"} Назад
-          %g:actionSubmit.button.button-next{:action => "save", :value => "Далее"}
+          %g:link.button.button-prev{:controller =>"envelope", :action=>"index"} На шаг назад
+          %g:actionSubmit.button.button-next{:action => "save", :value => "Готово"}

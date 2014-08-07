@@ -7,8 +7,8 @@
   </head>
   <body>
     <!-- Declare Variable -->
-    <% text = 'Ввести текст сообщения' %>
-    <% sign = 'Подписаться (Вы можете указать ФИО, должность, название Вашей компании и контакты)' %>
+    <% text = 'Введите текст сообщения' %>
+    <% sign = 'Подпишитесь, оставьте контактные данные' %>
     <div class='nav'>
       <div class='container'>
         <ul>
@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class='line active'></div>
-            <span class='active-text'>Выбор открытки</span>
+            <span class='active-text'>Выберите открытку</span>
           </li>
           <li>
             <div class='point'>
@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class='line active'></div>
-            <span class='active-text centred'>Ввод адреса</span>
+            <span class='active-text centred'>Введите адрес</span>
           </li>
           <li>
             <div class='point'>
@@ -39,19 +39,19 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='active-text centred'>Ввод текста и подписи</span>
+            <span class='active-text centred'>Заполните обратную сторону</span>
             <div class='point last'>
               <div class='circle'>
                 4
               </div>
             </div>
-            <span class='last'>Подтверждение заказа</span>
+            <span class='last'>Проверьте</span>
           </li>
         </ul>
       </div>
     </div>
     <div class='container page'>
-      <h1>3. Ввод текста и подписи</h1>
+      <h1>3. Заполните обратную сторону</h1>
       <g:form action='save' controller='card' enctype='multipart/form-data'>
         <div class='card'>
           <g:textArea class='text' name='card_text' placeholder='$text' value='${session.currentCard.text}' />
@@ -59,8 +59,8 @@
           <g:textArea class='sign' name='card_sign' placeholder='$sign' value='${session.currentCard.sign}' />
         </div>
         <div class='footer'>
-          <g:link action='index' class='button button-prev' controller='envelope'>Назад</g:link>
-          <g:actionSubmit action='save' class='button button-next' value='&#1044;&#1072;&#1083;&#1077;&#1077;'></g:actionSubmit>
+          <g:link action='index' class='button button-prev' controller='envelope'>На шаг назад</g:link>
+          <g:actionSubmit action='save' class='button button-next' value='&#1043;&#1086;&#1090;&#1086;&#1074;&#1086;'></g:actionSubmit>
         </div>
       </g:form>
     </div>

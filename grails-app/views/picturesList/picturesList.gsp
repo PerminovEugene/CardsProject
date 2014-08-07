@@ -20,7 +20,7 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='active-text'>Выбор открытки</span>
+            <span class='active-text'>Выберите открытку</span>
           </li>
           <li>
             <div class='point'>
@@ -29,7 +29,7 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='centred'>Ввод адреса</span>
+            <span class='centred'>Введите адрес</span>
           </li>
           <li>
             <div class='point'>
@@ -38,13 +38,13 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='centred'>Ввод текста и подписи</span>
+            <span class='centred'>Заполните обратную сторону</span>
             <div class='point last'>
               <div class='circle'>
                 4
               </div>
             </div>
-            <span class='last'>Подтверждение заказа</span>
+            <span class='last'>Проверьте</span>
           </li>
         </ul>
       </div>
@@ -84,7 +84,7 @@
     </div>
     <div class='footer footer-absolute'>
       <div class='container'>
-        <button class='button button-next' id='next-step-button' name='next_step_button' value='next_step'>Далее</button>
+        <button class='button button-next' id='next-step-button' name='next_step_button' value='next_step'>Готово</button>
       </div>
     </div>
   </body>

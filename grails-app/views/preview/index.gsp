@@ -16,7 +16,7 @@
               </div>
             </div>
             <div class='line active'></div>
-            <span class='active-text'>Выбор открытки</span>
+            <span class='active-text'>Выберите открытку</span>
           </li>
           <li>
             <div class='point'>
@@ -25,7 +25,7 @@
               </div>
             </div>
             <div class='line active'></div>
-            <span class='active-text centred'>Ввод адреса</span>
+            <span class='active-text centred'>Введите адрес</span>
           </li>
           <li>
             <div class='point'>
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class='line active final'></div>
-            <span class='active-text centred'>Ввод текста и подписи</span>
+            <span class='active-text centred'>заполниет обратную сторону</span>
             <div class='point last'>
               <div class='border'>
                 <div class='circle active'>
@@ -42,13 +42,13 @@
                 </div>
               </div>
             </div>
-            <span class='last active-text'>Подтверждение заказа</span>
+            <span class='last active-text'>Проверьте</span>
           </li>
         </ul>
       </div>
     </div>
     <div class='container page preview'>
-      <h1>4. Подтверждение заказа</h1>
+      <h1>4. Проверьте, все правильно?</h1>
       <div class='card-preview card-face'>
         <h2>Лицевая сторона</h2>
         <div class='card-view'>
@@ -68,9 +68,9 @@
         <Span>заботливо поглаженное на прощание</Span>
       </div>
       <div class='footer'>
-        <g:link action='index' class='button button-prev' controller='card'>Назад</g:link>
+        <g:link action='index' class='button button-prev' controller='card'>На шаг назад</g:link>
         <button id='registration_button' name='registration_button' value='registration_button'>
-          отправить
+          Готово
         </button>
       </div>
     </div>

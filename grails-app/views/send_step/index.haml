@@ -2,7 +2,6 @@
   %head
     %title Отправлено
     %meta{:content => "main", :name => "layout"}
-
   %body
     / Declare variable
     - pass = 'пароль'
@@ -11,14 +10,14 @@
     .container
       .content_block
         #send_message
-          %h1 Ваша открытка отправляется
+          %h1 Ваша открытка будет доставлена в течение недели
         .send_logo
           %img{:id => 'picture_send_logo', :src => '/CardsProject/assets/send_step/airoplane.png'}
-        %h1{:id => "message_take_email"} Чтобы знать о статусе письма оставте свой емэйл
         .subscribe_block
           %a{:href => "#"}
-            %img{:src => '/CardsProject/assets/send_step/facebook.png'}
-        %g:link.button.button-prev{:action => "toStart"} в начало
-        %g:link.button.button-prev{:action => "toMainPage"} на главную страничку
+        %g:link.button.button-subscribe{:action => "toStart"} Поделиться
+        %img{:src => '/CardsProject/assets/send_step/facebook.png'}
+        %g:link.button.button-new{:action => "toStart"} Создать еще открытку
+        %g:link.button.button-main{:action => "toMainPage"} Вернуться на главную страничку
 
 
