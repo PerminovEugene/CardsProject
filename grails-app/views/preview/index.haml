@@ -44,11 +44,11 @@
             %img{:src => "${session._logo}", :width => "125"}
           .sign ${session.currentCard.sign}
         %span Печать на гофрированной бумаге в три слоя,
-        %Span заботливо поглаженное на прощание
+        %Span заботливо поглажена на прощание
       .footer
         %g:link.button.button-prev{:controller =>"card", :action=>"index"} Назад
-        %button{:id =>'registration_button', :name => 'registration_button', :value => 'registration_button'}
-          отправить
+        %button.button.button-next{:id =>'registration_button', :name => 'registration_button', :value => 'registration_button'}
+          Отправить
     .popup_block{:id => 'popup_block'}
       .popup_content{:id => 'popup_content'}
         .exit_sign
