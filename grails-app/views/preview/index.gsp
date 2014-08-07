@@ -68,7 +68,7 @@
       </div>
       <div class='footer'>
         <g:link action='index' class='button button-prev' controller='card'>Назад</g:link>
-        <g:link action='toStart' class='button button-next'>Все правильно. Отправить</g:link>
+        <g:link action='saveInDb' class='button button-next'>Все правильно. Отправить</g:link>
       </div>
     </div>
     <!--
