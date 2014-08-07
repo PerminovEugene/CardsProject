@@ -6,6 +6,7 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery
+//= require validation
 //= require_self
 
 if (typeof jQuery !== 'undefined') {

@@ -44,7 +44,7 @@
     .container.page
       %h1 2. Ввод адреса
       %h3 Информация будет указана на конверте
-      %g:form{:controller => "envelope", :action => "save"}
+      %g:form.js-form{:controller => "envelope", :action => "save"}
         .sender.address-form
           %h2 Данные получателя
           %g:textField{:name => "sender_name", :placeholder => "$name", :value => "${session.companySender.sender.name}"}/
@@ -74,4 +74,5 @@
         .footer
           .container
             %g:link.button.button-prev{:controller =>"picturesList", :action=>"index"} Назад
-            %g:actionSubmit.button.button-next{:action => "save", :value => "Дaлее"}
+            %a.button.button-next.js-submit Дaлее
+            %span.error-text.js-error

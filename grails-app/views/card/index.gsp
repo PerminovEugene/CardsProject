@@ -52,7 +52,7 @@
     </div>
     <div class='container page'>
       <h1>3. Ввод текста и подписи</h1>
-      <g:form action='save' controller='card' enctype='multipart/form-data'>
+      <g:form action='save' class='js-form' controller='card' enctype='multipart/form-data'>
         <div class='card'>
           <g:textArea class='text' name='card_text' placeholder='$text' value='${session.currentCard.text}' />
           <input class='file' id='logo' name='logo' type='file' value='${session._logo}' />
@@ -60,7 +60,8 @@
         </div>
         <div class='footer'>
           <g:link action='index' class='button button-prev' controller='envelope'>Назад</g:link>
-          <g:actionSubmit action='save' class='button button-next' value='&#1044;&#1072;&#1083;&#1077;&#1077;'></g:actionSubmit>
+          <a class='button button-next js-submit'>Далее</a>
+          <span class='error-text js-error'></span>
         </div>
       </g:form>
     </div>
