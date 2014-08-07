@@ -73,5 +73,6 @@ class EnvelopeController {
                 ]
         ]
         redirect(controller:'card', action: 'index')
+
     }
 }

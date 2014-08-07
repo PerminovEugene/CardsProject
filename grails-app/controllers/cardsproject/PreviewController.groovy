@@ -3,6 +3,27 @@ package cardsproject
 class PreviewController {
 
     def index() {}
+
+    def registration() {
+        session ['userInfo'] = [
+                'e_mail': params.Mail,
+                'pass': params.Pass
+        ]
+        // здесь нужно сделать сначала валидаию перед записью в бд если не успешна послать причину, иначе послать ок и редирект на
+        //toStart
+
+       //example for send json for ajax
+        render(contentType: 'text/json') {[
+                'Mail': params.Mail,//тут код для валидности мэйла а ниже для паса
+                'pass': params.Pass
+        ]}
+
+       // redirect(controller: 'preview', action: 'toStart')
+    }
+
+    def toStart() {
+
+        /*
     def saveInDb() {
         def db = new DataBaseService()
 
@@ -36,6 +57,7 @@ class PreviewController {
 
         db.saveUser(user_id, companySender)
 //        redirect(controller: "picturesList", action: "index")
-//        session.invalidate()
+//        session.invalidate()*/
+//>>>>>>> 6a143af359a5f4af230a7f52380d37a71ad1af4a
     }
 }

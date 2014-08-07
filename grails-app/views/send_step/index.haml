@@ -1,0 +1,24 @@
+%html{:xmlns => "http://www.w3.org/1999/html"}
+  %head
+    %title Отправлено
+    %meta{:content => "main", :name => "layout"}
+
+  %body
+    / Declare variable
+    - pass = 'пароль'
+    - mail = 'mail'
+    - send_reg = 'отправить'
+    .container
+      .content_block
+        #send_message
+          %h1 Ваша открытка отправляется
+        .send_logo
+          %img{:id => 'picture_send_logo', :src => '/CardsProject/assets/send_step/airoplane.png'}
+        %h1{:id => "message_take_email"} Чтобы знать о статусе письма оставте свой емэйл
+        .subscribe_block
+          %a{:href => "#"}
+            %img{:src => '/CardsProject/assets/send_step/facebook.png'}
+        %g:link.button.button-prev{:action => "toStart"} в начало
+        %g:link.button.button-prev{:action => "toMainPage"} на главную страничку
+
+

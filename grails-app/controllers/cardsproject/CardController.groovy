@@ -15,7 +15,7 @@ class CardController {
         def context = servletContext.getRealPath("/")
         def path = '/images/temp/'
         img = request.getFile('logo')
-        def name  = 'sample.jpg'
+        def name  = 'sample.jpeg'
         if (img.empty) {
            //place for log
         }

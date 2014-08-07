@@ -2,6 +2,7 @@
   %head
     %meta{:content => "main", :name => "layout"}/
     %title Предпросмотр
+    %script{:src => "/CardsProject/assets/popup_registration.js", :type => "text/javascript"}
   %body
     .nav
       .container
@@ -46,7 +47,23 @@
         %Span заботливо поглаженное на прощание
       .footer
         %g:link.button.button-prev{:controller =>"card", :action=>"index"} Назад
-        %g:link.button.button-next{:action=>"saveInDb"} Все правильно. Отправить
+        %button{:id =>'registration_button', :name => 'registration_button', :value => 'registration_button'}
+          отправить
+    .popup_block{:id => 'popup_block'}
+      .popup_content{:id => 'popup_content'}
+        .exit_sign
+          %img
+        %h2 Регистрация
+        %h3 Вам не нужно будет повторно вводить данные, в следующий, раз все будет уже сохранено!
+        .mailError
+          %h3
+        %input{:id => 'mail', :type => 'text', :placeholder => "Ваш e-mail"}
+        .passError
+          %h3
+        %input{:id => 'pass', :type => 'password', :placeholder => "Пароль"}
+        %button{:id =>'send_reg_button', :name => 'send_reg_button', :value => 'send_reg_button'}
+          Регистрация
+
     /
       .envelope
         %h2 Конверт с указанием адресов

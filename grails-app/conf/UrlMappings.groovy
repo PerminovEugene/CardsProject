@@ -8,6 +8,7 @@ class UrlMappings {
         }
 
         "/" ( controller:'picturesList', action:'index' )
+       // "/" ( controller:'tester', action:'index' )
         "500"(view:'/error.haml')
 	}
 }
