@@ -11,27 +11,33 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"
 
 // Load pictures at start
 $(document).ready(function () {
-    getNextPicturesFromServer();
-    //loadFirstPicture();
-})/*
+//    getNextPicturesFromServer();
+//    loadFirstPicture();
+    loadAllPictures();
+})
+
+/*
 function loadFirstPicture(){
     var items = document.getElementById('list');
     var imgSource = items.children[1].children;
     var imgDest = document.getElementById('picture_preview');
     imgDest["src"] = imgSource[0]["src"];
 }*/
+
 $(document).ready(function () {
     $('#get-next-button').click(function () {
         getNextPicturesFromServer();
        // loadFirstPicture();
     })
 })
+
 $(document).ready(function () {
     $('#get-previous-button').click(function () {
         getPreviousPicturesFromServer();
-       // loadFirstPicture();
+//       loadFirstPicture();
     })
 })
+
 /**
  * фэйл в том что  пока сохраняем в поле нэйм исходный урл с серва чтобы потом кинуть его обратно при выборе
  */
@@ -57,7 +63,8 @@ function getNextPicturesFromServer() {
         })
     }
 }
-function getPreviousPicturesFromServer() {
+
+var getPreviousPicturesFromServer = function() {
     var items = document.getElementById('list');
     for (var i = 0; i<items.children.length ; i++){
         $.ajax({
@@ -78,6 +85,26 @@ function getPreviousPicturesFromServer() {
         })
     }
 }
+
+var loadAllPictures = function() {
+    $.ajax({
+        url: 'picturesList/sendListPictures',
+        type: 'get',
+        dataType: 'json',
+        success: (function (data) {
+            console.log(data);
+            var pictures = $('#list img');
+            console.log(pictures.length);
+            pictures.each(function(index){
+                $(this).attr('src', data.path[index]);
+                $(this).attr('data-id', data.id[index]);
+            });
+        }),
+        error: (function () {
+            console.log('fail');
+        })
+    })
+}
 // отобразить большую картинку
 $(document).ready(function () {
     $('.picture').click(function () {
@@ -96,7 +123,7 @@ $(document).ready(function () {
     })
 })
 // тыкнули кнопку перйти на следующий шаг
-function onNextStep() {
+var onNextStep = function(){
     var img = $('#picture-preview');
     var imgDest = img.attr('src');
     var imgId = img.attr('data-id');
