@@ -38,13 +38,9 @@ class EnvelopeController {
                     ]
             ]
         }
-        println(session.companySender.sender.name)
     }
 
     def save() {
-      //  session['envelope_data'] = params
-//        session['envelope_data'] = params
-//        redirect (action:"index")
         session ['companyReceiver'] = [
                 name: params.receiver_company,
                 address : [
@@ -76,7 +72,6 @@ class EnvelopeController {
                         post: params.sender_post
                 ]
         ]
-        println(session.companySender.sender.name)
         redirect(controller:'card', action: 'index')
 
     }

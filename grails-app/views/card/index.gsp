@@ -55,7 +55,7 @@
       <g:form action='save' controller='card' enctype='multipart/form-data'>
         <div class='card'>
           <g:textArea class='text' name='card_text' placeholder='$text' value='${session.currentCard.text}' />
-          <input class='file' id='logo' name='logo' type='file' />
+          <input class='file' id='logo' name='logo' type='file' value='${session._logo}' />
           <g:textArea class='sign' name='card_sign' placeholder='$sign' value='${session.currentCard.sign}' />
         </div>
         <div class='footer'>

@@ -16,10 +16,8 @@ class DataBaseService {
 
     def saveUser(long user_id, Company company) {
         def user = User.get(user_id)
-        println(user)
         user.company = company
         user.save(flush: true)
-        println(user.company)
         return user
     }
     def saveCompany(String name, Address address, Human human, String logo) {
@@ -32,22 +30,22 @@ class DataBaseService {
         return company
     }
 
-    def saveAddress(String city, String street, int house, String housing, String office, int postCode) {
+    def saveAddress(params) {
         def address = new Address()
-        address.city = city
-        address.street = street
-        address.house = house
-        address.housing = housing
-        address.office = office
-        address.postCode = postCode
+        address.city = params.city
+        address.street = params.street
+        address.house = params.house.toInteger()
+        address.housing = params.housing
+        address.office = params.office
+        address.postCode = params.postcode.toInteger()
         address.save()
         return address
     }
 
-    def saveHuman(String name, String post) {
+    def saveHuman(params) {
         def human = new Human()
-        human.name = name
-        human.post = post
+        human.name = params.name
+        human.post = params.post
         human.save()
         return human
     }
@@ -62,7 +60,7 @@ class DataBaseService {
         card.user = user
         card.company = company
         card.state = 'ON MODERATION'
-        card.created = new Date(2014, 01, 01)
+        card.created = new Date()
         card.save()
         return card
     }

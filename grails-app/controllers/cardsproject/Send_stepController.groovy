@@ -3,7 +3,7 @@ import grails.converters.JSON
 
 class Send_stepController {
 
-    def index() {
+    def index() {/*
         //было бы круто добавить логи
         def logo = session['_logo']
         def companySender = session.companySender
@@ -44,11 +44,54 @@ class Send_stepController {
         println('finish')
         session.invalidate()
         render (view: 'index.gsp')
+*/
+
+
+
+        def db = new DataBaseService()
+
+       // def user_id = db.createUser('test@test.ru','test5')
+
+        def userInfo = session.userInfo
+        def Email = userInfo.e_mail
+        def pass = userInfo.pass
+        def user_id = db.createUser(Email, pass)
+
+        def sender = db.saveHuman(session.companySender.sender)
+        def receiver = db.saveHuman(session.companyReceiver.receiver)
+
+        def companySenderAddress = db.saveAddress(session.companySender.address)
+        def companySender = db.saveCompany(
+                session.companySender.name,
+                companySenderAddress,
+                sender,
+                session._logo
+        )
+
+        def companyReceiverAddress = db.saveAddress(session.companyReceiver.address)
+        def companyReceiver = db.saveCompany(
+                session.companyReceiver.name,
+                companyReceiverAddress,
+                receiver,
+                session._logo)
+
+
+        db.saveCard(
+                session.currentCard.picture_id.toInteger(),
+                session.currentCard.text,
+                session.currentCard.sign,
+                user_id,
+                companyReceiver
+        )
+
+        db.saveUser(user_id, companySender)
+ //       session.invalidate()
+        render (view: 'index.gsp')
     }
     //static allowedMethods = [save: "POST", update: "POST", delete: "POST", save_registration: "POST"]
 
     def toStart() {
-        redirect (controller: 'pictureList', action: 'picturesList')
+        redirect (controller: 'picturesList', action: 'index')
     }
     def toMainPage() {
         // to do
