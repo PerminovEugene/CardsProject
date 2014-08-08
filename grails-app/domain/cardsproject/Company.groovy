@@ -10,7 +10,8 @@ class Company {
     //there human its a owner of company
 
     static constraints = {
-        name(unique: true, blank: true)
+//        unique: true,
+        name(blank: true)
         logo(blank: true)
     }
 }

@@ -11,7 +11,7 @@ class SendStepController {
     def saveInDb() {
         def db = new DataBaseService()
 
-        // def user_id = db.createUser('test@test.ru','test5')
+//        def user_id = db.createUser('test@test.ru','test5')
 
 //        def userInfo = session.userInfo
 //        def email = userInfo.e_mail
@@ -50,12 +50,13 @@ class SendStepController {
         )
 
         db.saveUser(user_id, companySender)
-        //       session.invalidate()
+
 
         redirect (action: 'index')
     }
     def toMainPage() {
         redirect (controller: 'picturesList', action: 'index')
+        session.invalidate()
     }
 
 
