@@ -75,6 +75,7 @@ grails.project.dependency.resolution = {
         //compile ":handlebars-asset-pipeline:1.3.0.3"
         //fixtures
         compile ":fixtures:1.2"
+        compile ":mail:1.0.7"
 
         test ':build-test-data:2.1.2'
         test ':fixtures:1.3'

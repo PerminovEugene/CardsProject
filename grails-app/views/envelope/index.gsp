@@ -27,7 +27,7 @@
               </div>
             </div>
             <div class='line active'></div>
-            <span class='active-text'>Выбор открытки</span>
+            <span class='active-text'>Выберите открытку</span>
           </li>
           <li>
             <div class='point'>
@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='active-text centred'>Ввод адреса</span>
+            <span class='active-text centred'>Введите адрес</span>
           </li>
           <li>
             <div class='point'>
@@ -47,20 +47,20 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='centred'>Ввод текста и подписи</span>
+            <span class='centred'>Заполните обратную сторону</span>
             <div class='point last'>
               <div class='circle'>
                 4
               </div>
             </div>
-            <span class='last'>Подтверждение заказа</span>
+            <span class='last'>Проверьте</span>
           </li>
         </ul>
       </div>
     </div>
     <div class='container page'>
-      <h1>2. Ввод адреса</h1>
-      <h3>Информация будет указана на конверте</h3>
+      <h1>2. Введите адрес</h1>
+      <h3>Адрес будет указан на конверте</h3>
       <g:form action='save' class='js-form' controller='envelope'>
         <div class='sender address-form'>
           <h2>Данные получателя</h2>
@@ -92,7 +92,7 @@
         </div>
         <div class='footer'>
           <div class='container'>
-            <g:link action='index' class='button button-prev' controller='picturesList'>Назад</g:link>
+            <g:link action='index' class='button button-prev' controller='picturesList'>На шаг назад</g:link>
             <a class='button button-next js-submit'>Дaлее</a>
             <span class='error-text js-error'></span>
           </div>

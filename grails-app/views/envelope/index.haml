@@ -23,27 +23,27 @@
               .circle.active
                 1
             .line.active
-            %span.active-text Выбор открытки
+            %span.active-text Выберите открытку
           %li
             .point
               .border
                 .circle.active
                   2
             .line
-            %span.active-text.centred Ввод адреса
+            %span.active-text.centred Введите адрес
           %li
             .point
               .circle
                 3
             .line
-            %span.centred Ввод текста и подписи
+            %span.centred Заполните обратную сторону
             .point.last
               .circle
                 4
-            %span.last Подтверждение заказа
+            %span.last Проверьте
     .container.page
-      %h1 2. Ввод адреса
-      %h3 Информация будет указана на конверте
+      %h1 2. Введите адрес
+      %h3 Адрес будет указан на конверте
       %g:form.js-form{:controller => "envelope", :action => "save"}
         .sender.address-form
           %h2 Данные получателя
@@ -73,6 +73,6 @@
           %a{:href => "http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx", :target => "_blank"} Уточнить индекс
         .footer
           .container
-            %g:link.button.button-prev{:controller =>"picturesList", :action=>"index"} Назад
+            %g:link.button.button-prev{:controller =>"picturesList", :action=>"index"} На шаг назад
             %a.button.button-next.js-submit Дaлее
             %span.error-text.js-error
