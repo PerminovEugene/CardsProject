@@ -2,8 +2,6 @@
  * Created by eugenep on 05.08.14.
  */
 
-//src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"
-
 //Скрыть PopUp при загрузке страницы
 $(document).ready(function(){
     PopUpHide();
@@ -50,7 +48,7 @@ function sendRegistrationInfo() {
         data: obj,
         response: 'JSON',
         success: (function (response) {
-            window.location.replace('../send_step/index');
+            window.location.replace('../sendStep/saveInDb');
         }),
         error: (function (response) {
             //time to logging

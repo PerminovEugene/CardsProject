@@ -65,7 +65,7 @@
           <div class='sign'>${session.currentCard.sign}</div>
         </div>
         <span>Печать на гофрированной бумаге в три слоя,</span>
-        <Span>заботливо поглаженное на прощание</Span>
+        <Span>заботливо поглажена на прощание</Span>
       </div>
       <div class='footer'>
         <g:link action='index' class='button button-prev' controller='card'>На шаг назад</g:link>

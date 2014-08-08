@@ -6,10 +6,10 @@ class DataBaseService {
 //    static transactional = false
 
     /*Добавить в каждый метод проверку обязательных параметров*/
-    def createUser(String e_mail, String password){
+    def createUser(params){
         def user = new User()
-        user.e_mail = e_mail
-        user.password = password
+        user.e_mail = params.e_mail
+        user.password = params.password
         user.save()
         return user.id
     }
@@ -65,5 +65,11 @@ class DataBaseService {
         return card
     }
 
+    def getCompany(long id) {
+        def user = User.get(id)
+        def company = user.company
+        def address = company.address
+        return
+    }
 
 }

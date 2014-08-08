@@ -35,11 +35,12 @@
             %span.last Проверьте
     .container.page
       %h1 3. Заполните обратную сторону
-      %g:form{:controller => "card", :action => "save", :enctype => "multipart/form-data"}
+      %g:form.js-form{:controller => "card", :action => "save", :enctype => "multipart/form-data"}
         .card
           %g:textArea.text{:name => "card_text", :value => "${session.currentCard.text}", :placeholder => "$text"}/
           %input.file{:type => "file", :id => "logo",  :name => "logo", :value => "${session._logo}"}/
           %g:textArea.sign{:name => "card_sign", :value => "${session.currentCard.sign}", :placeholder => "$sign"}/
         .footer
           %g:link.button.button-prev{:controller =>"envelope", :action=>"index"} На шаг назад
-          %g:actionSubmit.button.button-next{:action => "save", :value => "Готово"}
+          %a.button.button-next.js-submit Далее
+          %span.error-text.js-error

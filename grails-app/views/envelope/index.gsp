@@ -61,7 +61,7 @@
     <div class='container page'>
       <h1>2. Введите адрес</h1>
       <h3>Адрес будет указан на конверте</h3>
-      <g:form action='save' controller='envelope'>
+      <g:form action='save' class='js-form' controller='envelope'>
         <div class='sender address-form'>
           <h2>Данные получателя</h2>
           <g:textField name='sender_name' placeholder='$name' value='${session.companySender.sender.name}' />
@@ -93,7 +93,8 @@
         <div class='footer'>
           <div class='container'>
             <g:link action='index' class='button button-prev' controller='picturesList'>На шаг назад</g:link>
-            <g:actionSubmit action='save' class='button button-next' value='&#1043;&#1086;&#1090;&#1086;&#1074;&#1086;'></g:actionSubmit>
+            <a class='button button-next js-submit'>Дaлее</a>
+            <span class='error-text js-error'></span>
           </div>
         </div>
       </g:form>

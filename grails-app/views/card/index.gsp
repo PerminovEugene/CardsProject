@@ -52,7 +52,7 @@
     </div>
     <div class='container page'>
       <h1>3. Заполните обратную сторону</h1>
-      <g:form action='save' controller='card' enctype='multipart/form-data'>
+      <g:form action='save' class='js-form' controller='card' enctype='multipart/form-data'>
         <div class='card'>
           <g:textArea class='text' name='card_text' placeholder='$text' value='${session.currentCard.text}' />
           <input class='file' id='logo' name='logo' type='file' value='${session._logo}' />
@@ -60,7 +60,8 @@
         </div>
         <div class='footer'>
           <g:link action='index' class='button button-prev' controller='envelope'>На шаг назад</g:link>
-          <g:actionSubmit action='save' class='button button-next' value='&#1043;&#1086;&#1090;&#1086;&#1074;&#1086;'></g:actionSubmit>
+          <a class='button button-next js-submit'>Далее</a>
+          <span class='error-text js-error'></span>
         </div>
       </g:form>
     </div>
