@@ -63,5 +63,6 @@ class PicturesListController {
         render("ok") as JSON
 
         //redirect(controller:'cardsList', action: 'look')
+
     }
 }

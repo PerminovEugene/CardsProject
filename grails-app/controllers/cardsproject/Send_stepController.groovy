@@ -86,6 +86,17 @@ class Send_stepController {
 
         db.saveUser(user_id, companySender)
  //       session.invalidate()
+        try {
+            sendMail {
+                to Email
+                subject "Регистрация на BestReCards"
+                body 'Спасибо что зарегистрировались на нашем сервисе. :) ' +
+                        "Ваш пароль " + pass +". "
+            }
+        }
+        catch (Exception e){
+            println (e)
+        }
         render (view: 'index.gsp')
     }
     //static allowedMethods = [save: "POST", update: "POST", delete: "POST", save_registration: "POST"]

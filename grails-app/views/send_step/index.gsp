@@ -24,9 +24,7 @@
         <img src='/CardsProject/assets/send_step/facebook.png' />
         <g:link action='toStart' class='button button-new'>Создать еще открытку</g:link>
         <g:link action='toMainPage' class='button button-main'>Вернуться на главную страничку</g:link>
-        <button>{:name => "myButton", :id => "subsribe_button"} gоделиться</button>
       </div>
     </div>
   </body>
 </html>
-<!-- :onclick => "${remoteFunction(:action => "toStart")}"}Click Here -->

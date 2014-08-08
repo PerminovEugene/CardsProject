@@ -57,7 +57,17 @@ grails {
         // escapes all not-encoded output at final stage of outputting
         // filteringCodecForContentType.'text/html' = 'html'
     }
-}
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "bestrecards.project@gmail.com"
+        password = "rfhnsltymubjnrhsnrb"
+        props = ["mail.smtp.auth":"true",
+        "mail.smtp.socketFactory.port":"465",
+        "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+        "mail.smtp.socketFactory.fallback":"false"]
+        }
+    }
 
 
 grails.converters.encoding = "UTF-8"
@@ -66,7 +76,7 @@ grails.scaffolding.templates.domainSuffix = 'Instance'
 
 // Set to false to use the new Grails 1.2 JSONBuilder in the render method
 grails.json.legacy.builder = false
-// enabled native2ascii conversion of i18n properties files
+// enabled native2ascii conversion of i18n properties files                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 grails.enable.native2ascii = true
 // packages to include in Spring bean scanning
 grails.spring.bean.packages = []
