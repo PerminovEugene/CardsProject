@@ -5,36 +5,36 @@ class EnvelopeController {
     def index() {
         if ( session ['companyReceiver'] == null) {
             session['companyReceiver'] = [
-                    name    : '1',
+                    name    : '',
                     address : [
-                            city    : '2',
-                            street  : '3',
-                            house   : '4',
-                            housing : '5',
-                            office  : '6',
-                            postcode: '7'
+                            city    : '',
+                            street  : '',
+                            house   : '',
+                            housing : '',
+                            office  : '',
+                            postcode: ''
                     ],
                     receiver: [
-                            name: '8',
-                            post: '9'
+                            name: '',
+                            post: ''
                     ]
 
             ]
         }
         if ( session ['companySender'] == null) {
             session['companySender'] = [
-                    name   : '10',
+                    name   : '',
                     address: [
-                            city    : '11',
-                            street  : '12',
-                            house   : '13',
-                            housing : '14',
-                            office  : '15',
-                            postcode: '16'
+                            city    : '',
+                            street  : '',
+                            house   : '',
+                            housing : '',
+                            office  : '',
+                            postcode: ''
                     ],
                     sender : [
-                            name: '17',
-                            post: '18'
+                            name: '',
+                            post: ''
                     ]
             ]
         }

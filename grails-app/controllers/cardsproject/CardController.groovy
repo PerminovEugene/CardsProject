@@ -5,8 +5,8 @@ class CardController {
     def index() {
         if ((session['currentCard']['sign'] == null)||
             (session['currentCard']['text'] == null)){
-            session['currentCard'].putAt('sign','1')
-            session['currentCard'].putAt('text','2')
+            session['currentCard'].putAt('sign','')
+            session['currentCard'].putAt('text','')
         }
     }
 
