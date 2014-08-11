@@ -12,6 +12,6 @@ class Company {
     static constraints = {
 //        unique: true,
         name(blank: true)
-        logo(blank: true)
+        logo(nullable: true)
     }
 }

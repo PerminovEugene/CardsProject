@@ -11,11 +11,6 @@ class SendStepController {
     def saveInDb() {
         def db = new DataBaseService()
 
-//        def user_id = db.createUser('test@test.ru','test5')
-
-//        def userInfo = session.userInfo
-//        def email = userInfo.e_mail
-//        def pass = userInfo.pass
         println(session.userInfo)
         def user_id = db.createUser(session.userInfo)
         /*TODO
@@ -37,8 +32,7 @@ class SendStepController {
         def companyReceiver = db.saveCompany(
                 session.companyReceiver.name,
                 companyReceiverAddress,
-                receiver,
-                session._logo)
+                receiver)
 
 
         db.saveCard(
@@ -67,15 +61,5 @@ class SendStepController {
         redirect (controller: 'picturesList', action: 'index')
         session.invalidate()
     }
-
-
-    //здесь вставить функцию сервиса для сохранения в бд
-  /*  def save_registration() {
-
-        render(contentType: 'text/json') {[
-                'Mail': params.Mail,
-                'pass': params.Pass
-        ]}
-    }*/
 
 }

@@ -29,6 +29,14 @@ class DataBaseService {
         company.save()
         return company
     }
+    def saveCompany(String name, Address address, Human human) {
+        def company = new Company()
+        company.name = name
+        company.address = address
+        company.human = human
+        company.save(flush: true)
+        return company
+    }
 
     def saveAddress(params) {
         def address = new Address()
@@ -65,7 +73,7 @@ class DataBaseService {
         return card
     }
 
-    def getCompany(long id) {
+    def getUserCompany(long id) {
         def user = User.get(id)
         def company = user.company
         def address = company.address
