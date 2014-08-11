@@ -56,9 +56,9 @@ class PicturesListController {
     }
 
     def saveChoicePicture(){
-        session['currentCard'] = [
+        session.setAttribute('currentCard', [
                 'picture_id' : params.id
-        ]
+        ])
         session['_picture'] = params.path
         render("ok") as JSON
 

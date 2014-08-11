@@ -63,7 +63,7 @@
       <h3>Адрес будет указан на конверте</h3>
       <g:form action='save' class='js-form' controller='envelope'>
         <div class='sender address-form'>
-          <h2>Данные получателя</h2>
+          <h2>Данные отправителя</h2>
           <g:textField name='sender_name' placeholder='$name' value='${session.companySender.sender.name}' />
           <g:textField name='sender_post' placeholder='$post' value='${session.companySender.sender.post}' />
           <g:textField name='sender_company' placeholder='$company' value='${session.companySender.name}' />
@@ -77,7 +77,7 @@
           <a href='http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx' target='_blank'>Уточнить индекс</a>
         </div>
         <div class='receiver address-form'>
-          <h2>Данные отправителя</h2>
+          <h2>Данные получателя</h2>
           <g:textField name='receiver_name' placeholder='$name' value='${session.companyReceiver.receiver.name}' />
           <g:textField name='receiver_post' placeholder='$post' value='${session.companyReceiver.receiver.post}' />
           <g:textField name='receiver_company' placeholder='$company' value='${session.companyReceiver.name}' />

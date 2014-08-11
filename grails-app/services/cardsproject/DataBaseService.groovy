@@ -97,4 +97,15 @@ class DataBaseService {
         return company
     }
 
+//    def getAddress(long id_address) {
+//        def address = Address.get(id_address)
+//        return address
+//
+//    }
+//
+//    def getHuman(long id_human) {
+//        def human = Human.get(id_human)
+//        return human
+//    }
+
 }

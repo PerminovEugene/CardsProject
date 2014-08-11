@@ -16,7 +16,7 @@ class SendStepController {
         def user_id
 
         if (session.user_id != null) {
-
+                user_id = session.user_id
         } else {
             /*
             TODO
@@ -45,6 +45,8 @@ class SendStepController {
             }
             db.saveUser(user_id, companySender)
         }
+        session.setAttribute('user_id', user_id)
+
         def companyReceiver = db.getCompany(session.companyReceiver.name)
         if (companyReceiver != null) {
             //log
@@ -77,11 +79,16 @@ class SendStepController {
         catch (Exception e) {
             println(e)
         }
+        session.removeAttribute('currentCard')
+        session.removeAttribute('userInfo')
+        session.removeAttribute('companySender')
+        session.removeAttribute('companyReceiver')
+        session.removeAttribute('_logo')
+        session.removeAttribute('_picture')
         redirect(action: 'index')
     }
     def toMainPage() {
         redirect (controller: 'picturesList', action: 'index')
-        session.invalidate()
     }
 
 }
