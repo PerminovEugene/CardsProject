@@ -21,13 +21,12 @@ class DataBaseService {
         return user
     }
     def saveCompany(String name, Address address, Human human, String logo) {
-        def company = new Company()
-        company.name = name
-        company.address = address
-        company.human = human
-        company.logo = logo
-        company.save()
-        return company
+       def company = new Company()
+       company.name = name
+       company.address = address
+       company.human = human
+       company.logo = logo
+       return company
     }
     def saveCompany(String name, Address address, Human human) {
         def company = new Company()
@@ -73,11 +72,29 @@ class DataBaseService {
         return card
     }
 
-    def getUserCompany(long id) {
-        def user = User.get(id)
+    def getUser(String e_mail) {
+        def user = User.findByE_mail(e_mail)
+        if (user != null) {
+            return user.id
+        }
+        return null
+    }
+
+//    def getSender(long user_id) {
+//        def user = User.get(user_id)
+//
+//    }
+
+    def getUserCompany(long user_id) {
+        def user = User.get(user_id)
         def company = user.company
-        def address = company.address
-        return
+//        def address = company.address
+        return company
+    }
+
+    def getCompany(String name){
+        def company = Company.findByName(name)
+        return company
     }
 
 }

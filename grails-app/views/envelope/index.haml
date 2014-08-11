@@ -46,7 +46,7 @@
       %h3 Адрес будет указан на конверте
       %g:form.js-form{:controller => "envelope", :action => "save"}
         .sender.address-form
-          %h2 Данные получателя
+          %h2 Данные отправителя
           %g:textField{:name => "sender_name", :placeholder => "$name", :value => "${session.companySender.sender.name}"}/
           %g:textField{:name => "sender_post", :placeholder =>"$post", :value => "${session.companySender.sender.post}"}/
           %g:textField{:name => "sender_company", :placeholder =>"$company", :value => "${session.companySender.name}"}/
@@ -59,7 +59,7 @@
           %g:textField{:name => "sender_postcode", :placeholder =>"$postcode", :value => "${session.companySender.address.postcode}"}/
           %a{:href => "http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx", :target => "_blank"} Уточнить индекс
         .receiver.address-form
-          %h2 Данные отправителя
+          %h2 Данные получателя
           %g:textField{:name => "receiver_name", :placeholder => "$name", :value => "${session.companyReceiver.receiver.name}"}/
           %g:textField{:name => "receiver_post", :placeholder =>"$post", :value => "${session.companyReceiver.receiver.post}"}/
           %g:textField{:name => "receiver_company", :placeholder =>"$company", :value => "${session.companyReceiver.name}"}/

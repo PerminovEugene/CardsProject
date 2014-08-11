@@ -72,6 +72,9 @@ class EnvelopeController {
                         post: params.sender_post
                 ]
         ]
+//        def db = new DataBaseService()
+//        def company = db.getCompany(params.sender_company)
+//        println(company)
         redirect(controller:'card', action: 'index')
 
     }
