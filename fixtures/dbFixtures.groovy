@@ -136,7 +136,7 @@ lukoil.save()
 def testUser = new User()
 testUser.e_mail = 'test@gmail.com'
 testUser.password ='qwerty'
-//testUser.company = mostovik
+testUser.company = mostovik
 testUser.save()
 
 /**
@@ -151,3 +151,13 @@ firstCard.picture = evaCard1
 firstCard.user = testUser
 firstCard.company = lukoil
 firstCard.save()
+
+def secondCard = new Card()
+secondCard.text = 'Congratulation'
+secondCard.sign = "Your's banny"
+secondCard.created = new Date()
+secondCard.state = 'ON MODERATION'
+secondCard.picture = evaCard1
+secondCard.user = testUser
+secondCard.company = lukoil
+secondCard.save()

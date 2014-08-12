@@ -1,5 +1,4 @@
 package cardsproject
-import grails.converters.JSON
 
 class SendStepController {
 
@@ -25,25 +24,25 @@ class SendStepController {
             user_id = db.getUser(session.userInfo.e_mail)
             if (user_id != null) {
                 println('User already exist')
-                companySender = db.getUserCompany(user_id)
+//                companySender = db.getUserCompany(user_id)
             } else {
                 user_id = db.createUser(session.userInfo)
                 companySender = db.getCompany(session.companySender.name)
+                if (companySender == null) {
+                    def sender = db.createHuman(session.companySender.sender)
+                    def companySenderAddress = db.createAddress(session.companySender.address)
+                    companySender = db.createCompany(
+                            session.companySender.name,
+                            companySenderAddress,
+                            sender,
+                            session._logo
+                    )
+                    println(companySender)
+                }
+                db.addCompanyToUser(user_id, companySender)
             }
 
-            if (companySender != null) {
-                println('Sender ' + companySender.name + ' already exist')
-            } else {
-                def sender = db.saveHuman(session.companySender.sender)
-                def companySenderAddress = db.saveAddress(session.companySender.address)
-                companySender = db.saveCompany(
-                        session.companySender.name,
-                        companySenderAddress,
-                        sender,
-                        session._logo
-                )
-            }
-            db.saveUser(user_id, companySender)
+
         }
         session.setAttribute('user_id', user_id)
 
@@ -52,9 +51,9 @@ class SendStepController {
             //log
             println('Receiver ' + companyReceiver.name + ' already exist')
         } else {
-            def receiver = db.saveHuman(session.companyReceiver.receiver)
-            def companyReceiverAddress = db.saveAddress(session.companyReceiver.address)
-            companyReceiver = db.saveCompany(
+            def receiver = db.createHuman(session.companyReceiver.receiver)
+            def companyReceiverAddress = db.createAddress(session.companyReceiver.address)
+            companyReceiver = db.createCompany(
                     session.companyReceiver.name,
                     companyReceiverAddress,
                     receiver)

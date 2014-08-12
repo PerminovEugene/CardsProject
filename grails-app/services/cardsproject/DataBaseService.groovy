@@ -14,21 +14,22 @@ class DataBaseService {
         return user.id
     }
 
-    def saveUser(long user_id, Company company) {
+    def addCompanyToUser(long user_id, Company company) {
         def user = User.get(user_id)
         user.company = company
         user.save(flush: true)
         return user
     }
-    def saveCompany(String name, Address address, Human human, String logo) {
+    def createCompany(String name, Address address, Human human, String logo) {
        def company = new Company()
        company.name = name
        company.address = address
        company.human = human
        company.logo = logo
+       company.save()
        return company
     }
-    def saveCompany(String name, Address address, Human human) {
+    def createCompany(String name, Address address, Human human) {
         def company = new Company()
         company.name = name
         company.address = address
@@ -37,8 +38,20 @@ class DataBaseService {
         return company
     }
 
-    def saveAddress(params) {
+
+    def createAddress(params) {
         def address = new Address()
+        this.saveAddress(address, params)
+        return address
+    }
+
+    def createHuman(params) {
+        def human = new Human()
+        this.saveHuman(human, params)
+        return human
+    }
+
+    def saveAddress(Address address, params) {
         address.city = params.city
         address.street = params.street
         address.house = params.house.toInteger()
@@ -46,15 +59,18 @@ class DataBaseService {
         address.office = params.office
         address.postCode = params.postcode.toInteger()
         address.save()
-        return address
     }
 
-    def saveHuman(params) {
-        def human = new Human()
+    def saveHuman(Human human, params) {
         human.name = params.name
         human.post = params.post
         human.save()
-        return human
+    }
+
+    def saveCompany(Company company, String name, String logo) {
+        company.name = name
+        company.logo = logo
+        company.save(flush: true)
     }
 
     def saveCard(int picture_id, String text, String sign, long user_id, company) {
@@ -95,6 +111,12 @@ class DataBaseService {
     def getCompany(String name){
         def company = Company.findByName(name)
         return company
+    }
+
+    def getCards(long user_id) {
+        def user = User.get(user_id)
+        def cards = Card.findAllByUser(user)
+        return cards
     }
 
 //    def getAddress(long id_address) {
