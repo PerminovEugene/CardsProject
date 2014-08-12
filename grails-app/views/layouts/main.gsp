@@ -19,9 +19,17 @@
 	<body>
 		<div class="header" id="header" role="banner">
             <div class="container">
-                <a href="/CardsProject">
-                    <asset:image src="logo_o.png" alt="GoodCards" class="project-logo"/>
-                </a>
+                <div class="logo-block">
+                    <a href="/CardsProject" >
+                        <asset:image src="logo_o.png" alt="GoodCards" class="project-logo"/>
+                    </a>
+                </div>
+                <div class = "about_us">
+                     Сервис быстрой отправки открыток бисзнес партнерам и клиентам
+                </div>
+                <div class="account-info">
+
+                </div>
             </div>
         </div>
 		<g:layoutBody/>
