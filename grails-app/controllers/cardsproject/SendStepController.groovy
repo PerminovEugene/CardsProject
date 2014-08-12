@@ -9,37 +9,56 @@ class SendStepController {
     }
 
     def saveInDb() {
+
         def db = new DataBaseService()
-
-//        def user_id = db.createUser('test@test.ru','test5')
-
-//        def userInfo = session.userInfo
-//        def email = userInfo.e_mail
-//        def pass = userInfo.pass
+        def companySender
         println(session.userInfo)
-        def user_id = db.createUser(session.userInfo)
-        /*TODO
-        * не создавать новую компанию если пользователь уже создавал открытку
-        * дергать у залогиненых пользователей информацию о компании из базы
-        * */
-        def sender = db.saveHuman(session.companySender.sender)
-        def receiver = db.saveHuman(session.companyReceiver.receiver)
+        def user_id
 
-        def companySenderAddress = db.saveAddress(session.companySender.address)
-        def companySender = db.saveCompany(
-                session.companySender.name,
-                companySenderAddress,
-                sender,
-                session._logo
-        )
+        if (session.user_id != null) {
+                user_id = session.user_id
+        } else {
+            /*
+            TODO
+            выполнять этот код только для анонимных пользователей
+            */
+            user_id = db.getUser(session.userInfo.e_mail)
+            if (user_id != null) {
+                println('User already exist')
+                companySender = db.getUserCompany(user_id)
+            } else {
+                user_id = db.createUser(session.userInfo)
+                companySender = db.getCompany(session.companySender.name)
+            }
 
-        def companyReceiverAddress = db.saveAddress(session.companyReceiver.address)
-        def companyReceiver = db.saveCompany(
-                session.companyReceiver.name,
-                companyReceiverAddress,
-                receiver,
-                session._logo)
+            if (companySender != null) {
+                println('Sender ' + companySender.name + ' already exist')
+            } else {
+                def sender = db.saveHuman(session.companySender.sender)
+                def companySenderAddress = db.saveAddress(session.companySender.address)
+                companySender = db.saveCompany(
+                        session.companySender.name,
+                        companySenderAddress,
+                        sender,
+                        session._logo
+                )
+            }
+            db.saveUser(user_id, companySender)
+        }
+        session.setAttribute('user_id', user_id)
 
+        def companyReceiver = db.getCompany(session.companyReceiver.name)
+        if (companyReceiver != null) {
+            //log
+            println('Receiver ' + companyReceiver.name + ' already exist')
+        } else {
+            def receiver = db.saveHuman(session.companyReceiver.receiver)
+            def companyReceiverAddress = db.saveAddress(session.companyReceiver.address)
+            companyReceiver = db.saveCompany(
+                    session.companyReceiver.name,
+                    companyReceiverAddress,
+                    receiver)
+        }
 
         db.saveCard(
                 session.currentCard.picture_id.toInteger(),
@@ -49,33 +68,27 @@ class SendStepController {
                 companyReceiver
         )
 
-        db.saveUser(user_id, companySender)
         try {
             sendMail {
                 to session.userInfo.e_mail
                 subject "Регистрация на BestReCards"
                 body 'Спасибо что зарегистрировались на нашем сервисе. :) ' +
-                        "Ваш пароль " + session.userInfo.password +". "
+                        "Ваш пароль " + session.userInfo.password + ". "
             }
         }
-        catch (Exception e){
-            println (e)
+        catch (Exception e) {
+            println(e)
         }
-        redirect (action: 'index')
+        session.removeAttribute('currentCard')
+        session.removeAttribute('userInfo')
+        session.removeAttribute('companySender')
+        session.removeAttribute('companyReceiver')
+        session.removeAttribute('_logo')
+        session.removeAttribute('_picture')
+        redirect(action: 'index')
     }
     def toMainPage() {
         redirect (controller: 'picturesList', action: 'index')
-        session.invalidate()
     }
-
-
-    //здесь вставить функцию сервиса для сохранения в бд
-  /*  def save_registration() {
-
-        render(contentType: 'text/json') {[
-                'Mail': params.Mail,
-                'pass': params.Pass
-        ]}
-    }*/
 
 }

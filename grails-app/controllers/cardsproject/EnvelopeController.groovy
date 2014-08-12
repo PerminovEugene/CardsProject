@@ -1,8 +1,32 @@
 package cardsproject
 
 class EnvelopeController {
-
+    def db = new DataBaseService()
     def index() {
+        if (session['user_id'] != null) {
+            def companySender = db.getUserCompany(session.user_id)
+            if (companySender != null) {
+                /*достаем данные из базы и пишем в сессию*/
+                def address = companySender.address
+                def sender = companySender.human
+                session['companySender'] = [
+                        name   : companySender.name,
+                        address: [
+                                city    : address.city,
+                                street  : address.street,
+                                house   : address.house,
+                                housing : address.housing,
+                                office  : address.office,
+                                postcode: address.postCode
+                        ],
+                        sender : [
+                                name: sender.name,
+                                post: sender.post
+                        ]
+                ]
+            }
+        }
+
         if ( session ['companyReceiver'] == null) {
             session['companyReceiver'] = [
                     name    : '',
@@ -72,6 +96,9 @@ class EnvelopeController {
                         post: params.sender_post
                 ]
         ]
+//        def db = new DataBaseService()
+//        def company = db.getCompany(params.sender_company)
+//        println(company)
         redirect(controller:'card', action: 'index')
 
     }
