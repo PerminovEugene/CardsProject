@@ -1,5 +1,4 @@
 package cardsproject
-import grails.converters.JSON
 
 class SendStepController {
 
@@ -26,26 +25,24 @@ class SendStepController {
             if (user_id != null) {
                 println('User already exist')
                 companySender = db.getUserCompany(user_id)
-                println('2')
             } else {
                 user_id = db.createUser(session.userInfo)
                 companySender = db.getCompany(session.companySender.name)
             }
-            println('1')
-            if (companySender != null) {
-                println('Sender ' + companySender.name + ' already exist')
-            } else {
-                def sender = db.saveHuman(session.companySender.sender)
-                def companySenderAddress = db.saveAddress(session.companySender.address)
-                companySender = db.saveCompany(
+            if (companySender == null) {
+                def sender = db.createHuman(session.companySender.sender)
+                def companySenderAddress = db.createAddress(session.companySender.address)
+                companySender = db.createCompany(
                         session.companySender.name,
                         companySenderAddress,
                         sender,
                         session._logo
                 )
+                println(companySender)
             }
-            db.saveUser(user_id, companySender)
+            db.addCompanyToUser(user_id, companySender)
         }
+        
         session.setAttribute('user_id', user_id)
         println('1')
         def companyReceiver = db.getCompany(session.companyReceiver.name)
@@ -53,9 +50,9 @@ class SendStepController {
             //log
             println('Receiver ' + companyReceiver.name + ' already exist')
         } else {
-            def receiver = db.saveHuman(session.companyReceiver.receiver)
-            def companyReceiverAddress = db.saveAddress(session.companyReceiver.address)
-            companyReceiver = db.saveCompany(
+            def receiver = db.createHuman(session.companyReceiver.receiver)
+            def companyReceiverAddress = db.createAddress(session.companyReceiver.address)
+            companyReceiver = db.createCompany(
                     session.companyReceiver.name,
                     companyReceiverAddress,
                     receiver)
@@ -68,7 +65,6 @@ class SendStepController {
                 user_id,
                 companyReceiver
         )
-        println('1')
         try {
            /* sendMail {
                 to session.userInfo.e_mail

@@ -1,13 +1,6 @@
 /**
  * Created by eugenep on 30.07.14.
  */
-src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"
-
-/**
- * take info about picture for pictures from server
- */
-
-
 
 // Load pictures at start
 $(document).ready(function () {
