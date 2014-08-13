@@ -63,6 +63,16 @@
         %input{:id => 'pass', :type => 'password', :placeholder => "Пароль"}
         %button{:id =>'send_reg_button', :name => 'send_reg_button', :value => 'send_reg_button'}
           Регистрация
+    .popup_block_alert{:id => 'popup_block_alert'}
+      .popup_content_alert{:id => 'popup_content_alert'}
+        .exit_sign-alert
+          %img
+        %h2 Вы уверены?
+        %h3 Ваши данные не будут сохранены, а открытка не дойдет до адресата
+        %button{:id =>'want_send_button', :name => 'want_send_button', :value => 'want_send_button'}
+          Нет, я хочу отправить открытку
+        %button{:id =>'didnt_want_send_button', :name => 'didnt_want_send_button', :value => 'didnt_want_send_button'}
+          Да я уверен
 
     /
       .envelope

@@ -26,6 +26,7 @@ class DataBaseService {
        company.address = address
        company.human = human
        company.logo = logo
+       company.save()
        return company
     }
     def saveCompany(String name, Address address, Human human) {
@@ -78,6 +79,24 @@ class DataBaseService {
             return user.id
         }
         return null
+    }
+
+    def getUser(String e_mail, String pass)
+    {
+        def user = User.findByE_mail(e_mail)
+        if (user == null) {
+            return null
+        }
+        else {
+            println("user_pass " + user.password)
+            if (user.password == pass)
+            {
+                return user.id
+            }
+            else {
+                return null
+            }
+        }
     }
 
 //    def getSender(long user_id) {

@@ -14,7 +14,7 @@ class SendStepController {
         def companySender
         println(session.userInfo)
         def user_id
-
+        println (session.user_id)
         if (session.user_id != null) {
                 user_id = session.user_id
         } else {
@@ -26,11 +26,12 @@ class SendStepController {
             if (user_id != null) {
                 println('User already exist')
                 companySender = db.getUserCompany(user_id)
+                println('2')
             } else {
                 user_id = db.createUser(session.userInfo)
                 companySender = db.getCompany(session.companySender.name)
             }
-
+            println('1')
             if (companySender != null) {
                 println('Sender ' + companySender.name + ' already exist')
             } else {
@@ -46,7 +47,7 @@ class SendStepController {
             db.saveUser(user_id, companySender)
         }
         session.setAttribute('user_id', user_id)
-
+        println('1')
         def companyReceiver = db.getCompany(session.companyReceiver.name)
         if (companyReceiver != null) {
             //log
@@ -67,14 +68,14 @@ class SendStepController {
                 user_id,
                 companyReceiver
         )
-
+        println('1')
         try {
-            sendMail {
+           /* sendMail {
                 to session.userInfo.e_mail
                 subject "Регистрация на BestReCards"
                 body 'Спасибо что зарегистрировались на нашем сервисе. :) ' +
                         "Ваш пароль " + session.userInfo.password + ". "
-            }
+            }*/
         }
         catch (Exception e) {
             println(e)
