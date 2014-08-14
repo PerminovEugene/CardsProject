@@ -22,32 +22,44 @@ class SendStepController {
             выполнять этот код только для анонимных пользователей
             */
             user_id = db.getUser(session.userInfo.e_mail)
-            if (user_id != null) {
-                println('User already exist')
-                companySender = db.getUserCompany(user_id)
-            } else {
-                user_id = db.createUser(session.userInfo)
-                companySender = db.getCompany(session.companySender.name)
-            }
-            if (companySender == null) {
-                def sender = db.createHuman(session.companySender.sender)
-                def companySenderAddress = db.createAddress(session.companySender.address)
-                companySender = db.createCompany(
-                        session.companySender.name,
-                        companySenderAddress,
-                        sender,
-                        session._logo
-                )
-                println(companySender)
-            } else {
-                if ((companySender.logo == null)||(session._logo != '')) {
-                    companySender = db.saveCompany(companySender, session._logo)
-                }
-            }
-            db.addCompanyToUser(user_id, companySender)
-
-
         }
+
+        if (user_id != null) {
+            println('User already exist')
+            companySender = db.getUserCompany(user_id)
+        } else {
+            user_id = db.createUser(session.userInfo)
+            companySender = db.getCompany(session.companySender.name)
+        }
+        if (companySender == null) {
+            def sender = db.createHuman(session.companySender.sender)
+            def companySenderAddress = db.createAddress(session.companySender.address)
+            companySender = db.createCompany(
+                    session.companySender.name,
+                    companySenderAddress,
+                    sender,
+                    session._logo
+            )
+            println(companySender)
+            try {
+                 sendMail {
+                     to session.userInfo.e_mail
+                     subject "Регистрация на BestReCards"
+                     body 'Спасибо что зарегистрировались на нашем сервисе. :) ' +
+                             "Ваш пароль " + session.userInfo.password + ". "
+                 }
+            }
+            catch (Exception e) {
+                println(e)
+            }
+        } else {
+            if ((companySender.logo == null)||(session._logo != '')) {
+                companySender = db.saveCompany(companySender, session._logo)
+            }
+        }
+        db.addCompanyToUser(user_id, companySender)
+
+        
         session.setAttribute('user_id', user_id)
 
         def companyReceiver = db.getCompany(session.companyReceiver.name)
@@ -71,17 +83,6 @@ class SendStepController {
                 companyReceiver
         )
 
-        try {
-           /* sendMail {
-                to session.userInfo.e_mail
-                subject "Регистрация на BestReCards"
-                body 'Спасибо что зарегистрировались на нашем сервисе. :) ' +
-                        "Ваш пароль " + session.userInfo.password + ". "
-            }*/
-        }
-        catch (Exception e) {
-            println(e)
-        }
         session.removeAttribute('currentCard')
         session.removeAttribute('userInfo')
         session.removeAttribute('companySender')

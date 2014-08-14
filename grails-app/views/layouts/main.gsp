@@ -16,6 +16,7 @@
 		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
         <script src='/CardsProject/assets/popup_for_enter.js' type='text/javascript'></script>
+        <script src='/CardsProject/assets/popup_for_registration_header.js' type='text/javascript'></script>
 	</head>
 	<body>
 		<div class="header" id="header" role="banner">
@@ -29,6 +30,9 @@
                      Сервис быстрой отправки открыток бисзнес партнерам и клиентам
                 </div>
                 <div class="account-info">
+                    <button id='registration-button_t' name='registration-button_t' value='registration-button_t'>
+                        Регистрация
+                    </button>
                     <button id='enter-button_t' name='enter-button_t' value='enter-button_t'>
                         Вход
                     </button>
@@ -41,7 +45,7 @@
         <div class="cabinet-header">
             <div class="container">
                 <div class="heading">
-                    <g:link controller="cabinet" action="index">Личный кабинет</g:link>
+                    <g:link controller="cabinet" action="index" class="js-cabinet-button hidden">Личный кабинет</g:link>
                 </div>
             </div>
         </div>
@@ -67,6 +71,26 @@
                 </button>
              </div>
         </div>
+    <div class='reg_popup_block' id='reg_popup_block'>
+        <div class='reg_popup_content' id='reg_popup_content'>
+            <div class='reg_exit_sign'>
+                <img />
+            </div>
+            <h2>Регистрация</h2>
+            <h3>Вам не нужно будет повторно вводить данные, в следующий, раз все будет уже сохранено!</h3>
+            <div class='reg_mailError' id='reg_mailError'>
+                <h3></h3>
+            </div>
+            <input id='reg_mail' placeholder='&#1042;&#1072;&#1096; e-mail' type='text' />
+            <div class='reg_passError' id='reg_passError'>
+                <h3></h3>
+            </div>
+            <input id='reg_pass' placeholder='&#1055;&#1072;&#1088;&#1086;&#1083;&#1100;' type='password' />
+            <button id='send_registration_button' name='send_registration_button' value='send_registration_button'>
+                Регистрация
+            </button>
+        </div>
+    </div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>
 </html>

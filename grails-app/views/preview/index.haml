@@ -57,10 +57,10 @@
         %h3 Вам не нужно будет повторно вводить данные, в следующий, раз все будет уже сохранено!
         .mailError
           %h3
-        %input{:id => 'mail', :type => 'text', :placeholder => "Ваш e-mail"}
+        %input{:id => 'mail', :type => 'text', :placeholder => "Ваш e-mail", :class => 'js-input-email'}
         .passError
           %h3
-        %input{:id => 'pass', :type => 'password', :placeholder => "Пароль"}
+        %input{:id => 'pass', :type => 'password', :placeholder => "Пароль", :class => 'js-input-password'}
         %button{:id =>'send_reg_button', :name => 'send_reg_button', :value => 'send_reg_button'}
           Регистрация
     .popup_block_alert{:id => 'popup_block_alert'}

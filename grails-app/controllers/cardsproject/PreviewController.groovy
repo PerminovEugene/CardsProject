@@ -11,7 +11,6 @@ class PreviewController {
         {
             if (session.user_id == null)
             {
-                println("false")
                 render(contentType: 'text/json') {[
                         'response': "false"
 
@@ -39,6 +38,5 @@ class PreviewController {
                     ]
                 }
             }
-
     }
 }
