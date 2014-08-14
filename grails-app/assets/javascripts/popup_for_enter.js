@@ -23,9 +23,11 @@ $(document).ready(function(){
             //  alert(response.response);
             if (response.response == 'yes') {
                 $('#exit-button_t').show();
+                $('#registration-button_t').hide();
             }
             else if(response.response == 'not') {
                 $('#enter-button_t').show();
+                $('#registration-button_t').show()
             }
             else {
                 //logging there
@@ -140,7 +142,9 @@ function sendEnterInfo_t() {
             if (response.response == 'success')
             {
                 $('#enter-button_t').hide();
+                $('#registration-button_t').hide();
                 $('#exit-button_t').show();
+
                 PopUpHide_t();
             }
             else {
@@ -168,6 +172,7 @@ function sendExit_t() {
         response: 'JSON',
         success: (function (response) {
                 $('#exit-button_t').hide();
+                $('#registration-button_t').show();
                 $('#enter-button_t').show();
         }),
         error: (function (response) {

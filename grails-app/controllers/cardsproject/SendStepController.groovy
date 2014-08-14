@@ -15,7 +15,21 @@ class SendStepController {
         def user_id
         println (session.user_id)
         if (session.user_id != null) {
-                user_id = session.user_id
+            user_id = session.user_id
+            //new this thing need if userr registrate at early step, and now he havnt info about company, but he logined
+            companySender = db.getUserCompany(user_id)
+            if (companySender == null) {
+                def sender = db.createHuman(session.companySender.sender)
+                def companySenderAddress = db.createAddress(session.companySender.address)
+                companySender = db.createCompany(
+                        session.companySender.name,
+                        companySenderAddress,
+                        sender,
+                        session._logo
+                )
+            }
+            db.addCompanyToUser(user_id, companySender)
+            //finish new
         } else {
             /*
             TODO
@@ -42,7 +56,7 @@ class SendStepController {
             }
             db.addCompanyToUser(user_id, companySender)
         }
-        
+
         session.setAttribute('user_id', user_id)
         println('1')
         def companyReceiver = db.getCompany(session.companyReceiver.name)

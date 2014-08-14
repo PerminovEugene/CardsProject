@@ -1,9 +1,6 @@
 /**
  * Created by eugenep on 05.08.14.
  */
-var isLogin =false;
-
-
 
 //Скрыть PopUp при загрузке страницы
 $(document).ready(function(){
@@ -125,6 +122,7 @@ function sendRegistrationInfo() {
 
 function validationEmail() {
     var userMail = document.getElementById("mail").value;
+    //var userMail = $('.js-mail-input').value;
     if (userMail == "")
     {
         errorMessageMail("E-mail должен быть не пустым");
@@ -140,6 +138,7 @@ function validationEmail() {
 
 function validationPassword() {
     var userPass = document.getElementById("pass").value;
+   // var userPass = document.getElementById("pass").value;
     if (userPass == "")
     {
         errorMessagePass("Пароль должен быть не пустым");
@@ -166,6 +165,7 @@ function validationPassword() {
 //for info about validation error
 function errorMessageMail(message) {
     var userMail = document.getElementsByClassName("mailError");
+   // var userMail = $('.js-mail-error').value;
     userMail[0].textContent = message;
 }
 function errorMessagePass(message) {
@@ -199,7 +199,6 @@ function popupOnValidPassword() {
     var userPassEr = document.getElementsByClassName("mailError");
     userPassEr[0].textContent = '';
 }
-
 
 //use registration
 $(document).ready(function () {

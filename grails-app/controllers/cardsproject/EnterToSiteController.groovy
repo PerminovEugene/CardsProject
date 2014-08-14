@@ -72,6 +72,31 @@ class EnterToSiteController {
                     'response': "fail at response"
             ]}
         }
-
+    }
+    def registration() {
+        if (params.Request == "registration") {
+            def mail = params.Mail
+            def db = new DataBaseService()
+            def user_id = db.getUser(mail)
+            if (user_id != null ) {
+                render(contentType: 'text/json') { //user exist
+                    [
+                            'response':  'unsuccess'
+                    ]
+                }
+            } else { //user not exist, we create him
+                session['userInfo'] = [
+                        'e_mail'  : params.Mail,
+                        'password': params.Pass
+                ]
+                user_id = db.createUser(session.userInfo)
+                session.user_id = user_id
+                render(contentType: 'text/json') {
+                    [
+                            'response': 'success',//тут код для валидности мэйла а ниже для паса
+                    ]
+                }
+            }
+        }
     }
 }

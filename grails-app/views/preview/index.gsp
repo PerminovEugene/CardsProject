@@ -84,11 +84,11 @@
         <div class='mailError'>
           <h3></h3>
         </div>
-        <input id='mail' placeholder='&#1042;&#1072;&#1096; e-mail' type='text' />
+        <input class='js-input-email' id='mail' placeholder='&#1042;&#1072;&#1096; e-mail' type='text' />
         <div class='passError'>
           <h3></h3>
         </div>
-        <input id='pass' placeholder='&#1055;&#1072;&#1088;&#1086;&#1083;&#1100;' type='password' />
+        <input class='js-input-password' id='pass' placeholder='&#1055;&#1072;&#1088;&#1086;&#1083;&#1100;' type='password' />
         <button id='send_reg_button' name='send_reg_button' value='send_reg_button'>
           Регистрация
         </button>
