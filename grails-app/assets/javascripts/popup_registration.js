@@ -1,11 +1,16 @@
 /**
  * Created by eugenep on 05.08.14.
  */
+var isLogin =false;
+
+
 
 //Скрыть PopUp при загрузке страницы
 $(document).ready(function(){
     PopUpHide();
-});
+    alertPopUpHide();
+    //checkUser();
+    })
 //Функция отображения PopUp
 function PopUpShow(){
     $('#popup_block').show();
@@ -15,28 +20,88 @@ function PopUpHide(){
     $('#popup_block').hide();
 }
 
+//Функция отображения alertPopUp
+function alertPopUpShow(){
+    $('#popup_block_alert').show();
+}
+
+//Функция скрытия alertPopUp
+function alertPopUpHide(){
+    $('#popup_block_alert').hide();
+}
 // show popup when use button
 $(document).ready(function () {
     $('#registration_button').click(function () {
-        PopUpShow();
+        var obj = {
+            "Request": "login"
+        };
+        var myJson = JSON.stringify(obj);
+        $.ajax({
+            url: '../preview/registration',
+            type: 'post',
+            dataType: 'JSON',
+            data: obj,
+            response: 'JSON',
+            success: (function (response) {
+                if (response.response == "true")
+                {
+                    window.location.replace('../sendStep/saveInDb');
+                }
+                else {
+                    PopUpShow();
+                }
+            }),
+            error: (function (response) {
+                //time to logging
+                alert("error checkuser");
+            })
+        })
     })
 })
 //for hide popup when clicked out of him
 $(document).ready(function() {
-    $('#popup_block').click(PopUpHide);
+    $('#popup_block').click(function() {
+        alertPopUpShow()
+    });
     $('#popup_content').click(function (e) {
+        e.stopPropagation();
+    })
+})
+//for hide alert-popup when clicked out of him
+$(document).ready(function() {
+    $('#popup_block_alert').click(function(){
+        alertPopUpHide();
+        PopUpHide();
+    });
+    $('#popup_content_alert').click(function (e) {
         e.stopPropagation();
     })
 })
 //close popup when use 'x'
 $(document).ready(function() {
-    $('.exit_sign').click(PopUpHide);
+    $('.exit_sign').click(function() {
+        alertPopUpShow();
+    })
 })
+
+$(document).ready(function () {
+    $('#want_send_button').click(function () {
+        alertPopUpHide();
+    })
+})
+$(document).ready(function () {
+    $('#didnt_want_send_button').click(function () {
+        alertPopUpHide();
+        PopUpHide();
+    })
+})
+
 //send on server input info (mail and pass)
 function sendRegistrationInfo() {
     var userMail = document.getElementById("mail").value;
     var userPass = document.getElementById("pass").value;
     var obj = {
+        "Request": 'registration',
         "Mail": userMail,
         "Pass": userPass
     };
@@ -48,6 +113,7 @@ function sendRegistrationInfo() {
         data: obj,
         response: 'JSON',
         success: (function (response) {
+            alert(response.response)
             window.location.replace('../sendStep/saveInDb');
         }),
         error: (function (response) {
@@ -79,7 +145,7 @@ function validationPassword() {
         errorMessagePass("Пароль должен быть не пустым");
         return false;
     }
-    if (userPass.length < 5)
+    if (userPass.length < 6)
     {
         errorMessagePass("Слишком короткий пароль");
         return false;

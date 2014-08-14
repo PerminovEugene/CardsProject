@@ -101,6 +101,24 @@ class DataBaseService {
         return null
     }
 
+    def getUser(String e_mail, String pass)
+    {
+        def user = User.findByE_mail(e_mail)
+        if (user == null) {
+            return null
+        }
+        else {
+            println("user_pass " + user.password)
+            if (user.password == pass)
+            {
+                return user.id
+            }
+            else {
+                return null
+            }
+        }
+    }
+
 //    def getSender(long user_id) {
 //        def user = User.get(user_id)
 //

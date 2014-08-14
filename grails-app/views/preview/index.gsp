@@ -94,6 +94,21 @@
         </button>
       </div>
     </div>
+    <div class='popup_block_alert' id='popup_block_alert'>
+      <div class='popup_content_alert' id='popup_content_alert'>
+        <div class='exit_sign-alert'>
+          <img />
+        </div>
+        <h2>Вы уверены?</h2>
+        <h3>Ваши данные не будут сохранены, а открытка не дойдет до адресата</h3>
+        <button id='want_send_button' name='want_send_button' value='want_send_button'>
+          Нет, я хочу отправить открытку
+        </button>
+        <button id='didnt_want_send_button' name='didnt_want_send_button' value='didnt_want_send_button'>
+          Да я уверен
+        </button>
+      </div>
+    </div>
     <!--
     
       <div class='envelope envelope'>

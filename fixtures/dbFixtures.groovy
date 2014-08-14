@@ -43,7 +43,7 @@ holidays.save()
  */
 
 def evaCard1 = new Picture()
-evaCard1.name = ("счастливый поцык")
+evaCard1.name = ("cray man")
 evaCard1.path = 'assets/testCards/card1.jpg'
 evaCard1.catalog = happyBday
 evaCard1.save()

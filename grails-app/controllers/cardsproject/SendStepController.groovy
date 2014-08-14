@@ -72,12 +72,12 @@ class SendStepController {
         )
 
         try {
-            sendMail {
+           /* sendMail {
                 to session.userInfo.e_mail
                 subject "Регистрация на BestReCards"
                 body 'Спасибо что зарегистрировались на нашем сервисе. :) ' +
                         "Ваш пароль " + session.userInfo.password + ". "
-            }
+            }*/
         }
         catch (Exception e) {
             println(e)
