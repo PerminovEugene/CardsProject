@@ -8,15 +8,19 @@ $(document).ready(function() {
         var file = $('.js-form input[type=file]');
         var errMessage = '';
         var counter = 0;
-        var success = false;
+        var success = true;
         $('.js-error').empty();
 
-        if ((file.val() !== '') & (file.val() !== undefined) ) {
-            success = true;
-        } else {
-            success = false;
-            errMessage = 'Вы не загрузили логотип';
-        }
+        /*порядок проверки именно такой из-за шагов создания открытки.
+        Если на одной форме окажутся и текстовые поля и поле загрузки файла -
+        результат валидации последнего учитываться не будет*/
+
+//        if ((file.val() !== '') & (file.val() !== undefined) ) {
+//            success = true;
+//        } else {
+//            success = false;
+//            errMessage = 'Вы не загрузили логотип';
+//        }
 
         text_fields.each(function(index) {
             $(this).removeClass('empty-field');

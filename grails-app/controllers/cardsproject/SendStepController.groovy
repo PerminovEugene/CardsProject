@@ -24,23 +24,27 @@ class SendStepController {
             user_id = db.getUser(session.userInfo.e_mail)
             if (user_id != null) {
                 println('User already exist')
-//                companySender = db.getUserCompany(user_id)
+                companySender = db.getUserCompany(user_id)
             } else {
                 user_id = db.createUser(session.userInfo)
                 companySender = db.getCompany(session.companySender.name)
-                if (companySender == null) {
-                    def sender = db.createHuman(session.companySender.sender)
-                    def companySenderAddress = db.createAddress(session.companySender.address)
-                    companySender = db.createCompany(
-                            session.companySender.name,
-                            companySenderAddress,
-                            sender,
-                            session._logo
-                    )
-                    println(companySender)
-                }
-                db.addCompanyToUser(user_id, companySender)
             }
+            if (companySender == null) {
+                def sender = db.createHuman(session.companySender.sender)
+                def companySenderAddress = db.createAddress(session.companySender.address)
+                companySender = db.createCompany(
+                        session.companySender.name,
+                        companySenderAddress,
+                        sender,
+                        session._logo
+                )
+                println(companySender)
+            } else {
+                if ((companySender.logo == null)||(session._logo != '')) {
+                    companySender = db.saveCompany(companySender, session._logo)
+                }
+            }
+            db.addCompanyToUser(user_id, companySender)
 
 
         }

@@ -3,7 +3,82 @@
   %head
     %meta{:content => "main", :name => "layout"}/
     %title Личный кабинет
-    %script{:src => "js/userInfo.js", :type => "text/javascript"}
+    %script{:src => "../js/userInfo.js", :type => "text/javascript"}
+    %script{:src => "../js/handlebars/handlebars.js", :type => "text/javascript"}
   %body
-    %span.js-user-info Личные данные
-    %span.js-user-cards История заказов
+    / Declare Variable
+    - name = 'Ф.И.О'
+    - post = 'Должность'
+    - company = 'Компания'
+    - city = 'Город'
+    - street = 'Улица'
+    - house = 'Дом'
+    - housing = 'Корпус'
+    - office = 'Офис'
+    - postcode = 'Индекс'
+    - next = 'Далее'
+    - prev = 'Назад'
+    .tabs-row
+      .container
+        .tabs
+          .tab.js-user-info.active-tab
+            %span Личные данные
+          .tab.js-user-cards
+            %span История заказов
+    .container.page
+      %g:form.cabinet-form.js-form.js-cabinet-form{:controller => "cabinet", :action => "updateUserInfo", :enctype => "multipart/form-data"}
+        .address-form
+          %h2 Данные указанные на конверте
+          %g:textField.wide-input.name.js-name{:name => "name", :placeholder => "$name"}/
+          %g:textField.wide-input.post.js-post{:name => "post", :placeholder =>"$post"}/
+          %g:textField.wide-input.company.js-company{:name => "company", :placeholder =>"$company"}/
+          %br/
+          %g:textField.wide-input.city.js-city{:name => "city", :placeholder =>"$city"}/
+          %g:textField.wide-input.street.js-street{:name => "street", :placeholder =>"$street"}/
+          %g:textField.small-input.house.js-house{:name => "house", :placeholder =>"$house"}/
+          %g:textField.small-input.housing.js-housing{:name => "housing", :placeholder =>"$housing"}/
+          %g:textField.small-input.office.js-office{:name => "office", :placeholder =>"$office"}/
+          %g:textField.small-input.postcode.js-postcode{:name => "postcode", :placeholder =>"$postcode"}/
+          %a{:href => "http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx", :target => "_blank"} Уточнить индекс
+        .logo-form
+          %img.logo-preview.js-logo-preview
+          %input.file.js-file{:type => "file", :id => "logo",  :name => "logo"}/
+        .footer
+          %a.button.button-next.js-submit Сохранить
+          %span.error-text.js-error
+      .cabinet-table.js-table.hide
+        %table
+          %thead
+            %tr
+              %th
+                Открытка
+              %th
+                Адресат
+              %th
+                Дата создания
+              %th
+                Статус
+          %tbody.js-tbody
+            %script{:id => "table-template", :type => "text/x-handlebars-template"}
+              {{#each cards}}
+              %tr
+                %td
+                  %img{:src =>"../{{picture}}"}
+                %td
+                  {{receiver}}
+                  %br/
+                  {{post}}
+                  %br/
+                  {{company}}
+                  %br/
+                  {{address.city}}, {{address.street}}, {{address.house}}, {{address.housing}}
+                  %br/
+                  {{address.office}}
+                  %br/
+                  {{address.postCode}}
+                %td {{created}}
+                %td {{state}}
+              {{/each}}
+        .footer
+          %g:link.button.button-center{:controller =>"picturesList", :action=>"index"}
+            Создать еще открытку

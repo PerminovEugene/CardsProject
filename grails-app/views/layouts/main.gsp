@@ -24,6 +24,13 @@
                 </a>
             </div>
         </div>
+        <div class="cabinet-header">
+            <div class="container">
+                <div class="heading">
+                    <g:link controller="cabinet" action="index">Личный кабинет</g:link>
+                </div>
+            </div>
+        </div>
 		<g:layoutBody/>
 
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>

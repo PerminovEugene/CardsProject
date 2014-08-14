@@ -60,7 +60,7 @@
         <div class='card-view card'>
           <div class='text'>${session.currentCard.text}</div>
           <div class='file'>
-            <img src='${session._logo}' width='125' />
+            <img src='../${session._logo}' width='125' />
           </div>
           <div class='sign'>${session.currentCard.sign}</div>
         </div>
