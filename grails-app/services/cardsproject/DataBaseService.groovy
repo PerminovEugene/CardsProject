@@ -73,6 +73,11 @@ class DataBaseService {
         company.save(flush: true)
     }
 
+    def saveCompany(Company company, String logo) {
+        company.logo = logo
+        company.save(flush: true)
+    }
+
     def saveCard(int picture_id, String text, String sign, long user_id, company) {
         def picture = Picture.get(picture_id)
         def user = User.get(user_id)

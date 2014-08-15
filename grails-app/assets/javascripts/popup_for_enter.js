@@ -24,10 +24,12 @@ $(document).ready(function(){
             if (response.response == 'yes') {
                 $('#exit-button_t').show();
                 $('#registration-button_t').hide();
+                $('.js-cabinet-button').removeClass('hidden');
             }
             else if(response.response == 'not') {
                 $('#enter-button_t').show();
-                $('#registration-button_t').show()
+                $('#registration-button_t').show();
+                $('.js-cabinet-button').addClass('hidden');
             }
             else {
                 //logging there
@@ -144,6 +146,7 @@ function sendEnterInfo_t() {
                 $('#enter-button_t').hide();
                 $('#registration-button_t').hide();
                 $('#exit-button_t').show();
+                $('.js-cabinet-button').removeClass('hidden');
 
                 PopUpHide_t();
             }
@@ -172,8 +175,10 @@ function sendExit_t() {
         response: 'JSON',
         success: (function (response) {
                 $('#exit-button_t').hide();
+                $('.js-cabinet-button').addClass('hidden');
                 $('#registration-button_t').show();
                 $('#enter-button_t').show();
+                window.location.replace("../tester/index");
         }),
         error: (function (response) {
             //time to logging

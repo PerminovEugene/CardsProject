@@ -93,6 +93,7 @@ $(document).ready(function () {
                         $('#enter-button_t').hide();
                         $('#registration-button_t').hide();
                         $('#exit-button_t').show();
+                        $('.js-cabinet-button').removeClass('hidden');
                     }
                     else {
                         var userPasser = document.getElementById("reg_passError");

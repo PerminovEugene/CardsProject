@@ -42,6 +42,13 @@
                 </div>
             </div>
         </div>
+        <div class="cabinet-header">
+            <div class="container">
+                <div class="heading">
+                    <g:link controller="cabinet" action="index" class="js-cabinet-button hidden">Личный кабинет</g:link>
+                </div>
+            </div>
+        </div>
 		<g:layoutBody/>
         <div class='popup_block_t' id='popup_block_t'>
             <div class='popup_content_t' id='popup_content_t'>

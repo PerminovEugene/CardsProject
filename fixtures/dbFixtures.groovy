@@ -44,38 +44,38 @@ holidays.save()
 
 def evaCard1 = new Picture()
 evaCard1.name = ("cray man")
-evaCard1.path = 'images/testCards/card1.jpg'
+evaCard1.path = 'assets/testCards/card1.jpg'
 evaCard1.catalog = happyBday
 evaCard1.save()
 
 def evaCard2 = new Picture()
 evaCard2.name = ("happy girl")
-evaCard2.path = 'images/testCards/card2.jpg'
+evaCard2.path = 'assets/testCards/card2.jpg'
 evaCard2.catalog = valentinesDay
 evaCard2.save()
 
 def evaCard3 = new Picture()
 evaCard3.name = ("bubble goom girl")
-evaCard3.path = 'images/testCards/card3.jpg'
+evaCard3.path = 'assets/testCards/card3.jpg'
 evaCard3.catalog = holidays
 evaCard3.save()
 
 def picture = new Picture()
 picture.name = 'pict1'
-picture.path = 'images/testCards/cat1.jpeg'
+picture.path = 'assets/testCards/cat1.jpeg'
 picture.catalog = catalog
 picture.save()
 
 def picture1 = new Picture()
 picture1.name = 'pict2'
-picture1.path = 'images/testCards/cat2.jpeg'
+picture1.path = 'assets/testCards/cat2.jpeg'
 picture1.catalog = catalog
 picture1.save()
 
 def picture2 = new Picture()
 picture2.name = 'pict3'
 picture2.catalog = catalog
-picture2.path = 'images/testCards/cat3.jpeg'
+picture2.path = 'assets/testCards/cat3.jpeg'
 picture2.save()
 
 /**
@@ -157,7 +157,7 @@ secondCard.text = 'Congratulation'
 secondCard.sign = "Your's banny"
 secondCard.created = new Date()
 secondCard.state = 'ON MODERATION'
-secondCard.picture = evaCard1
+secondCard.picture = evaCard2
 secondCard.user = testUser
 secondCard.company = lukoil
 secondCard.save()

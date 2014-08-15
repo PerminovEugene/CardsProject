@@ -111,11 +111,11 @@ function sendRegistrationInfo() {
         data: obj,
         response: 'JSON',
         success: (function (response) {
-            alert(response.response)
+//            alert(response.response)
             window.location.replace('../sendStep/saveInDb');
         }),
         error: (function (response) {
-            //time to logging
+//            time to logging
             alert("error");
         })
     })

@@ -19,8 +19,8 @@
         </div>
         <div class='subscribe_block'></div>
         <div class='footer'>
-          <g:link action='toMainPage' class='button'>В начало</g:link>
-          <g:link action='toMainPage' class='button button-nav'>Создать еще открытку</g:link>
+          <g:link action='toMainPage' class='button button-prev'>В начало</g:link>
+          <g:link action='toMainPage' class='button button-next'>Создать еще открытку</g:link>
         </div>
       </div>
     </div>

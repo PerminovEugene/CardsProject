@@ -21,6 +21,7 @@ ul {
 body {
   margin: 0;
   color: #696969;
+  background-color: #f8f8f8;
 }
 .header {
   background-color: #313131;
@@ -70,20 +71,30 @@ body {
 .footer {
   width: 100%;
   margin-top: 20px;
-  .button {
-    padding: 10px 55px;
-    background-color: #1297ff;
-    color: #ffffff;
-    border: none;
-    font-family: PT_Sans_Regular;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
-  }
+
   .button-next {
     float: right;
   }
   .button-prev {
     float: left;
   }
+  .button-center {
+    margin-left: auto;
+    margin-right: auto;
+
+
+  }
+}
+
+.button {
+  padding: 10px 55px;
+  background-color: #1297ff;
+  color: #ffffff;
+  border: none;
+  font-family: PT_Sans_Regular;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  display: block;
 }

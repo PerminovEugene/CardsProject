@@ -16,6 +16,11 @@ class PicturesListController {
             session.setAttribute('_picture',params)
             session['_picture'] = ''
         }
+        if (session.currentCard == null) {
+            session.setAttribute('currentCard', [
+                    'picture_id' : params.id
+            ])
+        }
         render(view: "picturesList.gsp")
     }
 
@@ -56,9 +61,7 @@ class PicturesListController {
     }
 
     def saveChoicePicture(){
-        session.setAttribute('currentCard', [
-                'picture_id' : params.id
-        ])
+        session.currentCard.picture_id = params.id
         session['_picture'] = params.path
         render("ok") as JSON
 
