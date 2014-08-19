@@ -60,11 +60,11 @@ class PicturesListController {
         render data
     }
 
-    def saveChoicePicture(){
+    def save() {
         session.currentCard.picture_id = params.id
         session['_picture'] = params.path
-        render("ok") as JSON
-
+        //render("ok") as JSON
+        redirect (controller:'envelope', action: 'index')
         //redirect(controller:'cardsList', action: 'look')
 
     }

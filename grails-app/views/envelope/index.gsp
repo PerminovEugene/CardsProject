@@ -58,12 +58,12 @@
         </ul>
       </div>
     </div>
+    <div class='mail-style'></div>
     <div class='container page'>
-      <h1>2. Введите адрес</h1>
-      <h3>Адрес будет указан на конверте</h3>
+      <h1>Введите адреса</h1>
       <g:form action='save' class='js-form' controller='envelope'>
         <div class='sender address-form'>
-          <h2>Данные отправителя</h2>
+          <h2 class='sender_words'>От кого</h2>
           <g:textField class='name wide-input' name='sender_name' placeholder='$name' value='${session.companySender.sender.name}' />
           <g:textField class='post wide-input' name='sender_post' placeholder='$post' value='${session.companySender.sender.post}' />
           <g:textField class='company wide-input' name='sender_company' placeholder='$company' value='${session.companySender.name}' />
@@ -77,7 +77,7 @@
           <a href='http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx' target='_blank'>Уточнить индекс</a>
         </div>
         <div class='receiver address-form'>
-          <h2>Данные получателя</h2>
+          <h2 class='sender_words'>Кому</h2>
           <g:textField class='name wide-input' name='receiver_name' placeholder='$name' value='${session.companyReceiver.receiver.name}' />
           <g:textField class='post wide-input' name='receiver_post' placeholder='$post' value='${session.companyReceiver.receiver.post}' />
           <g:textField class='company wide-input' name='receiver_company' placeholder='$company' value='${session.companyReceiver.name}' />

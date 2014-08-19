@@ -49,9 +49,10 @@
         </ul>
       </div>
     </div>
+    <div class='mail-style'></div>
     <div class='container page'>
       <div class='change-card-header'>
-        <h1>1. Выберите открытку</h1>
+        <h1>Выберите открытку</h1>
       </div>
       <div class='change-block'>
         <div class='list-catalog'></div>
@@ -73,7 +74,16 @@
               <img class='picture' />
             </li>
             <li name='picture_li'>
-              <img class='picture' id="picture'" />
+              <img class='picture' />
+            </li>
+            <li name='picture_li'>
+              <img class='picture' />
+            </li>
+            <li name='picture_li'>
+              <img class='picture' />
+            </li>
+            <li name='picture_li'>
+              <img class='picture' id='picture' />
             </li>
           </ul>
         </div>
@@ -82,10 +92,17 @@
         <img id='picture-preview' src='${session._picture}' />
       </div>
     </div>
-    <div class='footer footer-absolute'>
-      <div class='container'>
-        <button class='button button-next' id='next-step-button' name='next_step_button' value='next_step'>Готово</button>
+    <g:form action='save' class='js-form' controller='picturesList' enctype='multipart/form-data'>
+      <g:hiddenField class='hidden-path' name='path'></g:hiddenField>
+      <div class='form-style'>Автор открыток: Ева Рупенко</div>
+      <div class='footer'>
+        <a class='button button-next js-submit'>Далее</a>
+        <span class='error-text js-error'>
+          <!-- .footer.footer-absolute -->
+          <!-- .container -->
+          <!-- %button#next-step-button.button.button-next{:name => "next_step_button", :value => "next_step"} Готово -->
+        </span>
       </div>
-    </div>
+    </g:form>
   </body>
 </html>

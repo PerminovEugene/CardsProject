@@ -47,6 +47,7 @@
         </ul>
       </div>
     </div>
+    <div class='mail-style'></div>
     <div class='container page preview'>
       <h1>4. Проверьте, все правильно?</h1>
       <div class='card-preview card-face'>

@@ -50,6 +50,7 @@
         </ul>
       </div>
     </div>
+    <div class='mail-style'></div>
     <div class='container page'>
       <h1>3. Заполните обратную сторону</h1>
       <g:form action='save' class='js-form' controller='card' enctype='multipart/form-data'>

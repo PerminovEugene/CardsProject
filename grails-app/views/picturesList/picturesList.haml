@@ -32,9 +32,10 @@
               .circle
                 4
             %span.last Проверьте
+    .mail-style
     .container.page
       .change-card-header
-        %h1 1. Выберите открытку
+        %h1  Выберите открытку
       .change-block
         .list-catalog
         .pictures
@@ -50,9 +51,21 @@
             %li{:name => "picture_li"}
               %img.picture
             %li{:name => "picture_li"}
-              %img.picture{:id => "picture'"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture{:id => "picture"}
       .preview-block
         %img#picture-preview{:src => "${session._picture}"}
-    .footer.footer-absolute
-      .container
-        %button#next-step-button.button.button-next{:name => "next_step_button", :value => "next_step"} Готово
+    %g:form.js-form{:controller => "picturesList", :action => "save", :enctype => "multipart/form-data"}
+      %g:hiddenField{:name => "path", :class => "hidden-path"}
+      .form-style Автор открыток: Ева Рупенко
+      .footer
+        %a.button.button-next.js-submit Далее
+        %span.error-text.js-error
+          /.footer.footer-absolute
+          /  .container
+          /    %button#next-step-button.button.button-next{:name => "next_step_button", :value => "next_step"} Готово

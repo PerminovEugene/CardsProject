@@ -4,8 +4,6 @@
 
 // Load pictures at start
 $(document).ready(function () {
-//    getNextPicturesFromServer();
-//    loadFirstPicture();
     loadAllPictures();
 })
 
@@ -106,6 +104,8 @@ $(document).ready(function () {
         img["name"] = this.name;
         var data_id = $(this).attr('data-id');
         img.setAttribute('data-id', data_id);
+        // write in hidden field in form
+        $('.hidden-path').val(this.src);
     })
 })
 // тыкнули батон следующие картинки

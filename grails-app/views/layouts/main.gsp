@@ -30,22 +30,25 @@
                      Сервис быстрой отправки открыток бисзнес партнерам и клиентам
                 </div>
                 <div class="account-info">
-                    <button id='registration-button_t' name='registration-button_t' value='registration-button_t'>
-                        Регистрация
-                    </button>
-                    <button id='enter-button_t' name='enter-button_t' value='enter-button_t'>
+                    <button id='enter-button_t' name='enter-button_t' value='enter-button_t' class="header-button">
                         Вход
                     </button>
-                    <button id='exit-button_t' name='exit-button_t' value='exit-button_t'>
+                    <button id='registration-button_t' name='registration-button_t' value='registration-button_t' class="header-button">
+                        Зарегестрироваться
+                    </button>
+                    <button id='exit-button_t' name='exit-button_t' value='exit-button_t' class="header-button">
                         Выход
                     </button>
-                </div>
-            </div>
-        </div>
-        <div class="cabinet-header">
-            <div class="container">
-                <div class="heading">
-                    <g:link controller="cabinet" action="index" class="js-cabinet-button hidden">Личный кабинет</g:link>
+                    %{--<div class="cabinet-header">--}%
+                        %{--<div class="container">--}%
+                            %{--<div class="heading">--}%
+                            <div  id="header-button">
+                                <g:link controller="cabinet" action="index" class="js-cabinet-button hidden header-button to-down">Личный кабинет</g:link>
+                            </div>
+                        %{--</div>--}%
+                    %{--</div>--}%
+
+
                 </div>
             </div>
         </div>
