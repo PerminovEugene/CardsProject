@@ -7,8 +7,8 @@
   </head>
   <body>
     <!-- Declare Variable -->
-    <% text = 'Введите текст сообщения' %>
-    <% sign = 'Подпишитесь, оставьте контактные данные' %>
+    <% text = '  Введите текст поздравления (максимум 650 символов)' %>
+    <% sign = ' Подпишитесь, оставьте контактные данные (максимум 250 символов' %>
     <div class='nav'>
       <div class='container'>
         <ul>
@@ -19,7 +19,6 @@
               </div>
             </div>
             <div class='line active'></div>
-            <span class='active-text'>Выберите открытку</span>
           </li>
           <li>
             <div class='point'>
@@ -28,7 +27,6 @@
               </div>
             </div>
             <div class='line active'></div>
-            <span class='active-text centred'>Введите адрес</span>
           </li>
           <li>
             <div class='point'>
@@ -39,20 +37,18 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='active-text centred'>Заполните обратную сторону</span>
             <div class='point last'>
               <div class='circle'>
                 4
               </div>
             </div>
-            <span class='last'>Проверьте</span>
           </li>
         </ul>
       </div>
     </div>
     <div class='mail-style'></div>
     <div class='container page'>
-      <h1>3. Заполните обратную сторону</h1>
+      <h1>Заполните обратную сторону</h1>
       <g:form action='save' class='js-form' controller='card' enctype='multipart/form-data'>
         <div class='card'>
           <g:textArea class='text' name='card_text' placeholder='$text' value='${session.currentCard.text}' />

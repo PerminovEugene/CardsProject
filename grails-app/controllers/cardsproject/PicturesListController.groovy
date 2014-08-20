@@ -62,6 +62,7 @@ class PicturesListController {
 
     def save() {
         session.currentCard.picture_id = params.id
+        println(params)
         session['_picture'] = params.path
         //render("ok") as JSON
         redirect (controller:'envelope', action: 'index')

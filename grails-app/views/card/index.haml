@@ -5,8 +5,8 @@
     %title Ввод текста
   %body
     / Declare Variable
-    - text = 'Введите текст сообщения'
-    - sign = 'Подпишитесь, оставьте контактные данные'
+    - text = '  Введите текст поздравления (максимум 650 символов)'
+    - sign = ' Подпишитесь, оставьте контактные данные (максимум 250 символов'
     .nav
       .container
         %ul
@@ -15,27 +15,23 @@
               .circle.active
                 1
             .line.active
-            %span.active-text Выберите открытку
           %li
             .point
               .circle.active
                 2
             .line.active
-            %span.active-text.centred Введите адрес
           %li
             .point
               .border
                 .circle.active
                   3
             .line
-            %span.active-text.centred Заполните обратную сторону
             .point.last
               .circle
                 4
-            %span.last Проверьте
     .mail-style
     .container.page
-      %h1 3. Заполните обратную сторону
+      %h1 Заполните обратную сторону
       %g:form.js-form{:controller => "card", :action => "save", :enctype => "multipart/form-data"}
         .card
           %g:textArea.text{:name => "card_text", :value => "${session.currentCard.text}", :placeholder => "$text"}/

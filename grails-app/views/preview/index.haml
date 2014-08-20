@@ -3,6 +3,7 @@
     %meta{:content => "main", :name => "layout"}/
     %title Предпросмотр
     %script{:src => "/CardsProject/assets/popup_registration.js", :type => "text/javascript"}
+    %script{:src => "/CardsProject/assets/preview.js", :type => "text/javascript"}
   %body
     .nav
       .container
@@ -12,27 +13,43 @@
               .circle.active
                 1
             .line.active
-            %span.active-text Выберите открытку
           %li
             .point
               .circle.active
                 2
             .line.active
-            %span.active-text.centred Введите адрес
           %li
             .point
               .circle.active
                 3
             .line.active.final
-            %span.active-text.centred заполниет обратную сторону
             .point.last
               .border
                 .circle.active
                   4
-            %span.last.active-text Проверьте
     .mail-style
     .container.page.preview
-      %h1 4. Проверьте, все правильно?
+      %h1 Проверьте, все ли правильно?
+      .choose-block
+        %h5 Лицевая сторона
+        .choose-picture
+          %img{:src => "${session._picture}"}
+        %h5 Обратная сторона
+        .choose-picture
+          %img{:src => '/CardsProject/assets/send_step/demo_sender.png'}
+        %h5 Конверт
+        .choose-picture
+          %img{:src => '/CardsProject/assets/send_step/demo_my_words.png'}
+      .big-preview
+        .big-picture
+          %h4 Лицевая сторона
+          %img{:src => "${session._picture}"}
+        .big-back-picture
+          %h4 Обратная сторона
+          .big-back-picture-structure
+        .big-destination-card
+          %h4 Конверт
+          .big-destination-card-structure
       .card-preview.card-face
         %h2 Лицевая сторона
         .card-view

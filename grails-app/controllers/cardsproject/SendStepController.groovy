@@ -23,7 +23,6 @@ class SendStepController {
             */
             user_id = db.getUser(session.userInfo.e_mail)
         }
-
         if (user_id != null) {
             println('User already exist')
             companySender = db.getUserCompany(user_id)
@@ -58,8 +57,6 @@ class SendStepController {
             }
         }
         db.addCompanyToUser(user_id, companySender)
-
-        
         session.setAttribute('user_id', user_id)
 
         def companyReceiver = db.getCompany(session.companyReceiver.name)
@@ -74,7 +71,7 @@ class SendStepController {
                     companyReceiverAddress,
                     receiver)
         }
-
+        println(session.currentCard.picture_id)
         db.saveCard(
                 session.currentCard.picture_id.toInteger(),
                 session.currentCard.text,
@@ -82,7 +79,7 @@ class SendStepController {
                 user_id,
                 companyReceiver
         )
-
+        println('sad')
         session.removeAttribute('currentCard')
         session.removeAttribute('userInfo')
         session.removeAttribute('companySender')

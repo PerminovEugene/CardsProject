@@ -90,6 +90,15 @@ var loadAllPictures = function() {
                 $(this).attr('src', data.path[index]);
                 $(this).attr('data-id', data.id[index]);
             });
+            var img = document.getElementById('picture-preview');
+            img["src"] = pictures[0].src;
+            var data_id = $(pictures[0]).attr('data-id');
+//            img.setAttribute('data-id', data_id);
+//            write in hidden field in form
+//            $('.hidden-path').val(this.src);
+           // alert ( this.src);
+            $('.hidden-path').val(pictures[0].src);
+            $('.hidden-id').val(data_id);
         }),
         error: (function () {
             console.log('fail');
@@ -101,18 +110,16 @@ $(document).ready(function () {
     $('.picture').click(function () {
         var img = document.getElementById('picture-preview');
         img["src"] = this.src;
-        img["name"] = this.name;
         var data_id = $(this).attr('data-id');
-        img.setAttribute('data-id', data_id);
-        // write in hidden field in form
         $('.hidden-path').val(this.src);
+        $('.hidden-id').val(data_id);
     })
 })
 // тыкнули батон следующие картинки
 $(document).ready(function () {
     $('#next-step-button').click(function ()
     {
-        onNextStep();
+        //onNextStep();
     })
 })
 // тыкнули кнопку перйти на следующий шаг

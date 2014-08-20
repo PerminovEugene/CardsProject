@@ -4,6 +4,7 @@
     <meta content='main' name='layout' />
     <title>Предпросмотр</title>
     <script src='/CardsProject/assets/popup_registration.js' type='text/javascript'></script>
+    <script src='/CardsProject/assets/preview.js' type='text/javascript'></script>
   </head>
   <body>
     <div class='nav'>
@@ -16,7 +17,6 @@
               </div>
             </div>
             <div class='line active'></div>
-            <span class='active-text'>Выберите открытку</span>
           </li>
           <li>
             <div class='point'>
@@ -25,7 +25,6 @@
               </div>
             </div>
             <div class='line active'></div>
-            <span class='active-text centred'>Введите адрес</span>
           </li>
           <li>
             <div class='point'>
@@ -34,7 +33,6 @@
               </div>
             </div>
             <div class='line active final'></div>
-            <span class='active-text centred'>заполниет обратную сторону</span>
             <div class='point last'>
               <div class='border'>
                 <div class='circle active'>
@@ -42,14 +40,41 @@
                 </div>
               </div>
             </div>
-            <span class='last active-text'>Проверьте</span>
           </li>
         </ul>
       </div>
     </div>
     <div class='mail-style'></div>
     <div class='container page preview'>
-      <h1>4. Проверьте, все правильно?</h1>
+      <h1>Проверьте, все ли правильно?</h1>
+      <div class='choose-block'>
+        <h5>Лицевая сторона</h5>
+        <div class='choose-picture'>
+          <img src='${session._picture}' />
+        </div>
+        <h5>Обратная сторона</h5>
+        <div class='choose-picture'>
+          <img src='/CardsProject/assets/send_step/demo_sender.png' />
+        </div>
+        <h5>Конверт</h5>
+        <div class='choose-picture'>
+          <img src='/CardsProject/assets/send_step/demo_my_words.png' />
+        </div>
+      </div>
+      <div class='big-preview'>
+        <div class='big-picture'>
+          <h4>Лицевая сторона</h4>
+          <img src='${session._picture}' />
+        </div>
+        <div class='big-back-picture'>
+          <h4>Обратная сторона</h4>
+          <div class='big-back-picture-structure'></div>
+        </div>
+        <div class='big-destination-card'>
+          <h4>Конверт</h4>
+          <div class='big-destination-card-structure'></div>
+        </div>
+      </div>
       <div class='card-preview card-face'>
         <h2>Лицевая сторона</h2>
         <div class='card-view'>

@@ -20,7 +20,6 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='active-text'>Выберите открытку</span>
           </li>
           <li>
             <div class='point'>
@@ -29,7 +28,6 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='centred'>Введите адрес</span>
           </li>
           <li>
             <div class='point'>
@@ -38,13 +36,11 @@
               </div>
             </div>
             <div class='line'></div>
-            <span class='centred'>Заполните обратную сторону</span>
             <div class='point last'>
               <div class='circle'>
                 4
               </div>
             </div>
-            <span class='last'>Проверьте</span>
           </li>
         </ul>
       </div>
@@ -94,6 +90,7 @@
     </div>
     <g:form action='save' class='js-form' controller='picturesList' enctype='multipart/form-data'>
       <g:hiddenField class='hidden-path' name='path'></g:hiddenField>
+      <g:hiddenField class='hidden-id' name='id'></g:hiddenField>
       <div class='form-style'>Автор открыток: Ева Рупенко</div>
       <div class='footer'>
         <a class='button button-next js-submit'>Далее</a>

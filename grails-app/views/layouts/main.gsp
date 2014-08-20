@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <div class = "about_us">
-                     Сервис быстрой отправки открыток бисзнес партнерам и клиентам
+                     Сервис по отправке открыток бизнес партнёрам и клиентам
                 </div>
                 <div class="account-info">
                     <button id='enter-button_t' name='enter-button_t' value='enter-button_t' class="header-button">
@@ -47,12 +47,15 @@
                             </div>
                         %{--</div>--}%
                     %{--</div>--}%
-
-
                 </div>
             </div>
         </div>
 		<g:layoutBody/>
+        <div class="template-footer">
+            <a class="first-link-footer" href="http://7bits.ru/">7bits.ru</a>
+            <h4>Есть вопросы? Пишите:</h4>
+            <a href="http://gmail.com/">bestrecards.project@gmail.com</a>
+        </div>
         <div class='popup_block_t' id='popup_block_t'>
             <div class='popup_content_t' id='popup_content_t'>
                 <div class='exit_sign_t'>

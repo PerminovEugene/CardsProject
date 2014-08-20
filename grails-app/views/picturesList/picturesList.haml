@@ -15,23 +15,19 @@
                 .circle.active
                   1
             .line
-            %span.active-text Выберите открытку
           %li
             .point
               .circle
                 2
             .line
-            %span.centred Введите адрес
           %li
             .point
               .circle
                 3
             .line
-            %span.centred Заполните обратную сторону
             .point.last
               .circle
                 4
-            %span.last Проверьте
     .mail-style
     .container.page
       .change-card-header
@@ -62,6 +58,7 @@
         %img#picture-preview{:src => "${session._picture}"}
     %g:form.js-form{:controller => "picturesList", :action => "save", :enctype => "multipart/form-data"}
       %g:hiddenField{:name => "path", :class => "hidden-path"}
+      %g:hiddenField{:name => "id", :class => "hidden-id"}
       .form-style Автор открыток: Ева Рупенко
       .footer
         %a.button.button-next.js-submit Далее
