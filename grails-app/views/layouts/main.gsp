@@ -58,8 +58,9 @@
         </div>
         <div class='popup_block_t' id='popup_block_t'>
             <div class='popup_content_t' id='popup_content_t'>
+                <div class="popup-style-top"></div>
                 <div class='exit_sign_t'>
-                    <img />
+                    %{--<img src="/CardsProject/assets/little_image_site/cross.png"/>--}%
                 </div>
                 <h1> Вход </h1>
                 <div id='enter-error_t'>
@@ -75,12 +76,14 @@
                 <button id='login-button_t' name='login-button_t' value='login-button_t'>
                     Войти
                 </button>
+                <div class="popup-style-down"></div>
              </div>
         </div>
     <div class='reg_popup_block' id='reg_popup_block'>
         <div class='reg_popup_content' id='reg_popup_content'>
+            <div class="popup-style-top"></div>
             <div class='reg_exit_sign'>
-                <img />
+                %{--<img src="/CardsProject/assets/little_image_site/cross.png"/>--}%
             </div>
             <h2>Регистрация</h2>
             <h3>Вам не нужно будет повторно вводить данные, в следующий, раз все будет уже сохранено!</h3>
@@ -95,6 +98,7 @@
             <button id='send_registration_button' name='send_registration_button' value='send_registration_button'>
                 Регистрация
             </button>
+            <div class="popup-style-down"></div>
         </div>
     </div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>

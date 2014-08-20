@@ -44,8 +44,8 @@
         .sender.address-form
           %h2{:class => "sender_words"} От кого
           %g:textField.name.wide-input.obligatory-field{:name => "sender_name", :placeholder => "$name", :value => "${session.companySender.sender.name}"}/
-          %g:textField.post.wide-input.obligatory-field{:name => "sender_post", :placeholder =>"$post", :value => "${session.companySender.sender.post}"}/
-          %g:textField.company.wide-input{:name => "sender_company", :placeholder =>"$company", :value => "${session.companySender.name}"}/
+          %g:textField.post.wide-input{:name => "sender_post", :placeholder =>"$post", :value => "${session.companySender.sender.post}"}/
+          %g:textField.company.wide-input.obligatory-field{:name => "sender_company", :placeholder =>"$company", :value => "${session.companySender.name}"}/
           %br/
           %g:textField.city.wide-input.obligatory-field{:name => "sender_city", :placeholder =>"$city", :value => "${session.companySender.address.city}"}/
           %g:textField.street.wide-input.obligatory-field{:name => "sender_street", :placeholder =>"$street", :value => "${session.companySender.address.street}"}/
@@ -57,8 +57,8 @@
         .receiver.address-form
           %h2{:class => "sender_words"} Кому
           %g:textField.name.wide-input.obligatory-field{:name => "receiver_name", :placeholder => "$name", :value => "${session.companyReceiver.receiver.name}"}/
-          %g:textField.post.wide-input.obligatory-field{:name => "receiver_post", :placeholder =>"$post", :value => "${session.companyReceiver.receiver.post}"}/
-          %g:textField.company.wide-input{:name => "receiver_company", :placeholder =>"$company", :value => "${session.companyReceiver.name}"}/
+          %g:textField.post.wide-input{:name => "receiver_post", :placeholder =>"$post", :value => "${session.companyReceiver.receiver.post}"}/
+          %g:textField.company.wide-input.obligatory-field{:name => "receiver_company", :placeholder =>"$company", :value => "${session.companyReceiver.name}"}/
           %br/
           %g:textField.city.wide-input.obligatory-field{:name => "receiver_city", :placeholder =>"$city", :value => "${session.companyReceiver.address.city}"}/
           %g:textField.street.wide-input.obligatory-field{:name => "receiver_street", :placeholder =>"$street", :value => "${session.companyReceiver.address.street}"}/

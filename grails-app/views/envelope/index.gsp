@@ -61,8 +61,8 @@
         <div class='sender address-form'>
           <h2 class='sender_words'>От кого</h2>
           <g:textField class='name wide-input obligatory-field' name='sender_name' placeholder='$name' value='${session.companySender.sender.name}' />
-          <g:textField class='post wide-input obligatory-field' name='sender_post' placeholder='$post' value='${session.companySender.sender.post}' />
-          <g:textField class='company wide-input' name='sender_company' placeholder='$company' value='${session.companySender.name}' />
+          <g:textField class='post wide-input' name='sender_post' placeholder='$post' value='${session.companySender.sender.post}' />
+          <g:textField class='company wide-input obligatory-field' name='sender_company' placeholder='$company' value='${session.companySender.name}' />
           <br />
           <g:textField class='city wide-input obligatory-field' name='sender_city' placeholder='$city' value='${session.companySender.address.city}' />
           <g:textField class='street wide-input obligatory-field' name='sender_street' placeholder='$street' value='${session.companySender.address.street}' />
@@ -75,8 +75,8 @@
         <div class='receiver address-form'>
           <h2 class='sender_words'>Кому</h2>
           <g:textField class='name wide-input obligatory-field' name='receiver_name' placeholder='$name' value='${session.companyReceiver.receiver.name}' />
-          <g:textField class='post wide-input obligatory-field' name='receiver_post' placeholder='$post' value='${session.companyReceiver.receiver.post}' />
-          <g:textField class='company wide-input' name='receiver_company' placeholder='$company' value='${session.companyReceiver.name}' />
+          <g:textField class='post wide-input' name='receiver_post' placeholder='$post' value='${session.companyReceiver.receiver.post}' />
+          <g:textField class='company wide-input obligatory-field' name='receiver_company' placeholder='$company' value='${session.companyReceiver.name}' />
           <br />
           <g:textField class='city wide-input obligatory-field' name='receiver_city' placeholder='$city' value='${session.companyReceiver.address.city}' />
           <g:textField class='street wide-input obligatory-field' name='receiver_street' placeholder='$street' value='${session.companyReceiver.address.street}' />

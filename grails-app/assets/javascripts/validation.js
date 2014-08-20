@@ -76,8 +76,9 @@ var validationOnEmpty = function(current_input){
             current_input.placeholder = "Вы забыли указать Улицу";
         } else if (current_input.name == "sender_house" || current_input.name == "receiver_house") {
             current_input.placeholder = "А дом?";
-        }// else if (current_input.name == "sender_postcode" || current_input.name == "receiver_postcode") {
-          //  current_input.placeholder = "А дом?";
+        } else if (current_input.name == "sender_postcode" || current_input.name == "receiver_postcode") {
+            current_input.placeholder = "А индекс?";
+        }
         return false
     }
     else {

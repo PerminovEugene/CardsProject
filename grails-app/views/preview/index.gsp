@@ -49,15 +49,15 @@
       <h1>Проверьте, все ли правильно?</h1>
       <div class='choose-block'>
         <h5>Лицевая сторона</h5>
-        <div class='choose-picture'>
+        <div class='choose-picture js-choose-picture'>
           <img src='${session._picture}' />
         </div>
         <h5>Обратная сторона</h5>
-        <div class='choose-picture'>
+        <div class='choose-picture js-choose-back-picture'>
           <img src='/CardsProject/assets/send_step/demo_sender.png' />
         </div>
         <h5>Конверт</h5>
-        <div class='choose-picture'>
+        <div class='choose-picture js-choose-sender'>
           <img src='/CardsProject/assets/send_step/demo_my_words.png' />
         </div>
       </div>
@@ -102,6 +102,7 @@
     </div>
     <div class='popup_block' id='popup_block'>
       <div class='popup_content' id='popup_content'>
+        <div class='popup-style-top'></div>
         <div class='exit_sign'>
           <img />
         </div>
@@ -118,10 +119,12 @@
         <button id='send_reg_button' name='send_reg_button' value='send_reg_button'>
           Регистрация
         </button>
+        <div class='popup-style-down'></div>
       </div>
     </div>
     <div class='popup_block_alert' id='popup_block_alert'>
       <div class='popup_content_alert' id='popup_content_alert'>
+        <div class='popup-style-top'></div>
         <div class='exit_sign-alert'>
           <img />
         </div>
@@ -133,6 +136,7 @@
         <button id='didnt_want_send_button' name='didnt_want_send_button' value='didnt_want_send_button'>
           Да я уверен
         </button>
+        <div class='popup-style-down'></div>
       </div>
     </div>
     <!--

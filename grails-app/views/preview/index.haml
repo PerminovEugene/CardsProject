@@ -32,13 +32,13 @@
       %h1 Проверьте, все ли правильно?
       .choose-block
         %h5 Лицевая сторона
-        .choose-picture
+        .choose-picture.js-choose-picture
           %img{:src => "${session._picture}"}
         %h5 Обратная сторона
-        .choose-picture
+        .choose-picture.js-choose-back-picture
           %img{:src => '/CardsProject/assets/send_step/demo_sender.png'}
         %h5 Конверт
-        .choose-picture
+        .choose-picture.js-choose-sender
           %img{:src => '/CardsProject/assets/send_step/demo_my_words.png'}
       .big-preview
         .big-picture
@@ -69,6 +69,7 @@
           Готово
     .popup_block{:id => 'popup_block'}
       .popup_content{:id => 'popup_content'}
+        .popup-style-top
         .exit_sign
           %img
         %h2 Регистрация
@@ -81,8 +82,10 @@
         %input{:id => 'pass', :type => 'password', :placeholder => "Пароль", :class => 'js-input-password'}
         %button{:id =>'send_reg_button', :name => 'send_reg_button', :value => 'send_reg_button'}
           Регистрация
+        .popup-style-down
     .popup_block_alert{:id => 'popup_block_alert'}
       .popup_content_alert{:id => 'popup_content_alert'}
+        .popup-style-top
         .exit_sign-alert
           %img
         %h2 Вы уверены?
@@ -91,7 +94,7 @@
           Нет, я хочу отправить открытку
         %button{:id =>'didnt_want_send_button', :name => 'didnt_want_send_button', :value => 'didnt_want_send_button'}
           Да я уверен
-
+        .popup-style-down
     /
       .envelope
         %h2 Конверт с указанием адресов
