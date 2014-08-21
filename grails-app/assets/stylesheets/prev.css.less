@@ -70,22 +70,141 @@
 }
 .big-preview {
   width: 75%;
-  height: 500px;
+  height: 490px;
   //background-color: red;
   margin-top: 1%;
   float:right;
   .big-picture img{
     width: 100%;
+    text-align: center;
   }
   h4 {
     font-size: 25px;
     float:right;
     margin-top: 0px;
     margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: top;
   }
-  .big-back-picture-structure{
-    background-color: black;
-    height: 100%;
+  .big-back-picture-structure, .big-destination-card-structure {
+//    background-color: black;
+    height: 467px;
     width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    white-space:pre-wrap;
+    border-color: #b3b3b3;
+    border-width: 1px;
+    border-style: solid;
+    postion: relative;
+  }
+}
+.card-back-view {
+  background-color: none;
+  width: 92%;
+  height: 254px;
+  font-size: 15px;
+  font-family: PT_Sans_Regular;
+  margin-left: 4%;
+  margin-top: 0px;
+  border-bottom-style: solid;
+  border-bottom-color: #b3b3b3;
+  padding-left: 1%;
+  padding-right: 1%;
+
+}
+.sign-back {
+  width: 34%;
+  height: 150px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 0%;
+  padding-top: 0px;
+  white-space:pre-wrap;
+  position: absolute;
+//  left: 0;
+}
+.file-logo {
+  width: 160px;
+  height: 150px;
+  margin-right: 20px;
+  position: absolute;
+  top: 62%;
+  right: 1%;
+}
+.sender-preview-block {
+//  background-color: blue;
+
+  width: 40%;
+  height: 233px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  position: absolute;
+  top: 19.3%;
+  left: 25.1%;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.mark {
+  width: 30%;
+  height:233px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  position: absolute;
+  top: 19.3%;
+  right: 0%;
+}
+.big-post-code{
+  width: 30%;
+  height: 233px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  position: absolute;
+  top: 55%;
+  left: 25.1%;
+  .receiver-post-code {
+    margin-top: 33%;
+    font-size: 70px;
+    color: #313131;
+    font-family: zipcode;
+    padding-left: 42px;
+    padding-bottom: 30px;
+  }
+}
+.receiver-preview-block  {
+  width: 40%;
+  height: 233px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  position: absolute;
+  top: 55%;
+  right: 0%;
+  white-space: normal;
+  padding-right: 30px;
+}
+.sender-preview-block, .receiver-preview-block {
+  white-space: normal;
+  .block-h5 {
+    color: darkgrey;
+    margin-right: 0px;
+  }
+  .sender-text {
+    font-size: 20px;
+    color: darkslateblue;
+    text-decoration: underline;
+  }
+  .sender-code {
+    font-size: 23px;
+    color: #313131;
+    border-style: solid;
+    border-color: #b3b3b3;
+    border-width: 3px;
+    width: 25%;
+    text-align: center;
+    float:right;
   }
 }

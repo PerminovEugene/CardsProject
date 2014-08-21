@@ -68,11 +68,42 @@
         </div>
         <div class='big-back-picture'>
           <h4>Обратная сторона</h4>
-          <div class='big-back-picture-structure'></div>
+          <div class='big-back-picture-structure'>
+            <div class='card-back-view'>${session.currentCard.text}</div>
+            <div class='sign-back'>${session.currentCard.sign}</div>
+            <div class='file-logo'>
+              <img src='../${session._logo}' width='125' />
+            </div>
+          </div>
         </div>
         <div class='big-destination-card'>
           <h4>Конверт</h4>
-          <div class='big-destination-card-structure'></div>
+          <div class='big-destination-card-structure'>
+            <div class='sender-preview-block'>
+              <div class='block-h5'>От кого:</div>
+              <div class='sender-text'>${session.companySender.sender.name}</div>
+              <div class='sender-text'>${session.companySender.sender.post}</div>
+              <div class='sender-text'>${session.companySender.name}</div>
+              <div class='block-h5'>Откуда:</div>
+              <div class='sender-text'>${session.companySender.address.city} ${session.companySender.address.street} ${session.companySender.address.house}</div>
+              <div class='sender-text'>${session.companySender.address.housing} ${session.companySender.address.office}</div>
+              <div class='sender-code'>${session.companySender.address.postcode}</div>
+            </div>
+            <div class='mark'></div>
+            <div class='big-post-code'>
+              <div class='receiver-post-code'>${session.companyReceiver.address.postcode}</div>
+            </div>
+            <div class='receiver-preview-block'>
+              <div class='block-h5'>От кого:</div>
+              <div class='sender-text'>${session.companyReceiver.receiver.name}</div>
+              <div class='sender-text'>${session.companyReceiver.receiver.post}</div>
+              <div class='sender-text'>${session.companyReceiver.name}</div>
+              <div class='block-h5'>Откуда:</div>
+              <div class='sender-text'>${session.companyReceiver.address.city} ${session.companyReceiver.address.street} ${session.companyReceiver.address.house}</div>
+              <div class='sender-text'>${session.companyReceiver.address.housing} ${session.companyReceiver.address.office}</div>
+              <div class='sender-code'>${session.companyReceiver.address.postcode}</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class='card-preview card-face'>
