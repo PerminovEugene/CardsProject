@@ -93,6 +93,11 @@ class DataBaseService {
         return card
     }
 
+    def updateCardState(Card card, String state) {
+        card.state = state
+        card.save(flush: true)
+    }
+
     def getUser(String e_mail) {
         def user = User.findByE_mail(e_mail)
         if (user != null) {
@@ -108,7 +113,7 @@ class DataBaseService {
             return null
         }
         else {
-            println("user_pass " + user.password)
+//            println("user_pass " + user.password)
             if (user.password == pass)
             {
                 return user.id

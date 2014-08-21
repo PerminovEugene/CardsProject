@@ -41,3 +41,6 @@ CardsProject.iml
 /web-app/images/testCards
 /web-app/images/temp
 
+#to build
+/out
+

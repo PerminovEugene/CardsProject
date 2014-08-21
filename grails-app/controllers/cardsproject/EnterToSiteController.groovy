@@ -7,7 +7,7 @@ class EnterToSiteController {
     def enter() {
         def db = new DataBaseService()
         def user_id
-        println(session.user_id)
+//        println(session.user_id)
         if (session.user_id == null) {
             /*
             TODO
@@ -16,11 +16,11 @@ class EnterToSiteController {
             def e_mail = params.Mail
             def password = params.Pass
             user_id = db.getUser(e_mail, password)
-            println (user_id + 'its user id')
+//            println (user_id + 'its user id')
             if (user_id != null) {
                 session.user_id = user_id
-                println (session.user_id + 'in session')
-                println (user_id + 'its user id')
+//                println (session.user_id + 'in session')
+//                println (user_id + 'its user id')
                 render(contentType: 'text/json') {
                     [
                             'response': 'success'
@@ -47,13 +47,13 @@ class EnterToSiteController {
         }
     }
     def checkUserStatus() {
-        println(params.Request)
-        println(session.user_id)
+//        println(params.Request)
+//        println(session.user_id)
         if (params.Request == "login")
         {
             if (session.user_id == null)
             {
-                println("false")
+//                println("false")
                 render(contentType: 'text/json') {[
                         'response': "not"
 

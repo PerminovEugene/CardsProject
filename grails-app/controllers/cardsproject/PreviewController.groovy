@@ -5,8 +5,8 @@ class PreviewController {
     def index() {}
 
     def registration() {
-        println(params.Request)
-        println(session.user_id)
+//        println(params.Request)
+//        println(session.user_id)
         if (params.Request == "login")
         {
             if (session.user_id == null)

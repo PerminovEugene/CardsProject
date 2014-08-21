@@ -11,7 +11,7 @@ class SendStepController {
 
         def db = new DataBaseService()
         def companySender
-        println(session.userInfo)
+//        println(session.userInfo)
         def user_id
 
         if (session.user_id != null) {
@@ -39,7 +39,7 @@ class SendStepController {
                     sender,
                     session._logo
             )
-            println(companySender)
+//            println(companySender)
             try {
                  sendMail {
                      to session.userInfo.e_mail

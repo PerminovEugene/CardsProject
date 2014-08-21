@@ -29,7 +29,7 @@
                 <div class = "about_us">
                      Сервис по отправке открыток бизнес партнёрам и клиентам
                 </div>
-                <div class="account-info">
+                <div class="account-info js-account-info">
                     <button id='enter-button_t' name='enter-button_t' value='enter-button_t' class="header-button">
                         Вход
                     </button>
