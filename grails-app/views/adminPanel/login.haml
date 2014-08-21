@@ -1,0 +1,11 @@
+%html
+  %head
+    %meta{:content => "main", :name => "layout"}/
+    %title Админка
+    %script{:src => "../js/hideLinkForAdmin.js", :type => "text/javascript"}
+  %body
+    .container.page
+      %g:form.login-form{:controller => "adminPanel", :action => "login"}
+        %input{:type => "text", :name => "login"}
+        %input{:type => "password", :name => "password"}
+        %g:submitButton.button{:name => "submit", :value => "Login"}

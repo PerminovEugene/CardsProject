@@ -29,7 +29,7 @@
                 <div class = "about_us">
                      Сервис быстрой отправки открыток бисзнес партнерам и клиентам
                 </div>
-                <div class="account-info">
+                <div class="account-info js-account-info">
                     <button id='registration-button_t' name='registration-button_t' value='registration-button_t'>
                         Регистрация
                     </button>
