@@ -178,7 +178,7 @@ function sendExit_t() {
                 $('.js-cabinet-button').addClass('hidden');
                 $('#registration-button_t').show();
                 $('#enter-button_t').show();
-                window.location.replace("tester/index");
+                window.location.replace("../tester/index");
         }),
         error: (function (response) {
             //time to logging

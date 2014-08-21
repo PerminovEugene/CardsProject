@@ -79,7 +79,7 @@ var getPreviousPicturesFromServer = function() {
 
 var loadAllPictures = function() {
     $.ajax({
-        url: 'picturesList/sendListPictures',
+        url: 'sendListPictures',
         type: 'get',
         dataType: 'json',
         success: (function (data) {
@@ -87,7 +87,7 @@ var loadAllPictures = function() {
             var pictures = $('#list img');
             console.log(pictures.length);
             pictures.each(function(index){
-                $(this).attr('src', data.path[index]);
+                $(this).attr('src', '../'+data.path[index]);
                 $(this).attr('data-id', data.id[index]);
             });
             var img = document.getElementById('picture-preview');

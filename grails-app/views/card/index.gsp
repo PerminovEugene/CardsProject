@@ -4,6 +4,7 @@
   <head>
     <meta content='main' name='layout' />
     <title>Ввод текста</title>
+    <script src='/CardsProject/assets/back-card.js' type='text/javascript'></script>
   </head>
   <body>
     <!-- Declare Variable -->
@@ -52,7 +53,11 @@
       <g:form action='save' class='js-form' controller='card' enctype='multipart/form-data'>
         <div class='card'>
           <g:textArea class='text' name='card_text' placeholder='$text' value='${session.currentCard.text}' />
-          <input class='file' id='logo' name='logo' type='file' value='${session._logo}' />
+          <input class='file js-hide-file-input' id='logo' name='logo' type='file' value='${session._logo}' />
+          <div class='js-logo-presenter file' id='js-logo-presenter'>
+            <img class='js-image-logo' src='/CardsProject/assets/little_image_site/plus_on_mail.png' />
+            <h3>Загрузите логотип</h3>
+          </div>
           <g:textArea class='sign' name='card_sign' placeholder='$sign' value='${session.currentCard.sign}' />
         </div>
         <div class='footer'>

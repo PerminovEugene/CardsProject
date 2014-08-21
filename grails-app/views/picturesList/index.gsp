@@ -1,9 +1,9 @@
-<%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY picturesList.haml --%>
+<%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY index.haml --%>
 <html xmlns='http://www.w3.org/1999/html'>
   <head>
     <title>Выбор открытки</title>
     <meta content='main' name='layout' />
-    <script src='js/swapPictures.js' type='text/javascript'></script>
+    <script src='../js/swapPictures.js' type='text/javascript'></script>
   </head>
   <body>
     <!-- Declare Variable -->
@@ -91,7 +91,9 @@
     <g:form action='save' class='js-form' controller='picturesList' enctype='multipart/form-data'>
       <g:hiddenField class='hidden-path' name='path'></g:hiddenField>
       <g:hiddenField class='hidden-id' name='id'></g:hiddenField>
-      <div class='form-style'>Автор открыток: Ева Рупенко</div>
+      <div class='form-style'>
+        Автор открыток: Ева Рупенко
+      </div>
       <div class='footer'>
         <a class='button button-next js-submit'>Далее</a>
         <span class='error-text js-error'>

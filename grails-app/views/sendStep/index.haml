@@ -2,19 +2,23 @@
   %head
     %title Отправлено
     %meta{:content => "main", :name => "layout"}
-
   %body
     / Declare variable
     - pass = 'пароль'
     - mail = 'mail'
     - send_reg = 'отправить'
-    .container
-      .content_block
-        #send_message
-          %h1.head-main Ваша открытка будет доставлена в течении недели
-        .send_logo
-          %img{:id => 'picture_send_logo', :src => '/CardsProject/assets/send_step/airoplane.jpg'}
-        .subscribe_block
-        .footer
-          %g:link.button.button-prev{:action => "toMainPage"} В начало
-          %g:link.button.button-next{:action => "toMainPage"} Создать еще открытку
+    .cheat-for-header
+    .mail-style
+    .big-container.page
+      .head-main Ваша открытка будет доставлена в течении недели!
+      .send_logo
+        %img{:id => 'picture_send_logo', :src => '/CardsProject/assets/send_step/airoplane.jpg'}
+      .subscribe_block
+      %img.left-image-cloud{:src => "/CardsProject/assets/little_image_site/left_cloud.png"}
+      %img.right-image-cloud{:src => "/CardsProject/assets/little_image_site/right_cloud.png"}
+      .send-step-footer
+        %g:link.size-subscribe.button-subscribe{:action => "toMainPage"} Поделиться
+        %g:link.size-subscribe-little.button-subscribe{:action => "toMainPage"} f
+        %g:link.send-step-button.button-next{:action => "toMainPage"} Создать еще открытку
+        %g:link.send-step-button.button-next{:action => "toMainPage"} Вернуться на главную
+

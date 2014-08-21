@@ -21,7 +21,8 @@ class PicturesListController {
                     'picture_id' : params.id
             ])
         }
-        render(view: "picturesList.gsp")
+        println('noob')
+        render (view: 'index.gsp')
     }
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST", getNextCards: "GET",

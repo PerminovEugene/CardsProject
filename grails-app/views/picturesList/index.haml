@@ -2,7 +2,7 @@
   %head
     %title Выбор открытки
     %meta{:content => "main", :name => "layout"}/
-    %script{:src => "js/swapPictures.js", :type => "text/javascript"}
+    %script{:src => "../js/swapPictures.js", :type => "text/javascript"}
   %body
     / Declare Variable
     - next = 'Далее'
@@ -59,7 +59,8 @@
     %g:form.js-form{:controller => "picturesList", :action => "save", :enctype => "multipart/form-data"}
       %g:hiddenField{:name => "path", :class => "hidden-path"}
       %g:hiddenField{:name => "id", :class => "hidden-id"}
-      .form-style Автор открыток: Ева Рупенко
+      .form-style
+        Автор открыток: Ева Рупенко
       .footer
         %a.button.button-next.js-submit Далее
         %span.error-text.js-error

@@ -3,6 +3,7 @@
   %head
     %meta{:content => "main", :name => "layout"}/
     %title Ввод текста
+    %script{:src => "/CardsProject/assets/back-card.js", :type => "text/javascript"}
   %body
     / Declare Variable
     - text = '  Введите текст поздравления (максимум 650 символов)'
@@ -35,7 +36,10 @@
       %g:form.js-form{:controller => "card", :action => "save", :enctype => "multipart/form-data"}
         .card
           %g:textArea.text{:name => "card_text", :value => "${session.currentCard.text}", :placeholder => "$text"}/
-          %input.file{:type => "file", :id => "logo",  :name => "logo", :value => "${session._logo}"}/
+          %input.file.js-hide-file-input{:type => "file", :id => "logo",  :name => "logo", :value => "${session._logo}"}/
+          .js-logo-presenter.file#js-logo-presenter
+            %img.js-image-logo{:src => '/CardsProject/assets/little_image_site/plus_on_mail.png'}
+            %h3 Загрузите логотип
           %g:textArea.sign{:name => "card_sign", :value => "${session.currentCard.sign}", :placeholder => "$sign"}/
         .footer
           %g:link.button.button-prev{:controller =>"envelope", :action=>"index"} На шаг назад

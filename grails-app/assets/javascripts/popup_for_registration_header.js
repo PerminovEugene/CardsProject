@@ -109,3 +109,11 @@ $(document).ready(function () {
         }
     })
 })
+
+
+//cheat
+$(document).ready(function() {
+    $('.js-reg-main-page').click(function() {
+        $('#registration-button_t').click();
+    })
+})
