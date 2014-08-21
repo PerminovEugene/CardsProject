@@ -1,5 +1,6 @@
 /**
  * Created by eugenep on 05.08.14.
+ * this for popup only at preview step
  */
 
 //Скрыть PopUp при загрузке страницы
