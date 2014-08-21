@@ -64,9 +64,10 @@
         %span Печать на гофрированной бумаге в три слоя,
         %Span заботливо поглажена на прощание
       .footer
-        %g:link.button.button-prev{:controller =>"card", :action=>"index"} На шаг назад
-        %button.button.button-next{:id =>'registration_button', :name => 'registration_button', :value => 'registration_button'}
-          Готово
+        .container
+          %g:link.button.button-prev{:controller =>"card", :action=>"index"} На шаг назад
+          %button.button.button-next{:id =>'registration_button', :name => 'registration_button', :value => 'registration_button'}
+            Готово
     .popup_block{:id => 'popup_block'}
       .popup_content{:id => 'popup_content'}
         .popup-style-top

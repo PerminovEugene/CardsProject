@@ -9,9 +9,8 @@
 		%{--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">--}%
 		<title><g:layoutTitle default="Grails"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
+		<link rel="shortcut icon" href="/CardsProject/assets/favicon.ico" type="image/x-icon">
+
   		<asset:stylesheet src="application.css"/>
 		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
@@ -19,6 +18,7 @@
         <script src='/CardsProject/assets/popup_for_registration_header.js' type='text/javascript'></script>
 	</head>
 	<body>
+        <div class="page-wrapper">
 		<div class="header" id="header" role="banner">
             <div class="container">
                 <div class="logo-block">
@@ -51,10 +51,6 @@
             </div>
         </div>
 		<g:layoutBody/>
-        <div class="template-footer">
-            <a class="first-link-footer" href="http://7bits.ru/">7bits.ru</a>
-            <h4>Есть вопросы? Пишите:</h4>
-            <a href="http://gmail.com/">bestrecards.project@gmail.com</a>
         </div>
         <div class='popup_block_t' id='popup_block_t'>
             <div class='popup_content_t' id='popup_content_t'>
@@ -102,5 +98,10 @@
         </div>
     </div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+    <div class="template-footer">
+        <a class="first-link-footer" href="http://7bits.ru/">7bits.ru</a>
+        <h4>Есть вопросы? Пишите:</h4>
+        <a href="http://gmail.com/">bestrecards.project@gmail.com</a>
+    </div>
 	</body>
 </html>

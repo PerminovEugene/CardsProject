@@ -56,14 +56,14 @@
               %img.picture{:id => "picture"}
       .preview-block
         %img#picture-preview{:src => "${session._picture}"}
-    %g:form.js-form{:controller => "picturesList", :action => "save", :enctype => "multipart/form-data"}
-      %g:hiddenField{:name => "path", :class => "hidden-path"}
-      %g:hiddenField{:name => "id", :class => "hidden-id"}
-      .form-style
-        Автор открыток: Ева Рупенко
-      .footer
-        %a.button.button-next.js-submit Далее
-        %span.error-text.js-error
-          /.footer.footer-absolute
-          /  .container
-          /    %button#next-step-button.button.button-next{:name => "next_step_button", :value => "next_step"} Готово
+      %g:form.js-form{:controller => "picturesList", :action => "save", :enctype => "multipart/form-data"}
+        %g:hiddenField{:name => "path", :class => "hidden-path"}
+        %g:hiddenField{:name => "id", :class => "hidden-id"}
+        .footer
+          .form-style
+            Автор открыток: Ева Рупенко
+          %a.button.button-next.js-submit Далее
+          %span.error-text.js-error
+            /.footer.footer-absolute
+            /  .container
+            /    %button#next-step-button.button.button-next{:name => "next_step_button", :value => "next_step"} Готово

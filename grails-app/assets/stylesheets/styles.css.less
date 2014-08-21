@@ -18,11 +18,24 @@ ul {
   padding: 0px;
   list-style-type: none;
 }
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+body {
+//  min-width: 100%;
+  min-width: 960px;
   color: #696969;
   background-color: #f8f8f8;
 }
+//.page-wrapper {
+//  height: auto;
+//  min-height: 100%;
+//  margin-bottom: -40px;
+//}
+
+
 .header {
   background-color: #313131;
   height: 30px;
@@ -48,7 +61,7 @@ body {
 //  float: left;
   display: inline-block;
   vertical-align: top;
-  margin-right: 16%;
+  margin-right: 19%;
   color: white;
   font-size: 14px;
   margin-top: 2%;
@@ -56,14 +69,8 @@ body {
 .account-info {
   display: inline-block;
   vertical-align: top;
-  width: 30%;
+  width: 27%;
   padding-top: 10px;
-}
-.container {
-  width: 960px;
-  margin: 0px auto;
-  min-height: 100%;
-//  margin-bottom: 3%;
 }
 .page h1{
   font-family: Nautilus;
@@ -73,21 +80,41 @@ body {
 .page {
   padding: 30px 0px;
   position: relative;
+  height: 700px;
 }
+.container {
+  width: 50%;
+  min-width: 950px;
+  margin: 0px auto;
+//  min-height: 100%;
+//  margin-bottom: 3%;
+}
+.container-wide {
+  width: 57%;
+  margin: 0 auto;
+  min-width: 960px;
+}
+
+.big-container {
+  height: 750px;
+}
+
 .footer-absolute {
     position: absolute;
     bottom: 0;
     height: 50px;
 }
 .footer {
-  width: 88%;
+//  width: 88%;
   margin-top: 20px;
+  height: 70px;
+  margin-bottom: 40px;
 
   .button-next {
 //    float: right;
     display: inline-block;
     float: right;
-    margin-right: 2%;
+    margin-right: 0;
     background-color: #ffa112;
     border-color: #ffa112;
     border-style: solid;
@@ -116,8 +143,9 @@ body {
 .button {
 //  padding: 10px 55px;
  padding-top: 15px;
+ padding-bottom: 15px;
   width: 16%;
-  height: 45px;
+//  height: 45px;
   color: #ffffff;
   border: none;
   font-family: PT_Sans_Regular;
@@ -126,21 +154,22 @@ body {
   text-decoration: none;
   text-align: center;
   display: block;
-  margin-bottom: 5%;
+//  margin-bottom: 5%;
   border-radius: 9px;
+  background-color: #ffa112;
 }
 //
 //footer on template
 //
 .template-footer {
   background-color: #313131;
-  position: bottom;
+//  position: bottom;
   width: 100%;
   height: 40px;
- // position: absolute;
-  bottom: 0;
-  left: 0;
-  display: inline-block;
+//  position: absolute;
+//  bottom: 0;
+//  left: 0;
+//  display: inline-block;
   padding-bottom: 5px;
   padding-top: 0px;
   a {
@@ -165,7 +194,7 @@ body {
 }
 .template-footer h4, a {
   display: inline-block;
-  margin-top: 14px;
+//  margin-top: 14px;
 }
 
 .popup-style-top, .popup-style-down {
@@ -186,5 +215,11 @@ body {
 .popup-style-down {
   background-image: url("/CardsProject/assets/send_step/registration_down_border.png");
   bottom: -17px;
+}
+
+.account-info {
+  button {
+    cursor: pointer;
+  }
 }
 
