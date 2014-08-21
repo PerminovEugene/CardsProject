@@ -133,7 +133,8 @@
   right: 1%;
 }
 .sender-preview-block {
-  background-color: blue;
+//  background-color: blue;
+
   width: 40%;
   height: 233px;
   margin-right: 0px;
@@ -142,9 +143,10 @@
   position: absolute;
   top: 19.3%;
   left: 25.1%;
+  padding-left: 30px;
+  padding-top: 30px;
 }
 .mark {
-  background-color: #ffff00;
   width: 30%;
   height:233px;
   margin-right: 0px;
@@ -154,8 +156,7 @@
   top: 19.3%;
   right: 0%;
 }
-.receiver-preview-block {
-  background-color: green;
+.big-post-code{
   width: 30%;
   height: 233px;
   margin-right: 0px;
@@ -164,9 +165,16 @@
   position: absolute;
   top: 55%;
   left: 25.1%;
+  .receiver-post-code {
+    margin-top: 33%;
+    font-size: 70px;
+    color: #313131;
+    font-family: zipcode;
+    padding-left: 42px;
+    padding-bottom: 30px;
+  }
 }
-.big-post-code {
-  background-color: red;
+.receiver-preview-block  {
   width: 40%;
   height: 233px;
   margin-right: 0px;
@@ -175,16 +183,28 @@
   position: absolute;
   top: 55%;
   right: 0%;
-}
-.sender-preview-block {
   white-space: normal;
-//  margin-top: 0px;
-//  margin-bottom: 0px;
-//  margin: 0!important;
-  padding-left: 30px;
-  padding-top: 30px;
+  padding-right: 30px;
+}
+.sender-preview-block, .receiver-preview-block {
+  white-space: normal;
   .block-h5 {
     color: darkgrey;
     margin-right: 0px;
+  }
+  .sender-text {
+    font-size: 20px;
+    color: darkslateblue;
+    text-decoration: underline;
+  }
+  .sender-code {
+    font-size: 23px;
+    color: #313131;
+    border-style: solid;
+    border-color: #b3b3b3;
+    border-width: 3px;
+    width: 25%;
+    text-align: center;
+    float:right;
   }
 }

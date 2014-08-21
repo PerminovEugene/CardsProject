@@ -56,14 +56,25 @@
           .big-destination-card-structure
             .sender-preview-block
               .block-h5 От кого:
-              .sender-name-text ${session.currentCard.sign}
-              .sender-post-text ${session.currentCard.sign}
-              .sender-company-text ${session.currentCard.sign}
+              .sender-text ${session.companySender.sender.name}
+              .sender-text ${session.companySender.sender.post}
+              .sender-text ${session.companySender.name}
               .block-h5 Откуда:
-              .sender-company-text ${session.currentCard.sign}
+              .sender-text ${session.companySender.address.city} ${session.companySender.address.street} ${session.companySender.address.house}
+              .sender-text ${session.companySender.address.housing} ${session.companySender.address.office}
+              .sender-code${session.companySender.address.postcode}
             .mark
-            .receiver-preview-block
             .big-post-code
+              .receiver-post-code ${session.companyReceiver.address.postcode}
+            .receiver-preview-block
+              .block-h5 От кого:
+              .sender-text ${session.companyReceiver.receiver.name}
+              .sender-text ${session.companyReceiver.receiver.post}
+              .sender-text ${session.companyReceiver.name}
+              .block-h5 Откуда:
+              .sender-text ${session.companyReceiver.address.city} ${session.companyReceiver.address.street} ${session.companyReceiver.address.house}
+              .sender-text ${session.companyReceiver.address.housing} ${session.companyReceiver.address.office}
+              .sender-code${session.companyReceiver.address.postcode}
       .card-preview.card-face
         %h2 Лицевая сторона
         .card-view
