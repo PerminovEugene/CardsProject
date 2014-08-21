@@ -68,11 +68,29 @@
         </div>
         <div class='big-back-picture'>
           <h4>Обратная сторона</h4>
-          <div class='big-back-picture-structure'></div>
+          <div class='big-back-picture-structure'>
+            <div class='card-back-view'>${session.currentCard.text}</div>
+            <div class='sign-back'>${session.currentCard.sign}</div>
+            <div class='file-logo'>
+              <img src='../${session._logo}' width='125' />
+            </div>
+          </div>
         </div>
         <div class='big-destination-card'>
           <h4>Конверт</h4>
-          <div class='big-destination-card-structure'></div>
+          <div class='big-destination-card-structure'>
+            <div class='sender-preview-block'>
+              <div class='block-h5'>От кого:</div>
+              <div class='sender-name-text'>${session.currentCard.sign}</div>
+              <div class='sender-post-text'>${session.currentCard.sign}</div>
+              <div class='sender-company-text'>${session.currentCard.sign}</div>
+              <div class='block-h5'>Откуда:</div>
+              <div class='sender-company-text'>${session.currentCard.sign}</div>
+            </div>
+            <div class='mark'></div>
+            <div class='receiver-preview-block'></div>
+            <div class='big-post-code'></div>
+          </div>
         </div>
       </div>
       <div class='card-preview card-face'>

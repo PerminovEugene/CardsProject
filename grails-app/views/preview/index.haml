@@ -47,9 +47,23 @@
         .big-back-picture
           %h4 Обратная сторона
           .big-back-picture-structure
+            .card-back-view ${session.currentCard.text}
+            .sign-back ${session.currentCard.sign}
+            .file-logo
+              %img{:src => "../${session._logo}", :width => "125"}
         .big-destination-card
           %h4 Конверт
           .big-destination-card-structure
+            .sender-preview-block
+              .block-h5 От кого:
+              .sender-name-text ${session.currentCard.sign}
+              .sender-post-text ${session.currentCard.sign}
+              .sender-company-text ${session.currentCard.sign}
+              .block-h5 Откуда:
+              .sender-company-text ${session.currentCard.sign}
+            .mark
+            .receiver-preview-block
+            .big-post-code
       .card-preview.card-face
         %h2 Лицевая сторона
         .card-view
