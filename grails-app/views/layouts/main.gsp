@@ -22,7 +22,7 @@
 		<div class="header" id="header" role="banner">
             <div class="container">
                 <div class="logo-block">
-                    <a href="/CardsProject" >
+                    <a href="/CardsProject/picturesList/index" >
                         <asset:image src="logo_o.png" alt="GoodCards" class="project-logo"/>
                     </a>
                 </div>

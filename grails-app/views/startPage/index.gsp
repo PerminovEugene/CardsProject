@@ -1,7 +1,7 @@
 <%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY index.haml --%>
 <html xmlns='http://www.w3.org/1999/html'>
   <head>
-    <title>Отправлено</title>
+    <title>Добро пожаловать</title>
     <meta content='main' name='layout' />
   </head>
   <body>

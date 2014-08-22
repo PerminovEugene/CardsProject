@@ -23,7 +23,7 @@ environments {
             driverClassName = "com.mysql.jdbc.Driver"
             username = "root"
             password = "root"
-            url = "jdbc:mysql://localhost:3306/CardsProject?autoreconnect=true?useUnicode=true&characterEncoding=Cp1251"
+            url = "jdbc:mysql://localhost:3306/CardsProject?autoreconnect=true?useUnicode=true&characterEncoding=utf8"
         }
     }
     test {
@@ -33,7 +33,7 @@ environments {
             driverClassName = "com.mysql.jdbc.Driver"
             username = "root"
             password = "root"
-            url = "jdbc:mysql://localhost:3306/CardsProject?autoreconnect=true?useUnicode=true&characterEncoding=Cp1251"
+            url = "jdbc:mysql://localhost:3306/CardsProject?autoreconnect=true?useUnicode=true&characterEncoding=utf8"
         }
     }
     production {
@@ -43,7 +43,7 @@ environments {
             driverClassName = "com.mysql.jdbc.Driver"
             username = "root"
             password = "root"
-            url = "jdbc:mysql://localhost:3306/CardsProject?autoreconnect=true?useUnicode=true&characterEncoding=Cp1251"
+            url = "jdbc:mysql://localhost:3306/CardsProject?autoreconnect=true?useUnicode=true&characterEncoding=utf8"
         }
     }
 }

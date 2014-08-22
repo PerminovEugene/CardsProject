@@ -9,16 +9,19 @@
     - send_reg = 'отправить'
     .cheat-for-header
     .mail-style
-    .big-container.page
+    .page
       .head-main Ваша открытка будет доставлена в течении недели!
       .send_logo
         %img{:id => 'picture_send_logo', :src => '/CardsProject/assets/send_step/airoplane.jpg'}
       .subscribe_block
-      %img.left-image-cloud{:src => "/CardsProject/assets/little_image_site/left_cloud.png"}
-      %img.right-image-cloud{:src => "/CardsProject/assets/little_image_site/right_cloud.png"}
-      .send-step-footer
-        %g:link.size-subscribe.button-subscribe{:action => "toMainPage"} Поделиться
-        %g:link.size-subscribe-little.button-subscribe{:action => "toMainPage"} f
-        %g:link.send-step-button.button-next{:action => "toMainPage"} Создать еще открытку
-        %g:link.send-step-button.button-next{:action => "toMainPage"} Вернуться на главную
+      .footer
+        .container
+          /
+            %g:link.size-subscribe.button-subscribe{:action => "toMainPage"} Поделиться
+            %g:link.size-subscribe-little.button-subscribe{:action => "toMainPage"} f
+          %g:link.send-step-button.button-prev{:action => "toMainPage"} Вернуться на главную
+          %g:link.send-step-button.button-next{:action => "toMainPage"} Создать еще открытку
+      .container-cloud
+        %img.left-cloud{:src => "/CardsProject/assets/little_image_site/left_cloud.png"}
+        %img.right-cloud{:src => "/CardsProject/assets/little_image_site/right_cloud.png"}
 

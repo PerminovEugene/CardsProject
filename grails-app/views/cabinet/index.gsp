@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class='container page'>
+    <div class='container big-page page'>
       <g:form action='updateUserInfo' class='cabinet-form js-form js-cabinet-form' controller='cabinet' enctype='multipart/form-data'>
         <div class='address-form'>
           <h2>Данные указанные на конверте</h2>

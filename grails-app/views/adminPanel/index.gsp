@@ -7,8 +7,8 @@
     <script src='../js/hideLinkForAdmin.js' type='text/javascript'></script>
   </head>
   <body>
-    <div class='container page'>
-      <g:form action='update' class='container' controller='adminPanel'>
+    <div class='big-container big-page page'>
+      <g:form action='update' class='big-container' controller='adminPanel'>
         <table class='admin-table'>
           <thead>
             <tr>

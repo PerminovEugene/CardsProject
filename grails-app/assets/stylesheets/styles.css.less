@@ -64,13 +64,19 @@ body {
   margin-right: 19%;
   color: white;
   font-size: 14px;
-  margin-top: 2%;
+  margin-top: 5px;
 }
 .account-info {
   display: inline-block;
   vertical-align: top;
   width: 27%;
   padding-top: 10px;
+  a, button {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 .page h1{
   font-family: Nautilus;
@@ -80,7 +86,13 @@ body {
 .page {
   padding: 30px 0px;
   position: relative;
-  height: 700px;
+  min-height: 700px;
+}
+.big-page {
+  min-height: 746px;
+}
+.login-page {
+  min-height: 796px;
 }
 .container {
   width: 50%;
@@ -94,10 +106,11 @@ body {
   margin: 0 auto;
   min-width: 960px;
 }
-
 .big-container {
-  height: 750px;
+  width: 95%;
 }
+
+
 
 .footer-absolute {
     position: absolute;
@@ -165,13 +178,13 @@ body {
   background-color: #313131;
 //  position: bottom;
   width: 100%;
-  height: 40px;
+//  height: 40px;
 //  position: absolute;
 //  bottom: 0;
 //  left: 0;
 //  display: inline-block;
-  padding-bottom: 5px;
-  padding-top: 0px;
+  padding-bottom: 12px;
+  padding-top: 15px;
   a {
     color: #ffa112;
     font-size: 14px;
@@ -190,6 +203,7 @@ body {
     font-size: 14px;
     font-weight:300;
     font-family: PT_Sans_Regular;
+    margin: 0;
   }
 }
 .template-footer h4, a {

@@ -6,7 +6,7 @@
     <script src='../js/hideLinkForAdmin.js' type='text/javascript'></script>
   </head>
   <body>
-    <div class='container page'>
+    <div class='container login-page page'>
       <g:form action='login' class='login-form' controller='adminPanel'>
         <input name='login' type='text' />
         <input name='password' type='password' />

@@ -23,9 +23,10 @@
       .text {
           width: 143mm;
           height: 67mm;
-          font-family: PT_Sans_Regular;
+          font-family: Oranienbaum-Regular;
           font-size: 18px;
           padding: 2mm;
+          border-bottom: 2px solid #e0e0e0;
       }
       .footer{
           width: 152mm;
@@ -42,9 +43,10 @@
           width: 98mm;
           padding: 2mm;
           vertical-align: top;
+          font-family: Oranienbaum-Regular;
       }
       .logo, .sign, .text {
-          border: 0.5mm dashed #e0e0e0;
+          /*border: 0.5mm dashed #e0e0e0;*/
       }
       .logo, .sign {
           height: 25mm;

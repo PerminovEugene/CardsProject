@@ -1,24 +1,24 @@
 package cardsproject
 
 class AdminPanelController {
-    def success = false
+//    def success = false
 
     def login() {
         def login = 'CardsProject'
         def password = 'CardsProject'
         if ((params.login==login)&(params.password==password)){
-            success = true
+            session.admin_success = true
             redirect(action: 'index')
         } else {
-            success = false
+            session.admin_success = false
         }
     }
     def exit() {
-        success = false
+        session.admin_success = false
         redirect(action: 'login')
     }
     def index() {
-        if (success) {
+        if (session.admin_success == true) {
             def cards = Card.getAll()
             ["cards":cards]
         } else {
