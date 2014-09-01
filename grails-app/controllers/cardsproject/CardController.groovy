@@ -30,8 +30,8 @@ class CardController {
             def name = img.getOriginalFilename()
             img.transferTo(new File(context + path + name))
             session['_logo'] = path + name
+            println(name)
         }
-
         session.currentCard.sign = params.card_sign
         session.currentCard.text = params.card_text
         redirect(controller:'preview', action: 'index')
