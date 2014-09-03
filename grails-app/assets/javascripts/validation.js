@@ -4,9 +4,15 @@
 $(document).ready(function() {
     $('.js-error').empty();
     $(document).on('click', '.js-submit', function(){
+//        максимальная длина сообщения на открытке
+        var _SIZEOFTEXTCARD_ = 650;
+//        максимальная длина подписи
+        var _SIZEOFSIGNCARD_ = 250;
         var text_fields = $('.js-form input[type=text]');
         var file = $('.js-form input[type=file]');
         var obligatory_fields = $('.obligatory-field');
+        var postcode_fields = $('.js-postcode-validation');
+        var home_fields = $('.js-home-validation');
         var errMessage = '';
         var counter = 0;
         var success = false;
@@ -47,9 +53,51 @@ $(document).ready(function() {
 //                else if (currentInput instanceof small-input) {
 //                    counter++;
 //                }
-        })
+        });
+//        проверяем валидность индекса (ровно 6 цифр) если не валидно, то счетчик уменьшаем
+        postcode_fields.each(function(index) {
+          var currentInput = this;
+          if (!validationPostCode(currentInput)) {
+              counter--;
+          }
+        });
+//        проверяем поле дом, на цифры, если не валидны, то счетчик уменьшаем
+        home_fields.each(function(index){
+            var currentInput = this;
+            if(!validationHomeNumber(currentInput)) {
+                counter --;
+            }
+        });
+
+
+//        проверяем размер сообщения на открытке на шаге 3
+        var textCard = $('.js-text-validation');
+        var textCorrect = false;
+        textCard.each(function(index) {
+            var currentInput = this;
+            if (currentInput.value.length < _SIZEOFTEXTCARD_) {
+                textCorrect = true;
+            }
+         });
+//        проверяем размер подписи на открытке на шаге 3
+        if (textCorrect) {
+            var signCard = $('.js-sign-validation');
+            signCard.each(function (index) {
+                var currentInput = this;
+                if (currentInput.value.length >= _SIZEOFSIGNCARD_) {
+                    textCorrect = false;
+                }
+            });
+            if (textCorrect == true) {
+                success = true;
+            }
+        }
+
+
+//        если количество обязательных полей совпало с каунтером то все валидно (для шага 2)
+//        если
         console.log(counter, text_fields.length);
-        if ((counter == obligatory_fields.length) || (obligatory_fields.length == 0)) {
+        if (counter == obligatory_fields.length && counter != 0) {
             success = true;
         }
 
@@ -105,3 +153,20 @@ var validationOnEmpty = function(current_input){
         return true
     }
 }*/
+
+var validationPostCode = function(currentInput) {
+    reg = /^[0-9]{6}/;
+    if (!currentInput.value.match(reg)) {
+        currentInput.style.borderColor = "#ed452a";
+        return false;
+    }
+    return true;
+}
+var validationHomeNumber = function(currentInput) {
+    reg = /^[\.\+\*0-9_-]{1,10}$/i;
+    if (!currentInput.value.match(reg)) {
+        currentInput.style.borderColor = "#ed452a";
+        return false;
+    }
+    return true;
+}

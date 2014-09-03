@@ -21,7 +21,6 @@ class PicturesListController {
                     'picture_id' : params.id
             ])
         }
-        println('noob')
         render (view: 'index.gsp')
     }
 
@@ -65,9 +64,6 @@ class PicturesListController {
         session.currentCard.picture_id = params.id
         println(params)
         session['_picture'] = params.path
-        //render("ok") as JSON
         redirect (controller:'envelope', action: 'index')
-        //redirect(controller:'cardsList', action: 'look')
-
     }
 }

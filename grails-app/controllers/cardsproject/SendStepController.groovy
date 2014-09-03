@@ -58,7 +58,7 @@ class SendStepController {
         }
         db.addCompanyToUser(user_id, companySender)
         session.setAttribute('user_id', user_id)
-
+        println("company_receiver")
         def companyReceiver = db.getCompany(session.companyReceiver.name)
         if (companyReceiver != null) {
             //log
