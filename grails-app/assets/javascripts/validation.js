@@ -97,7 +97,7 @@ $(document).ready(function() {
 //        если количество обязательных полей совпало с каунтером то все валидно (для шага 2)
 //        если
         console.log(counter, text_fields.length);
-        if (counter == obligatory_fields.length && counter != 0) {
+        if (counter == obligatory_fields.length || obligatory_fields.length == 0) {
             success = true;
         }
 

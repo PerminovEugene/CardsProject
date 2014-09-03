@@ -5,77 +5,7 @@
 // Load pictures at start
 $(document).ready(function () {
     loadAllPictures();
-})
-
-/*
-function loadFirstPicture(){
-    var items = document.getElementById('list');
-    var imgSource = items.children[1].children;
-    var imgDest = document.getElementById('picture_preview');
-    imgDest["src"] = imgSource[0]["src"];
-}*/
-
-$(document).ready(function () {
-    $('#get-next-button').click(function () {
-        getNextPicturesFromServer();
-       // loadFirstPicture();
-    })
-})
-
-$(document).ready(function () {
-    $('#get-previous-button').click(function () {
-        getPreviousPicturesFromServer();
-//       loadFirstPicture();
-    })
-})
-
-/**
- * фэйл в том что  пока сохраняем в поле нэйм исходный урл с серва чтобы потом кинуть его обратно при выборе
- */
-function getNextPicturesFromServer() {
-    var items = document.getElementById('list');
-    for (var i = 0; i<items.children.length ; i++){
-        $.ajax({
-            url: 'picturesList/getNextPictures',
-            type: 'get',
-            dataType: 'json',
-            success: (function (data) {
-                i +=1;
-                var img = items.children[i-7].children;
-                img[0]["src"] = data[0];
-                img[0]["name"] = data[0];
-                img[0].setAttribute('data-id', data[1]);
-            }),
-            error: (function (data) {
-                i +=1;
-                var img = items.children[i-7].children;
-                img[0]["background-color"] = "red";
-            })
-        })
-    }
-}
-
-var getPreviousPicturesFromServer = function() {
-    var items = document.getElementById('list');
-    for (var i = 0; i<items.children.length ; i++){
-        $.ajax({
-            url: 'picturesList/getPreviousPictures',
-            type: 'get',
-            dataType: 'json',
-            success: (function (data) {
-                i +=1;
-                var img = items.children[i-7].children;
-                img[0]["src"] = data;
-                img[0]["name"] = data;
-            }),
-            error: (function (data) {
-                i +=1;
-                var img = items.children[i-7].children;
-                img[0]["background-color"] = "red";
-            })
-        })
-    }
-}
+});
 
 var loadAllPictures = function() {
     $.ajax({
@@ -93,10 +23,6 @@ var loadAllPictures = function() {
             var img = document.getElementById('picture-preview');
             img["src"] = pictures[0].src;
             var data_id = $(pictures[0]).attr('data-id');
-//            img.setAttribute('data-id', data_id);
-//            write in hidden field in form
-//            $('.hidden-path').val(this.src);
-           // alert ( this.src);
             $('.hidden-path').val(pictures[0].src);
             $('.hidden-id').val(data_id);
         }),
@@ -104,7 +30,7 @@ var loadAllPictures = function() {
             console.log('fail');
         })
     })
-}
+};
 // отобразить большую картинку
 $(document).ready(function () {
     $('.picture').click(function () {
@@ -114,15 +40,17 @@ $(document).ready(function () {
         $('.hidden-path').val(this.src);
         $('.hidden-id').val(data_id);
     })
-})
+});
 // тыкнули батон следующие картинки
+/*
 $(document).ready(function () {
     $('#next-step-button').click(function ()
     {
         //onNextStep();
     })
-})
+})*/
 // тыкнули кнопку перйти на следующий шаг
+/*
 var onNextStep = function(){
     var img = $('#picture-preview');
     var imgDest = img.attr('src');
@@ -133,7 +61,10 @@ var onNextStep = function(){
         alert("сначала выберите открытку");
     }
     else{
-        var toServer = {path : imgDest, id: imgId};
+        var toServer = {path : imgDest,
+var getPreviousPicturesFromServer = function() {
+    var items = document.getElementById('list');
+ id: imgId};
         $.ajax({
             url: 'picturesList/saveChoicePicture',
             type: 'post',
@@ -144,12 +75,68 @@ var onNextStep = function(){
             success: (function (response) {
 //                alert(response);
                 window.location.replace("envelope/index");
-            }),
-            error: (function (data) {
-            //  alert(imgDest["name"]);
-            //   alert(response);
-               alert('cant send picture now :(');
-            })
-        })
-    }
-}
+            }),￼
+ /*
+ $(document).ready(function () {
+ $('#get-next-button').click(function () {
+ getNextPicturesFromServer();
+ // loadFirstPicture();
+ })
+ })*/
+/*
+ $(document).ready(function () {
+ $('#get-previous-button').click(function () {
+ getPreviousPicturesFromServer();
+ //       loadFirstPicture();
+ })
+ })*/
+
+/**
+ * фэйл в том что  пока сохраняем в поле нэйм исходный урл с серва чтобы потом кинуть его обратно при выборе
+ */
+/*
+ function getNextPicturesFromServer() {
+ var items = document.getElementById('list');
+ for (var i = 0; i<items.children.length ; i++){
+ $.ajax({
+ url: 'picturesList/getNextPictures',
+ type: 'get',
+ dataType: 'json',
+ success: (function (data) {
+ i +=1;
+ var img = items.children[i-7].children;
+ img[0]["src"] = data[0];
+ img[0]["name"] = data[0];
+ img[0].setAttribute('data-id', data[1]);
+ }),
+ error: (function (data) {
+ i +=1;
+ var img = items.children[i-7].children;
+ img[0]["background-color"] = "red";
+ })
+ })
+ }
+ }*/
+/*
+ var getPreviousPicturesFromServer = function() {
+ var items = document.getElementById('list');
+ for (var i = 0; i<items.children.length ; i++){
+ $.ajax({
+ url: 'picturesList/getPreviousPictures',
+ type: 'get',
+ dataType: 'json',
+ success: (function (data) {
+ i +=1;
+ var img = items.children[i-7].children;
+ img[0]["src"] = data;
+ img[0]["name"] = data;
+ }),
+ error: (function (data) {
+ i +=1;
+ var img = items.children[i-7].children;
+ img[0]["background-color"] = "red";
+ })
+ })
+ }
+ }
+ */
