@@ -27,16 +27,24 @@ class PreviewController {
                         'e_mail'  : params.Mail,
                         'password': params.Pass
                 ]
-                // здесь нужно сделать сначала валидаию перед записью в бд если не успешна послать причину, иначе послать ок и редирект на
-                //toStart
-
-                //example for send json for ajax
+            def db = new DataBaseService()
+            def user = db.getUser(params.Mail);
+            if (user == null) {
                 render(contentType: 'text/json') {
                     [
-                            'e_mail'  : params.Mail,//тут код для валидности мэйла а ниже для паса
-                            'password': params.Pass
+                        'e_mail'  : "ok",//тут код для валидности мэйла
+//                            'password': params.Pass
                     ]
                 }
             }
+            else {
+                render(contentType: 'text/json') {
+                    [
+                        'e_mail'  : "locked",//тут код для валидности мэйла
+//                            'password': params.Pass
+                    ]
+                }
+            }
+        }
     }
 }

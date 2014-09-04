@@ -106,24 +106,6 @@
           </div>
         </div>
       </div>
-      <div class='card-preview card-face'>
-        <h2>Лицевая сторона</h2>
-        <div class='card-view'>
-          <img src='${session._picture}' />
-        </div>
-      </div>
-      <div class='card-preview card-back'>
-        <h2>Обратная сторона</h2>
-        <div class='card-view card'>
-          <div class='text'>${session.currentCard.text}</div>
-          <div class='file'>
-            <img src='../${session._logo}' width='125' />
-          </div>
-          <div class='sign'>${session.currentCard.sign}</div>
-        </div>
-        <span>Печать на гофрированной бумаге в три слоя,</span>
-        <Span>заботливо поглажена на прощание</Span>
-      </div>
       <div class='footer'>
         <div class='container'>
           <g:link action='index' class='button button-prev' controller='card'>На шаг назад</g:link>

@@ -147,6 +147,7 @@ class DataBaseService {
         return cards
     }
 
+
 //    def getAddress(long id_address) {
 //        def address = Address.get(id_address)
 //        return address

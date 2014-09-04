@@ -3,7 +3,6 @@ package cardsproject
 class SendStepController {
 
     def index() {
-        //было бы круто добавить логи
         render (view: 'index.gsp')
     }
 
@@ -11,7 +10,6 @@ class SendStepController {
 
         def db = new DataBaseService()
         def companySender
-//        println(session.userInfo)
         def user_id
 
         if (session.user_id != null) {
@@ -39,7 +37,6 @@ class SendStepController {
                     sender,
                     session._logo
             )
-//            println(companySender)
             try {
                  sendMail {
                      to session.userInfo.e_mail
@@ -79,7 +76,6 @@ class SendStepController {
                 user_id,
                 companyReceiver
         )
-        println('sad')
         session.removeAttribute('currentCard')
         session.removeAttribute('userInfo')
         session.removeAttribute('companySender')

@@ -26,7 +26,6 @@ class EnvelopeController {
                 ]
             }
         }
-
         if ( session ['companyReceiver'] == null) {
             session['companyReceiver'] = [
                     name    : '',

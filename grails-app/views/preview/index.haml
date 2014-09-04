@@ -75,19 +75,6 @@
               .sender-text ${session.companyReceiver.address.city} ${session.companyReceiver.address.street} ${session.companyReceiver.address.house}
               .sender-text ${session.companyReceiver.address.housing} ${session.companyReceiver.address.office}
               .sender-code${session.companyReceiver.address.postcode}
-      .card-preview.card-face
-        %h2 Лицевая сторона
-        .card-view
-          %img{:src => "${session._picture}"}
-      .card-preview.card-back
-        %h2 Обратная сторона
-        .card-view.card
-          .text ${session.currentCard.text}
-          .file
-            %img{:src => "../${session._logo}", :width => "125"}
-          .sign ${session.currentCard.sign}
-        %span Печать на гофрированной бумаге в три слоя,
-        %Span заботливо поглажена на прощание
       .footer
         .container
           %g:link.button.button-prev{:controller =>"card", :action=>"index"} На шаг назад
