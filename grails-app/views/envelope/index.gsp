@@ -66,10 +66,10 @@
           <br />
           <g:textField class='city wide-input obligatory-field' name='sender_city' placeholder='$city' value='${session.companySender.address.city}' />
           <g:textField class='street wide-input obligatory-field' name='sender_street' placeholder='$street' value='${session.companySender.address.street}' />
-          <g:textField class='house small-input obligatory-field' name='sender_house' placeholder='$house' value='${session.companySender.address.house}' />
+          <g:textField class='house small-input obligatory-field js-home-validation' name='sender_house' placeholder='$house' value='${session.companySender.address.house}' />
           <g:textField class='housing small-input' name='sender_housing' placeholder='$housing' value='${session.companySender.address.housing}' />
           <g:textField class='office small-input' name='sender_office' placeholder='$office' value='${session.companySender.address.office}' />
-          <g:textField class='postcode obligatory-field' name='sender_postcode' placeholder='$postcode' value='${session.companySender.address.postcode}' />
+          <g:textField class='postcode obligatory-field js-postcode-validation' name='sender_postcode' placeholder='$postcode' value='${session.companySender.address.postcode}' />
           <a href='http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx' target='_blank'>Уточнить индекс</a>
         </div>
         <div class='receiver address-form'>
@@ -80,10 +80,10 @@
           <br />
           <g:textField class='city wide-input obligatory-field' name='receiver_city' placeholder='$city' value='${session.companyReceiver.address.city}' />
           <g:textField class='street wide-input obligatory-field' name='receiver_street' placeholder='$street' value='${session.companyReceiver.address.street}' />
-          <g:textField class='house small-input obligatory-field' name='receiver_house' placeholder='$house' value='${session.companyReceiver.address.house}' />
+          <g:textField class='house small-input obligatory-field js-home-validation' name='receiver_house' placeholder='$house' value='${session.companyReceiver.address.house}' />
           <g:textField class='housing small-input' name='receiver_housing' placeholder='$housing' value='${session.companyReceiver.address.housing}' />
           <g:textField class='office small-input' name='receiver_office' placeholder='$office' value='${session.companyReceiver.address.office}' />
-          <g:textField class='postcode obligatory-field' name='receiver_postcode' placeholder='$postcode' value='${session.companyReceiver.address.postcode}' />
+          <g:textField class='postcode obligatory-field js-postcode-validation' name='receiver_postcode' placeholder='$postcode' value='${session.companyReceiver.address.postcode}' />
           <a href='http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx' target='_blank'>Уточнить индекс</a>
         </div>
         <div class='footer'>

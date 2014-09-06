@@ -35,12 +35,12 @@
       %h1 Заполните обратную сторону
       %g:form.js-form{:controller => "card", :action => "save", :enctype => "multipart/form-data"}
         .card
-          %g:textArea.text{:name => "card_text", :value => "${session.currentCard.text}", :placeholder => "$text"}/
+          %g:textArea.text.js-text-validation{:name => "card_text", :value => "${session.currentCard.text}", :placeholder => "$text"}/
           %input.file.js-hide-file-input{:type => "file", :id => "logo",  :name => "logo", :value => "${session._logo}"}/
           .js-logo-presenter.file#js-logo-presenter
             %img.js-image-logo{:src => '/CardsProject/assets/little_image_site/plus_on_mail.png'}
             %h3 Загрузите логотип
-          %g:textArea.sign{:name => "card_sign", :value => "${session.currentCard.sign}", :placeholder => "$sign"}/
+          %g:textArea.sign.js-sign-validation{:name => "card_sign", :value => "${session.currentCard.sign}", :placeholder => "$sign"}/
         .footer
           %g:link.button.button-prev{:controller =>"envelope", :action=>"index"} На шаг назад
           %a.button.button-next.js-submit Далее
