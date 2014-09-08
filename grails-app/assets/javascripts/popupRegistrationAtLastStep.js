@@ -34,23 +34,20 @@ $(document).ready(function () {
         };
         var myJson = JSON.stringify(obj);
         $.ajax({
-            url: '../preview/registration',
-            type: 'post',
+            url: '../preview/isLogin',
+            type: 'GET',
             dataType: 'JSON',
-            data: obj,
-            response: 'JSON',
+//            response: 'JSON',
             success: (function (response) {
-                if (response.response == "true")
-                {
+                if (response.response == "true") {
                     window.location.replace('../sendStep/saveInDb');
-                }
-                else {
+                } else {
                     PopUpShow();
                 }
             }),
             error: (function (response) {
                 //time to logging
-                alert("error checkuser");
+                alert("error at check user");
             })
         })
     })
@@ -98,7 +95,7 @@ function sendRegistrationInfo() {
     var userMail = document.getElementById("mail").value;
     var userPass = document.getElementById("pass").value;
     var obj = {
-        "Request": 'registration',
+//        "Request": 'registration',
         "Mail": userMail,
         "Pass": userPass
     };

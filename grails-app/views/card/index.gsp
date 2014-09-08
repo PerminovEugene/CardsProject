@@ -4,7 +4,7 @@
   <head>
     <meta content='main' name='layout' />
     <title>Ввод текста</title>
-    <script src='/CardsProject/assets/back-card.js' type='text/javascript'></script>
+    <script src='/CardsProject/assets/backCard.js' type='text/javascript'></script>
   </head>
   <body>
     <!-- Declare Variable -->

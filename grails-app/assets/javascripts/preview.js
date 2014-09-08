@@ -3,8 +3,6 @@
  */
 
 $(document).ready(function(){
-    $('.card-face').hide();
-    $('.card-back').hide();
     $('.big-destination-card').hide();
     $('.big-back-picture').hide();
     $('.big-picture').show();

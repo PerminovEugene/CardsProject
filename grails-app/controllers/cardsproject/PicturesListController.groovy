@@ -2,6 +2,7 @@ package cardsproject
 import grails.converters.JSON
 
 class PicturesListController {
+    def linkerService
     /**
      * @return страницу первого шага отправления открытки
      */
@@ -22,10 +23,7 @@ class PicturesListController {
      * @return возвращает JSON список, содержащий айдишники картинок и пути к картинкам
      */
     def sendListPictures() {
-        def linker = new LinkerService()
-        def listPicturesId = linker.getListPicturesId()
-        def listPicturesPath = linker.getListPicturesPath()
-        def data = ["id" : listPicturesId, "path" : listPicturesPath] as JSON
+        def data = linkerService.fetchPictureListJSON()
         render data
     }
 

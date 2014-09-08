@@ -4,17 +4,14 @@ import grails.converters.JSON
 import org.springframework.web.multipart.MultipartFile
 
 class CabinetController {
+//    def db = new DataBaseService()
+    def dataBaseService
 
-
-    def db = new DataBaseService()
-
-    def index() {
-
-    }
+    def index() {}
 
     def sendCards() {
         def user_id = session.user_id
-        def cards = db.getCards(user_id)
+        def cards = dataBaseService.fetchCards(user_id)
         def data = []
         cards.each() {
             def card = [
@@ -34,7 +31,7 @@ class CabinetController {
 
     def sendUserInfo() {
         def user_id = session.user_id
-        def company = db.getUserCompany(user_id)
+        def company = dataBaseService.fetchUserCompany(user_id)
         def address = company.address
         def human = company.human
         def data = ["company" : company, "human" : human, "address" : address] as JSON
@@ -45,7 +42,7 @@ class CabinetController {
         def user_id = session.user_id
         MultipartFile img
         String message
-        def company = db.getUserCompany(user_id)
+        def company = dataBaseService.fetchUserCompany(user_id)
         def logo = company.logo
         def address = company.address
         def human = company.human
@@ -64,8 +61,8 @@ class CabinetController {
                 'post' : params.post
         ]
 
-        db.saveAddress(address, newAddress)
-        db.saveHuman(human, newHuman)
+        dataBaseService.saveAddress(address, newAddress)
+        dataBaseService.saveHuman(human, newHuman)
 
         def context = servletContext.getRealPath("/")
         def path = 'images/temp/'
@@ -81,11 +78,11 @@ class CabinetController {
             logo = path + name
         }
 
-        if (db.getCompany(params.company) != null) {
-            db.saveCompany(company, logo)
+        if (dataBaseService.fetchCompany(params.company) != null) {
+            dataBaseService.saveCompany(company, logo)
             message = 'This company name already exist'
         } else {
-            db.saveCompany(company, params.company, logo)
+            dataBaseService.saveCompany(company, params.company, logo)
             message = 'Company updated'
         }
 

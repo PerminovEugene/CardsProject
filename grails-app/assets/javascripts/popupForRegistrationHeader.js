@@ -82,7 +82,7 @@ $(document).ready(function () {
             };
             var myJson = JSON.stringify(obj);
             $.ajax({
-                url: 'enterToSite/registration',
+                url: '../enterToSite/registration',
                 type: 'post',
                 dataType: 'JSON',
                 data: obj,

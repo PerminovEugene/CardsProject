@@ -1,11 +1,12 @@
 package cardsproject
 
 class EnterToSiteController {
+    def dataBaseService
 
     def index() {}
 
     def enter() {
-        def db = new DataBaseService()
+
         def user_id
 //        println(session.user_id)
         if (session.user_id == null) {
@@ -15,7 +16,7 @@ class EnterToSiteController {
             */
             def e_mail = params.Mail
             def password = params.Pass
-            user_id = db.getUser(e_mail, password)
+            user_id = dataBaseService.fetchUser(e_mail, password)
 //            println (user_id + 'its user id')
             if (user_id != null) {
                 session.user_id = user_id
@@ -76,26 +77,17 @@ class EnterToSiteController {
     def registration() {
         if (params.Request == "registration") {
             def mail = params.Mail
-            def db = new DataBaseService()
-            def user_id = db.getUser(mail)
+            def user_id = dataBaseService.fetchUser(mail)
             if (user_id != null ) {
-                render(contentType: 'text/json') { //user exist
-                    [
-                            'response':  'unsuccess'
-                    ]
-                }
+                render(contentType: 'text/json') {[ 'response':  'unsuccess' ]}
             } else { //user not exist, we create him
                 session['userInfo'] = [
                         'e_mail'  : params.Mail,
                         'password': params.Pass
                 ]
-                user_id = db.createUser(session.userInfo)
+                user_id = dataBaseService.createUser(session.userInfo)
                 session.user_id = user_id
-                render(contentType: 'text/json') {
-                    [
-                            'response': 'success',//тут код для валидности мэйла а ниже для паса
-                    ]
-                }
+                render(contentType: 'text/json') {[ 'response': 'success' ]}
             }
         }
     }

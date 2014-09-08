@@ -14,8 +14,9 @@
   		<asset:stylesheet src="application.css"/>
 		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
-        <script src='/CardsProject/assets/popup_for_enter.js' type='text/javascript'></script>
-        <script src='/CardsProject/assets/popup_for_registration_header.js' type='text/javascript'></script>
+        <script src='/CardsProject/assets/popupForEnter.js' type='text/javascript'></script>
+        <script src='/CardsProject/assets/ajaxPathes.js' type='text/javascript'></script>
+        <script src='/CardsProject/assets/popupForRegistrationHeader.js' type='text/javascript'></script>
 	</head>
 	<body>
         <div class="page-wrapper">

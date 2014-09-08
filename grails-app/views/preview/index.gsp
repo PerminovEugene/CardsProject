@@ -3,7 +3,7 @@
   <head>
     <meta content='main' name='layout' />
     <title>Предпросмотр</title>
-    <script src='/CardsProject/assets/popup_registration.js' type='text/javascript'></script>
+    <script src='/CardsProject/assets/popupRegistrationAtLastStep.js' type='text/javascript'></script>
     <script src='/CardsProject/assets/preview.js' type='text/javascript'></script>
   </head>
   <body>
