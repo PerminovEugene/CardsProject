@@ -2,8 +2,8 @@
   %head
     %meta{:content => "main", :name => "layout"}/
     %title Предпросмотр
-    %script{:src => "/CardsProject/assets/popupRegistrationAtLastStep.js", :type => "text/javascript"}
-    %script{:src => "/CardsProject/assets/preview.js", :type => "text/javascript"}
+    %script{:src => "/assets/popupRegistrationAtLastStep.js", :type => "text/javascript"}
+    %script{:src => "/assets/preview.js", :type => "text/javascript"}
   %body
     .nav
       .container
@@ -36,10 +36,10 @@
           %img{:src => "${session._picture}"}
         %h5 Обратная сторона
         .choose-picture.js-choose-back-picture
-          %img{:src => '/CardsProject/assets/send_step/demo_sender.png'}
+          %img{:src => '/assets/send_step/demo_sender.png'}
         %h5 Конверт
         .choose-picture.js-choose-sender
-          %img{:src => '/CardsProject/assets/send_step/demo_my_words.png'}
+          %img{:src => '/assets/send_step/demo_my_words.png'}
       .big-preview
         .big-picture
           %h4 Лицевая сторона

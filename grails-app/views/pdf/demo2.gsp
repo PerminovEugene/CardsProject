@@ -25,7 +25,7 @@
     </style>
   </head>
   <body>
-    <img width="100%" src="/CardsProject/${name}" alt="cardPicture" title="cardPicture" />
+    <img width="100%" src="/${name}" alt="cardPicture" title="cardPicture" />
     <div class="head" style="page-break-before:always">
        ${text}
     </div>

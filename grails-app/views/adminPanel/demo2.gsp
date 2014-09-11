@@ -54,7 +54,7 @@
     </style>
   </head>
   <body>
-    <img class = "face" width="148mm" height="100mm" src="/CardsProject/${picture}" alt="cardPicture" title="cardPicture" />
+    <img class = "face" width="148mm" height="100mm" src="/${picture}" alt="cardPicture" title="cardPicture" />
     <div class="back" style="page-break-before:always">
         <div class = "text">${card.text}</div>
         %{--<div class="footer">--}%
@@ -63,7 +63,7 @@
         %{--</div>--}%
         <table class="footer">
             <tr>
-            <td class = "logo"><img width="100%" src="/CardsProject/${logo}" alt="cardPicture" title="cardPicture" /></td>
+            <td class = "logo"><img width="100%" src="/${logo}" alt="cardPicture" title="cardPicture" /></td>
             <td class = "sign">${card.sign}</td>
             </tr>
         </table>

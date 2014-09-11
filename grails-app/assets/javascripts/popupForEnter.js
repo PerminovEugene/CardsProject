@@ -14,7 +14,8 @@ $(document).ready(function(){
     };
     var myJson = JSON.stringify(obj);
     $.ajax({
-        url: '/CardsProject/enterToSite/checkUserStatus',
+//        url: '/CardsProject/enterToSite/checkUserStatus',
+        url: '/enterToSite/checkUserStatus',
         type: 'post',
         dataType: 'JSON',
         data: obj,
@@ -134,7 +135,8 @@ function sendEnterInfo_t() {
     };
     var myJson = JSON.stringify(obj);
     $.ajax({
-        url: '/CardsProject/enterToSite/enter',
+//        url: '/CardsProject/enterToSite/enter',
+        url: '/enterToSite/enter',
         type: 'post',
         dataType: 'JSON',
         data: obj,
@@ -168,7 +170,8 @@ function sendExit_t() {
     };
     var myJson = JSON.stringify(obj);
     $.ajax({
-        url: '/CardsProject/enterToSite/exit',
+//        url: '/CardsProject/enterToSite/exit',
+        url: '/enterToSite/exit',
         type: 'post',
         dataType: 'JSON',
         data: obj,

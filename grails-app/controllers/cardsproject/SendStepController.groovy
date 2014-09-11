@@ -52,13 +52,9 @@ class SendStepController {
         if (companySender == null) {
             def sender = dataBaseService.createHuman(session.companySender.sender)
             def companySenderAddress = dataBaseService.createAddress(session.companySender.address)
-            companySender = dataBaseService.createCompany(
-                    session.companySender.name,
-                    companySenderAddress,
-                    sender,
-                    session._logo
-            )
-            try {
+            companySender = dataBaseService.createCompany(session.companySender.name, companySenderAddress,
+                    sender, session._logo)
+           /* try {
                  sendMail {
                      to session.userInfo.e_mail
                      subject "Регистрация на BestReCards"
@@ -67,7 +63,8 @@ class SendStepController {
                  }
             } catch (Exception e) {
                 println(e)
-            }
+            }*/
+            sendMailRegistration()
         } else {
             if ((companySender.logo == null)||(session._logo != '')) {
                 companySender = dataBaseService.saveCompany(companySender, session._logo)
@@ -111,7 +108,23 @@ class SendStepController {
         session.removeAttribute('_picture')*/
         redirect(action: 'index')
     }
+    def sendMailRegistration() {
+        try {
+            sendMail {
+                to session.userInfo.e_mail
+                subject "Регистрация на BestReCards"
+                body 'Спасибо что зарегистрировались на нашем сервисе. :) ' +
+                        "Ваш пароль " + session.userInfo.password + ". "
+            }
+        } catch (Exception e) {
+            println(e)
+        }
+    }
+
     def toMainPage() {
+        redirect (controller: 'startPage', action: 'index')
+    }
+    def toPicturesListPage() {
         redirect (controller: 'picturesList', action: 'index')
     }
 

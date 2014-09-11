@@ -14,7 +14,7 @@
     <div class='page'>
       <div class='head-main'>Ваша открытка будет доставлена в течении недели!</div>
       <div class='send_logo'>
-        <img id='picture_send_logo' src='/CardsProject/assets/send_step/airoplane.jpg' />
+        <img id='picture_send_logo' src='/assets/send_step/airoplane.jpg' />
       </div>
       <div class='subscribe_block'></div>
       <div class='footer'>
@@ -30,8 +30,8 @@
         </div>
       </div>
       <div class='container-cloud'>
-        <img class='left-cloud' src='/CardsProject/assets/little_image_site/left_cloud.png' />
-        <img class='right-cloud' src='/CardsProject/assets/little_image_site/right_cloud.png' />
+        <img class='left-cloud' src='/assets/little_image_site/left_cloud.png' />
+        <img class='right-cloud' src='/assets/little_image_site/right_cloud.png' />
       </div>
     </div>
   </body>
