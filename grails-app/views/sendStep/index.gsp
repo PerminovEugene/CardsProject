@@ -25,8 +25,8 @@
             <g:link action='toMainPage' class='size-subscribe-little button-subscribe size-subscribe-little button-subscribe'>f</g:link>
           
           -->
-          <g:link action='toMainPage' class='send-step-button button-prev'>Вернуться на главную</g:link>
-          <g:link action='toMainPage' class='send-step-button button-next'>Создать еще открытку</g:link>
+          <g:link action='toStartPage' class='send-step-button button-prev'>Вернуться на главную</g:link>
+          <g:link action='toPicturesListPage' class='send-step-button button-next'>Создать еще открытку</g:link>
         </div>
       </div>
       <div class='container-cloud'>

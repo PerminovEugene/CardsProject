@@ -121,7 +121,8 @@ class SendStepController {
         }
     }
 
-    def toMainPage() {
+    def toStartPage() {
+//        println('hi noobs')
         redirect (controller: 'startPage', action: 'index')
     }
     def toPicturesListPage() {
