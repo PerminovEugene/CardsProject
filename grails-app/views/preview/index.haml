@@ -50,7 +50,7 @@
             .card-back-view ${session.currentCard.text}
             .sign-back ${session.currentCard.sign}
             .file-logo
-              %img{:src => "../${session._logo}", :width => "125"}
+              %img.js-logo-img-hide{:src => "../${session._logo}", :width => "125"}
         .big-destination-card
           %h4 Конверт
           .big-destination-card-structure

@@ -72,7 +72,7 @@
             <div class='card-back-view'>${session.currentCard.text}</div>
             <div class='sign-back'>${session.currentCard.sign}</div>
             <div class='file-logo'>
-              <img src='../${session._logo}' width='125' />
+              <img class='js-logo-img-hide' src='../${session._logo}' width='125' />
             </div>
           </div>
         </div>

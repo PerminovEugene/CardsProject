@@ -88,7 +88,6 @@ class CabinetController {
             db.saveCompany(company, params.company, logo)
             message = 'Company updated'
         }
-
         redirect(action: 'index')
     }
 
