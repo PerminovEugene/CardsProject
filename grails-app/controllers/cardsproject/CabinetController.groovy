@@ -31,9 +31,18 @@ class CabinetController {
 
     def sendUserInfo() {
         def user_id = session.user_id
-        def company = dataBaseService.fetchUserCompany(user_id)
-        def address = company.address
-        def human = company.human
+        println("ss")
+//        try {
+            def company = dataBaseService.fetchUserCompany(user_id)
+        println("ss")
+        println(company)
+            def address = company.address
+        println("ss")
+            def human = company.human
+//        }
+//        catch (MissingPropertyException) {
+            println("ss")
+//        }
         def data = ["company" : company, "human" : human, "address" : address] as JSON
         render data
     }

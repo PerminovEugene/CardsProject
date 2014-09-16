@@ -123,7 +123,6 @@ class DataBaseService {
     def fetchUserCompany(long user_id) {
         def user = User.get(user_id)
         def company = user.company
-//        def address = company.address
         return company
     }
 
