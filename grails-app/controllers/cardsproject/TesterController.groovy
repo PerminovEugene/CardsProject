@@ -3,6 +3,7 @@ package cardsproject
 class TesterController {
 
     def index() {
-        render("hello world its test page")
+        session.invalidate();
+        redirect(controller: 'picturesList', action: 'index' )
     }
 }

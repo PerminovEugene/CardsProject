@@ -1,0 +1,25 @@
+%html{:xmlns => "http://www.w3.org/1999/html"}
+  %head
+    %title Добро пожаловать
+    %meta{:content => "main", :name => "layout"}
+  %body
+    .cheat-for-header
+    .mail-style
+    #start-page
+      .container
+        .us-features
+          .feature-block
+            %img{:src => '/assets/StartPage/message.png'}
+            %h4 Меньше проблем!
+            %h5 Пока вы занимаетесь бизнесом, мы повышаем лояльность ваших клиентов. Создайте открытку, а мы займемся её печатью и отправкой.
+          .feature-block
+            %img{:src => '/assets/StartPage/heart.png'}
+            %h4 Просто о важном
+            %h5 Поздравительная открытка - это просто способ показать партнёру, что он важен для вас.
+          .feature-block
+            %img{:src => '/assets/StartPage/circlewithfoot.png'}
+            %h4.last-h4 Пригласите лично
+            %h5 Создайте эксклюзивное приглашение для важных персон.
+          .main-page-footer
+            .main-page-reg-button.js-reg-main-page Зарегистрироваться
+            %g:link.main-page-test-button{:controller => "picturesList", :action => "index"} Попробовать

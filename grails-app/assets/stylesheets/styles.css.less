@@ -1,0 +1,239 @@
+@import "fonts.css.less";
+h1 {
+  .header-font-family;
+  font-size: 20px;
+  text-align: center;
+}
+h2 {
+  .header-font-family;
+  font-size: 18px;
+}
+h3 {
+  .header-font-family;
+  font-size: 14px;
+  text-align: center;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+//  min-width: 100%;
+  min-width: 960px;
+  color: #696969;
+  background-color: #f8f8f8;
+}
+//.page-wrapper {
+//  height: auto;
+//  min-height: 100%;
+//  margin-bottom: -40px;
+//}
+
+
+.header {
+  background-color: #313131;
+  height: 30px;
+  padding: 20px 10px;
+  .project-logo {
+    width: 240px;
+  }
+}
+.logo-block
+{
+  width: 25%;
+  height: 50px;
+//  float: left;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 4%;
+}
+.about_us
+{
+  margin-left: 0;
+  height: 50px;
+  width: 24%;
+//  float: left;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 19%;
+  color: white;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.account-info {
+  display: inline-block;
+  vertical-align: top;
+  width: 27%;
+  padding-top: 10px;
+  a, button {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.page h1{
+  font-family: Nautilus;
+  color: black;
+  font-size: 30px;
+}
+.page {
+  padding: 30px 0px;
+  position: relative;
+  min-height: 700px;
+}
+.big-page {
+  min-height: 746px;
+}
+.login-page {
+  min-height: 796px;
+}
+.container {
+  width: 50%;
+  min-width: 950px;
+  margin: 0px auto;
+//  min-height: 100%;
+//  margin-bottom: 3%;
+}
+.container-wide {
+  width: 57%;
+  margin: 0 auto;
+  min-width: 960px;
+}
+.big-container {
+  width: 95%;
+}
+
+
+
+.footer-absolute {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+}
+.footer {
+//  width: 88%;
+  margin-top: 20px;
+  height: 70px;
+  margin-bottom: 40px;
+
+  .button-next {
+//    float: right;
+    display: inline-block;
+    float: right;
+    margin-right: 0;
+    background-color: #ffa112;
+    border-color: #ffa112;
+    border-style: solid;
+  }
+  .button-next:hover {
+    background-color: white;
+    color: #ffa112;
+  }
+  .button-prev {
+    display: inline-block;
+    float: left;
+    background-color: #b3b3b3;
+    border-color: #b3b3b3;
+    border-style: solid;
+  }
+  .button-prev:hover{
+    background-color: white;
+    color: #b3b3b3;
+  }
+  .button-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.button {
+//  padding: 10px 55px;
+ padding-top: 15px;
+ padding-bottom: 15px;
+  width: 16%;
+//  height: 45px;
+  color: #ffffff;
+  border: none;
+  font-family: PT_Sans_Regular;
+  font-size: 23px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+//  margin-bottom: 5%;
+  border-radius: 9px;
+  background-color: #ffa112;
+}
+//
+//footer on template
+//
+.template-footer {
+  background-color: #313131;
+//  position: bottom;
+  width: 100%;
+//  height: 40px;
+//  position: absolute;
+//  bottom: 0;
+//  left: 0;
+//  display: inline-block;
+  padding-bottom: 12px;
+  padding-top: 15px;
+  a {
+    color: #ffa112;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .first-link-footer {
+    text-align: left;
+    width: 20%;
+    margin-right: 26.5%;
+    margin-left: 16%;
+    color: #ffa112;
+    font-size: 14px;
+  }
+  h4 {
+    color: #f8f8f8;
+    font-size: 14px;
+    font-weight:300;
+    font-family: PT_Sans_Regular;
+    margin: 0;
+  }
+}
+.template-footer h4, a {
+  display: inline-block;
+//  margin-top: 14px;
+}
+
+.popup-style-top, .popup-style-down {
+//  background-color: none;
+  background-repeat: repeat-x;
+//  background-color: black;
+  width: 100%;
+  height:18px;
+  position: absolute;
+  left: 0;
+}
+
+.popup-style-top {
+  background-image: url("/assets/send_step/registration_top_border.png");
+  top:-7px;
+}
+
+.popup-style-down {
+  background-image: url("/assets/send_step/registration_down_border.png");
+  bottom: -17px;
+}
+
+.account-info {
+  button {
+    cursor: pointer;
+  }
+}
+

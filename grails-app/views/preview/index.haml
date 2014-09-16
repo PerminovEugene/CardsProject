@@ -1,0 +1,148 @@
+%html
+  %head
+    %meta{:content => "main", :name => "layout"}/
+    %title Предпросмотр
+    %script{:src => "/assets/popupRegistrationAtLastStep.js", :type => "text/javascript"}
+    %script{:src => "/assets/preview.js", :type => "text/javascript"}
+  %body
+    .nav
+      .container
+        %ul
+          %li
+            .point
+              .circle.active
+                1
+            .line.active
+          %li
+            .point
+              .circle.active
+                2
+            .line.active
+          %li
+            .point
+              .circle.active
+                3
+            .line.active.final
+            .point.last
+              .border
+                .circle.active
+                  4
+    .mail-style
+    .container.page.preview
+      %h1 Проверьте, все ли правильно?
+      .choose-block
+        %h5 Лицевая сторона
+        .choose-picture.js-choose-picture
+          %img{:src => "${session._picture}"}
+        %h5 Обратная сторона
+        .choose-picture.js-choose-back-picture
+          %img{:src => '/assets/send_step/demo_sender.png'}
+        %h5 Конверт
+        .choose-picture.js-choose-sender
+          %img{:src => '/assets/send_step/demo_my_words.png'}
+      .big-preview
+        .big-picture
+          %h4 Лицевая сторона
+          %img{:src => "${session._picture}"}
+        .big-back-picture
+          %h4 Обратная сторона
+          .big-back-picture-structure
+            .card-back-view ${session.currentCard.text}
+            .sign-back ${session.currentCard.sign}
+            .file-logo
+              %img{:src => "../${session._logo}", :width => "125"}
+        .big-destination-card
+          %h4 Конверт
+          .big-destination-card-structure
+            .sender-preview-block
+              .block-h5 От кого:
+              .sender-text ${session.companySender.sender.name}
+              .sender-text ${session.companySender.sender.post}
+              .sender-text ${session.companySender.name}
+              .block-h5 Откуда:
+              .sender-text ${session.companySender.address.city} ${session.companySender.address.street} ${session.companySender.address.house}
+              .sender-text ${session.companySender.address.housing} ${session.companySender.address.office}
+              .sender-code${session.companySender.address.postcode}
+            .mark
+            .big-post-code
+              .receiver-post-code ${session.companyReceiver.address.postcode}
+            .receiver-preview-block
+              .block-h5 От кого:
+              .sender-text ${session.companyReceiver.receiver.name}
+              .sender-text ${session.companyReceiver.receiver.post}
+              .sender-text ${session.companyReceiver.name}
+              .block-h5 Откуда:
+              .sender-text ${session.companyReceiver.address.city} ${session.companyReceiver.address.street} ${session.companyReceiver.address.house}
+              .sender-text ${session.companyReceiver.address.housing} ${session.companyReceiver.address.office}
+              .sender-code${session.companyReceiver.address.postcode}
+      .footer
+        .container
+          %g:link.button.button-prev{:controller =>"card", :action=>"index"} На шаг назад
+          %button.button.button-next{:id =>'registration_button', :name => 'registration_button', :value => 'registration_button'}
+            Готово
+    .popup_block{:id => 'popup_block'}
+      .popup_content{:id => 'popup_content'}
+        .popup-style-top
+        .exit_sign
+          %img
+        %h2 Регистрация
+        %h3 Вам не нужно будет повторно вводить данные, в следующий, раз все будет уже сохранено!
+        .mailError
+          %h3
+        %input{:id => 'mail', :type => 'text', :placeholder => "Ваш e-mail", :class => 'js-input-email'}
+        .passError
+          %h3
+        %input{:id => 'pass', :type => 'password', :placeholder => "Пароль", :class => 'js-input-password'}
+        %button{:id =>'send_reg_button', :name => 'send_reg_button', :value => 'send_reg_button'}
+          Регистрация
+        .popup-style-down
+    .popup_block_alert{:id => 'popup_block_alert'}
+      .popup_content_alert{:id => 'popup_content_alert'}
+        .popup-style-top
+        .exit_sign-alert
+          %img
+        %h2 Вы уверены?
+        %h3 Ваши данные не будут сохранены, а открытка не дойдет до адресата
+        %button{:id =>'want_send_button', :name => 'want_send_button', :value => 'want_send_button'}
+          Нет, я хочу отправить открытку
+        %button{:id =>'didnt_want_send_button', :name => 'didnt_want_send_button', :value => 'didnt_want_send_button'}
+          Да я уверен
+        .popup-style-down
+    /
+      .envelope
+        %h2 Конверт с указанием адресов
+        .envelop-view
+          .sender
+            .name
+              От кого
+              %span.underlined
+              ${session.companySender.sender.name}
+            .address
+              От куда
+              %span.city.underlined
+                город ${session.companySender.address.city}
+              %span.street.underlined
+                улица ${session.companySender.address.street}
+              %span.house.underlined
+                дом ${session.companySender.address.house}, корпус ${session.companySender.address.housing},
+                офис ${session.companySender.address.office}
+            .postcode
+              ${session.companySender.address.postcode}
+          .receiver
+            .name
+              Кому
+              %span.underlined
+              ${session.companyReceiver.receiver.name}
+            .address
+              Куда
+              %span.city.underlined
+                город ${session.companyReceiver.address.city}
+              %span.street.underlined
+                улица ${session.companyReceiver.address.street}
+              %span.house.underlined
+                дом ${session.companyReceiver.address.house}, корпус ${session.companyReceiver.address.housing},
+                офис ${session.companyReceiver.address.office}
+            .postcode
+              ${session.companyReceiver.address.postcode}
+          .postcode-main
+            %h1 ${session.companyReceiver.address.postcode}

@@ -1,0 +1,69 @@
+%html{:xmlns => "http://www.w3.org/1999/html"}
+  %head
+    %title Выбор открытки
+    %meta{:content => "main", :name => "layout"}/
+    %script{:src => "../js/swapPictures.js", :type => "text/javascript"}
+  %body
+    / Declare Variable
+    - next = 'Далее'
+    .nav
+      .container
+        %ul
+          %li
+            .point
+              .border
+                .circle.active
+                  1
+            .line
+          %li
+            .point
+              .circle
+                2
+            .line
+          %li
+            .point
+              .circle
+                3
+            .line
+            .point.last
+              .circle
+                4
+    .mail-style
+    .container.page
+      .change-card-header
+        %h1  Выберите открытку
+      .change-block
+        .list-catalog
+        .pictures
+          %ul#list{:name => "list"}
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture
+            %li{:name => "picture_li"}
+              %img.picture{:id => "picture"}
+      .preview-block
+        %img#picture-preview{:src => "${session._picture}"}
+      %g:form.js-form{:controller => "picturesList", :action => "save", :enctype => "multipart/form-data"}
+        %g:hiddenField{:name => "path", :class => "hidden-path"}
+        %g:hiddenField{:name => "id", :class => "hidden-id"}
+        .footer
+          .form-style
+            Автор открыток: Ева Рупенко
+          %a.button.button-next.js-submit Далее
+          %span.error-text.js-error
+            /.footer.footer-absolute
+            /  .container
+            /    %button#next-step-button.button.button-next{:name => "next_step_button", :value => "next_step"} Готово

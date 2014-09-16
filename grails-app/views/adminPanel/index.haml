@@ -1,0 +1,56 @@
+!!!5
+%html
+  %head
+    %meta{:content => "main", :name => "layout"}/
+    %title Админка
+    %script{:src => "../js/hideLinkForAdmin.js", :type => "text/javascript"}
+  %body
+    .big-container.big-page.page
+      %g:form.big-container{:controller => "adminPanel", :action => "update"}
+        %table.admin-table
+          %thead
+            %tr
+              %td №
+              %td Изображение
+              %td Отправитель
+              %td Получатель
+              %td Текст
+              %td Подпись
+              %td Дата создания
+              %td Статус
+              %td
+          %g:each{:in => "${cards}", :var => "item"}
+            %tr
+              %td${item.id}
+              %td
+                %img{:src => "../${item.picture.path}"}
+              %td${item.user.company.name}, г.${item.user.company.address.city} </br> ул.${item.user.company.address.street}, д.${item.user.company.address.house} корпус ${item.user.company.address.housing} оффис ${item.user.company.address.office},</br> ${item.user.company.address.postCode}
+              %td${item.company.name}, г.${item.company.address.city} </br> ул.${item.company.address.street}, д.${item.company.address.house} корпус ${item.company.address.housing} оффис ${item.company.address.office},</br> ${item.company.address.postCode}
+              %td${item.text}
+              %td${item.sign}
+              %td${item.created}
+              %td
+                %input{:type => "hidden", :name => "cardId", :value => "${item.id}"}
+                %select{:size => "1", :name => "state"}
+                  %g:if{:test => "${item.state == "MODERATION"}"}
+                    %option{:selected => "selected", :value => "MODERATION"}На модерации
+                  %g:else
+                    %option{:value => "MODERATION"}На модерации
+                  %g:if{:test => "${item.state == "BANED"}"}
+                    %option{:selected => "selected", :value => "BANED"}Отклонена
+                  %g:else
+                    %option{:value => "BANED"}Отклонена
+                  %g:if{:test => "${item.state == "PRINTED"}"}
+                    %option{:selected => "selected", :value => "PRINTED"}В печати
+                  %g:else
+                    %option{:value => "PRINTED"}В печати
+                  %g:if{:test => "${item.state == "SENDED"}"}
+                    %option{:selected => "selected", :value => "SENDED"}Отправлена
+                  %g:else
+                    %option{:value => "SENDED"}Отправлена
+              %td
+                %g:pdfLink{:pdfController => "adminPanel", :pdfAction => "demo2",  :pdfId => "${item.id}"}
+                  Скачать
+        .footer
+          %g:submitButton.button.button-prev{:name => "submit", :value => "Update"}
+          %g:link.button.button-next{:controller =>"adminPanel", :action=>"exit"}Exit

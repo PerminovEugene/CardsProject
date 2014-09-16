@@ -36,3 +36,17 @@ CardsProject.iml
 
 # "temporary" build files
 /target
+
+#testImages
+/web-app/images/testCards
+/web-app/images/temp
+
+#to build
+/out
+
+#pom
+pom.xml
+
+#COMMENTED FOR ECLIPSE
+.classpath
+.project

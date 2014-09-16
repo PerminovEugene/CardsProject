@@ -7,7 +7,8 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
-        "500"(view:'/error')
+        "/" ( controller:'startPage', action:'index' )
+       // "/" ( controller:'tester', action:'index' )
+        "500"(view:'/error.haml')
 	}
 }

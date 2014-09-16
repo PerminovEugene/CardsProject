@@ -1,14 +1,16 @@
 package cardsproject
 
 class Company {
-    static hasMany = [user: User]
+    //static hasMany = [user: User]
 
     String name
     String logo
-    //phone
+
+    static belongsTo = [address: Address, human: Human]
+    //there human its a owner of company
 
     static constraints = {
         name(unique: true, blank: true)
-        logo(url: true)
+        logo(nullable: true)
     }
 }
