@@ -78,7 +78,7 @@ CREATE TABLE `card` (
 
 LOCK TABLES `card` WRITE;
 /*!40000 ALTER TABLE `card` DISABLE KEYS */;
-INSERT INTO `card` VALUES (1,0,2,'2014-09-16 15:53:59',1,'Your\'s banny','MODERATION','Congratulation',1),(2,0,2,'2014-09-16 15:53:59',2,'Your\'s banny','PRINT','Congratulation',1);
+INSERT INTO `card` VALUES (1,0,2,'2014-09-17 17:17:37',1,'Your\'s banny','MODERATION','Congratulation',1),(2,0,2,'2014-09-17 17:17:37',2,'Your\'s banny','PRINT','Congratulation',1);
 /*!40000 ALTER TABLE `card` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,6 +251,87 @@ INSERT INTO `picture` VALUES (1,0,3,'crazy man','assets/testCards/card1.jpg'),(2
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sec_role`
+--
+
+DROP TABLE IF EXISTS `sec_role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sec_role` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `version` bigint(20) NOT NULL,
+  `authority` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_oah023x2ltqw09mdue7w0mcxb` (`authority`)
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sec_role`
+--
+
+LOCK TABLES `sec_role` WRITE;
+/*!40000 ALTER TABLE `sec_role` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sec_role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sec_user`
+--
+
+DROP TABLE IF EXISTS `sec_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sec_user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `version` bigint(20) NOT NULL,
+  `account_expired` bit(1) NOT NULL,
+  `account_locked` bit(1) NOT NULL,
+  `enabled` bit(1) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `password_expired` bit(1) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_5ctbdrlf3eismye20vsdtk8w8` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sec_user`
+--
+
+LOCK TABLES `sec_user` WRITE;
+/*!40000 ALTER TABLE `sec_user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sec_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sec_user_sec_role`
+--
+
+DROP TABLE IF EXISTS `sec_user_sec_role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sec_user_sec_role` (
+  `sec_role_id` bigint(20) NOT NULL,
+  `sec_user_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`sec_role_id`,`sec_user_id`),
+  KEY `FK_f1eew3u65ajs3e50xvacwgron` (`sec_user_id`),
+  CONSTRAINT `FK_f1eew3u65ajs3e50xvacwgron` FOREIGN KEY (`sec_user_id`) REFERENCES `sec_user` (`id`),
+  CONSTRAINT `FK_bshvqhdx8h9mb4rrbo1ahnp7q` FOREIGN KEY (`sec_role_id`) REFERENCES `sec_role` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sec_user_sec_role`
+--
+
+LOCK TABLES `sec_user_sec_role` WRITE;
+/*!40000 ALTER TABLE `sec_user_sec_role` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sec_user_sec_role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user`
 --
 
@@ -260,9 +341,13 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `version` bigint(20) NOT NULL,
+  `account_expired` bit(1) NOT NULL,
+  `account_locked` bit(1) NOT NULL,
   `company_id` bigint(20) DEFAULT NULL,
   `e_mail` varchar(255) NOT NULL,
+  `enabled` bit(1) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `password_expired` bit(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_5awx5dcb9xdv5m1bl38bmoke0` (`e_mail`),
   KEY `FK_bteyn2vjkuydkfqefgaje2rhr` (`company_id`),
@@ -276,7 +361,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,0,1,'test@gmail.com','qwerty');
+INSERT INTO `user` VALUES (1,0,'\0','\0',1,'test@gmail.com','','qwerty','\0');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -289,4 +374,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-09-16 16:00:06
+-- Dump completed on 2014-09-17 17:33:32
