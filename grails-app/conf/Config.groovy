@@ -105,6 +105,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
+        grails.assets.storagePath = "/home/bestrecards/www/CardsProject/grails-app/assets/pipeline"
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
