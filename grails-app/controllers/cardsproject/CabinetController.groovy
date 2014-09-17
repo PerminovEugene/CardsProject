@@ -30,52 +30,58 @@ class CabinetController {
     }
 
     def sendUserInfo() {
+
         def user_id = session.user_id
-        println("ss")
-//        try {
-            def company = dataBaseService.fetchUserCompany(user_id)
-        println("ss")
-        println(company)
+        def company = dataBaseService.fetchUserCompany(user_id)
+        if (company != null) {
+            println("sssss")
             def address = company.address
-        println("ss")
             def human = company.human
-//        }
-//        catch (MissingPropertyException) {
-            println("ss")
-//        }
-        def data = ["company" : company, "human" : human, "address" : address] as JSON
-        render data
+            def data = ["company": company, "human": human, "address": address] as JSON
+            render data
+        }
+        else {
+
+            def data = ["company": "Укажите компанию", "human": "Человек", "address": "Аддрес"] as JSON
+            render data
+        }
     }
 
     def updateUserInfo() {
         def user_id = session.user_id
-        MultipartFile img
         String message
         def company = dataBaseService.fetchUserCompany(user_id)
-        def logo = company.logo
-        def address = company.address
-        def human = company.human
-
         def newAddress = [
-                'city' : params.city,
-                'street' : params.street,
-                'house' : params.house,
+                'city'    : params.city,
+                'street'  : params.street,
+                'house'   : params.house,
                 'housing' : params.housing,
-                'office' : params.office,
-                'postcode' : params.postcode
+                'office'  : params.office,
+                'postcode': params.postcode
         ]
-
         def newHuman = [
                 'name' : params.name,
                 'post' : params.post
         ]
-
-        dataBaseService.saveAddress(address, newAddress)
-        dataBaseService.saveHuman(human, newHuman)
-
+        if (company != null) {
+            def logo = company.logo
+            def address = company.address
+            def human = company.human
+            dataBaseService.saveAddress(address, newAddress)
+            dataBaseService.saveHuman(human, newHuman)
+        }
+        else {
+            def human = dataBaseService.createHuman(newHuman)
+            println("human created")
+            def companyAddress = dataBaseService.createAddress(newAddress)
+            println("address created")
+            company = dataBaseService.createCompany(params.company, companyAddress, human)
+            dataBaseService.addCompanyToUser(user_id, company)
+            println ("finish saved")
+        }
         def context = servletContext.getRealPath("/")
         def path = 'images/temp/'
-        img = request.getFile('logo')
+        MultipartFile img = request.getFile('logo')
         def name  = 'sample.jpeg'
         if (img.empty) {
             //place for log
@@ -85,15 +91,16 @@ class CabinetController {
             name = img.getOriginalFilename()
             img.transferTo(new File(context + path + name))
             logo = path + name
+            dataBaseService.saveCompany(company, logo)
         }
-
-        if (dataBaseService.fetchCompany(params.company) != null) {
+        println ("lol")
+      /*  if (dataBaseService.fetchCompany(params.company) != null) {
             dataBaseService.saveCompany(company, logo)
             message = 'This company name already exist'
         } else {
             dataBaseService.saveCompany(company, params.company, logo)
             message = 'Company updated'
-        }
+        }*/
 
         redirect(action: 'index')
     }

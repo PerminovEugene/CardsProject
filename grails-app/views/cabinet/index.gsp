@@ -9,15 +9,15 @@
   </head>
   <body>
     <!-- Declare Variable -->
-    <% name = 'Ф.И.О' %>
+    <% name = 'Ф.И.О*' %>
     <% post = 'Должность' %>
-    <% company = 'Компания' %>
-    <% city = 'Город' %>
-    <% street = 'Улица' %>
-    <% house = 'Дом' %>
+    <% company = 'Компания*' %>
+    <% city = 'Город*' %>
+    <% street = 'Улица*' %>
+    <% house = 'Дом*' %>
     <% housing = 'Корпус' %>
     <% office = 'Офис' %>
-    <% postcode = 'Индекс' %>
+    <% postcode = 'Индекс*' %>
     <% next = 'Далее' %>
     <% prev = 'Назад' %>
     <div class='tabs-row'>
@@ -36,16 +36,16 @@
       <g:form action='updateUserInfo' class='cabinet-form js-form js-cabinet-form' controller='cabinet' enctype='multipart/form-data'>
         <div class='address-form'>
           <h2>Данные указанные на конверте</h2>
-          <g:textField class='wide-input name js-name' name='name' placeholder='$name' />
+          <g:textField class='wide-input name js-name obligatory-field' name='name' placeholder='$name' />
           <g:textField class='wide-input post js-post' name='post' placeholder='$post' />
-          <g:textField class='wide-input company js-company' name='company' placeholder='$company' />
+          <g:textField class='wide-input company js-company obligatory-field' name='company' placeholder='$company' />
           <br />
-          <g:textField class='wide-input city js-city' name='city' placeholder='$city' />
-          <g:textField class='wide-input street js-street' name='street' placeholder='$street' />
-          <g:textField class='small-input house js-house' name='house' placeholder='$house' />
+          <g:textField class='wide-input city js-city obligatory-field' name='city' placeholder='$city' />
+          <g:textField class='wide-input street js-street obligatory-field' name='street' placeholder='$street' />
+          <g:textField class='small-input house js-house obligatory-field js-home-validation' name='house' placeholder='$house' />
           <g:textField class='small-input housing js-housing' name='housing' placeholder='$housing' />
           <g:textField class='small-input office js-office' name='office' placeholder='$office' />
-          <g:textField class='small-input postcode js-postcode' name='postcode' placeholder='$postcode' />
+          <g:textField class='small-input postcode js-postcode obligatory-field js-postcode-validation' name='postcode' placeholder='$postcode' />
           <a href='http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx' target='_blank'>Уточнить индекс</a>
         </div>
         <div class='logo-form'>

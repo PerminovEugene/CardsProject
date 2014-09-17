@@ -7,15 +7,15 @@
     %script{:src => "../js/handlebars/handlebars.js", :type => "text/javascript"}
   %body
     / Declare Variable
-    - name = 'Ф.И.О'
+    - name = 'Ф.И.О*'
     - post = 'Должность'
-    - company = 'Компания'
-    - city = 'Город'
-    - street = 'Улица'
-    - house = 'Дом'
+    - company = 'Компания*'
+    - city = 'Город*'
+    - street = 'Улица*'
+    - house = 'Дом*'
     - housing = 'Корпус'
     - office = 'Офис'
-    - postcode = 'Индекс'
+    - postcode = 'Индекс*'
     - next = 'Далее'
     - prev = 'Назад'
     .tabs-row
@@ -29,16 +29,16 @@
       %g:form.cabinet-form.js-form.js-cabinet-form{:controller => "cabinet", :action => "updateUserInfo", :enctype => "multipart/form-data"}
         .address-form
           %h2 Данные указанные на конверте
-          %g:textField.wide-input.name.js-name{:name => "name", :placeholder => "$name"}/
+          %g:textField.wide-input.name.js-name.obligatory-field{:name => "name", :placeholder => "$name"}/
           %g:textField.wide-input.post.js-post{:name => "post", :placeholder =>"$post"}/
-          %g:textField.wide-input.company.js-company{:name => "company", :placeholder =>"$company"}/
+          %g:textField.wide-input.company.js-company.obligatory-field{:name => "company", :placeholder =>"$company"}/
           %br/
-          %g:textField.wide-input.city.js-city{:name => "city", :placeholder =>"$city"}/
-          %g:textField.wide-input.street.js-street{:name => "street", :placeholder =>"$street"}/
-          %g:textField.small-input.house.js-house{:name => "house", :placeholder =>"$house"}/
+          %g:textField.wide-input.city.js-city.obligatory-field{:name => "city", :placeholder =>"$city"}/
+          %g:textField.wide-input.street.js-street.obligatory-field{:name => "street", :placeholder =>"$street"}/
+          %g:textField.small-input.house.js-house.obligatory-field.js-home-validation{:name => "house", :placeholder =>"$house"}/
           %g:textField.small-input.housing.js-housing{:name => "housing", :placeholder =>"$housing"}/
           %g:textField.small-input.office.js-office{:name => "office", :placeholder =>"$office"}/
-          %g:textField.small-input.postcode.js-postcode{:name => "postcode", :placeholder =>"$postcode"}/
+          %g:textField.small-input.postcode.js-postcode.obligatory-field.js-postcode-validation{:name => "postcode", :placeholder =>"$postcode"}/
           %a{:href => "http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx", :target => "_blank"} Уточнить индекс
         .logo-form
           %img.logo-preview.js-logo-preview
