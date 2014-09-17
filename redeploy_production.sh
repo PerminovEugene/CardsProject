@@ -7,6 +7,7 @@ ssh bestrecards@178.62.0.194 -A '
   gvm use grails 2.4.2
   rm /home/bestrecards/www/CardsProject/grails-app/assets/pipeline -r
   mkdir /home/bestrecards/www/CardsProject/grails-app/assets/pipeline
+  grails clean all
   grails prod war target/ROOT.war
 '
 ssh root@178.62.0.194 -A '
