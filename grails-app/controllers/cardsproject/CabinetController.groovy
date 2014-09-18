@@ -41,7 +41,6 @@ class CabinetController {
             render data
         }
         else {
-
             def data = ["company": "Укажите компанию", "human": "Человек", "address": "Аддрес"] as JSON
             render data
         }
@@ -82,6 +81,7 @@ class CabinetController {
         def path = 'images/temp/'
         MultipartFile img = request.getFile('logo')
         def name = 'sample.jpeg'
+
         if (img.empty) {
             //place for log
             println('File ' + name + ' is failed to upload')
@@ -91,5 +91,7 @@ class CabinetController {
             def logoNew = path + name
             dataBaseService.saveCompany(company, logoNew)
         }
+        redirect (action: 'index')
     }
+
 }
