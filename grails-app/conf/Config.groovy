@@ -108,17 +108,100 @@ environments {
         // grails.assets.storagePath = "/home/bestrecards/www/CardsProject/grails-app/assets/pipeline"
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
-}
-
+}/*
+log4j = {
+    appenders {
+        file name:'file.log', file:'/var/logs/mylog.log'
+    }
+    root {
+        debug 'stdout', 'file'
+        additivity = true
+    }*/
+//}
 // log4j configuration
-log4j.main = {
+//log4j.main = {
     // Example of changing the log pattern for the default console appender:
     //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
 
-    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
+//    appenders {
+//        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+//    }
+// log4j configuration
+import grails.util.Environment
+import org.apache.log4j.DailyRollingFileAppender
+
+log4j = {
+    appenders {
+        // Use if we want to prevent creation of a stacktrace.log file.
+        'null' name:'stacktrace'
+
+        // Use this if we want to modify the default appender called 'stdout'.
+//        console name:'stdout', layout:pattern(conversionPattern: '%d{yyyy-MM-dd HH:mm} -%x- %-5p-%-10c:%m%n')
+        appender new DailyRollingFileAppender(
+//            rollingFile
+            name:"controllerAppender",
+            file:"${"Logs/cards/"}${"Controller"}.log".toString(),
+//            maxFileSize:'300kB',
+//            maxBackupIndex:1,
+            layout:pattern(conversionPattern: '%d{[EEE, dd-MMM-yyyy @ HH:mm:ss.SSS]} [%t] %-5p %c %x - %m%n')
+        )
+        appender new DailyRollingFileAppender(
+            name:"serviceAppender",
+            file:"${"Logs/cards/"}${"service"}.log".toString(),
+//            maxFileSize:'300kB',
+//            maxBackupIndex:1,
+            layout:pattern(conversionPattern: '%d{[EEE, dd-MMM-yyyy @ HH:mm:ss.SSS]} [%t] %-5p %c %x - %m%n')
+        )
+    }
+
+switch(Environment.current) {
+    case Environment."DEVELOPMENT":
+        // Configure the root logger to output to stdout and appLog appenders.
+        root {
+            error "controllerAppender", "serviceAppender"
+            //,'appLog'
+            additivity = false
+        }
+
+        error "controllerAppender" 'grails-app/controllers/cardsproject/CardController.groovy'
+        error "serviceAppender" 'controllers/cardsproject/CardController.groovy'
+        error 'grails.plugin.springsecurity.web.filter.DebugFilter'
+        error "grails.plugins.twitterbootstrap"
+        debug "it.mypackage"
+        debug "org.hibernate.SQL"
+        debug 'grails.app.controllers'
+        debug 'grails.app.services'
+        debug 'grails.app.taglib'
+        debug 'grails.app.conf'
+        debug 'grails.app.jobs'
+        break
+    case Environment.TEST:
+        // Configure the root logger to only output to appLog appender.
+        root {
+            error 'stdout'
+            //,'appLog'
+            additivity = true
+        }
+        //depend how much code write in console
+        //            debug 'grails.app.controllers'
+        //          debug 'grails.app.domain'
+        //          debug 'grails.app.services'
+        //          debug 'grails.app.taglib'
+        //          debug 'grails.app.conf'
+        //          debug 'grails.app.filters'
+        break
+    case Environment.PRODUCTION:
+        // Configure the root logger to output to stdout and appLog appenders.
+        root {
+            error 'appLog'
+            //,'appLog'
+            additivity = true
+        }
+        error 'grails.app'
+        break
+}
+}
+/* error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
            'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
@@ -130,3 +213,4 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+*/

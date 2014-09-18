@@ -5,7 +5,7 @@ class CardController {
     def dataBaseService
 
     def index() {
-        println("qweq")
+        log.error "228"
         if ((session.currentCard.sign == null)||
             (session.currentCard.text == null)){
             println("qweq")
