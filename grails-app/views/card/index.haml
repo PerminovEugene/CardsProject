@@ -43,5 +43,6 @@
           %g:textArea.sign.js-sign-validation{:name => "card_sign", :value => "${session.currentCard.sign}", :placeholder => "$sign"}/
         .footer
           %g:link.button.button-prev{:controller =>"envelope", :action=>"index"} На шаг назад
+          %g:link.button-feedback{:controller =>"requester", :action=>"indexFromCard"} Заказать индивидуальное оформление
           %a.button.button-next.js-submit Далее
           %span.error-text.js-error

@@ -99,13 +99,6 @@ class SendStepController {
         session.removeAttribute('companyReceiver')
         session.removeAttribute('_logo')
         session.removeAttribute('_picture')
-      /*  dataBaseService.saveAllAtSendStep(session);
-        session.removeAttribute('currentCard')
-        session.removeAttribute('userInfo')
-        session.removeAttribute('companySender')
-        session.removeAttribute('companyReceiver')
-        session.removeAttribute('_logo')
-        session.removeAttribute('_picture')*/
         redirect(action: 'index')
     }
     def sendMailRegistration() {

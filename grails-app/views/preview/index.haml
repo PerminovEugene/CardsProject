@@ -78,6 +78,7 @@
       .footer
         .container
           %g:link.button.button-prev{:controller =>"card", :action=>"index"} На шаг назад
+          %g:link.button-feedback{:controller =>"requester", :action=>"indexFromPreview"} Пожелания по доставке
           %button.button.button-next{:id =>'registration_button', :name => 'registration_button', :value => 'registration_button'}
             Готово
     .popup_block{:id => 'popup_block'}

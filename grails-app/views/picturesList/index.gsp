@@ -94,6 +94,7 @@
           <div class='form-style'>
             Автор открыток: Ева Рупенко
           </div>
+          <g:link action='indexFromPicturesList' class='button-feedback' controller='requester'>Заказать индивидуальный дизайн</g:link>
           <a class='button button-next js-submit'>Далее</a>
           <span class='error-text js-error'>
             <!-- .footer.footer-absolute -->

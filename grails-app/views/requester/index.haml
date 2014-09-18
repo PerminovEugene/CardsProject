@@ -1,0 +1,22 @@
+%html
+  %head
+    %meta{:content => "main", :name => "layout"}/
+    %title Ввод адреса
+  %body
+    .mail-style
+    .container.page
+      %h1 Заполните одно из полей, и наш менеджер с вами свяжется
+      %g:form.js-form{:controller => "requester", :action => "save"}
+        .sender.address-form
+          %h2{:class => "sender_words"} Ваше имя
+          %g:textField.name.wide-input{:name => "request_name", :placeholder => "Name"}/
+          %h2{:class => "sender_words"} Ваш телефон
+          %g:textField.name.wide-input{:name => "request_phone", :placeholder => "Phone"}/
+          %br/
+          %h2{:class => "sender_words"} Ваш e-mail
+          %g:textField.post.wide-input{:name => "request_email", :placeholder =>"E-mail"}/
+        .footer
+          .container
+            %g:link.button.button-prev{:action=>"toPreviousPage"} Вернуться назад
+            %a.button.button-next.js-submit Отправить заявку
+            %span.error-text.js-error

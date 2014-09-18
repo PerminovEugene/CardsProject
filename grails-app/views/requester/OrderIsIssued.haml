@@ -16,12 +16,8 @@
       .subscribe_block
       .footer
         .container
-          /
-            %g:link.size-subscribe.button-subscribe{:action => "toMainPage"} Поделиться
-            %g:link.size-subscribe-little.button-subscribe{:action => "toMainPage"} f
-          %g:link.send-step-button.button-prev{:action => "toStartPage"} Вернуться на главную
-          %g:link.send-step-button.button-next{:action => "toPicturesListPage"} Создать еще открытку
+          %g:link.send-step-button.button-prev{:controller => "SendStep", :action => "toStartPage"} Вернуться на главную
+          %g:link.send-step-button.button-next{:action => "toPreviousPage"} Продолжить создание открытки
       .container-cloud
         %img.left-cloud{:src => "/assets/little_image_site/left_cloud.png"}
         %img.right-cloud{:src => "/assets/little_image_site/right_cloud.png"}
-

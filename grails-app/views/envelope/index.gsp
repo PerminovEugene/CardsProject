@@ -89,6 +89,7 @@
         <div class='footer'>
           <div class='container'>
             <g:link action='index' class='button button-prev' controller='picturesList'>На шаг назад</g:link>
+            <g:link action='indexFromEnvelope' class='button-feedback' controller='requester'>Отправить более чем одному адресату</g:link>
             <a class='button button-next js-submit'>Дaлее</a>
             <span class='error-text js-error'></span>
           </div>
