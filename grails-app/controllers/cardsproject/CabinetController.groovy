@@ -88,10 +88,11 @@ class CabinetController {
             println('File ' + name + ' is failed to upload' )
         }
         else {
+
             name = img.getOriginalFilename()
             img.transferTo(new File(context + path + name))
-            logo = path + name
-            dataBaseService.saveCompany(company, logo)
+            def logoNew = path + name
+            dataBaseService.saveCompany(company, logoNew)
         }
         println ("lol")
       /*  if (dataBaseService.fetchCompany(params.company) != null) {

@@ -149,8 +149,8 @@ function sendEnterInfo_t() {
                 $('#registration-button_t').hide();
                 $('#exit-button_t').show();
                 $('.js-cabinet-button').removeClass('hidden');
-
                 PopUpHide_t();
+                window.location.reload();
             }
             else {
                 var enterCode = document.getElementById("enter-error_t");
@@ -182,6 +182,7 @@ function sendExit_t() {
                 $('#registration-button_t').show();
                 $('#enter-button_t').show();
 //                window.location.replace("../tester/index");
+            location.reload();
         }),
         error: (function (response) {
             //time to logging

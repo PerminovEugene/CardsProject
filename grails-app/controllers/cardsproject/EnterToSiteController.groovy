@@ -41,11 +41,7 @@ class EnterToSiteController {
         if (session.user_id != null) {
             session.removeAttribute('user_id')
             }
-        render(contentType: 'text/json') {
-            [
-                    'response': 'success'
-            ]
-        }
+        render(contentType: 'text/json') { [ 'response': 'success' ] }
     }
     def checkUserStatus() {
 //        println(params.Request)
@@ -57,7 +53,6 @@ class EnterToSiteController {
 //                println("false")
                 render(contentType: 'text/json') {[
                         'response': "not"
-
                 ]}
             }
             else {
