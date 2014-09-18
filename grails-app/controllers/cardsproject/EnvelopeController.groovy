@@ -4,7 +4,9 @@ class EnvelopeController {
     def dataBaseService
     def index() {
         if (session['user_id'] != null) {
+            println("userid!=0")
             def companySender = dataBaseService.fetchUserCompany(session.user_id)
+            println("fetch++")
             if (companySender != null) {
                 /*достаем данные из базы и пишем в сессию*/
                 def address = companySender.address

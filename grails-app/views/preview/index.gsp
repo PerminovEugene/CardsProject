@@ -109,6 +109,7 @@
       <div class='footer'>
         <div class='container'>
           <g:link action='index' class='button button-prev' controller='card'>На шаг назад</g:link>
+          <g:link action='indexFromPreview' class='button-feedback' controller='requester'>Пожелания по доставке</g:link>
           <button class='button button-next' id='registration_button' name='registration_button' value='registration_button'>
             Готово
           </button>

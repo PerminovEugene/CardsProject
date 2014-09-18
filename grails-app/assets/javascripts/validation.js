@@ -161,7 +161,7 @@ var validationPostCode = function(currentInput) {
         return false;
     }
     return true;
-}
+};
 var validationHomeNumber = function(currentInput) {
     reg = /^[\.\+\*0-9_-]{1,10}$/i;
     if (!currentInput.value.match(reg)) {
@@ -169,4 +169,5 @@ var validationHomeNumber = function(currentInput) {
         return false;
     }
     return true;
-}
+};
+

@@ -70,5 +70,6 @@
         .footer
           .container
             %g:link.button.button-prev{:controller =>"picturesList", :action=>"index"} На шаг назад
+            %g:link.button-feedback{:controller =>"requester", :action=>"indexFromEnvelope"} Отправить более чем одному адресату
             %a.button.button-next.js-submit Дaлее
             %span.error-text.js-error

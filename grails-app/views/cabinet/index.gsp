@@ -6,6 +6,7 @@
     <title>Личный кабинет</title>
     <script src='../js/userInfo.js' type='text/javascript'></script>
     <script src='../js/handlebars/handlebars.js' type='text/javascript'></script>
+    <script src='/assets/cabinet.js' type='text/javascript'></script>
   </head>
   <body>
     <!-- Declare Variable -->

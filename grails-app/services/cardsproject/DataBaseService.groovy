@@ -1,4 +1,7 @@
 package cardsproject
+
+import org.yecht.Data.Str
+
 //import grails.transaction.Transactional
 
 //@Transactional
@@ -128,11 +131,26 @@ class DataBaseService {
             }
         }
     }
-
+/*
     def fetchUserCompany( user_id) {
         def user = User.get(user_id)
         if (user != null) {
+            println (user + ' user')
             def company = user.company
+            println ("hist company")
+            return company
+        }
+        return null
+
+    }*/
+    def fetchUserCompany( user_id) {
+        println("in service")
+        def user = User.get(user_id)
+       println("in service user" + user.company)
+        if (user.company != null) {
+//            println (user.company + ' user')
+            def company = user.company
+            println ("hist company" + company)
             return company
         }
         return null
@@ -217,6 +235,19 @@ class DataBaseService {
         )
 
     }
+
+    def createRequest(name, phone, email, state) {
+        def request = new Requester()
+        println("1")
+        if (phone != "" || email != "") {
+            request.name = name
+            request.phone = phone
+            request.email = email
+            request.state = state
+            request.save()
+        }
+    }
+
 
 //    def getAddress(long id_address) {
 //        def address = Address.get(id_address)

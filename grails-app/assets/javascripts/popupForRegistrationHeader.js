@@ -82,7 +82,6 @@ $(document).ready(function () {
             };
             var myJson = JSON.stringify(obj);
             $.ajax({
-//                url: '../enterToSite/registration',
                 url: '../enterToSite/registration',
                 type: 'post',
                 dataType: 'JSON',
@@ -95,6 +94,7 @@ $(document).ready(function () {
                         $('#registration-button_t').hide();
                         $('#exit-button_t').show();
                         $('.js-cabinet-button').removeClass('hidden');
+                        window.location.reload();
                     }
                     else {
                         var userPasser = document.getElementById("reg_passError");

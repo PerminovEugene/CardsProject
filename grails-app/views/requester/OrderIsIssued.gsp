@@ -1,4 +1,4 @@
-<%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY index.haml --%>
+<%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY OrderIsIssued.haml --%>
 <html xmlns='http://www.w3.org/1999/html'>
   <head>
     <title>Отправлено</title>
@@ -19,14 +19,8 @@
       <div class='subscribe_block'></div>
       <div class='footer'>
         <div class='container'>
-          <!--
-          
-            <g:link action='toMainPage' class='size-subscribe button-subscribe size-subscribe button-subscribe'>Поделиться</g:link>
-            <g:link action='toMainPage' class='size-subscribe-little button-subscribe size-subscribe-little button-subscribe'>f</g:link>
-          
-          -->
-          <g:link action='toStartPage' class='send-step-button button-prev'>Вернуться на главную</g:link>
-          <g:link action='toPicturesListPage' class='send-step-button button-next'>Создать еще открытку</g:link>
+          <g:link action='toStartPage' class='send-step-button button-prev' controller='SendStep'>Вернуться на главную</g:link>
+          <g:link action='toPreviousPage' class='send-step-button button-next'>Продолжить создание открытки</g:link>
         </div>
       </div>
       <div class='container-cloud'>
