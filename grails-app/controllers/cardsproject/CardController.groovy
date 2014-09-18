@@ -2,6 +2,8 @@ package cardsproject
 import org.springframework.web.multipart.MultipartFile
 
 class CardController {
+    def dataBaseService
+
     def index() {
         if ((session.currentCard.sign == null)||
             (session.currentCard.text == null)){
@@ -11,22 +13,19 @@ class CardController {
     }
 
     def save() {
-        MultipartFile img
         def context = servletContext.getRealPath("/")
         def path = 'images/temp/'
-        img = request.getFile('logo')
+        MultipartFile img = request.getFile('logo')
         if (img.empty) {
            //place for log
             if(session.user_id != null) {
                 def user_id = session.user_id
-                def db = new DataBaseService()
-                def company = db.getUserCompany(user_id)
+                def company = dataBaseService.fetchUserCompany(user_id)
                 session['_logo'] = company.logo
             } else {
                 session['_logo'] = ''
             }
-        }
-        else {
+        } else {
             def name = img.getOriginalFilename()
             img.transferTo(new File(context + path + name))
             session['_logo'] = path + name

@@ -9,20 +9,21 @@
 		%{--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">--}%
 		<title><g:layoutTitle default="Grails"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="/CardsProject/assets/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
   		<asset:stylesheet src="application.css"/>
 		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
-        <script src='/CardsProject/assets/popup_for_enter.js' type='text/javascript'></script>
-        <script src='/CardsProject/assets/popup_for_registration_header.js' type='text/javascript'></script>
+        <script src='/assets/popupForEnter.js' type='text/javascript'></script>
+        <script src='/assets/ajaxPathes.js' type='text/javascript'></script>
+        <script src='/assets/popupForRegistrationHeader.js' type='text/javascript'></script>
 	</head>
 	<body>
         <div class="page-wrapper">
 		<div class="header" id="header" role="banner">
             <div class="container">
                 <div class="logo-block">
-                    <a href="/CardsProject/picturesList/index" >
+                    <a href="/startPage/index" >
                         <asset:image src="logo_o.png" alt="GoodCards" class="project-logo"/>
                     </a>
                 </div>
@@ -39,14 +40,9 @@
                     <button id='exit-button_t' name='exit-button_t' value='exit-button_t' class="header-button">
                         Выход
                     </button>
-                    %{--<div class="cabinet-header">--}%
-                        %{--<div class="container">--}%
-                            %{--<div class="heading">--}%
-                            <div  id="header-button">
-                                <g:link controller="cabinet" action="index" class="js-cabinet-button hidden header-button to-down">Личный кабинет</g:link>
-                            </div>
-                        %{--</div>--}%
-                    %{--</div>--}%
+                        <div  id="header-button">
+                            <g:link controller="cabinet" action="index" class="js-cabinet-button hidden header-button to-down">Личный кабинет</g:link>
+                        </div>
                 </div>
             </div>
         </div>

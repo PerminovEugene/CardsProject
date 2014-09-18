@@ -2,7 +2,7 @@ package cardsproject
 
 class AdminPanelController {
 //    def success = false
-
+    def dataBaseService
     def login() {
         def login = 'CardsProject'
         def password = 'CardsProject'
@@ -32,15 +32,17 @@ class AdminPanelController {
         def logo = card.user.company.logo
         ["card" : card, "picture" : picture, "logo" : logo]
     }
+
     def update() {
-        def db = new DataBaseService()
+//        def db = new DataBaseService()
         def card
         params.cardId.each {
             it = it.toString()
             it = it.toInteger()
             card = Card.get(it)
             it--
-            db.updateCardState(card,params.state[it])
+//            db.updateCardState(card,params.state[it])
+            dataBaseService.updateCardState(card, params.state[it])
         }
         redirect(action: "index")
     }

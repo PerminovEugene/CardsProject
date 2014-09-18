@@ -47,3 +47,6 @@ CardsProject.iml
 #pom
 pom.xml
 
+#COMMENTED FOR ECLIPSE
+.classpath
+.project

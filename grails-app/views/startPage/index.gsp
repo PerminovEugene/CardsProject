@@ -11,17 +11,17 @@
       <div class='container'>
         <div class='us-features'>
           <div class='feature-block'>
-            <img src='/CardsProject/assets/StartPage/message.png' />
+            <img src='/assets/StartPage/message.png' />
             <h4>Меньше проблем!</h4>
             <h5>Пока вы занимаетесь бизнесом, мы повышаем лояльность ваших клиентов. Создайте открытку, а мы займемся её печатью и отправкой.</h5>
           </div>
           <div class='feature-block'>
-            <img src='/CardsProject/assets/StartPage/heart.png' />
+            <img src='/assets/StartPage/heart.png' />
             <h4>Просто о важном</h4>
             <h5>Поздравительная открытка - это просто способ показать партнёру, что он важен для вас.</h5>
           </div>
           <div class='feature-block'>
-            <img src='/CardsProject/assets/StartPage/circlewithfoot.png' />
+            <img src='/assets/StartPage/circlewithfoot.png' />
             <h4 class='last-h4'>Пригласите лично</h4>
             <h5>Создайте эксклюзивное приглашение для важных персон.</h5>
           </div>

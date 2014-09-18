@@ -3,8 +3,8 @@
   <head>
     <meta content='main' name='layout' />
     <title>Предпросмотр</title>
-    <script src='/CardsProject/assets/popup_registration.js' type='text/javascript'></script>
-    <script src='/CardsProject/assets/preview.js' type='text/javascript'></script>
+    <script src='/assets/popupRegistrationAtLastStep.js' type='text/javascript'></script>
+    <script src='/assets/preview.js' type='text/javascript'></script>
   </head>
   <body>
     <div class='nav'>
@@ -54,11 +54,11 @@
         </div>
         <h5>Обратная сторона</h5>
         <div class='choose-picture js-choose-back-picture'>
-          <img src='/CardsProject/assets/send_step/demo_sender.png' />
+          <img src='/assets/send_step/demo_sender.png' />
         </div>
         <h5>Конверт</h5>
         <div class='choose-picture js-choose-sender'>
-          <img src='/CardsProject/assets/send_step/demo_my_words.png' />
+          <img src='/assets/send_step/demo_my_words.png' />
         </div>
       </div>
       <div class='big-preview'>
@@ -105,24 +105,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class='card-preview card-face'>
-        <h2>Лицевая сторона</h2>
-        <div class='card-view'>
-          <img src='${session._picture}' />
-        </div>
-      </div>
-      <div class='card-preview card-back'>
-        <h2>Обратная сторона</h2>
-        <div class='card-view card'>
-          <div class='text'>${session.currentCard.text}</div>
-          <div class='file'>
-            <img src='../${session._logo}' width='125' />
-          </div>
-          <div class='sign'>${session.currentCard.sign}</div>
-        </div>
-        <span>Печать на гофрированной бумаге в три слоя,</span>
-        <Span>заботливо поглажена на прощание</Span>
       </div>
       <div class='footer'>
         <div class='container'>

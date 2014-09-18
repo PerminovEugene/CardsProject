@@ -98,7 +98,7 @@ class DataBaseService {
         card.save(flush: true)
     }
 
-    def getUser(String e_mail) {
+    def fetchUser(String e_mail) {
         def user = User.findByE_mail(e_mail)
         if (user != null) {
             return user.id
@@ -106,45 +106,104 @@ class DataBaseService {
         return null
     }
 
-    def getUser(String e_mail, String pass)
+    def fetchUser(String e_mail, String pass)
     {
         def user = User.findByE_mail(e_mail)
         if (user == null) {
             return null
-        }
-        else {
-//            println("user_pass " + user.password)
-            if (user.password == pass)
-            {
+        } else {
+            if (user.password == pass) {
                 return user.id
-            }
-            else {
+            } else {
                 return null
             }
         }
     }
 
-//    def getSender(long user_id) {
-//        def user = User.get(user_id)
-//
-//    }
-
-    def getUserCompany(long user_id) {
+    def fetchUserCompany(long user_id) {
         def user = User.get(user_id)
         def company = user.company
 //        def address = company.address
         return company
     }
 
-    def getCompany(String name){
+    def fetchCompany(String name){
         def company = Company.findByName(name)
         return company
     }
 
-    def getCards(long user_id) {
+    def fetchCards(long user_id) {
         def user = User.get(user_id)
         def cards = Card.findAllByUser(user)
         return cards
+    }
+
+    def saveAllAtSendStep(session) {
+        def companySender
+        def user_id
+
+        if (session.user_id != null) {
+            user_id = session.user_id
+        } else {
+//          выполнять этот код только для анонимных пользователей
+            user_id = dataBaseService.fetchUser(session.userInfo.e_mail)
+        }
+        if (user_id != null) {
+            println('User already exist')
+            companySender = dataBaseService.fetchUserCompany(user_id)
+        } else {
+            user_id = dataBaseService.createUser(session.userInfo)
+            companySender = dataBaseService.fetchCompany(session.companySender.name)
+        }
+
+        if (companySender == null) {
+            def sender = dataBaseService.createHuman(session.companySender.sender)
+            def companySenderAddress = dataBaseService.createAddress(session.companySender.address)
+            companySender = dataBaseService.createCompany(
+                    session.companySender.name,
+                    companySenderAddress,
+                    sender,
+                    session._logo
+            )
+            /*try {
+                sendMail {
+                    to session.userInfo.e_mail
+                    subject "Регистрация на BestReCards"
+                    body 'Спасибо что зарегистрировались на нашем сервисе. :) ' +
+                            "Ваш пароль " + session.userInfo.password + ". "
+                }
+            } catch (Exception e) {
+                println(e)
+            }*/
+        } else {
+            if ((companySender.logo == null)||(session._logo != '')) {
+                companySender = dataBaseService.saveCompany(companySender, session._logo)
+            }
+        }
+        dataBaseService.addCompanyToUser(user_id, companySender)
+        session.setAttribute('user_id', user_id)
+        println("company_receiver")
+        def companyReceiver = dataBaseService.fetchCompany(session.companyReceiver.name)
+        if (companyReceiver != null) {
+            //log
+            println('Receiver ' + companyReceiver.name + ' already exist')
+        } else {
+            def receiver = dataBaseService.createHuman(session.companyReceiver.receiver)
+            def companyReceiverAddress = dataBaseService.createAddress(session.companyReceiver.address)
+            companyReceiver = dataBaseService.createCompany(
+                    session.companyReceiver.name,
+                    companyReceiverAddress,
+                    receiver)
+        }
+        println(session.currentCard.picture_id)
+        dataBaseService.saveCard(
+                session.currentCard.picture_id.toInteger(),
+                session.currentCard.text,
+                session.currentCard.sign,
+                user_id,
+                companyReceiver
+        )
+
     }
 
 //    def getAddress(long id_address) {

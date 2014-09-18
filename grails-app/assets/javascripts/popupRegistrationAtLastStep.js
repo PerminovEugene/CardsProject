@@ -7,8 +7,7 @@
 $(document).ready(function(){
     PopUpHide();
     alertPopUpHide();
-    //checkUser();
-    })
+    });
 //Функция отображения PopUp
 function PopUpShow(){
     $('#popup_block').show();
@@ -27,7 +26,7 @@ function alertPopUpShow(){
 function alertPopUpHide(){
     $('#popup_block_alert').hide();
 }
-// show popup when use button
+// запрос на сервер, выполнен ли вход пользователем, если да то переход на следующий шаг, иначе показать попап
 $(document).ready(function () {
     $('#registration_button').click(function () {
         var obj = {
@@ -35,27 +34,24 @@ $(document).ready(function () {
         };
         var myJson = JSON.stringify(obj);
         $.ajax({
-            url: '../preview/registration',
-            type: 'post',
+            url: '../preview/isLogin',
+            type: 'GET',
             dataType: 'JSON',
-            data: obj,
-            response: 'JSON',
+//            response: 'JSON',
             success: (function (response) {
-                if (response.response == "true")
-                {
+                if (response.response == "true") {
                     window.location.replace('../sendStep/saveInDb');
-                }
-                else {
+                } else {
                     PopUpShow();
                 }
             }),
             error: (function (response) {
                 //time to logging
-                alert("error checkuser");
+                alert("error at check user");
             })
         })
     })
-})
+});
 //for hide popup when clicked out of him
 $(document).ready(function() {
     $('#popup_block').click(function() {
@@ -64,7 +60,7 @@ $(document).ready(function() {
     $('#popup_content').click(function (e) {
         e.stopPropagation();
     })
-})
+});
 //for hide alert-popup when clicked out of him
 $(document).ready(function() {
     $('#popup_block_alert').click(function(){
@@ -74,32 +70,32 @@ $(document).ready(function() {
     $('#popup_content_alert').click(function (e) {
         e.stopPropagation();
     })
-})
+});
 //close popup when use 'x'
 $(document).ready(function() {
     $('.exit_sign').click(function() {
         alertPopUpShow();
     })
-})
+});
 
 $(document).ready(function () {
     $('#want_send_button').click(function () {
         alertPopUpHide();
     })
-})
+});
 $(document).ready(function () {
     $('#didnt_want_send_button').click(function () {
         alertPopUpHide();
         PopUpHide();
     })
-})
+});
 
 //send on server input info (mail and pass)
 function sendRegistrationInfo() {
     var userMail = document.getElementById("mail").value;
     var userPass = document.getElementById("pass").value;
     var obj = {
-        "Request": 'registration',
+//        "Request": 'registration',
         "Mail": userMail,
         "Pass": userPass
     };
@@ -111,10 +107,14 @@ function sendRegistrationInfo() {
         data: obj,
         response: 'JSON',
         success: (function (response) {
-//            alert(response.response)
-            window.location.replace('../sendStep/saveInDb');
+            if (response.e_mail == "ok") {
+                PopUpHide();
+                window.location.replace('../sendStep/saveInDb');
+            } else {
+                errorMessageMail("Такой email уже занят");
+            }
         }),
-        error: (function (response) {
+        error: (function () {
 //            time to logging
             alert("error");
         })
@@ -123,7 +123,6 @@ function sendRegistrationInfo() {
 
 function validationEmail() {
     var userMail = document.getElementById("mail").value;
-    //var userMail = $('.js-mail-input').value;
     if (userMail == "")
     {
         errorMessageMail("E-mail должен быть не пустым");
@@ -139,7 +138,6 @@ function validationEmail() {
 
 function validationPassword() {
     var userPass = document.getElementById("pass").value;
-   // var userPass = document.getElementById("pass").value;
     if (userPass == "")
     {
         errorMessagePass("Пароль должен быть не пустым");
@@ -208,19 +206,15 @@ $(document).ready(function () {
         if (!validationEmail()) {
             popupOnErrorEmail();
             popupOnError();
-
-        }
-        else{
+        } else {
             if (!validationPassword()) {
                 popupOnValidEmail();
                 popupOnErrorPassword();
                 popupOnError();
-            }
-            else {
+            } else {
                 popupOnValidPassword();
                 sendRegistrationInfo();
-                PopUpHide();
             }
         }
     })
-})
+});

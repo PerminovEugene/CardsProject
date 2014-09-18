@@ -2,16 +2,14 @@
  * Created by eugenep on 20.08.14.
  */
 
-$(document).ready(function(){
-    $('.card-face').hide();
-    $('.card-back').hide();
-    $('.big-destination-card').show();
+$(document).ready(function() {
+    $('.big-destination-card').hide();
     $('.big-back-picture').hide();
-    $('.big-picture').hide();
+    $('.big-picture').show();
 });
 
 $(document).ready(function() {
-    $('.js-choose-picture').click(function() {
+    $('.js-choose-picture').click(function () {
         $('.big-destination-card').hide();
         $('.big-back-picture').hide();
         $('.big-picture').show();

@@ -1,5 +1,5 @@
 package cardsproject
-
+import grails.converters.JSON
 import grails.transaction.Transactional
 /**
  * Сервис предназначен для сборки объектов, списков, коллекций необходимых для контроллеров и других сервисов
@@ -12,24 +12,15 @@ class LinkerService {
     }
 
     /**
-     * Компонует список айдишников всех картинок.
-     * @return список айдишников всех картинок.
+     * Компонует список айдишников и путей всех картинок.
+     * @return этот список как JSON.
      */
-    def getListPicturesId() {
+    def fetchPictureListJSON() {
         def picture = new Picture()
         def picturesList = picture.list()
         def idList = picturesList.id
-        return idList
-    }
-
-    /**
-     * Компонует список всех путей картинок.
-     * @return список всех путей картинок.
-     */
-    def getListPicturesPath() {
-        def picture = new Picture()
-        def picturesList = picture.list()
         def pathList = picturesList.path
-        return pathList
+        def data = ["id" : idList, "path" : pathList] as JSON
+        return data
     }
 }
