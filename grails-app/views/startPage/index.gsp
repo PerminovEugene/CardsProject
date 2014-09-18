@@ -3,6 +3,7 @@
   <head>
     <title>Добро пожаловать</title>
     <meta content='main' name='layout' />
+    <script src='/assets/startPage.js' type='text/javascript'></script>
   </head>
   <body>
     <div class='cheat-for-header'></div>

@@ -28,14 +28,14 @@
                     </a>
                 </div>
                 <div class = "about_us">
-                     Сервис по отправке открыток бизнес партнёрам и клиентам
+                     Сервис по отправке открыток бизнес-партнёрам и клиентам
                 </div>
                 <div class="account-info js-account-info">
                     <button id='enter-button_t' name='enter-button_t' value='enter-button_t' class="header-button">
                         Вход
                     </button>
                     <button id='registration-button_t' name='registration-button_t' value='registration-button_t' class="header-button">
-                        Зарегестрироваться
+                        Зарегистрироваться
                     </button>
                     <button id='exit-button_t' name='exit-button_t' value='exit-button_t' class="header-button">
                         Выход

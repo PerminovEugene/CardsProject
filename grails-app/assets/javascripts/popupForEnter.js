@@ -58,13 +58,13 @@ $(document).ready(function () {
     $('#enter-button_t').click(function () {
        PopUpShow_t();
     })
-})
+});
 
 $(document).ready(function () {
     $('#exit-button_t').click(function () {
-       sendExit_t()
+       sendExit_t();
     })
-})
+});
 //for hide popup when clicked out of him
 $(document).ready(function() {
     $('#popup_block_t').click(PopUpHide_t);
@@ -181,7 +181,7 @@ function sendExit_t() {
                 $('.js-cabinet-button').addClass('hidden');
                 $('#registration-button_t').show();
                 $('#enter-button_t').show();
-                window.location.replace("../tester/index");
+//                window.location.replace("../tester/index");
         }),
         error: (function (response) {
             //time to logging

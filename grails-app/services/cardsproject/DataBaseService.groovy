@@ -9,7 +9,9 @@ class DataBaseService {
     def createUser(params){
         def user = new User()
         user.e_mail = params.e_mail
+//        password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : params.password
         user.password = params.password
+//        user.password = password
         user.save()
         return user.id
     }
@@ -52,12 +54,19 @@ class DataBaseService {
     }
 
     def saveAddress(Address address, params) {
-        address.city = params.city
-        address.street = params.street
-        address.house = params.house.toInteger()
-        address.housing = params.housing
-        address.office = params.office
-        address.postCode = params.postcode.toInteger()
+        if (params.city != null)
+            address.city = params.city
+        if (params.street != null)
+            address.street = params.street
+        if (params.house != null)
+            address.house = params.house.toInteger()
+        if (params.housing != null)
+            address.housing = params.housing
+        if (params.office != null)
+            address.office = params.office
+        if (params.postcode != null)
+            address.postCode = params.postcode.toInteger()
+        println ("save in db")
         address.save()
     }
 
@@ -120,11 +129,14 @@ class DataBaseService {
         }
     }
 
-    def fetchUserCompany(long user_id) {
+    def fetchUserCompany( user_id) {
         def user = User.get(user_id)
-        def company = user.company
-//        def address = company.address
-        return company
+        if (user != null) {
+            def company = user.company
+            return company
+        }
+        return null
+
     }
 
     def fetchCompany(String name){
