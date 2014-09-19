@@ -111,12 +111,43 @@ environments {
 }
 
 // log4j configuration
-log4j.main = {
+//log4j.main = {
     // Example of changing the log pattern for the default console appender:
     //
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
+import org.apache.log4j.DailyRollingFileAppender
+    log4j = {
+        appenders {
+            appender new DailyRollingFileAppender(
+                name: 'errorAppender',
+                datePattern: "'.'yyyy-MM-dd",  // See the API for all patterns.
+                fileName: "logs/error.log",
+                layout: pattern(conversionPattern:'%d [%t] %-5p %c{2} %x - %m%n')
+                )
+            }
+        appender new DailyRollingFileAppender(
+                name: 'debugAppender',
+                datePattern: "'.'yyyy-MM-dd",  // See the API for all patterns.
+                fileName: "logs/debug.log",
+                layout: pattern(conversionPattern:'%d [%t] %-5p %c{2} %x - %m%n')
+        )
+        appender new DailyRollingFileAppender(
+                name: 'infoAppender',
+                datePattern: "'.'yyyy-MM-dd",  // See the API for all patterns.
+                fileName: "logs/info.log",
+                layout: pattern(conversionPattern:'%d [%t] %-5p %c{2} %x - %m%n')
+        )
+        root {
+            error  'errorAppender'
+//            info 'infoAppender'
+//            debug 'debugAppender'
+
+        }
+    error errorAppender: '/CardsProject/grails-app/services/'
+//    info infoAppender: '/CardsProject/grails-app/services/'
+//    debug  debugAppender: '/CardsProject/grails-app/services/'
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP

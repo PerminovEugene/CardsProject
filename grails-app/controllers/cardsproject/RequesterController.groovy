@@ -2,13 +2,9 @@ package cardsproject
 
 class RequesterController {
     def dataBaseService
-    def index() {
-//        render (view: "index")
-    }
-    def OrderIsIssued() {
-//        println("sadsad")
-//        render (views:'OrderIsIssued.gsp')
-    }
+    def index() {}
+
+    def OrderIsIssued() {}
 
     def indexFromPicturesList() {
         session ['requester'] = [state: 'picturesList']
@@ -27,19 +23,20 @@ class RequesterController {
         redirect(action: 'index')
     }
     def save() {
-        def name = params.request_name
-        def phone = params.request_phone
-        println (phone)
-        def email = params.request_email
-        println (email)
-        def state = session.requester.state
-        println (state)
-        dataBaseService.createRequest(name, phone, email, state)
-        println ("55")
-        redirect(action: "OrderIsIssued")
+        try {
+            def name = params.request_name
+            def phone = params.request_phone
+            def email = params.request_email
+            def state = session.requester.state
+            dataBaseService.createRequest(name, phone, email, state)
+            redirect(action: "OrderIsIssued")
+        } catch (Exception e) {
+            log.error "Error in requesterController.save: ${e.message}", e
+        }
     }
 
     def toPreviousPage() {
+
         if (session ['requester']."state" == 'picturesList') {
             redirect(controller: 'PicturesList', action: 'index')
         } else if (session ["requester"]."state" == 'envelope') {
@@ -48,6 +45,8 @@ class RequesterController {
             redirect(controller: 'card', action: 'index')
         } else if (session ["requester"]."state" == 'preview') {
             redirect(controller: 'preview', action: 'index')
+        } else {
+            log.error("Error in requesterController.toPreviusPage. request == " + session ["requester"]."state")
         }
     }
 }
