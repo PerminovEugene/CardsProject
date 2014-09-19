@@ -3,6 +3,7 @@ package cardsproject
 class User {
 
 	transient springSecurityService
+
     static belongsTo = [company: Company]
     static hasMany = [card: Card]
 
@@ -15,19 +16,19 @@ class User {
 
 	static transients = ['springSecurityService']
 
-	static constraints = {
+    static constraints = {
         e_mail(unique: true)
         company(nullable: true)
-		password blank: false
-	}
+        password blank: false
+    }
 
 	static mapping = {
 		password column: '`password`'
 	}
 
-	//Set<Role> getAuthorities() {
-//		UserRole.findAllByuser(this).collect { it.userRole }
-//	}
+	Set<Role> getAuthorities() {
+		UserRole.findAllByUser(this).collect { it.role }
+	}
 
 	def beforeInsert() {
 		encodePassword()

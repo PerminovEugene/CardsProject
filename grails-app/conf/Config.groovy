@@ -161,3 +161,24 @@ import org.apache.log4j.DailyRollingFileAppender
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'cardsproject.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'cardsproject.UserRole'
+grails.plugin.springsecurity.authority.className = 'cardsproject.Role'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/*':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/assets/**':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/'
+grails.plugins.springsecurity.failureHandler.defaultFailureUrl = '/?login_error=1'
+
+grails.plugins.springsecurity.ui.register.defaultRoleNames = ['ROLE_USER', 'ROLE_ADMIN']
+grails.plugins.springsecurity.ui.encodePassword = false
+grails.plugins.springsecurity.ui.register.postRegisterUrl = '/'

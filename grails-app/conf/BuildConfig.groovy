@@ -80,5 +80,7 @@ grails.project.dependency.resolution = {
 
         test ':build-test-data:2.1.2'
         test ':fixtures:1.3'
+
+        compile ':spring-security-core:2.0-RC4'
     }
 }
