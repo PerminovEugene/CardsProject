@@ -10,7 +10,7 @@ class DataBaseService {
         try {
             def user = new User()
             user.e_mail = params.e_mail
-            user.password = params.password
+            user.password = params.password.encodeAsMD5()
             user.save()
             return user.id
         } catch (Exception e) {

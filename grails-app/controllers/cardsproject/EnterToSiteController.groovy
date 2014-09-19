@@ -15,7 +15,7 @@ class EnterToSiteController {
             выполнять этот код только для входящих пользователей
             */
             def e_mail = params.Mail
-            def password = params.Pass
+            def password = params.Pass.encodeAsMD5()
             user_id = dataBaseService.fetchUser(e_mail, password)
 //            println (user_id + 'its user id')
             if (user_id != null) {
