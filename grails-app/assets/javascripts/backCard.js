@@ -15,7 +15,7 @@ $(document).ready(function() {
     if ($(".js-hide-file-input")[0].value != null) {
         var text_info = $(".js-logo-presenter");
         var text_h3 = text_info[0].getElementsByTagName("h3");
-        text_h3[0].innerHTML = "Логотип не загружен";
+        text_h3[0].innerHTML = "Загрузите логотип";
     }
 });
 $(document).ready(function() {

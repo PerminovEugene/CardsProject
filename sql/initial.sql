@@ -78,7 +78,7 @@ CREATE TABLE `card` (
 
 LOCK TABLES `card` WRITE;
 /*!40000 ALTER TABLE `card` DISABLE KEYS */;
-INSERT INTO `card` VALUES (1,0,2,'2014-09-17 17:17:37',1,'Your\'s banny','MODERATION','Congratulation',1),(2,0,2,'2014-09-17 17:17:37',2,'Your\'s banny','PRINT','Congratulation',1);
+INSERT INTO `card` VALUES (1,0,2,'2014-09-19 17:14:55',1,'Your\'s banny','MODERATION','Congratulation',1),(2,0,2,'2014-09-19 17:14:55',2,'Your\'s banny','PRINT','Congratulation',1);
 /*!40000 ALTER TABLE `card` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,6 +251,33 @@ INSERT INTO `picture` VALUES (1,0,3,'crazy man','assets/testCards/card1.jpg'),(2
 UNLOCK TABLES;
 
 --
+-- Table structure for table `requester`
+--
+
+DROP TABLE IF EXISTS `requester`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `requester` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `version` bigint(20) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `requester`
+--
+
+LOCK TABLES `requester` WRITE;
+/*!40000 ALTER TABLE `requester` DISABLE KEYS */;
+/*!40000 ALTER TABLE `requester` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sec_role`
 --
 
@@ -317,8 +344,8 @@ CREATE TABLE `sec_user_sec_role` (
   `sec_user_id` bigint(20) NOT NULL,
   PRIMARY KEY (`sec_role_id`,`sec_user_id`),
   KEY `FK_f1eew3u65ajs3e50xvacwgron` (`sec_user_id`),
-  CONSTRAINT `FK_f1eew3u65ajs3e50xvacwgron` FOREIGN KEY (`sec_user_id`) REFERENCES `sec_user` (`id`),
-  CONSTRAINT `FK_bshvqhdx8h9mb4rrbo1ahnp7q` FOREIGN KEY (`sec_role_id`) REFERENCES `sec_role` (`id`)
+  CONSTRAINT `FK_bshvqhdx8h9mb4rrbo1ahnp7q` FOREIGN KEY (`sec_role_id`) REFERENCES `sec_role` (`id`),
+  CONSTRAINT `FK_f1eew3u65ajs3e50xvacwgron` FOREIGN KEY (`sec_user_id`) REFERENCES `sec_user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -374,4 +401,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-09-17 17:33:32
+-- Dump completed on 2014-09-19 17:15:55
