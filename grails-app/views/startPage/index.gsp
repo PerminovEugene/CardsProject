@@ -33,5 +33,64 @@
         </div>
       </div>
     </div>
+    <div class='startPageForm'>
+      <div class='container'>
+        <g:form action='saveFromStart' class='js-form' controller='requester'>
+          <h2>Оставте заявку и наш менеджер свяжется с вами</h2>
+          <div class='form-block-half'>
+            <h4>1. Что бы Вы хотели разослать</h4>
+            <div class='radio-start-page-block'>
+              <g:radio class='radioStyle' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
+              <div class='text-near-radio'>Открытки</div>
+              <br />
+              <g:radio class='radioStyle' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Invites' />
+              <div class='text-near-radio'>Приглашения</div>
+              <br />
+            </div>
+            <h4>2. Они будут персональные?</h4>
+            <div class='radio-start-page-block'>
+              <g:radio class='radioStyle' name='personalSendRadio' type='radio" :cheked =&gt; "checked' value='Nominal' />
+              <div class='text-near-radio'>Да на них будут указаны конкретные ФИО человека</div>
+              <br />
+              <g:radio class='radioStyle' name='personalSendRadio' type='radio" :cheked =&gt; "checked' value='Noname' />
+              <div class='text-near-radio'>Нет они будут безымянные</div>
+              <br />
+            </div>
+            <h4>3. Как вы хотели бы их разослать?</h4>
+            <div class='radio-start-page-block'>
+              <g:radio class='radioStyle' name='methodOfDeliveryRadio' type='radio" :cheked =&gt; "checked' value='Personal' />
+              <div class='text-near-radio'>Курьером по конкретным адресам и определенным людям</div>
+              <br />
+              <g:radio class='radioStyle' name='methodOfDeliveryRadio' type='radio" :cheked =&gt; "checked' value='Spam' />
+              <div class='text-near-radio'>Безадресное распространение для определенной целевой аудитории</div>
+            </div>
+          </div>
+          <div class='form-block-half'>
+            <h4>Ваше имя</h4>
+            <div class='input-start-page-block'>
+              <g:textField class='name start-page-input' name='request_name' placeholder='Name' />
+              <br />
+            </div>
+            <h4>Ваш телефон</h4>
+            <div class='input-start-page-block'>
+              <g:textField class='obligatory-field start-page-input' name='request_phone' placeholder='Phone' />
+              <br />
+            </div>
+            <h4>Ваш e-mail</h4>
+            <div class='input-start-page-block'>
+              <g:textField class='post obligatory-field start-page-input' name='request_email' placeholder='E-mail' />
+              <br />
+            </div>
+            <h5>Нужно заполнить одно из полей или оба <<Ваш телефон>> и <<Ваш e-mail>></h5>
+            <a class='main-page-test-button js-submit'>Отправить заявку</a>
+          </div>
+        </g:form>
+        <!-- .footer -->
+        <!-- .container -->
+        <!-- %g:link.button.button-prev{:action=>"toPreviousPage"} Вернуться назад -->
+        <!-- %a.button.button-next.js-submit Отправить заявку -->
+        <!-- %span.error-text.js-error -->
+      </div>
+    </div>
   </body>
 </html>

@@ -34,7 +34,23 @@ class RequesterController {
             log.error "Error in requesterController.save: ${e.message}", e
         }
     }
-
+    def saveFromStart() {
+        try {
+            session ['requester'] = [state: 'startPage']
+            def name = params.request_name
+            def phone = params.request_phone
+            def email = params.request_email
+            def state = session.requester.state
+            def whatSendRadio = params.whatSendRadio
+            def personalSendRadio = params.personalSendRadio
+            def methodOfDeliveryRadio = params.methodOfDeliveryRadio
+            dataBaseService.createRequest(name, phone, email, state,
+                    whatSendRadio, personalSendRadio, methodOfDeliveryRadio)
+            redirect(action: "OrderIsIssued")
+        } catch (Exception e) {
+            log.error "Error in requesterController.save: ${e.message}", e
+        }
+    }
     def toPreviousPage() {
 
         if (session ['requester']."state" == 'picturesList') {
@@ -45,6 +61,8 @@ class RequesterController {
             redirect(controller: 'card', action: 'index')
         } else if (session ["requester"]."state" == 'preview') {
             redirect(controller: 'preview', action: 'index')
+        } else if (session ["requester"]."state" == 'preview') {
+            redirect(controller: 'startPage', action: 'index')
         } else {
             log.error("Error in requesterController.toPreviusPage. request == " + session ["requester"]."state")
         }

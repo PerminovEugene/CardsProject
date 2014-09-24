@@ -223,7 +223,26 @@ class DataBaseService {
                 request.save()
             }
         } catch (Exception e) {
-            log.error "Error in create Request: ${e.message}", e
+            log.error "Error in createRequest(name, phone, email, state): ${e.message}", e
         }
     }
+
+    def createRequest(name, phone, email, state, whatSendRadio, personalSendRadio, methodOfDeliveryRadio) {
+        try {
+            def request = new Requester()
+            if (phone != "" || email != "") {
+                request.name = name
+                request.phone = phone
+                request.email = email
+                request.state = state
+                request.whatSendRadio = whatSendRadio
+                request.personalSendRadio = personalSendRadio
+                request.methodOfDeliveryRadio = methodOfDeliveryRadio
+                request.save()
+            }
+        } catch (Exception e) {
+            log.error "Error in createRequest(name, phone, email, state, whatSendRadio, personalSendRadio, methodOfDeliveryRadio): ${e.message}", e
+        }
+    }
+
 }
