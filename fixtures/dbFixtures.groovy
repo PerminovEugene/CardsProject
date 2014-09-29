@@ -96,22 +96,11 @@ picture5.catalog = catalog
 picture5.path = 'assets/testCards/card9.png'
 picture5.save()
 
-/**
- *  Create some human in db
- */
-def sender = new Human()
-sender.name = 'Alexeev S.K.'
-sender.post = 'Director'
-sender.save()
-
-def addressee = new Human()
-addressee.name = 'Antonov A.V.'
-addressee.post = 'General director'
-addressee.save()
 
 /**
  *  Create some address in db
  */
+/*
 def lukoilAddress = new Address()
 lukoilAddress.city = 'Moskva'
 lukoilAddress.street = 'Lenina'
@@ -129,10 +118,11 @@ mostovikAddress.housing = '25'
 mostovikAddress.office = '18'
 mostovikAddress.postCode = 643421
 mostovikAddress.save()
-
+*/
 /**
  *  Create some company in db
  */
+/*
 def mostovik = new Company()
 mostovik.name = 'Mostovik'
 mostovik.logo = 'images/logo/mostovik.jpeg'
@@ -147,35 +137,17 @@ lukoil.human = addressee
 lukoil.address = lukoilAddress
 lukoil.save()
 
-
+*/
 /**
  *  Create test user in db
  */
+/*
 def testUser = new User()
 testUser.e_mail = 'test@gmail.com'
 testUser.password ='qwerty'
 testUser.company = mostovik
 testUser.save()
-
+*/
 /**
  *  Create card in db
  */
-def firstCard = new Card()
-firstCard.text = 'Congratulation'
-firstCard.sign = "Your's banny"
-firstCard.created = new Date()
-firstCard.state = "MODERATION"
-firstCard.picture = evaCard1
-firstCard.user = testUser
-firstCard.company = lukoil
-firstCard.save()
-
-def secondCard = new Card()
-secondCard.text = 'Congratulation'
-secondCard.sign = "Your's banny"
-secondCard.created = new Date()
-secondCard.state = "PRINT"
-secondCard.picture = evaCard2
-secondCard.user = testUser
-secondCard.company = lukoil
-secondCard.save()

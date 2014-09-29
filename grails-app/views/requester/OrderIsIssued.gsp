@@ -14,7 +14,7 @@
     <div class='page'>
       <div class='head-main'>Спасибо за заявку! Наш менеджер свяжется с вами.</div>
       <div class='send_logo'>
-        <img id='picture_send_logo' src='/assets/send_step/airoplane.jpg' />
+        <img id='picture_send_logo' src='/assets/send_step/samolet.png' />
       </div>
       <div class='subscribe_block'></div>
       <div class='footer'>

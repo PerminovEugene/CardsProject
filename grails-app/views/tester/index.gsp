@@ -1,11 +1,12 @@
 <%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY index.haml --%>
-<!DOCTYPE html>
-<html>
+<html xmlns='http://www.w3.org/1999/html'>
   <head>
+    <title>Добро пожаловать</title>
     <meta content='main' name='layout' />
-    <title>tester</title>
+    <script src='/assets/startPage.js' type='text/javascript'></script>
   </head>
   <body>
-    <p>${message}</p>
+    <div class='cheat-for-header'></div>
+    <div class='mail-style'></div>
   </body>
 </html>

@@ -5,6 +5,8 @@
     <title>Ввод адреса</title>
   </head>
   <body>
+    <div class='cheat-for-header'></div>
+    <div class='cheat-for-header'></div>
     <div class='mail-style'></div>
     <div class='container page'>
       <h1>Заполните одно из полей, и наш менеджер с вами свяжется</h1>
@@ -16,6 +18,7 @@
           <g:textField class='name wide-input' name='request_phone' placeholder='Phone' />
           <br />
           <h2 class='sender_words'>Ваш e-mail</h2>
+          <br />
           <g:textField class='post wide-input' name='request_email' placeholder='E-mail' />
         </div>
         <div class='footer'>

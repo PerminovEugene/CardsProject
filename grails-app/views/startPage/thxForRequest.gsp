@@ -1,8 +1,9 @@
-<%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY index.haml --%>
+<%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY thxForRequest.haml --%>
 <html xmlns='http://www.w3.org/1999/html'>
   <head>
-    <title>Отправлено</title>
+    <title>Добро пожаловать</title>
     <meta content='main' name='layout' />
+    <script src='/assets/startPage.js' type='text/javascript'></script>
   </head>
   <body>
     <!-- Declare variable -->
@@ -19,8 +20,7 @@
       <div class='subscribe_block'></div>
       <div class='footer'>
         <div class='container'>
-          <g:link action='toStartPage' class='send-step-button button-prev'>Вернуться на главную</g:link>
-          <g:link action='toPicturesListPage' class='send-step-button button-next'>Создать еще открытку</g:link>
+          <g:link action='index' class='main-page-test-button'>Вернуться на главную</g:link>
         </div>
       </div>
       <div class='container-cloud'>

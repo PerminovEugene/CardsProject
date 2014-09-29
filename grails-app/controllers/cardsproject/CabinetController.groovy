@@ -30,19 +30,21 @@ class CabinetController {
     }
 
     def sendUserInfo() {
+        try {
+            def user_id = session.user_id
+            def company = dataBaseService.fetchUserCompany(user_id)
+            if (company != null) {
+                def address = company.address
+                def human = company.human
+                def data = ["company": company, "human": human, "address": address] as JSON
+                render data
+            } else {
 
-        def user_id = session.user_id
-        def company = dataBaseService.fetchUserCompany(user_id)
-        if (company != null) {
-            println("sssss")
-            def address = company.address
-            def human = company.human
-            def data = ["company": company, "human": human, "address": address] as JSON
-            render data
-        }
-        else {
-            def data = ["company": "Укажите компанию", "human": "Человек", "address": "Аддрес"] as JSON
-            render data
+                def data = ["company": "Укажите компанию", "human": "Человек", "address": "Аддрес"] as JSON
+                render data
+            }
+        } catch (Exception e) {
+            log.error "Error in sendUserInfo ${e.message}", e
         }
     }
 
@@ -63,35 +65,48 @@ class CabinetController {
                 'post': params.post
         ]
         if (company != null) {
-            def logo = company.logo
-            def address = company.address
-            def human = company.human
-            dataBaseService.saveAddress(address, newAddress)
-            dataBaseService.saveHuman(human, newHuman)
+            try {
+                def logo = company.logo
+                def address = company.address
+                def human = company.human
+                dataBaseService.saveAddress(address, newAddress)
+                dataBaseService.saveHuman(human, newHuman)
+            } catch (Exception e) {
+                log.error "Error in updateUserInfo in save info part ${e.message}", e
+            }
         } else {
-            def human = dataBaseService.createHuman(newHuman)
-            println("human created")
-            def companyAddress = dataBaseService.createAddress(newAddress)
-            println("address created")
-            company = dataBaseService.createCompany(params.company, companyAddress, human)
-            dataBaseService.addCompanyToUser(user_id, company)
-            println("finish saved")
+            try {
+                def human = dataBaseService.createHuman(newHuman)
+                def companyAddress = dataBaseService.createAddress(newAddress)
+                company = dataBaseService.createCompany(params.company, companyAddress, human)
+                dataBaseService.addCompanyToUser(user_id, company)
+            } catch (Exception e) {
+            log.error "Error in updateUserInfo in create info part ${e.message}", e
+            }
         }
-        def context = servletContext.getRealPath("/")
-        def path = 'images/temp/'
-        MultipartFile img = request.getFile('logo')
-        def name = 'sample.jpeg'
+        try {
+            def context = servletContext.getRealPath("/")
+            def path = 'images/temp/'
+            MultipartFile img = request.getFile('logo')
+            def name = 'sample.jpeg'
+            if (img.empty) {
 
-        if (img.empty) {
-            //place for log
-            println('File ' + name + ' is failed to upload')
-        } else {
-            name = img.getOriginalFilename()
-            img.transferTo(new File(context + path + name))
-            def logoNew = path + name
-            dataBaseService.saveCompany(company, logoNew)
+            } else {
+                name = img.getOriginalFilename()
+                img.transferTo(new File(context + path + name))
+                def logoNew = path + name
+                dataBaseService.saveCompany(company, logoNew)
+            }
+        } catch (Exception e) {
+            log.error "Error in updateUserInfo in save logo part ${e.message}", e
         }
-        redirect (action: 'index')
+      /*  if (dataBaseService.fetchCompany(params.company) != null) {
+            dataBaseService.saveCompany(company, logo)
+            message = 'This company name already exist'
+        } else {
+            dataBaseService.saveCompany(company, params.company, logo)
+            message = 'Company updated'
+        }*/
+        redirect(action: 'index')
     }
-
 }

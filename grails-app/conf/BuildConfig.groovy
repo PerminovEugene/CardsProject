@@ -78,7 +78,24 @@ grails.project.dependency.resolution = {
         compile ":mail:1.0.7"
         compile ":pdf:0.6"
 
+        // file uploader
+      /*  compile ":file-uploader:1.2.1"*/
+
         test ':build-test-data:2.1.2'
         test ':fixtures:1.3'
     }
+
 }
+/*
+fileuploader {
+    logo {
+        maxSize = 1024 * 256 //256 kbytes
+        allowedExtensions = ["jpg","jpeg","gif","png"]
+        path = "/tmp/avatar/"
+    }
+    docs {
+        maxSize = 1000 * 1024 * 4 //4 mbytes
+        allowedExtensions = ["doc", "docx", "pdf", "rtf"]
+        path = "/tmp/docs/"
+    }
+}*/

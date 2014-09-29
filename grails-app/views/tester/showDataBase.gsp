@@ -11,13 +11,5 @@
   <title></title>
 </head>
 <body>
-    <ui class="listPictures">
-        <li>
-            hi
-        </li>
-        <li>
-            noob
-        </li>
-    </ui>
 </body>
 </html>

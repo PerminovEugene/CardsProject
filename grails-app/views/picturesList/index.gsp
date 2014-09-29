@@ -91,9 +91,7 @@
         <g:hiddenField class='hidden-path' name='path'></g:hiddenField>
         <g:hiddenField class='hidden-id' name='id'></g:hiddenField>
         <div class='footer'>
-          <div class='form-style'>
-            Автор открыток: Ева Рупенко
-          </div>
+          <div class='form-style'></div>
           <g:link action='indexFromPicturesList' class='button-feedback' controller='requester'>Заказать индивидуальный дизайн</g:link>
           <a class='button button-next js-submit'>Далее</a>
           <span class='error-text js-error'>
