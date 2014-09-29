@@ -26,10 +26,10 @@
             <h4 class='last-h4'>Пригласите лично</h4>
             <h5>Создайте эксклюзивное приглашение для важных персон.</h5>
           </div>
-          <div class='main-page-footer'>
-            <div class='main-page-reg-button js-reg-main-page'>Зарегистрироваться</div>
-            <g:link action='index' class='main-page-test-button' controller='picturesList'>Попробовать</g:link>
-          </div>
+        </div>
+        <div class='main-page-footer'>
+          <div class='main-page-reg-button js-reg-main-page'>Зарегистрироваться</div>
+          <g:link action='index' class='main-page-test-button' controller='picturesList'>Попробовать</g:link>
         </div>
       </div>
     </div>
