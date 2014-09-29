@@ -241,8 +241,20 @@ class DataBaseService {
                 request.save()
             }
         } catch (Exception e) {
-            log.error "Error in createRequest(name, phone, email, state, whatSendRadio, personalSendRadio, methodOfDeliveryRadio): ${e.message}", e
+            log.error "Error in createRequest(name, phone, email, state, whatSendRadio, personalSendRadio, methodOfDeliveryRadio): ${e.message}, name ${name}," +
+                    "phhone ${phone}, email ${email}, whatSendRadio ${whatSendRadio}, personalSendRadio ${personalSendRadio}," +
+                    "methodOfDeliveryRadio ${methodOfDeliveryRadio}", e
         }
     }
-
+    def saveSubscribeEmail(email) {
+        try {
+            if (email != "" && email != null) {
+                def subscribe = new Subscribe()
+               subscribe.email = email
+                subscribe.save()
+            }
+        } catch (Exception e) {
+            log.error "Error in saveSubscribeEmail(email): ${e.message}, email:  $email", e
+        }
+    }
 }

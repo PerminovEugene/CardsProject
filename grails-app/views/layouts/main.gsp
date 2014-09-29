@@ -15,7 +15,6 @@
 		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
         <script src='/assets/popupForEnter.js' type='text/javascript'></script>
-        <script src='/assets/ajaxPathes.js' type='text/javascript'></script>
         <script src='/assets/popupForRegistrationHeader.js' type='text/javascript'></script>
 	</head>
 	<body>
@@ -77,8 +76,8 @@
             <div class='reg_exit_sign'>
                 %{--<img src="/CardsProject/assets/little_image_site/cross.png"/>--}%
             </div>
-            <h2>Регистрация</h2>
-            <h3>Вам не нужно будет повторно вводить данные, в следующий, раз все будет уже сохранено!</h3>
+            <h2> Регистрация </h2>
+            <h3> Зарегестрировавшись вы сможете заполнить профиль компании отправителя для использования его повторно! </h3>
             <div class='reg_mailError' id='reg_mailError'>
                 <h3></h3>
             </div>
@@ -95,7 +94,7 @@
     </div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
     <div class="template-footer">
-        <a class="first-link-footer" href="http://7bits.ru/">7bits.ru</a>
+        %{--<a class="first-link-footer" href="http://7bits.ru/">7bits.ru</a>--}%
         <h4>Есть вопросы? Пишите:</h4>
         <a href="http://gmail.com/">bestrecards.project@gmail.com</a>
     </div>

@@ -1,7 +1,8 @@
 %html{:xmlns => "http://www.w3.org/1999/html"}
   %head
-    %title Отправлено
+    %title Добро пожаловать
     %meta{:content => "main", :name => "layout"}
+    %script{:src => "/assets/startPage.js", :type => "text/javascript"}
   %body
     / Declare variable
     - pass = 'пароль'
@@ -16,8 +17,7 @@
       .subscribe_block
       .footer
         .container
-          %g:link.send-step-button.button-prev{:controller => "SendStep", :action => "toStartPage"} Вернуться на главную
-          %g:link.send-step-button.button-next{:action => "toPreviousPage"} Продолжить создание открытки
+          %g:link.main-page-test-button{:action => "index"} Вернуться на главную
       .container-cloud
         %img.left-cloud{:src => "/assets/little_image_site/left_cloud.png"}
         %img.right-cloud{:src => "/assets/little_image_site/right_cloud.png"}

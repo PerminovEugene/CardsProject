@@ -17,23 +17,10 @@ class EnterToSiteController {
             def e_mail = params.Mail
             def password = params.Pass.encodeAsMD5()
             user_id = dataBaseService.fetchUser(e_mail, password)
-//            println (user_id + 'its user id')
             if (user_id != null) {
                 session.user_id = user_id
-//                println (session.user_id + 'in session')
-//                println (user_id + 'its user id')
-                render(contentType: 'text/json') {
-                    [
-                            'response': 'success'
-                    ]
-                }
-            }
-            else {
-                render(contentType: 'text/json') {
-                    [
-                            'response': 'unsuccess'
-                    ]
-                }
+                render(contentType: 'text/json') {[ 'response': 'success' ]}
+            } else { render(contentType: 'text/json') {[ 'response': 'unsuccess' ]}
             }
         }
     }
@@ -41,7 +28,7 @@ class EnterToSiteController {
         if (session.user_id != null) {
             session.removeAttribute('user_id')
             }
-        render(contentType: 'text/json') { [ 'response': 'success' ] }
+        render(contentType: 'text/json') {[ 'response': 'success' ]}
     }
     def checkUserStatus() {
 //        println(params.Request)
@@ -50,23 +37,13 @@ class EnterToSiteController {
         {
             if (session.user_id == null)
             {
-//                println("false")
-                render(contentType: 'text/json') {[
-                        'response': "not"
-                ]}
+                render(contentType: 'text/json') {[ 'response': "not" ]}
+            } else {
+                render(contentType: 'text/json') {[ 'response': "yes" ]}
             }
-            else {
-                render(contentType: 'text/json') {[
-                        'response': "yes"
-                ]}
-            }
-        }
-        else
-        {
-            //logging there
-            render(contentType: 'text/json') {[
-                    'response': "fail at response"
-            ]}
+        } else {
+            log.error "Error in checkUserStatus(): ${e.message}", e
+            render(contentType: 'text/json') {[ 'response': "fail at response" ]}
         }
     }
     def registration() {

@@ -3,7 +3,7 @@ package cardsproject
 class RequesterController {
     def dataBaseService
     def index() {}
-
+    def thxForRequest() {}
     def OrderIsIssued() {}
 
     def indexFromPicturesList() {
@@ -46,9 +46,11 @@ class RequesterController {
             def methodOfDeliveryRadio = params.methodOfDeliveryRadio
             dataBaseService.createRequest(name, phone, email, state,
                     whatSendRadio, personalSendRadio, methodOfDeliveryRadio)
-            redirect(action: "OrderIsIssued")
+            redirect(controller: "startPage", action: "thxForRequest")
         } catch (Exception e) {
-            log.error "Error in requesterController.save: ${e.message}", e
+            log.error "Error in requesterController.save: ${e.message}, name ${name}," +
+                    "phone ${phone}, email ${email}, whatSendRadio ${whatSendRadio}, personalSendRadio ${personalSendRadio}," +
+                    "methodOfDeliveryRadio ${methodOfDeliveryRadio},", e
         }
     }
     def toPreviousPage() {

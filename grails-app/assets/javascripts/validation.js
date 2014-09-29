@@ -3,6 +3,42 @@
  */
 $(document).ready(function() {
     $('.js-error').empty();
+    $(document).on('click', '.js-submit-send-email', function(){
+        reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+        var input = $('.input-bottom-style');
+        if (!input[0].value.match(reg)) {
+            input[0]["style"].borderColor = 'red';
+            input[0].placeholder = 'Введите корректный email';
+            return false
+        } else {
+            $('.js-form').submit();
+        }
+    });
+
+    // валидация формы request
+    $(document).on('click', '.js-submit-request-form', function(){
+        var radio = $('.js-group-radio-1');
+        var success = checkRadioGroup(radio);
+        if (success) {
+            radio = $('.js-group-radio-2');
+            success = checkRadioGroup(radio);
+            if (success) {
+                radio = $('.js-group-radio-3');
+                success = checkRadioGroup(radio);
+                if (success) {
+                    var input = $('.half-obligatory-field');
+                    success = false
+                    input.each(function(index) {
+                        if (this.value != "")
+                        { success = true; }
+                    });
+                }
+            }
+        }
+        if (success == true) {
+            $('.js-request-form').submit();
+        }
+    });
     $(document).on('click', '.js-submit', function(){
 //        максимальная длина сообщения на открытке
         var _SIZEOFTEXTCARD_ = 650;
@@ -11,6 +47,7 @@ $(document).ready(function() {
         var text_fields = $('.js-form input[type=text]');
         var file = $('.js-form input[type=file]');
         var obligatory_fields = $('.obligatory-field');
+//        var half_obligatory_fields = $('.half-obligatory-field');
         var postcode_fields = $('.js-postcode-validation');
         var home_fields = $('.js-home-validation');
         var errMessage = '';
@@ -18,41 +55,12 @@ $(document).ready(function() {
         var success = false;
         $('.js-error').empty();
 
-        /*порядок проверки именно такой из-за шагов создания открытки.
-        Если на одной форме окажутся и текстовые поля и поле загрузки файла -
-        результат валидации последнего учитываться не будет*/
 
-//        if ((file.val() !== '') & (file.val() !== undefined) ) {
-//            success = true;
-//        } else {
-//            success = false;
-//            errMessage = 'Вы не загрузили логотип';
-//        }
-
-        /*text_fields.each(function(index) {
-            $(this).removeClass('empty-field');
-            if (($(this).val() !== '') && ($(this instanceOf obligatory-field))) {
-                counter++;
-            } else {
-                $(this).addClass('empty-field');
-                errMessage = 'Вы заполнили не все поля';
-            }
-        });
-        */
         obligatory_fields.each(function(index) {
             var currentInput = this;
             if (validationOnEmpty(currentInput)) {
-                //if (currentInput instanceof $('.wide-input')) {
-//                    if (validationOnMaxSizeBigInput())
-//                if (currentInput.name == "sender_postcode" || currentInput.name == "receiver_postcode") {
-//                    а сюда запилить регулярное выраджение для индекса
-//                }
-//                else
-                    counter++;
-                }
-//                else if (currentInput instanceof small-input) {
-//                    counter++;
-//                }
+                counter++;
+            }
         });
 //        проверяем валидность индекса (ровно 6 цифр) если не валидно, то счетчик уменьшаем
         postcode_fields.each(function(index) {
@@ -68,8 +76,6 @@ $(document).ready(function() {
                 counter --;
             }
         });
-
-
 //        проверяем размер сообщения на открытке на шаге 3
         var textCard = $('.js-text-validation');
         var textCorrect = false;
@@ -93,7 +99,6 @@ $(document).ready(function() {
             }
         }
 
-
 //        если количество обязательных полей совпало с каунтером то все валидно (для шага 2)
 //        если
         console.log(counter, text_fields.length);
@@ -107,8 +112,16 @@ $(document).ready(function() {
             $('.js-error').text(errMessage);
         }
     });
-})
-
+});
+var checkRadioGroup = function(radio) {
+    var success = false;
+    radio.each(function(index) {
+        if (this.checked == true) {
+            success = true
+        }
+    });
+    return success;
+};
 var validationOnEmpty = function(current_input){
     if (current_input.value == "")
     {

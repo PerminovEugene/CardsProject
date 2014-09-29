@@ -4,71 +4,84 @@
     %meta{:content => "main", :name => "layout"}
     %script{:src => "/assets/startPage.js", :type => "text/javascript"}
   %body
+    / Declare Variable
+    - name = 'Ваше имя'
+    - phone = 'Ваш телефон'
+    - email = 'Ваш e-mail'
     .cheat-for-header
     .mail-style
-    #start-page
-      .container
-        .us-features
-          .feature-block
-            %img{:src => '/assets/StartPage/message.png'}
-            %h4 Меньше проблем!
-            %h5 Пока вы занимаетесь бизнесом, мы повышаем лояльность ваших клиентов. Создайте открытку, а мы займемся её печатью и отправкой.
-          .feature-block
-            %img{:src => '/assets/StartPage/heart.png'}
-            %h4 Просто о важном
-            %h5 Поздравительная открытка - это просто способ показать партнёру, что он важен для вас.
-          .feature-block
-            %img{:src => '/assets/StartPage/circlewithfoot.png'}
-            %h4.last-h4 Пригласите лично
-            %h5 Создайте эксклюзивное приглашение для важных персон.
-          .main-page-footer
-            .main-page-reg-button.js-reg-main-page Зарегистрироваться
-            %g:link.main-page-test-button{:controller => "picturesList", :action => "index"} Попробовать
-    .startPageForm
-      .container
-        %g:form.js-form{:controller => "requester", :action => "saveFromStart"}
-          %h2 Оставте заявку и наш менеджер свяжется с вами
-          .form-block-half
-            %h4 1. Что бы Вы хотели разослать
-            .radio-start-page-block
-              %g:radio.radioStyle{:name => "whatSendRadio", :type => "radio" :cheked => "checked", :value => "Cards"}/
-              .text-near-radio Открытки
-              %br/
-              %g:radio.radioStyle{:name => "whatSendRadio", :type => "radio" :cheked => "checked", :value => "Invites"}/
-              .text-near-radio Приглашения
-              %br/
-            %h4 2. Они будут персональные?
-            .radio-start-page-block
-              %g:radio.radioStyle{:name => "personalSendRadio", :type => "radio" :cheked => "checked", :value => "Nominal"}/
-              .text-near-radio Да на них будут указаны конкретные ФИО человека
-              %br/
-              %g:radio.radioStyle{:name => "personalSendRadio", :type => "radio" :cheked => "checked", :value => "Noname"}/
-              .text-near-radio Нет они будут безымянные
-              %br/
-            %h4 3. Как вы хотели бы их разослать?
-            .radio-start-page-block
-              %g:radio.radioStyle{:name => "methodOfDeliveryRadio", :type => "radio" :cheked => "checked", :value => "Personal"}/
-              .text-near-radio Курьером по конкретным адресам и определенным людям
-              %br/
-              %g:radio.radioStyle{:name => "methodOfDeliveryRadio", :type => "radio" :cheked => "checked", :value => "Spam"}/
-              .text-near-radio Безадресное распространение для определенной целевой аудитории
-          .form-block-half
-            %h4 Ваше имя
-            .input-start-page-block
-              %g:textField.name.start-page-input{:name => "request_name", :placeholder => "Name"}/
-              %br/
-            %h4 Ваш телефон
-            .input-start-page-block
-              %g:textField.obligatory-field.start-page-input{:name => "request_phone", :placeholder => "Phone"}/
-              %br/
-            %h4 Ваш e-mail
-            .input-start-page-block
-              %g:textField.post.obligatory-field.start-page-input{:name => "request_email", :placeholder =>"E-mail"}/
-              %br/
-            %h5 Нужно заполнить одно из полей или оба <<Ваш телефон>> и <<Ваш e-mail>>
-            %a.main-page-test-button.js-submit Отправить заявку
-        /.footer
-        /  .container
-        /    %g:link.button.button-prev{:action=>"toPreviousPage"} Вернуться назад
-        /    %a.button.button-next.js-submit Отправить заявку
-        /   %span.error-text.js-error
+    #start-page-top
+      .content-start-page.top-img-style
+        .feature-block-1.top-style
+          %img{:src => '/assets/StartPage/Ikon_letter.png'}
+          .black-text-in-features Некогда повысить лояльность клиентов? Так много других неотложных дел?
+          .blue-text-in-features Пока вы занимаетесь бизнесом, мы повышаем лояльность ваших клиентов. Создайте открытку, а мы займемся её печатью и отправкой.
+        .feature-block-1.top-style
+          %img{:src => '/assets/StartPage/Ikon_love.png'}
+          .black-text-in-features Не знаете, как показать бизнес - партнёрам, что они важны для вас?
+          .blue-text-in-features Поздравительная открытка - это простой способ показать партнёру, что он важен для вас.
+        .feature-block-1.top-style
+          %img{:src => '/assets/StartPage/Ikon_medal.png'}
+          .black-text-in-features Не знаете как лучше пригласить важных персон на событие?
+          .blue-text-in-features Создайте эксклюзивное приглашение для важных персон, заказав индивидуальный дизайн и курьерскую доставку.
+      .startPageForm
+        .container
+          %g:form.js-request-form{:controller => "requester", :action => "saveFromStart"}
+            %h2 Оставьте заявку и наш менеджер свяжется с вами
+            .form-block-half.left-block
+              %h4 1. Что бы Вы хотели разослать
+              .radio-start-page-block
+                %g:radio.radioStyle.js-group-radio-1{:name => "whatSendRadio", :type => "radio" :cheked => "checked",
+                 :value => "Cards", :id => "Cards"}/
+                %label.text-near-radio{:for => "Cards"} Открытки
+                %br/
+                %g:radio.radioStyle.js-group-radio-1{:name => "whatSendRadio", :type => "radio" :cheked => "checked",
+                 :value => "Invites", :id => "Invites"}/
+                %label.text-near-radio{:for => "Invites"} Приглашения
+                %br/
+              %h4 2. Они будут персональные?
+              .radio-start-page-block
+                %g:radio.radioStyle.js-group-radio-2.double-line-radioStyle{:name => "personalSendRadio", :type => "radio" :cheked => "checked",
+                 :value => "Nominal", :id => "Nominal"}/
+                %label.text-near-radio{:for => "Nominal"} Да на них будут указаны конкретные ФИО человека
+                %br/
+                %g:radio.radioStyle.js-group-radio-2{:name => "personalSendRadio", :type => "radio" :cheked => "checked",
+                 :value => "Noname", :id => "Noname"}/
+                %label.text-near-radio{:for => "Noname"} Нет они будут безымянные
+                %br/
+              %h4 3. Как вы хотели бы их разослать?
+              .radio-start-page-block
+                %g:radio.radioStyle.double-line-radioStyle.js-group-radio-3{:name => "methodOfDeliveryRadio", :type => "radio" :cheked => "checked",
+                 :value => "Personal", :id => "Personal"}/
+                %label.text-near-radio{:for => "Personal"} Курьером по конкретным адресам и определенным людям
+                %br/
+                %g:radio.radioStyle.double-line-radioStyle.js-group-radio-3{:name => "methodOfDeliveryRadio", :type => "radio" :cheked => "checked",
+                 :value => "Spam", :id => "Spam"}/
+                %label.text-near-radio{:for => "Spam"} Безадресное распространение для определенной целевой аудитории
+            .form-block-half.right-block
+              %h4 Ваше имя
+              .input-start-page-block
+                %g:textField.name.start-page-input{:name => "request_name", :placeholder => "$name"}/
+                %br/
+              %h4 Ваш телефон
+              .input-start-page-block
+                %g:textField.start-page-input.half-obligatory-field{:name => "request_phone", :placeholder => "$phone"}/
+                %br/
+              %h4 Ваш e-mail
+              .input-start-page-block
+                %g:textField.post.start-page-input.half-obligatory-field{:name => "request_email", :placeholder =>"$email"}/
+                %br/
+              %h5 Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"
+              %a.main-page-test-button.js-submit-request-form Отправить заявку
+    #start-page-bottom
+      .content-start-page-bottom.bottom-img-style
+        .feature-block-1.bottom-style
+          .black-bottom-text.left Если вы хотите отправить одну открытку конкретному адресату, то воспользуйтесь сервисом BestReCards и сделайте это за несколько шагов
+          %g:link.blue-little-button{:controller => "picturesList", :action => "index"} Создать открытку
+          %img.left-img{:src => '/assets/StartPage/Ikon_fly.png'}
+        .feature-block-1.bottom-style
+          .black-bottom-text Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!
+          %g:form.js-form{:controller => "subscribe", :action => "saveEmail"}
+            %g:textField.input-bottom-style{:name => "subscribeEmail", :placeholder => "E-mail"}/
+            %img.right-img{:src => '/assets/StartPage/Ikon_vsklznaki.png'}
+            %a.blue-little-button.js-submit-send-email  Подписаться

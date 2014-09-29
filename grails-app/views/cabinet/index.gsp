@@ -47,7 +47,6 @@
           <g:textField class='small-input housing js-housing' name='housing' placeholder='$housing' />
           <g:textField class='small-input office js-office' name='office' placeholder='$office' />
           <g:textField class='small-input postcode js-postcode obligatory-field js-postcode-validation' name='postcode' placeholder='$postcode' />
-          <a href='http://www.russianpost.ru/PostOfficeFindInterface/default10.aspx' target='_blank'>Уточнить индекс</a>
         </div>
         <div class='logo-form'>
           <img class='logo-preview js-logo-preview' />
