@@ -2,6 +2,23 @@
  * Created by lokk on 07.08.14.
  */
 $(document).ready(function() {
+    $('.js-hide-session-info-input').hide();
+    if ($('.js-hide-session-info-input')[0].value != "") {
+        if ($('.js-hide-session-info-input')[0].value == "[form-1]") {
+            $.gritter.add({
+                title: 'Спасибо что оставили заявку! Наш менеджер обязательно с вами свяжется.',
+                time: 20000
+            });
+            $('.js-hide-session-info-input')[0].value = "";
+        } else if ($('.js-hide-session-info-input')[0].value == "[form-2]") {
+            $.gritter.add({
+                title: 'Спасибо что подписались на наши новости!',
+                time: 20000
+            });
+            $('.js-hide-session-info-input')[0].value = "";
+        }
+
+    };
     $('.js-error').empty();
     $(document).on('click', '.js-submit-send-email', function(){
         reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
@@ -15,10 +32,6 @@ $(document).ready(function() {
             });
             return false
         } else {
-            $.gritter.add({
-                title: 'Спасибо, что подписались на новости.',
-                time: 10000
-            });
             $('.js-form').submit();
         }
     });
@@ -40,11 +53,11 @@ $(document).ready(function() {
                         { success = true; }
                     });
                     if (!success) {
-                        var input = $('.input-start-page-block');
+                        var input = $('.start-page-input');
                         input[1]["style"].borderColor = 'red';
+                        input[1]["style"].borderStyle = 'solid';
                         input[2]["style"].borderColor = 'red';
-//                        input[1]["style"].border = '2px'
-//                        input[2]["style"].borderColor = 'red';
+                        input[2]["style"].borderStyle = 'solid';
                         $.gritter.add({
                             title: 'Значение поля e-mail или телефон не должно быть пустым.',
                             time: 10000

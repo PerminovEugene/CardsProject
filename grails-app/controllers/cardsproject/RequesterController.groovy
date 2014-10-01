@@ -46,7 +46,9 @@ class RequesterController {
             def methodOfDeliveryRadio = params.methodOfDeliveryRadio
             dataBaseService.createRequest(name, phone, email, state,
                     whatSendRadio, personalSendRadio, methodOfDeliveryRadio)
-            redirect(controller: "startPage", action: "thxForRequest")
+            session ['start_memory_form'] = ['form-1']
+            session ['counter'] = ['2']
+            redirect(controller: "startPage", action: "index")
         } catch (Exception e) {
             log.error "Error in requesterController.save: ${e.message}, name ${name}," +
                     "phone ${phone}, email ${email}, whatSendRadio ${whatSendRadio}, personalSendRadio ${personalSendRadio}," +

@@ -114,6 +114,7 @@
               </div>
               <h5>Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"</h5>
               <a class='main-page-test-button js-submit-request-form'>Отправить заявку</a>
+              <input class='js-hide-session-info-input' type='text' value='${session.start_memory_form}' />
             </div>
           </g:form>
         </div>
