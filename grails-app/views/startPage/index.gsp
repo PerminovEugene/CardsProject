@@ -55,7 +55,7 @@
         </div>
         <div class='feature-block-1 top-style'>
           <img src='/assets/StartPage/Ikon_love.png' />
-          <div class='black-text-in-features'>Думаете, как поздравить бизнес-партнёров с праздником?</div>
+          <div class='black-text-in-features'>Думаете, как поздравить бизнес — партнёров с праздником?</div>
           <div class='blue-text-in-features'>Красивая печатная открытка - это простой способ передать человеку, что он значит для Вас.</div>
         </div>
         <div class='feature-block-1 top-style'>
