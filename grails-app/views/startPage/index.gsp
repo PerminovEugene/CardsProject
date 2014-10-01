@@ -4,12 +4,46 @@
     <title>Добро пожаловать</title>
     <meta content='main' name='layout' />
     <script src='/assets/startPage.js' type='text/javascript'></script>
+    <script src='/assets/jquery.gritter.js' type='text/javascript'></script>
   </head>
   <body>
     <!-- Declare Variable -->
     <% name = 'Ваше имя' %>
     <% phone = 'Ваш телефон' %>
     <% email = 'Ваш e-mail' %>
+    <!-- Yandex.Metrika counter -->
+    <script type='text/javascript'>
+      //<![CDATA[
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter26328996 = new Ya.Metrika({id:26328996,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+        
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+        
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+      //]]>
+    </script>
+    <noscript>
+      <div>
+        <img alt='' src='//mc.yandex.ru/watch/26328996' style='position:absolute; left:-9999px;' />
+      </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
     <div class='cheat-for-header'></div>
     <div class='mail-style'></div>
     <div id='start-page-top'>
@@ -26,7 +60,7 @@
         </div>
         <div class='feature-block-1 top-style'>
           <img src='/assets/StartPage/Ikon_letter.png' />
-          <div class='black-text-in-features'>Нет времени повысить лояльность клиентов?</div>
+          <div class='black-text-in-features'>Нет времени <br/> повысить лояльность клиентов?</div>
           <div class='blue-text-in-features'>Мы сделаем это, пока Вы занимаетесь бизнесом. Создадим и отправим открытку или приглашение.</div>
         </div>
       </div>
@@ -87,15 +121,14 @@
     </div>
     <div id='start-page-bottom'>
       <div class='content-start-page-bottom bottom-img-style'>
-        <div class='feature-block-1 bottom-style'>
-          <div class='black-bottom-text left'>Если вы хотите отправить одну открытку конкретному адресату, то воспользуйтесь сервисом BestReCards и сделайте это за несколько шагов</div>
-          <g:link action='index' class='blue-little-button' controller='picturesList'>Создать открытку</g:link>
-          <img class='left-img' src='/assets/StartPage/Ikon_fly.png' />
-        </div>
+        <!-- .feature-block-1.bottom-style -->
+        <!-- .black-bottom-text.left Если вы хотите отправить одну открытку конкретному адресату, то воспользуйтесь сервисом BestReCards и сделайте это за несколько шагов -->
+        <!-- %g:link.blue-little-button{:controller => "picturesList", :action => "index"} Создать открытку -->
+        <!-- %img.left-img{:src => '/assets/StartPage/Ikon_fly.png'} -->
         <div class='feature-block-1 bottom-style'>
           <div class='black-bottom-text'>Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!</div>
           <g:form action='saveEmail' class='js-form' controller='subscribe'>
-            <g:textField class='input-bottom-style' name='subscribeEmail' placeholder='E-mail' />
+            <g:textField class='input-bottom-style' name='subscribeEmail' onkeydown='javascript:if(13==event.keyCode){return false;}' placeholder='E-mail' />
             <img class='right-img' src='/assets/StartPage/Ikon_vsklznaki.png' />
             <a class='blue-little-button js-submit-send-email'>Подписаться</a>
           </g:form>

@@ -8,6 +8,6 @@ class StartPageController {
     def thxForRequest() {}
 
     def toCardPage() {
-        redirect (controller: 'picturesList', action: 'index')
+        redirect (action: 'index')
     }
 }

@@ -8,13 +8,20 @@ $(document).ready(function() {
         var input = $('.input-bottom-style');
         if (!input[0].value.match(reg)) {
             input[0]["style"].borderColor = 'red';
-            input[0].placeholder = 'Введите корректный email';
+            $.gritter.add({
+                title: 'Введите корректный e-mail.',
+                class_name: 'email-validation-class',
+                time: 10000
+            });
             return false
         } else {
+            $.gritter.add({
+                title: 'Спасибо, что подписались на новости.',
+                time: 10000
+            });
             $('.js-form').submit();
         }
     });
-
     // валидация формы request
     $(document).on('click', '.js-submit-request-form', function(){
         var radio = $('.js-group-radio-1');
@@ -32,8 +39,30 @@ $(document).ready(function() {
                         if (this.value != "")
                         { success = true; }
                     });
+                    if (!success) {
+                        $.gritter.add({
+                            title: 'Значение поля e-mail или телефон не должно быть пустым.',
+                            time: 10000
+                        });
+                    }
                 }
+                else {
+                    $.gritter.add({
+                        title: 'Вы не указали желаемый способ рассылки открытки.',
+                        time: 10000
+                    });
+                }
+            } else {
+                $.gritter.add({
+                    title: 'Вы не указали будут ли персональными открытки.',
+                    time: 10000
+                });
             }
+        } else {
+            $.gritter.add({
+                title: 'Вы не указали что хотели бы разослать.',
+                time: 10000
+            });
         }
         if (success == true) {
             $('.js-request-form').submit();

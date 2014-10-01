@@ -30,18 +30,18 @@
                      Отправка печатных открыток и приглашений
                 </div>
                 <div class="account-info js-account-info">
-                    <button id='enter-button_t' name='enter-button_t' value='enter-button_t' class="header-button">
-                        Вход
-                    </button>
-                    <button id='registration-button_t' name='registration-button_t' value='registration-button_t' class="header-button">
-                        Зарегистрироваться
-                    </button>
-                    <button id='exit-button_t' name='exit-button_t' value='exit-button_t' class="header-button">
-                        Выход
-                    </button>
-                        <div  id="header-button">
-                            <g:link controller="cabinet" action="index" class="js-cabinet-button hidden header-button to-down">Личный кабинет</g:link>
-                        </div>
+                    %{--<button id='enter-button_t' name='enter-button_t' value='enter-button_t' class="header-button">--}%
+                        %{--Вход--}%
+                    %{--</button>--}%
+                    %{--<button id='registration-button_t' name='registration-button_t' value='registration-button_t' class="header-button">--}%
+                        %{--Зарегистрироваться--}%
+                    %{--</button>--}%
+                    %{--<button id='exit-button_t' name='exit-button_t' value='exit-button_t' class="header-button">--}%
+                        %{--Выход--}%
+                    %{--</button>--}%
+                        %{--<div  id="header-button">--}%
+                            %{--<g:link controller="cabinet" action="index" class="js-cabinet-button hidden header-button to-down">Личный кабинет</g:link>--}%
+                        %{--</div>--}%
                 </div>
             </div>
         </div>
