@@ -40,6 +40,11 @@ $(document).ready(function() {
                         { success = true; }
                     });
                     if (!success) {
+                        var input = $('.input-start-page-block');
+                        input[1]["style"].borderColor = 'red';
+                        input[2]["style"].borderColor = 'red';
+//                        input[1]["style"].border = '2px'
+//                        input[2]["style"].borderColor = 'red';
                         $.gritter.add({
                             title: 'Значение поля e-mail или телефон не должно быть пустым.',
                             time: 10000
