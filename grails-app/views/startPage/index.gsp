@@ -15,19 +15,19 @@
     <div id='start-page-top'>
       <div class='content-start-page top-img-style'>
         <div class='feature-block-1 top-style'>
-          <img src='/assets/StartPage/Ikon_letter.png' />
-          <div class='black-text-in-features'>Некогда повысить лояльность клиентов? Так много других неотложных дел?</div>
-          <div class='blue-text-in-features'>Пока вы занимаетесь бизнесом, мы повышаем лояльность ваших клиентов. Создайте открытку, а мы займемся её печатью и отправкой.</div>
+          <img src='/assets/StartPage/Ikon_medal.png' />
+          <div class='black-text-in-features'>Не знаете, как лучше пригласить важных персон на событие?</div>
+          <div class='blue-text-in-features'>Создайте эксклюзивное приглашение, заказав у нас индивидуальный дизайн и курьерскую доставку.</div>
         </div>
         <div class='feature-block-1 top-style'>
           <img src='/assets/StartPage/Ikon_love.png' />
-          <div class='black-text-in-features'>Не знаете, как показать бизнес - партнёрам, что они важны для вас?</div>
-          <div class='blue-text-in-features'>Поздравительная открытка - это простой способ показать партнёру, что он важен для вас.</div>
+          <div class='black-text-in-features'>Думаете, как поздравить бизнес-партнёров с праздником?</div>
+          <div class='blue-text-in-features'>Красивая печатная открытка - это простой способ передать человеку, что он значит для Вас.</div>
         </div>
         <div class='feature-block-1 top-style'>
-          <img src='/assets/StartPage/Ikon_medal.png' />
-          <div class='black-text-in-features'>Не знаете как лучше пригласить важных персон на событие?</div>
-          <div class='blue-text-in-features'>Создайте эксклюзивное приглашение для важных персон, заказав индивидуальный дизайн и курьерскую доставку.</div>
+          <img src='/assets/StartPage/Ikon_letter.png' />
+          <div class='black-text-in-features'>Нет времени повысить лояльность клиентов?</div>
+          <div class='blue-text-in-features'>Мы сделаем это, пока Вы занимаетесь бизнесом. Создадим и отправим открытку или приглашение.</div>
         </div>
       </div>
       <div class='startPageForm'>
