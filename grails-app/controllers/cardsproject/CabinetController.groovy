@@ -46,7 +46,6 @@ class CabinetController {
         } catch (Exception e) {
             log.error "Error in sendUserInfo ${e.message}", e
         }
-
     }
 
     def updateUserInfo() {
@@ -110,6 +109,4 @@ class CabinetController {
         }*/
         redirect(action: 'index')
     }
-
-
 }

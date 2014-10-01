@@ -25,4 +25,4 @@ $(document).ready(function() {
         var text_h3 = text_info[0].getElementsByTagName("h3");
         text_h3[0].innerHTML = "Логотип загружен";
     })
-})
+});

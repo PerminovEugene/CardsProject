@@ -108,8 +108,16 @@ environments {
         // grails.assets.storagePath = "/home/bestrecards/www/CardsProject/grails-app/assets/pipeline"
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
-}
-
+}/*
+log4j = {
+    appenders {
+        file name:'file.log', file:'/var/logs/mylog.log'
+    }
+    root {
+        debug 'stdout', 'file'
+        additivity = true
+    }*/
+//}
 // log4j configuration
 //log4j.main = {
     // Example of changing the log pattern for the default console appender:

@@ -50,7 +50,7 @@
         </div>
         <div class='logo-form'>
           <img class='logo-preview js-logo-preview' />
-          <input class='file js-file' id='logo' name='logo' type='file' />
+          <input class='file button-next js-file' id='logo' name='logo' type='file' />
         </div>
         <div class='footer'>
           <a class='button button-next js-submit'>Сохранить</a>
