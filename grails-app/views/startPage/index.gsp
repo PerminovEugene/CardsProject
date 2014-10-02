@@ -69,7 +69,7 @@
           <g:form action='saveFromStart' class='js-request-form' controller='requester'>
             <h2>Оставьте заявку и наш менеджер свяжется с вами</h2>
             <div class='form-block-half left-block'>
-              <h4>1. Что бы Вы хотели разослать</h4>
+              <h4>1. Что Вы хотели бы создать?</h4>
               <div class='radio-start-page-block'>
                 <g:radio class='radioStyle js-group-radio-1' id='Cards' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
                 <label class='text-near-radio' for='Cards'>Открытки</label>
@@ -87,7 +87,7 @@
                 <label class='text-near-radio' for='Noname'>Нет они будут безымянные</label>
                 <br />
               </div>
-              <h4>3. Как вы хотели бы их разослать?</h4>
+              <h4>3. Какой способ доставки Вам необходим?</h4>
               <div class='radio-start-page-block'>
                 <g:radio class='radioStyle double-line-radioStyle js-group-radio-3' id='Personal' name='methodOfDeliveryRadio' type='radio" :cheked =&gt; "checked' value='Personal' />
                 <label class='text-near-radio' for='Personal'>Курьером по конкретным адресам и определенным людям</label>

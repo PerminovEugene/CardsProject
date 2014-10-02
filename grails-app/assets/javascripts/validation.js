@@ -6,14 +6,14 @@ $(document).ready(function() {
     if ($('.js-hide-session-info-input')[0].value != "") {
         if ($('.js-hide-session-info-input')[0].value == "[form-1]") {
             $.gritter.add({
-                title: 'Спасибо что оставили заявку! Наш менеджер обязательно с вами свяжется.',
-                time: 20000
+                title: 'Спасибо, что оставили заявку! Наш менеджер обязательно с вами свяжется.',
+                time: 4000
             });
             $('.js-hide-session-info-input')[0].value = "";
         } else if ($('.js-hide-session-info-input')[0].value == "[form-2]") {
             $.gritter.add({
-                title: 'Спасибо что подписались на наши новости!',
-                time: 20000
+                title: 'Подписка оформлена, спасибо!',
+                time: 4000
             });
             $('.js-hide-session-info-input')[0].value = "";
         }
@@ -27,8 +27,7 @@ $(document).ready(function() {
             input[0]["style"].borderColor = 'red';
             $.gritter.add({
                 title: 'Введите корректный e-mail.',
-                class_name: 'email-validation-class',
-                time: 10000
+                time: 4000
             });
             return false
         } else {
@@ -47,7 +46,7 @@ $(document).ready(function() {
                 success = checkRadioGroup(radio);
                 if (success) {
                     var input = $('.half-obligatory-field');
-                    success = false
+                    success = false;
                     input.each(function(index) {
                         if (this.value != "")
                         { success = true; }
@@ -60,26 +59,26 @@ $(document).ready(function() {
                         input[2]["style"].borderStyle = 'solid';
                         $.gritter.add({
                             title: 'Значение поля e-mail или телефон не должно быть пустым.',
-                            time: 10000
+                            time: 4000
                         });
                     }
                 }
                 else {
                     $.gritter.add({
-                        title: 'Вы не указали желаемый способ рассылки открытки.',
-                        time: 10000
+                        title: 'Вы не указали желаемый способ доставки.',
+                        time: 4000
                     });
                 }
             } else {
                 $.gritter.add({
                     title: 'Вы не указали будут ли персональными открытки.',
-                    time: 10000
+                    time: 4000
                 });
             }
         } else {
             $.gritter.add({
-                title: 'Вы не указали что хотели бы разослать.',
-                time: 10000
+                title: 'Вы не указали, что хотели бы создать.',
+                time: 4000
             });
         }
         if (success == true) {
