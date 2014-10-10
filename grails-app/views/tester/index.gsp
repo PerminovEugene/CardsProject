@@ -6,7 +6,15 @@
     <meta content='header' name='layout' />
   </head>
   <body>
-    <div class='container-top-landing'></div>
+    <div class='container-top-landing'>
+      <div class='container'>
+        <ul>
+          <li class='feature-block'></li>
+          <li class='feature-block'></li>
+          <li class='feature-block'></li>
+        </ul>
+      </div>
+    </div>
     <div class='container-form-landing'></div>
     <div class='container-bottom-landing'></div>
   </body>

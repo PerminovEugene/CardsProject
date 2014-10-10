@@ -11,12 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     <asset:stylesheet src="landing.css"/>
+    <asset:stylesheet src="fonts.css.less"/>
     %{--<asset:javascript src="application.js"/>--}%
     <g:layoutHead/>
 </head>
 <body>
 <header>
-    <div class="content">
+    <div class="container">
             <a href="/startPage/index" >
                 <asset:image src="logo_o.png" alt="GoodCards" class="project-logo"/>
             </a>
@@ -26,5 +27,14 @@
 <div class="header-style"> </div>
 <g:layoutBody/>
 %{--<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>--}%
+<footer>
+    <div class="container">
+        <p>
+            Есть вопросы? Пишите:</p>
+        <addres>
+            <a href="bestrecards.project@gmail.com">bestrecards.project@gmail.com</a>
+        </addres>
+    </div>
+</footer>
 </body>
 </html>
