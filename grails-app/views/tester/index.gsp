@@ -1,12 +1,13 @@
 <%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY index.haml --%>
-<html xmlns='http://www.w3.org/1999/html'>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
   <head>
     <title>Добро пожаловать</title>
-    <meta content='main' name='layout' />
-    <script src='/assets/startPage.js' type='text/javascript'></script>
+    <meta content='header' name='layout' />
   </head>
   <body>
-    <div class='cheat-for-header'></div>
-    <div class='mail-style'></div>
+    <div class='container-top-landing'></div>
+    <div class='container-form-landing'></div>
+    <div class='container-bottom-landing'></div>
   </body>
 </html>
