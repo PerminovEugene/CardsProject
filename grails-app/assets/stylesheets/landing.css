@@ -42,9 +42,48 @@ table {
     border-spacing: 0;
 }
 
+/***************************************** gloabal ******************************/
+/*%html {*/
+     /*font-size: 75%;*/
+ /*}*/
+p {
+    color: #313131;
+    margin: 0.5em 0em 0.5em 1em;
+    font-weight: normal;
+    line-height: 1.31em;
+}
+.blue-text {
+    color: #1296ff;
+}
+
+ul {
+    margin: 0 auto;
+}
+li {
+    opacity: 0.95;
+    background: #ffffff;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1em;
+    text-align: left;
+}
+.input-size {
 
 
-/* Header styles */
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+    border-radius: 3px;
+}
+.input-view {
+    background-color: #ffffff;
+    border: 2px  solid  #b3b3b3;
+    border-radius: 3px;
+    outline:none;
+}
+
+/******************************************* Header styles *******************************/
 header {
     background-color: #313131;
     padding: 7px 7px 32px 7px;
@@ -54,6 +93,7 @@ header {
     width: 80%;
     max-width: 960px;
     min-width: 750px;
+    height: 100%;
     font-family: PT_Sans_Regular;
 }
 header h1 {
@@ -71,25 +111,10 @@ header h1 {
     position: relative;
     z-index:99;
 }
-/* gloabal */
-ul {
-    margin: 0 auto;
-}
-li {
-    opacity: 0.95;
-    background: #ffffff;
-    border-radius: 10px;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 16px;
-    text-align: left;
-}
-li.feature-block {
-    width: 250px;
-    margin: 60px 1% 40px 5%;
-    height: 250px;
-}
-/* Top part */
+
+
+/************************************** Top part *******************************/
+
 .container-top-landing {
     background-image: url("/assets/StartPage/fon_verh.jpg");
     background-repeat: no-repeat;
@@ -101,13 +126,31 @@ li.feature-block {
     height: 400px;
     max-height: 905px;
 }
-/* form */
+li.feature-block {
+    width: 26.5%;
+    margin: 70px 0% 40px 3%;
+    height: 260px;
+    /*padding: 10px 10px 10% 10%;*/
+}
+li.feature-block:first-child {
+    margin-left: 7%;
+}
+li.feature-block img {
+    height: 20%;
+    float: right;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left: 80%;
+}
+/************************************** request form ***********************************/
+
 .container-form-landing {
     background-color: #1296ff;
     height: 460px;
 }
 
-/* Bottom part */
+/************************************ Bottom part ****************************/
+
 .container-bottom-landing {
     background-image: url("/assets/StartPage/fon_niz.jpg");
     background-repeat: no-repeat;
@@ -117,7 +160,30 @@ li.feature-block {
     z-index: 3;
     height: 268px;
 }
-/* */
+.action-block {
+    display: inline-block;
+    width: 43%;
+    padding: 1.5% 2.3% 3% 2.3%;
+    margin: 20px 0% 0 1.5%;
+    height: 140px;
+    position: relative;
+}
+.action-block img {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+}
+.action-block .blue-little-button{
+    position: absolute;
+    bottom: 12%;
+    left: 5%;
+}
+.action-block input[type=text]{
+    margin-left: 5%;
+    margin-top: 1%
+}
+/********************************** footer ********************************/
+
 footer {
     height: 30px;
     background-color: #313131;
@@ -134,4 +200,25 @@ footer a {
     color: #ffa112;
     text-decoration: none;
     font-style: normal;
+}
+
+/********************************* buttons *********************************/
+
+.blue-little-button {
+    /*padding: 3% 3.1% 3% 3.1%;*/
+    height: 15%;
+    width: 40%;
+    text-align: center;
+    color: white;
+    background-color: #1296ff;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #1296ff;
+    text-decoration: none;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.blue-little-button:hover {
+    color: #1296ff;
+    background-color: white;
 }

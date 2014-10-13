@@ -8,7 +8,27 @@
       .container
         %ul
           %li.feature-block
+            %img{:src => '/assets/StartPage/Ikon_medal.png'}
+            %p Не знаете, как лучше пригласить важных персон на событие?
+            %p.blue-text Создайте эксклюзивное приглашение, заказав у нас индивидуальный дизайн и курьерскую доставку.
           %li.feature-block
+            %img{:src => '/assets/StartPage/Ikon_love.png'}
+            %p Думаете, как поздравить бизнес — партнёров с праздником?
+            %p.blue-text Красивая печатная открытка - это простой способ передать человеку, что он значит для Вас.
           %li.feature-block
+            %img{:src => '/assets/StartPage/Ikon_letter.png'}
+            %p Нет времени <br/> повысить лояльность клиентов?
+            %p.blue-text Мы сделаем это, пока Вы занимаетесь бизнесом. Создадим и отправим открытку или приглашение.
     .container-form-landing
     .container-bottom-landing
+      .container
+        %ul
+          %li.action-block
+            %p Если Вы хотите отправить одну открытку конкретному адресату, то воспользуйтесь сервисом BestReCards и сделайте это за несколько шагов
+            %g:link.blue-little-button{:controller => 'picturesList', :action => 'index'} Создать открытку
+            %img{:src => '/assets/StartPage/Ikon_fly.png'}
+          %li.action-block
+            %p Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!
+            %g:textField.input-size.input-view{:name => "subscribeEmail", :placeholder => "E-mail", :onkeydown => "javascript:if(13==event.keyCode){return false;}"}/
+            %img{:src => '/assets/StartPage/Ikon_vsklznaki.png'}
+            %g:link.blue-little-button.js-submit-send-email{:controller => 'subscribe', :action => 'saveEmail'}  Подписаться
