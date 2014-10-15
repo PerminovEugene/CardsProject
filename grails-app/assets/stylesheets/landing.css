@@ -57,8 +57,10 @@ h1 {
     /*margin: 1em 1em 1em 1em;*/
     /*padding: 1em 1em 1em 1em;*/
     padding-top: 1em;
+    padding-bottom: 1em;
     font-weight: normal;
     line-height: 1.31em;
+    word-spacing: 4px;
     font-size: 1.5em;
     font-family: Nautilus;
     text-align: center;
@@ -68,6 +70,10 @@ h1 {
 }
 ul {
     margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
 }
 .list-height {
     height: 400px;
@@ -81,24 +87,25 @@ li {
     font-size: 1em;
     text-align: left;
 }
-.input-size {
+.input-size-medium {
     height: 30px;
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 1em;
     border-radius: 3px;
     width: 70%;
+}
+.input-size-big {
+    height: 35px;
+    padding-left: 10px;
+    font-size: 1em;
+    border-radius: 6px;
+    width: 85%;
 }
 .input-view {
     background-color: #ffffff;
     border: 2px  solid  #b3b3b3;
     border-radius: 3px;
     outline:none;
-}
-
-/******************************************* Header styles *******************************/
-header {
-    background-color: #313131;
-    padding: 7px 7px 32px 7px;
 }
 .container {
     margin: 0 auto;
@@ -108,12 +115,18 @@ header {
     height: 100%;
     font-family: PT_Sans_Regular;
 }
+/******************************************* Header styles *******************************/
+header {
+    background-color: #313131;
+    padding: 7px 7px 32px 7px;
+}
+
 header h1 {
     text-align: right;
     float: right;
     font: normal 1.3em PT_Sans_Regular;
     color: white;
-    margin-top: 30px;
+    margin-top: -48px;
 }
 .header-style {
     background-image: url("/assets/little_image_site/black_thing.png");
@@ -164,7 +177,33 @@ li.feature-block p{
     background-color: #1296ff;
     height: 460px;
 }
+.request-form {
+    color: white;
+}
+fieldset {
+    width: 40%;
+    float: left;
+    margin-left: 2%;
+}
+legend {
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+.radio-block {
+    margin-bottom: 30px;
+}
+label {
 
+}
+.text-near-radio {
+    margin-bottom: 20px;
+}
+input[type=radio] {
+    display: none;
+}
+.js-hide-session-info-input {
+    display: none;
+}
 /************************************ Bottom part ****************************/
 
 .container-bottom-landing {
@@ -245,4 +284,20 @@ footer a {
 .blue-little-button:hover {
     color: #1296ff;
     background-color: white;
+}
+.big-orange-button {
+    color: white;
+    background-color: #ffa112;
+    border: none;
+    text-decoration: none;
+    padding: 10px 10% 10px 10%;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+.big-orange-button:hover {
+    color:  #ffa112;
+    background-color: #ffffff;
+    cursor: pointer;
+
 }

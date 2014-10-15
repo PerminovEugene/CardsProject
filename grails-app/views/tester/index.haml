@@ -22,6 +22,47 @@
     .container-form-landing
       .container
         %h1 Оставьте заявку и наш менеджер свяжется с вами
+        %g:form.request-form.js-request-form{:controller => "requester", :action => "saveFromStart"}
+          %fieldset.left-block
+            %legend 1. Что Вы хотели бы создать?
+            .radio-block
+              %g:radio.radio-style.js-group-radio-1{:name => "whatSendRadio", :type => "radio" :cheked => "checked",
+               :value => "Cards", :id => "Cards"}/
+              %img{:src => '/assets/StartPage/radio-off.jpg'}
+              %label.text-near-radio{:for => "Cards"} Открытки
+              %g:radio.radio-style.js-group-radio-1{:name => "whatSendRadio", :type => "radio" :cheked => "checked",
+               :value => "Invites", :id => "Invites"}/
+              %label.text-near-radio{:for => "Invites"} Приглашения
+              %br/
+            %legend 2. Они будут персональные?
+            .radio-block
+              %g:radio.radio-style.js-group-radio-2.double-line-radioStyle{:name => "personalSendRadio", :type => "radio" :cheked => "checked",
+               :value => "Nominal", :id => "Nominal"}/
+              %label.text-near-radio{:for => "Nominal"} Да на них будут указаны конкретные ФИО человека
+              %br/
+              %g:radio.radio-style.js-group-radio-2{:name => "personalSendRadio", :type => "radio" :cheked => "checked",
+               :value => "Noname", :id => "Noname"}/
+              %label.text-near-radio{:for => "Noname"} Нет они будут безымянные
+              %br/
+            %legend 3. Какой способ доставки Вам необходим?
+            .radio-block
+              %g:radio.radio-style.double-line-radioStyle.js-group-radio-3{:name => "methodOfDeliveryRadio", :type => "radio" :cheked => "checked",
+               :value => "Personal", :id => "Personal"}/
+              %label.text-near-radio{:for => "Personal"} Курьером по конкретным адресам и определенным людям
+              %br/
+              %g:radio.radio-style.double-line-radioStyle.js-group-radio-3{:name => "methodOfDeliveryRadio", :type => "radio" :cheked => "checked",
+               :value => "Spam", :id => "Spam"}/
+              %label.text-near-radio{:for => "Spam"} Безадресное распространение для определенной целевой аудитории
+          %fieldset.right-block
+            %legend Ваше имя
+            %g:textField.input-size-big.input-view-no-border{:name => "request_name", :placeholder => "$name"}/
+            %legend Ваш телефон
+            %g:textField.input-size-big.input-view-no-border.half-obligatory-field{:name => "request_phone", :placeholder => "$phone"}/
+            %legend Ваш e-mail
+            %g:textField.input-size-big.input-view-no-border.half-obligatory-field{:name => "request_email", :placeholder =>"$email"}/
+            %legend Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"
+            %a.big-orange-button.js-submit-request-form Отправить заявку
+            %input.js-hide-session-info-input{:type => "text", :value => "${session.start_memory_form}"}/
     .container-bottom-landing
       .container
         %ul
@@ -31,6 +72,6 @@
             %img{:src => '/assets/StartPage/Ikon_fly.png'}
           %li.action-block
             %p Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!
-            %g:textField.input-size.input-view{:name => "subscribeEmail", :placeholder => "E-mail", :onkeydown => "javascript:if(13==event.keyCode){return false;}"}/
+            %g:textField.input-size-medium.input-view{:name => "subscribeEmail", :placeholder => "E-mail", :onkeydown => "javascript:if(13==event.keyCode){return false;}"}/
             %img{:src => '/assets/StartPage/Ikon_vsklznaki.png'}
             %g:link.blue-little-button.js-submit-send-email{:controller => 'subscribe', :action => 'saveEmail'}  Подписаться
