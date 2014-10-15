@@ -8,7 +8,7 @@
   <body>
     <div class='container-top-landing'>
       <div class='container'>
-        <ul>
+        <ul class='list-height'>
           <li class='feature-block'>
             <img src='/assets/StartPage/Ikon_medal.png' />
             <p>Не знаете, как лучше пригласить важных персон на событие?</p>
@@ -27,7 +27,11 @@
         </ul>
       </div>
     </div>
-    <div class='container-form-landing'></div>
+    <div class='container-form-landing'>
+      <div class='container'>
+        <h1>Оставьте заявку и наш менеджер свяжется с вами</h1>
+      </div>
+    </div>
     <div class='container-bottom-landing'>
       <div class='container'>
         <ul>

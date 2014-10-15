@@ -48,16 +48,29 @@ table {
  /*}*/
 p {
     color: #313131;
-    margin: 0.5em 0em 0.5em 1em;
+    margin: 0.5em 0.5em 0.5em 1em;
     font-weight: normal;
     line-height: 1.31em;
+}
+h1 {
+    color: #ffffff;
+    /*margin: 1em 1em 1em 1em;*/
+    /*padding: 1em 1em 1em 1em;*/
+    padding-top: 1em;
+    font-weight: normal;
+    line-height: 1.31em;
+    font-size: 1.5em;
+    font-family: Nautilus;
+    text-align: center;
 }
 .blue-text {
     color: #1296ff;
 }
-
 ul {
     margin: 0 auto;
+}
+.list-height {
+    height: 400px;
 }
 li {
     opacity: 0.95;
@@ -69,12 +82,11 @@ li {
     text-align: left;
 }
 .input-size {
-
-
     height: 30px;
     padding-left: 10px;
     font-size: 15px;
     border-radius: 3px;
+    width: 70%;
 }
 .input-view {
     background-color: #ffffff;
@@ -136,11 +148,15 @@ li.feature-block:first-child {
     margin-left: 7%;
 }
 li.feature-block img {
-    height: 20%;
+    height: 23%;
     float: right;
     margin-top: 5%;
     margin-right: 5%;
     margin-left: 80%;
+    margin-bottom: 1%;
+}
+li.feature-block p{
+    height: 47%;
 }
 /************************************** request form ***********************************/
 
@@ -166,22 +182,31 @@ li.feature-block img {
     padding: 1.5% 2.3% 3% 2.3%;
     margin: 20px 0% 0 1.5%;
     height: 140px;
-    position: relative;
+    /*position: relative;*/
+}
+.action-block:first-child p{
+    height: 56%;
+}
+.action-block:nth-child(2) p{
+    height: 40%;
 }
 .action-block img {
-    position: absolute;
-    bottom: 10%;
-    right: 5%;
+    float:right;
+}
+.action-block:nth-child(2) img {
+    margin-top: 40px;
 }
 .action-block .blue-little-button{
-    position: absolute;
-    bottom: 12%;
-    left: 5%;
+    float:left;
+}
+.action-block:first-child .blue-little-button{
+    margin-top: 17px;
 }
 .action-block input[type=text]{
-    margin-left: 5%;
-    margin-top: 1%
+    margin-left: 15px;
+    margin-bottom: 1%;
 }
+
 /********************************** footer ********************************/
 
 footer {
@@ -205,8 +230,7 @@ footer a {
 /********************************* buttons *********************************/
 
 .blue-little-button {
-    /*padding: 3% 3.1% 3% 3.1%;*/
-    height: 15%;
+    padding: 13px 3.1% 13px 3.1%;
     width: 40%;
     text-align: center;
     color: white;
