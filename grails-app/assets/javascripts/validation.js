@@ -45,7 +45,7 @@ $(document).ready(function() {
                 radio = $('.js-group-radio-3');
                 success = checkRadioGroup(radio);
                 if (success) {
-                    var input = $('.half-obligatory-field');
+                    var input = $('.js-half-obligatory-field');
                     success = false;
                     input.each(function(index) {
                         if (this.value != "")

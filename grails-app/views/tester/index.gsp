@@ -6,6 +6,10 @@
     <meta content='header' name='layout' />
   </head>
   <body>
+    <!-- Declare Variable -->
+    <% name = 'Ваше имя' %>
+    <% phone = 'Ваш телефон' %>
+    <% email = 'Ваш e-mail' %>
     <div class='container-top-landing'>
       <div class='container'>
         <ul class='list-height'>
@@ -35,39 +39,35 @@
             <legend>1. Что Вы хотели бы создать?</legend>
             <div class='radio-block'>
               <g:radio class='radio-style js-group-radio-1' id='Cards' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
-              <img src='/assets/StartPage/radio-off.jpg' />
-              <label class='text-near-radio' for='Cards'>Открытки</label>
+              <label for='Cards'><span></span>  Открытки</label>
+              <g:radio class='radio-style js-group-radio-1' id='Cards' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
               <g:radio class='radio-style js-group-radio-1' id='Invites' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Invites' />
-              <label class='text-near-radio' for='Invites'>Приглашения</label>
-              <br />
+              <label for='Invites'><span></span>  Приглашения</label>
             </div>
             <legend>2. Они будут персональные?</legend>
             <div class='radio-block'>
               <g:radio class='radio-style js-group-radio-2 double-line-radioStyle' id='Nominal' name='personalSendRadio' type='radio" :cheked =&gt; "checked' value='Nominal' />
-              <label class='text-near-radio' for='Nominal'>Да на них будут указаны конкретные ФИО человека</label>
-              <br />
+              <label for='Nominal'><span></span> Да на них будут указаны конкретные ФИО человека</label>
               <g:radio class='radio-style js-group-radio-2' id='Noname' name='personalSendRadio' type='radio" :cheked =&gt; "checked' value='Noname' />
-              <label class='text-near-radio' for='Noname'>Нет они будут безымянные</label>
-              <br />
+              <label for='Noname'><span></span> Нет они будут безымянные</label>
             </div>
             <legend>3. Какой способ доставки Вам необходим?</legend>
             <div class='radio-block'>
               <g:radio class='radio-style double-line-radioStyle js-group-radio-3' id='Personal' name='methodOfDeliveryRadio' type='radio" :cheked =&gt; "checked' value='Personal' />
-              <label class='text-near-radio' for='Personal'>Курьером по конкретным адресам и определенным людям</label>
-              <br />
+              <label for='Personal'><span></span> Курьером по конкретным адресам и определенным людям</label>
               <g:radio class='radio-style double-line-radioStyle js-group-radio-3' id='Spam' name='methodOfDeliveryRadio' type='radio" :cheked =&gt; "checked' value='Spam' />
-              <label class='text-near-radio' for='Spam'>Безадресное распространение для определенной целевой аудитории</label>
+              <label for='Spam'><span></span> Безадресное распространение для определенной целевой аудитории</label>
             </div>
           </fieldset>
           <fieldset class='right-block'>
             <legend>Ваше имя</legend>
             <g:textField class='input-size-big input-view-no-border' name='request_name' placeholder='$name' />
             <legend>Ваш телефон</legend>
-            <g:textField class='input-size-big input-view-no-border half-obligatory-field' name='request_phone' placeholder='$phone' />
+            <g:textField class='input-size-big input-view-no-border js-half-obligatory-field' name='request_phone' placeholder='$phone' />
             <legend>Ваш e-mail</legend>
-            <g:textField class='input-size-big input-view-no-border half-obligatory-field' name='request_email' placeholder='$email' />
+            <g:textField class='input-size-big input-view-no-border js-half-obligatory-field' name='request_email' placeholder='$email' />
             <legend>Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"</legend>
-            <a class='big-orange-button js-submit-request-form'>Отправить заявку</a>
+            <g:link class='big-orange-button js-submit-request-form'>Отправить заявку</g:link>
             <input class='js-hide-session-info-input' type='text' value='${session.start_memory_form}' />
           </fieldset>
         </g:form>
@@ -85,7 +85,7 @@
             <p>Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!</p>
             <g:textField class='input-size-medium input-view' name='subscribeEmail' onkeydown='javascript:if(13==event.keyCode){return false;}' placeholder='E-mail' />
             <img src='/assets/StartPage/Ikon_vsklznaki.png' />
-            <g:link action='saveEmail' class='blue-little-button js-submit-send-email' controller='subscribe'>Подписаться</g:link>
+            <A action='saveEmail' class='blue-little-button js-submit-send-email' controller='subscribe'>Подписаться</A>
           </li>
         </ul>
       </div>

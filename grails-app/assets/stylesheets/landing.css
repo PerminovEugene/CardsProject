@@ -101,6 +101,12 @@ li {
     border-radius: 6px;
     width: 85%;
 }
+.input-view-no-border {
+    border: 2px solid #ffffff;
+}
+.input-view-no-border:focus {
+    outline: none;
+}
 .input-view {
     background-color: #ffffff;
     border: 2px  solid  #b3b3b3;
@@ -181,26 +187,48 @@ li.feature-block p{
     color: white;
 }
 fieldset {
-    width: 40%;
+    width: 47%;
     float: left;
     margin-left: 2%;
 }
 legend {
     font-weight: 900;
     margin-bottom: 12px;
+    margin-top: 12px;
+    width: 87%;
 }
 .radio-block {
     margin-bottom: 30px;
 }
-label {
+/*label p {
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
 
+}*/
+/*radio bittons styles*/
+.radio-block label {
+    display: block;
+    margin-bottom: 0.5em;
 }
-.text-near-radio {
-    margin-bottom: 20px;
-}
-input[type=radio] {
+input[type="radio"] {
     display: none;
 }
+input[type="radio"] + label span {
+    display:inline-block;
+    width:22px;
+    height:22px;
+    margin:0px 4px 0 0;
+    vertical-align:middle;
+    background:url("/assets/StartPage/checkbox.png") 0px bottom no-repeat;
+    cursor:pointer;
+}
+input[type="radio"]:checked + label span {
+    background:url("/assets/StartPage/checkbox.png") left no-repeat;
+    background-position: 0 2px;
+}
+/*end of radio bittons styles*/
+
 .js-hide-session-info-input {
     display: none;
 }
@@ -287,14 +315,23 @@ footer a {
 }
 .big-orange-button {
     color: white;
+    width: 88%;
+    float: left;
+    height: 1.5em;
     background-color: #ffa112;
     border: none;
+    padding-top: 0.5em;
     text-decoration: none;
-    padding: 10px 10% 10px 10%;
     text-align: center;
     font-size: 1.5em;
     border-radius: 5px;
 }
+.test-orange-button {
+    background-color: #ffa112;
+    width: 90%;
+    height: 2em;
+}
+.test-orange-button:hover,
 .big-orange-button:hover {
     color:  #ffa112;
     background-color: #ffffff;
