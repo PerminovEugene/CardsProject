@@ -72,7 +72,6 @@ ul {
     margin: 0 auto;
     display: inline-block;
     vertical-align: top;
-    zoom: 1;
     *display: inline;
 }
 .list-height {
@@ -99,7 +98,7 @@ li {
     padding-left: 10px;
     font-size: 1em;
     border-radius: 6px;
-    width: 85%;
+    width: 90%;
 }
 .input-view-no-border {
     border: 2px solid #ffffff;
@@ -189,7 +188,16 @@ li.feature-block p{
 fieldset {
     width: 47%;
     float: left;
-    margin-left: 2%;
+
+}
+@media (min-width:770px) {
+    fieldset:first-child {
+        margin-left: 4%;
+    }
+    fieldset:last-child {
+        width: 46%;
+        margin-left: 2%;
+    }
 }
 legend {
     font-weight: 900;
@@ -315,7 +323,7 @@ footer a {
 }
 .big-orange-button {
     color: white;
-    width: 88%;
+    width: 94%;
     float: left;
     height: 1.5em;
     background-color: #ffa112;
@@ -336,5 +344,63 @@ footer a {
     color:  #ffa112;
     background-color: #ffffff;
     cursor: pointer;
+}
+/****************************************************************************************/
+/*************************************** media 481 - 768*********************************/
+/****************************************************************************************/
+@media (min-width: 481px) and (max-width:768px) {
+    /*************************************** Header *********************************/
+    header {
+        padding: 0 0 15px 0;
+    }
 
+    header h1 {
+        font-size: 1.1em;
+        width: 44%;
+        margin-top: -57px;
+        margin-right: 15px;
+
+    }
+    /*************************************** Top-parte *********************************/
+    .container-top-landing {
+        height: 600px;
+    }
+    .container {
+        min-width: 481px;
+    }
+    li.feature-block {
+        width: 41.5%;
+        margin: 20px 0% 10px 3%;
+    }
+    li.feature-block:last-child {
+        margin: 20px 0% 10px 29.5%;
+    }
+    /*************************************** Requester-form *****************************/
+    .container-form-landing {
+        height: 810px;
+    }
+    .container-form-landing h1{
+        width: 80%;
+        margin-left: 10%;
+    }
+    fieldset:first-child {
+        width: 87%;
+    }
+    fieldset {
+        width: 90%;
+        float: left;
+        margin-left: 5%;
+    }
+    /*************************************** Bottom-part *****************************/
+    .container-bottom-landing {
+        height: 400px;
+    }
+    .action-block {
+        width: 86%;
+        height: 100%;
+    }
+    /*************************************** footer *****************************/
+    footer {
+        text-align: center;
+    }
 }

@@ -27,7 +27,7 @@
       .container
         %h1 Оставьте заявку и наш менеджер свяжется с вами
         %g:form.request-form.js-request-form{:controller => "requester", :action => "saveFromStart"}
-          %fieldset.left-block
+          %fieldset
             %legend 1. Что Вы хотели бы создать?
             .radio-block
               %g:radio.radio-style.js-group-radio-1{:name => "whatSendRadio", :type => "radio" :cheked => "checked",
@@ -54,7 +54,7 @@
               %g:radio.radio-style.double-line-radioStyle.js-group-radio-3{:name => "methodOfDeliveryRadio",
                :type => "radio" :cheked => "checked", :value => "Spam", :id => "Spam"}/
               %label{:for => "Spam"} <span></span> Безадресное распространение для определенной целевой аудитории
-          %fieldset.right-block
+          %fieldset
             %legend Ваше имя
             %g:textField.input-size-big.input-view-no-border{:name => "request_name", :placeholder => "$name"}/
             %legend Ваш телефон

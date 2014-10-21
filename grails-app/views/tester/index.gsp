@@ -35,7 +35,7 @@
       <div class='container'>
         <h1>Оставьте заявку и наш менеджер свяжется с вами</h1>
         <g:form action='saveFromStart' class='request-form js-request-form' controller='requester'>
-          <fieldset class='left-block'>
+          <fieldset>
             <legend>1. Что Вы хотели бы создать?</legend>
             <div class='radio-block'>
               <g:radio class='radio-style js-group-radio-1' id='Cards' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
@@ -59,7 +59,7 @@
               <label for='Spam'><span></span> Безадресное распространение для определенной целевой аудитории</label>
             </div>
           </fieldset>
-          <fieldset class='right-block'>
+          <fieldset>
             <legend>Ваше имя</legend>
             <g:textField class='input-size-big input-view-no-border' name='request_name' placeholder='$name' />
             <legend>Ваш телефон</legend>

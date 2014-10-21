@@ -104,12 +104,12 @@
               </div>
               <h4>Ваш телефон</h4>
               <div class='input-start-page-block'>
-                <g:textField class='start-page-input half-obligatory-field' name='request_phone' placeholder='$phone' />
+                <g:textField class='start-page-input js-half-obligatory-field' name='request_phone' placeholder='$phone' />
                 <br />
               </div>
               <h4>Ваш e-mail</h4>
               <div class='input-start-page-block'>
-                <g:textField class='post start-page-input half-obligatory-field' name='request_email' placeholder='$email' />
+                <g:textField class='post start-page-input js-half-obligatory-field' name='request_email' placeholder='$email' />
                 <br />
               </div>
               <h5>Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"</h5>
