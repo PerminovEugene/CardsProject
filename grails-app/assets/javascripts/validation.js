@@ -52,7 +52,7 @@ $(document).ready(function() {
                         { success = true; }
                     });
                     if (!success) {
-                        var input = $('.start-page-input');
+                        var input = $('.js-start-page-input');
                         input[1]["style"].borderColor = 'red';
                         input[1]["style"].borderStyle = 'solid';
                         input[2]["style"].borderColor = 'red';

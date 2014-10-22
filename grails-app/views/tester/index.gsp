@@ -4,6 +4,9 @@
   <head>
     <title>Добро пожаловать</title>
     <meta content='header' name='layout' />
+    <!-- %script{:src => "/assets/startPage.js", :type => "text/javascript"} -->
+    <script src='/assets/jquery.gritter.js' type='text/javascript'></script>
+    <script src='/assets/jquery.gritter.css.less' type='text/less'></script>
   </head>
   <body>
     <!-- Declare Variable -->
@@ -38,7 +41,6 @@
           <fieldset>
             <legend>1. Что Вы хотели бы создать?</legend>
             <div class='radio-block'>
-              <g:radio class='radio-style js-group-radio-1' id='Cards' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
               <label for='Cards'><span></span>  Открытки</label>
               <g:radio class='radio-style js-group-radio-1' id='Cards' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
               <g:radio class='radio-style js-group-radio-1' id='Invites' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Invites' />
@@ -61,11 +63,11 @@
           </fieldset>
           <fieldset>
             <legend>Ваше имя</legend>
-            <g:textField class='input-size-big input-view-no-border' name='request_name' placeholder='$name' />
+            <g:textField class='input-size-big input-view-no-border js-start-page-input' name='request_name' placeholder='$name' />
             <legend>Ваш телефон</legend>
-            <g:textField class='input-size-big input-view-no-border js-half-obligatory-field' name='request_phone' placeholder='$phone' />
+            <g:textField class='input-size-big input-view-no-border js-half-obligatory-field js-start-page-input' name='request_phone' placeholder='$phone' />
             <legend>Ваш e-mail</legend>
-            <g:textField class='input-size-big input-view-no-border js-half-obligatory-field' name='request_email' placeholder='$email' />
+            <g:textField class='input-size-big input-view-no-border js-half-obligatory-field js-start-page-input' name='request_email' placeholder='$email' />
             <legend>Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"</legend>
             <g:link class='big-orange-button js-submit-request-form'>Отправить заявку</g:link>
             <input class='js-hide-session-info-input' type='text' value='${session.start_memory_form}' />
@@ -82,10 +84,12 @@
             <img src='/assets/StartPage/Ikon_fly.png' />
           </li>
           <li class='action-block'>
-            <p>Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!</p>
-            <g:textField class='input-size-medium input-view' name='subscribeEmail' onkeydown='javascript:if(13==event.keyCode){return false;}' placeholder='E-mail' />
-            <img src='/assets/StartPage/Ikon_vsklznaki.png' />
-            <A action='saveEmail' class='blue-little-button js-submit-send-email' controller='subscribe'>Подписаться</A>
+            <g:form action='saveEmail' class='js-form' controller='subscribe'>
+              <p>Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!</p>
+              <g:textField class='input-size-medium input-view' name='subscribeEmail' onkeydown='javascript:if(13==event.keyCode){return false;}' placeholder='E-mail' />
+              <img src='/assets/StartPage/Ikon_vsklznaki.png' />
+              <a action='saveEmail' class='blue-little-button js-submit-send-email' controller='subscribe'>Подписаться</a>
+            </g:form>
           </li>
         </ul>
       </div>

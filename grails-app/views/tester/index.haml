@@ -3,6 +3,9 @@
   %head
     %title Добро пожаловать
     %meta{:content => "header", :name => "layout"}
+    /%script{:src => "/assets/startPage.js", :type => "text/javascript"}
+    %script{:src => "/assets/jquery.gritter.js", :type => "text/javascript"}
+    %script{:src => "/assets/jquery.gritter.css.less", :type => "text/less"}
   %body
     / Declare Variable
     - name = 'Ваше имя'
@@ -30,8 +33,6 @@
           %fieldset
             %legend 1. Что Вы хотели бы создать?
             .radio-block
-              %g:radio.radio-style.js-group-radio-1{:name => "whatSendRadio", :type => "radio" :cheked => "checked",
-                             :value => "Cards", :id => "Cards"}/
               %label{:for => "Cards"} <span></span>  Открытки
               %g:radio.radio-style.js-group-radio-1{:name => "whatSendRadio", :type => "radio" :cheked => "checked",
                :value => "Cards", :id => "Cards"}/
@@ -56,12 +57,12 @@
               %label{:for => "Spam"} <span></span> Безадресное распространение для определенной целевой аудитории
           %fieldset
             %legend Ваше имя
-            %g:textField.input-size-big.input-view-no-border{:name => "request_name", :placeholder => "$name"}/
+            %g:textField.input-size-big.input-view-no-border.js-start-page-input{:name => "request_name", :placeholder => "$name"}/
             %legend Ваш телефон
-            %g:textField.input-size-big.input-view-no-border.js-half-obligatory-field{:name => "request_phone",
+            %g:textField.input-size-big.input-view-no-border.js-half-obligatory-field.js-start-page-input{:name => "request_phone",
              :placeholder => "$phone"}/
             %legend Ваш e-mail
-            %g:textField.input-size-big.input-view-no-border.js-half-obligatory-field{:name => "request_email",
+            %g:textField.input-size-big.input-view-no-border.js-half-obligatory-field.js-start-page-input{:name => "request_email",
              :placeholder => "$email"}/
             %legend Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"
             %g:link.big-orange-button.js-submit-request-form Отправить заявку
@@ -74,8 +75,9 @@
             %g:link.blue-little-button{:controller => 'picturesList', :action => 'index'} Создать открытку
             %img{:src => '/assets/StartPage/Ikon_fly.png'}
           %li.action-block
-            %p Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!
-            %g:textField.input-size-medium.input-view{:name => "subscribeEmail", :placeholder => "E-mail",
-             :onkeydown => "javascript:if(13==event.keyCode){return false;}"}/
-            %img{:src => '/assets/StartPage/Ikon_vsklznaki.png'}
-            %A.blue-little-button.js-submit-send-email{:controller => 'subscribe', :action => 'saveEmail'}  Подписаться
+            %g:form.js-form{:controller => "subscribe", :action => "saveEmail"}
+              %p Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!
+              %g:textField.input-size-medium.input-view{:name => "subscribeEmail", :placeholder => "E-mail",
+               :onkeydown => "javascript:if(13==event.keyCode){return false;}"}/
+              %img{:src => '/assets/StartPage/Ikon_vsklznaki.png'}
+              %a.blue-little-button.js-submit-send-email{:controller => 'subscribe', :action => 'saveEmail'}  Подписаться
