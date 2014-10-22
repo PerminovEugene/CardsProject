@@ -18,10 +18,12 @@
 <body>
 <header>
     <div class="container">
-            <a href="/startPage/index" >
-                <asset:image src="logo_o.png" alt="GoodCards" class="project-logo"/>
-            </a>
-        <h1>  Отправка печатных открыток и приглашений </h1>
+        <div class="inline-content">
+            %{--<a href="/startPage/index" >--}%
+            <asset:image src="logo_o.png" alt="GoodCards" class="project-logo"/>
+            %{--</a>--}%
+            <h1>  Отправка печатных открыток и приглашений </h1>
+        </div">
     </div>
 </header>
 <div class="header-style"> </div>
