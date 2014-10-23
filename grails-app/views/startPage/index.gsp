@@ -1,12 +1,10 @@
 <%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY index.haml --%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
     <title>Добро пожаловать</title>
     <meta content='header' name='layout' />
-    <!-- %script{:src => "/assets/startPage.js", :type => "text/javascript"} -->
     <script src='/assets/jquery.gritter.js' type='text/javascript'></script>
-    <!-- #%script{:src => "/assets/jquery.gritter.css.less", :type => "text/css"} -->
   </head>
   <body>
     <!-- Declare Variable -->
@@ -112,13 +110,13 @@
         <ul>
           <li class='action-block'>
             <p>Если Вы хотите отправить одну открытку конкретному адресату, то воспользуйтесь сервисом BestReCards и сделайте это за несколько шагов</p>
-            <g:link action='index' class='blue-little-button' controller='picturesList'>Создать открытку</g:link>
+            <g:link action='index' class='blue-little-button' controller='startPage'>Создать открытку</g:link>
             <img src='/assets/StartPage/Ikon_fly.png' />
           </li>
           <li class='action-block'>
             <g:form action='saveEmail' class='js-form' controller='subscribe'>
               <p>Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!</p>
-              <g:textField class='input-size-medium input-view' name='subscribeEmail' onkeydown='javascript:if(13==event.keyCode){return false;}' placeholder='E-mail' />
+              <g:textField class='input-size-medium input-view js-send-email-validation' name='subscribeEmail' onkeydown='javascript:if(13==event.keyCode){return false;}' placeholder='E-mail' />
               <img src='/assets/StartPage/Ikon_vsklznaki.png' />
               <a action='saveEmail' class='blue-little-button js-submit-send-email' controller='subscribe'>Подписаться</a>
             </g:form>

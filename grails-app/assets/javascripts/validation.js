@@ -22,7 +22,7 @@ $(document).ready(function() {
     $('.js-error').empty();
     $(document).on('click', '.js-submit-send-email', function(){
         reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-        var input = $('.input-bottom-style');
+        var input = $('.js-send-email-validation');
         if (!input[0].value.match(reg)) {
             input[0]["style"].borderColor = 'red';
             $.gritter.add({
