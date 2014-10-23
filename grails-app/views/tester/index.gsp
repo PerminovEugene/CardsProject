@@ -6,13 +6,45 @@
     <meta content='header' name='layout' />
     <!-- %script{:src => "/assets/startPage.js", :type => "text/javascript"} -->
     <script src='/assets/jquery.gritter.js' type='text/javascript'></script>
-    <script src='/assets/jquery.gritter.css.less' type='text/less'></script>
+    <!-- #%script{:src => "/assets/jquery.gritter.css.less", :type => "text/css"} -->
   </head>
   <body>
     <!-- Declare Variable -->
     <% name = 'Ваше имя' %>
     <% phone = 'Ваш телефон' %>
     <% email = 'Ваш e-mail' %>
+    <script type='text/javascript'>
+      //<![CDATA[
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter26328996 = new Ya.Metrika({id:26328996,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+        
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+        
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+      //]]>
+    </script>
+    <noscript>
+      <div>
+        <img alt='' src='//mc.yandex.ru/watch/26328996' style='position:absolute; left:-9999px;' />
+      </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
     <div class='container-top-landing'>
       <div class='container'>
         <ul class='list-height'>
@@ -41,8 +73,8 @@
           <fieldset>
             <legend>1. Что Вы хотели бы создать?</legend>
             <div class='radio-block'>
-              <label for='Cards'><span></span>  Открытки</label>
               <g:radio class='radio-style js-group-radio-1' id='Cards' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
+              <label for='Cards'><span></span>  Открытки</label>
               <g:radio class='radio-style js-group-radio-1' id='Invites' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Invites' />
               <label for='Invites'><span></span>  Приглашения</label>
             </div>
@@ -69,7 +101,7 @@
             <legend>Ваш e-mail</legend>
             <g:textField class='input-size-big input-view-no-border js-half-obligatory-field js-start-page-input' name='request_email' placeholder='$email' />
             <legend>Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"</legend>
-            <g:link class='big-orange-button js-submit-request-form'>Отправить заявку</g:link>
+            <a class='big-orange-button js-submit-request-form'>Отправить заявку</a>
             <input class='js-hide-session-info-input' type='text' value='${session.start_memory_form}' />
           </fieldset>
         </g:form>

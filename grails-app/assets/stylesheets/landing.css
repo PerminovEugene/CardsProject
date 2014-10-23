@@ -43,9 +43,7 @@ table {
 }
 
 /***************************************** gloabal ******************************/
-/*%html {*/
-     /*font-size: 75%;*/
- /*}*/
+
 html {
     min-width: 481px;
 }
@@ -57,8 +55,6 @@ p {
 }
 h1 {
     color: #ffffff;
-    /*margin: 1em 1em 1em 1em;*/
-    /*padding: 1em 1em 1em 1em;*/
     padding-top: 1em;
     padding-bottom: 1em;
     font-weight: normal;
@@ -75,7 +71,6 @@ ul {
     margin: 0 auto;
     display: inline-block;
     vertical-align: top;
-    *display: inline;
 }
 .list-height {
     height: 400px;
@@ -217,9 +212,7 @@ legend {
     margin-top: 12px;
     width: 87%;
 }
-.radio-block {
 
-}
 .radio-block {
     margin-bottom: 30px;
 }
@@ -273,7 +266,7 @@ input[type="radio"]:checked + label span {
     height: 56%;
 }
 .action-block:nth-child(2) p{
-    height: 40%;
+    height: 60px;
 }
 .action-block img {
     float:right;
@@ -322,7 +315,6 @@ footer a {
     background-color: #1296ff;
     border-style: solid;
     border-radius: 3px;
-    border-color: #1296ff;
     text-decoration: none;
     margin-left: 15px;
     cursor: pointer;
@@ -344,19 +336,14 @@ footer a {
     font-size: 1.5em;
     border-radius: 5px;
 }
-.test-orange-button {
-    background-color: #ffa112;
-    width: 90%;
-    height: 2em;
-}
-.test-orange-button:hover,
+
 .big-orange-button:hover {
     color:  #ffa112;
     background-color: #ffffff;
     cursor: pointer;
 }
 /****************************************************************************************/
-/*************************************** media 200 - 768*********************************/
+/*************************************** media 321 - 768*********************************/
 /****************************************************************************************/
 
 @media (min-width: 321px) and (max-width:768px) {
@@ -372,7 +359,7 @@ footer a {
         margin-right: 15px;
 
     }
-    /*************************************** Top-parte *********************************/
+    /*************************************** Top-part *********************************/
     .container-top-landing {
         height: 600px;
     }

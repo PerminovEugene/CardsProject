@@ -1,17 +1,18 @@
 <%-- DO NOT MODIFY THIS FILE, IT IS AUTOMATICALLY GENERATED. INSTEAD MODIFY index.haml --%>
-<html xmlns='http://www.w3.org/1999/html'>
+<!DOCTYPE html>
+<html>
   <head>
     <title>Добро пожаловать</title>
-    <meta content='main' name='layout' />
-    <script src='/assets/startPage.js' type='text/javascript'></script>
+    <meta content='header' name='layout' />
+    <!-- %script{:src => "/assets/startPage.js", :type => "text/javascript"} -->
     <script src='/assets/jquery.gritter.js' type='text/javascript'></script>
+    <!-- #%script{:src => "/assets/jquery.gritter.css.less", :type => "text/css"} -->
   </head>
   <body>
     <!-- Declare Variable -->
     <% name = 'Ваше имя' %>
     <% phone = 'Ваш телефон' %>
     <% email = 'Ваш e-mail' %>
-    <!-- Yandex.Metrika counter -->
     <script type='text/javascript'>
       //<![CDATA[
         (function (d, w, c) {
@@ -44,96 +45,85 @@
       </div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
-    <div class='cheat-for-header'></div>
-    <div class='mail-style'></div>
-    <div id='start-page-top'>
-      <div class='content-start-page top-img-style'>
-        <div class='feature-block-1 top-style'>
-          <img src='/assets/StartPage/Ikon_medal.png' />
-          <div class='black-text-in-features'>Не знаете, как лучше пригласить важных персон на событие?</div>
-          <div class='blue-text-in-features'>Создайте эксклюзивное приглашение, заказав у нас индивидуальный дизайн и курьерскую доставку.</div>
-        </div>
-        <div class='feature-block-1 top-style'>
-          <img src='/assets/StartPage/Ikon_love.png' />
-          <div class='black-text-in-features'>Думаете, как поздравить бизнес — партнёров с праздником?</div>
-          <div class='blue-text-in-features'>Красивая печатная открытка - это простой способ передать человеку, что он значит для Вас.</div>
-        </div>
-        <div class='feature-block-1 top-style'>
-          <img src='/assets/StartPage/Ikon_letter.png' />
-          <div class='black-text-in-features'>Нет времени <br/> повысить лояльность клиентов?</div>
-          <div class='blue-text-in-features'>Мы сделаем это, пока Вы занимаетесь бизнесом. Создадим и отправим открытку или приглашение.</div>
-        </div>
-      </div>
-      <div class='startPageForm'>
-        <div class='container'>
-          <g:form action='saveFromStart' class='js-request-form' controller='requester'>
-            <h2>Оставьте заявку и наш менеджер свяжется с вами</h2>
-            <div class='form-block-half left-block'>
-              <h4>1. Что Вы хотели бы создать?</h4>
-              <div class='radio-start-page-block'>
-                <g:radio class='radioStyle js-group-radio-1' id='Cards' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
-                <label class='text-near-radio' for='Cards'>Открытки</label>
-                <br />
-                <g:radio class='radioStyle js-group-radio-1' id='Invites' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Invites' />
-                <label class='text-near-radio' for='Invites'>Приглашения</label>
-                <br />
-              </div>
-              <h4>2. Они будут персональные?</h4>
-              <div class='radio-start-page-block'>
-                <g:radio class='radioStyle js-group-radio-2 double-line-radioStyle' id='Nominal' name='personalSendRadio' type='radio" :cheked =&gt; "checked' value='Nominal' />
-                <label class='text-near-radio' for='Nominal'>Да на них будут указаны конкретные ФИО человека</label>
-                <br />
-                <g:radio class='radioStyle js-group-radio-2' id='Noname' name='personalSendRadio' type='radio" :cheked =&gt; "checked' value='Noname' />
-                <label class='text-near-radio' for='Noname'>Нет они будут безымянные</label>
-                <br />
-              </div>
-              <h4>3. Какой способ доставки Вам необходим?</h4>
-              <div class='radio-start-page-block'>
-                <g:radio class='radioStyle double-line-radioStyle js-group-radio-3' id='Personal' name='methodOfDeliveryRadio' type='radio" :cheked =&gt; "checked' value='Personal' />
-                <label class='text-near-radio' for='Personal'>Курьером по конкретным адресам и определенным людям</label>
-                <br />
-                <g:radio class='radioStyle double-line-radioStyle js-group-radio-3' id='Spam' name='methodOfDeliveryRadio' type='radio" :cheked =&gt; "checked' value='Spam' />
-                <label class='text-near-radio' for='Spam'>Безадресное распространение для определенной целевой аудитории</label>
-              </div>
-            </div>
-            <div class='form-block-half right-block'>
-              <h4>Ваше имя</h4>
-              <div class='input-start-page-block'>
-                <g:textField class='name start-page-input' name='request_name' placeholder='$name' />
-                <br />
-              </div>
-              <h4>Ваш телефон</h4>
-              <div class='input-start-page-block'>
-                <g:textField class='start-page-input js-half-obligatory-field' name='request_phone' placeholder='$phone' />
-                <br />
-              </div>
-              <h4>Ваш e-mail</h4>
-              <div class='input-start-page-block'>
-                <g:textField class='post start-page-input js-half-obligatory-field' name='request_email' placeholder='$email' />
-                <br />
-              </div>
-              <h5>Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"</h5>
-              <a class='main-page-test-button js-submit-request-form'>Отправить заявку</a>
-              <input class='js-hide-session-info-input' type='text' value='${session.start_memory_form}' />
-            </div>
-          </g:form>
-        </div>
+    <div class='container-top-landing'>
+      <div class='container'>
+        <ul class='list-height'>
+          <li class='feature-block'>
+            <img src='/assets/StartPage/Ikon_medal.png' />
+            <p>Не знаете, как лучше пригласить важных персон на событие?</p>
+            <p class='blue-text'>Создайте эксклюзивное приглашение, заказав у нас индивидуальный дизайн и курьерскую доставку.</p>
+          </li>
+          <li class='feature-block'>
+            <img src='/assets/StartPage/Ikon_love.png' />
+            <p>Думаете, как поздравить бизнес — партнёров с праздником?</p>
+            <p class='blue-text'>Красивая печатная открытка - это простой способ передать человеку, что он значит для Вас.</p>
+          </li>
+          <li class='feature-block'>
+            <img src='/assets/StartPage/Ikon_letter.png' />
+            <p>Нет времени <br/> повысить лояльность клиентов?</p>
+            <p class='blue-text'>Мы сделаем это, пока Вы занимаетесь бизнесом. Создадим и отправим открытку или приглашение.</p>
+          </li>
+        </ul>
       </div>
     </div>
-    <div id='start-page-bottom'>
-      <div class='content-start-page-bottom bottom-img-style'>
-        <!-- .feature-block-1.bottom-style -->
-        <!-- .black-bottom-text.left Если вы хотите отправить одну открытку конкретному адресату, то воспользуйтесь сервисом BestReCards и сделайте это за несколько шагов -->
-        <!-- %g:link.blue-little-button{:controller => "picturesList", :action => "index"} Создать открытку -->
-        <!-- %img.left-img{:src => '/assets/StartPage/Ikon_fly.png'} -->
-        <div class='feature-block-1 bottom-style'>
-          <div class='black-bottom-text'>Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!</div>
-          <g:form action='saveEmail' class='js-form' controller='subscribe'>
-            <g:textField class='input-bottom-style' name='subscribeEmail' onkeydown='javascript:if(13==event.keyCode){return false;}' placeholder='E-mail' />
-            <img class='right-img' src='/assets/StartPage/Ikon_vsklznaki.png' />
-            <a class='blue-little-button js-submit-send-email'>Подписаться</a>
-          </g:form>
-        </div>
+    <div class='container-form-landing'>
+      <div class='container'>
+        <h1>Оставьте заявку и наш менеджер свяжется с вами</h1>
+        <g:form action='saveFromStart' class='request-form js-request-form' controller='requester'>
+          <fieldset>
+            <legend>1. Что Вы хотели бы создать?</legend>
+            <div class='radio-block'>
+              <g:radio class='radio-style js-group-radio-1' id='Cards' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Cards' />
+              <label for='Cards'><span></span>  Открытки</label>
+              <g:radio class='radio-style js-group-radio-1' id='Invites' name='whatSendRadio' type='radio" :cheked =&gt; "checked' value='Invites' />
+              <label for='Invites'><span></span>  Приглашения</label>
+            </div>
+            <legend>2. Они будут персональные?</legend>
+            <div class='radio-block'>
+              <g:radio class='radio-style js-group-radio-2 double-line-radioStyle' id='Nominal' name='personalSendRadio' type='radio" :cheked =&gt; "checked' value='Nominal' />
+              <label for='Nominal'><span></span> Да на них будут указаны конкретные ФИО человека</label>
+              <g:radio class='radio-style js-group-radio-2' id='Noname' name='personalSendRadio' type='radio" :cheked =&gt; "checked' value='Noname' />
+              <label for='Noname'><span></span> Нет они будут безымянные</label>
+            </div>
+            <legend>3. Какой способ доставки Вам необходим?</legend>
+            <div class='radio-block'>
+              <g:radio class='radio-style double-line-radioStyle js-group-radio-3' id='Personal' name='methodOfDeliveryRadio' type='radio" :cheked =&gt; "checked' value='Personal' />
+              <label for='Personal'><span></span> Курьером по конкретным адресам и определенным людям</label>
+              <g:radio class='radio-style double-line-radioStyle js-group-radio-3' id='Spam' name='methodOfDeliveryRadio' type='radio" :cheked =&gt; "checked' value='Spam' />
+              <label for='Spam'><span></span> Безадресное распространение для определенной целевой аудитории</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Ваше имя</legend>
+            <g:textField class='input-size-big input-view-no-border js-start-page-input' name='request_name' placeholder='$name' />
+            <legend>Ваш телефон</legend>
+            <g:textField class='input-size-big input-view-no-border js-half-obligatory-field js-start-page-input' name='request_phone' placeholder='$phone' />
+            <legend>Ваш e-mail</legend>
+            <g:textField class='input-size-big input-view-no-border js-half-obligatory-field js-start-page-input' name='request_email' placeholder='$email' />
+            <legend>Нужно заполнить одно из полей или оба "Ваш телефон" и "Ваш e-mail"</legend>
+            <a class='big-orange-button js-submit-request-form'>Отправить заявку</a>
+            <input class='js-hide-session-info-input' type='text' value='${session.start_memory_form}' />
+          </fieldset>
+        </g:form>
+      </div>
+    </div>
+    <div class='container-bottom-landing'>
+      <div class='container'>
+        <ul>
+          <li class='action-block'>
+            <p>Если Вы хотите отправить одну открытку конкретному адресату, то воспользуйтесь сервисом BestReCards и сделайте это за несколько шагов</p>
+            <g:link action='index' class='blue-little-button' controller='picturesList'>Создать открытку</g:link>
+            <img src='/assets/StartPage/Ikon_fly.png' />
+          </li>
+          <li class='action-block'>
+            <g:form action='saveEmail' class='js-form' controller='subscribe'>
+              <p>Скоро будут добавлены новые функции! Подпишитесь и узнайте о новинках и акциях первыми!</p>
+              <g:textField class='input-size-medium input-view' name='subscribeEmail' onkeydown='javascript:if(13==event.keyCode){return false;}' placeholder='E-mail' />
+              <img src='/assets/StartPage/Ikon_vsklznaki.png' />
+              <a action='saveEmail' class='blue-little-button js-submit-send-email' controller='subscribe'>Подписаться</a>
+            </g:form>
+          </li>
+        </ul>
       </div>
     </div>
   </body>

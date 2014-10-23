@@ -13,6 +13,7 @@
     <asset:javascript src="application.js"/>
     <asset:stylesheet src="landing.css"/>
     <asset:stylesheet src="fonts.css.less"/>
+    <asset:stylesheet src="jquery.gritter.css.less"/>
     %{--<asset:javascript src="application.js"/>--}%
     <g:layoutHead/>
 </head>

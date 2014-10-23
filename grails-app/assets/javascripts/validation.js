@@ -1,5 +1,5 @@
 /**
- * Created by lokk on 07.08.14.
+ * Created by eugene on 07.08.14.
  */
 $(document).ready(function() {
     $('.js-hide-session-info-input').hide();
@@ -193,25 +193,6 @@ var validationOnEmpty = function(current_input){
         return true
     }
 }
-
-/*var validationOnMaxSizeBigInput = function(current_input){
-    if (current_input.placeholder.length  >= 30)
-    {
-        current_input.style.borderColor = "#ed452a";
-        if  (current_input.name == "sender_name" || current_input.name == "receiver_name") {
-            current_input.placeholder = "Ф.И.О. должно быть короче 30 символов";
-        } else if (current_input.name == "sender_city" || current_input.name == "receiver_city") {
-            current_input.placeholder = "Город должен быть короче 30 символов";
-        } else if (current_input.name == "sender_street" || current_input.name == "receiver_street") {
-            current_input.placeholder = "Улица должна быть короче 30 символов";
-        }
-        return false
-    }
-    else {
-        current_input.style.borderColor = "#b3b3b3";
-        return true
-    }
-}*/
 
 var validationPostCode = function(currentInput) {
     reg = /^[0-9]{6}/;
